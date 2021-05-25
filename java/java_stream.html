@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># (Java) Stream API 첫걸음</title>
+  <meta name="description" content="0. 들어가며: 최근, 여러 알고리즘 문제들을 풀면서,가끔 심심할때마다 프로그래머스 Lv.1 문제들도 푸는데,">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 들어가며: 최근, 여러 알고리즘 문제들을 풀면서,가끔 심심할때마다 프로그래머스 Lv.1 문제들도 푸는데," />
+  <meta property="og:url" content="https://cjlee38.github.io/java/java_stream">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# (Java) Stream API 첫걸음" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# (Java) Stream API 첫걸음">
+  <meta name="twitter:description" content="0. 들어가며: 최근, 여러 알고리즘 문제들을 풀면서,가끔 심심할때마다 프로그래머스 Lv.1 문제들도 푸는데,">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/java/java_stream">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/java/java_stream">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># (Java) Stream API 첫걸음</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">October 7, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/java">Java</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-들어가며">0. 들어가며</h1>
+<p>: 최근, 여러 알고리즘 문제들을 풀면서,<br />
+가끔 심심할때마다 프로그래머스 Lv.1 문제들도 푸는데,</p>
+
+<p>Lv.1 문제들은 단순하게 제출하는 것이 뭔가 좀 껄끄러웠다. <br />
+개인적으로는, 1차원의 for loop를 쓰더라도 이게 여러 개 있으면 꽤 마음이 불편해진다. <br />
+뭔가, 깔끔하고 멋있게 써야 할 것 같았다.</p>
+
+<p>개인적으로, 이러한 상황에 가장 베스트인 선택지는<br />
+바로 Stream API 라고 생각한다.</p>
+
+<p>아직 익숙치 않은 Stream API를 공부해보자.<br />
+양이 꽤 많기 때문에 아마 모두 적기에는 어려울 것 같다.</p>
+
+<hr />
+
+<blockquote>
+  <p>Note. Stream API는 일반적으로 컴퓨터 공학에서 사용하는 용어인 Stream 과는 다르다.<br />
+본 포스팅은 Stream API(이하, Stream) 에 대해서 다룬다.</p>
+</blockquote>
+
+<hr />
+
+<h1 id="1-stream-이란">1. Stream 이란?</h1>
+<p>: Oracle에서 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html#package.description">Stream package의 document</a>에서는 다음과 같이 설명하고 있다.</p>
+
+<Center> Classes to support functional-style operations on streams of elements, such as map-reduce transformations on collections. </Center>
+
+<p>요소들의 stream에 대해서, (컬렉션의 map-reduce 변환과 같은) 함수형 연산을 지원하는 클래스 … ?<br />
+무슨 말인지 이해하기 어렵다.</p>
+
+<p><a href="https://cjlee38.github.io/java/journey_to_java_hashmap">이전 HashMap 편</a>에서도 이야기했듯이 나는 <strong>Naming</strong>이 중요하다고 생각하기 때문에,<br />
+가장 먼저 네이버 사전에 stream을 검색한 결과는 다음과 같다.</p>
+
+<p><strong>stream</strong></p>
+
+<ol>
+  <li>개울, 시내</li>
+  <li>(액체기체의) 줄기</li>
+  <li>줄줄 흐르다</li>
+</ol>
+
+<p>이걸 보고나니, 영화 전우치에서 전우치가 화담과 마지막 전투를 할 때에<br />
+벽에서 물을 끌어다가 화담에게 쏘는 장면이 생각났다.</p>
+
+<p>아무튼, <strong>“어떠한 흐름”</strong> 을 다루는 것이 stream 이라고 생각하면 될 것같다.<br />
+(이 부분은 컴퓨터공학의 Stream과 비슷한 맥락을 갖는다.)</p>
+
+<p>이 흐름은 그대로 흘러가는구나.. 하는 것이 아니라,<br />
+우리가 주도적으로 이리저리 다룰 수 있어야 한다.</p>
+
+<p><strong>수도꼭지를 돌렸을 때</strong> 물이 어떻게 나오는지 상상해보면 이해하기 쉽다.<br />
+수도꼭지는 수도관과 연결되어 있을테고,<br />
+수도관의 물은 단순히 전달되는것이 아니라, 그 과정에서 filtering도 하고, 정화도 하고..<br />
+등등의 여러가지 절차가 있을 것이다.</p>
+
+<p><img src="/assets/images/2020-10-10-23-58-33_2020-10-07-java_stream.md.png" style="width: 300px; height: 300px" />
+<!-- ![](/assets/images/2020-10-10-23-58-33_2020-10-07-java_stream.md.png) --></p>
+
+<p>마찬가지로, 우리가 원하는 데이터를 얻기 위해,<br />
+Stream을 이용해서 <strong>요리조리 흐름을 제어하고, 필터링을 하는 등의 작업</strong>을 거치면 된다.</p>
+
+<h2 id="간단한-예시--1-">간단한 예시 ( 1 )</h2>
+<p>: Stream을 썼을 때의 장점이라면, <strong>가독성</strong>이 좋아진다는 것이다. <br />
+숫자가 1부터 10까지 있는 array에서, <strong>짝수인 숫자</strong>만 골라내고 싶다면 어떻게 해야할까?</p>
+
+<p>아마 stream을 쓰지 않는다면, 이렇게 작성할 수 있을 것이다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
+
+<span class="c1">// 짝수를 구하는 부분</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">evens</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span><span class="o">];</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">array</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>  <span class="o">{</span>
+        <span class="n">evens</span><span class="o">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="c1">// 짝수를 구하는 부분</span>
+
+<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">evens</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">evens</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">" "</span><span class="o">);</span>
+<span class="o">}</span> <span class="c1">// 2 4 6 8 10 </span>
+</code></pre></div></div>
+<p>그러나, 이 방법은 꽤 우아해보이진 않는다.<br />
+만약, array가 <strong>랜덤</strong>인 정수라면 어떨까?<br />
+조금 더 극단적으로, array가 <strong>짝수로만</strong> 이루어져있다면 어떨까?</p>
+
+<p>물론, ArrayList 나 LinkedList 같이 편리한 Collection을 사용하는 방법도 있지만,<br />
+<strong>근본적인 해결책</strong>을 제시했다고 보기는 어렵다.</p>
+
+<p><strong>stream을 이용한다면 어떨까?</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">[]</span> <span class="n">evens</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">array</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>…???<br />
+이게 전부다.</p>
+
+<p>array를 stream으로 감싸서 Instream 이라는 객체로 만든뒤에,<br />
+x % 2 == 0, 즉 짝수인 애들만 남기고,<br />
+이를 다시 Array로 만들었다.</p>
+
+<p>이렇게 작성하면, array에 무슨 값이 들어와도 두렵지 않다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="o">{</span><span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">4</span><span class="o">};</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">evens</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">array</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
+<span class="c1">// 2 4 4 4 4</span>
+</code></pre></div></div>
+
+<p>하나만 더 보자.</p>
+
+<h2 id="간단한-예시--2-">간단한 예시 ( 2 )</h2>
+<p>: 프로그래머스에서 풀었던 문제 중 하나다.<br />
+<a href="https://programmers.co.kr/learn/courses/30/lessons/12932">자연수 뒤집어 배열로 만들기</a> 라는 문제인데,<br />
+숫자형 값이 들어왔을 때, 이를 뒤집은 뒤, 배열로 만들면 된다.</p>
+
+<p>가령, 12345가 들어오면, [5, 4, 3, 2, 1] 로 만들어서 돌려주면 된다.</p>
+
+<p>stream을 쓰지 않는다면, 이렇게 썼을 것 같다.<br />
+(일부러 조금 귀찮게 썼다.)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">n</span><span class="o">)).</span><span class="na">reverse</span><span class="o">();</span>
+<span class="nc">String</span><span class="o">[]</span> <span class="n">strArray</span> <span class="o">=</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s">""</span><span class="o">);</span>
+
+<span class="kt">int</span><span class="o">[]</span> <span class="n">answer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">strArray</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">strArray</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="n">answer</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">strArray</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+<span class="o">}</span>
+<span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>StringBuilder로 만들어서 뒤집고, 이를 빈 문자열로 split한다.<br />
+–&gt; [“5”, “4”, “3”, “2”, “1”]</p>
+
+<p>그리고, int형의 빈 배열을 만든 뒤 하나씩 int형으로 parsing해서 집어넣고, 돌려준다.</p>
+
+<p>꽤 괜찮아보인다.<br />
+stream을 쓰면 어떨까?</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">(</span><span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">n</span><span class="o">))</span>
+        <span class="o">.</span><span class="na">reverse</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">toString</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">chars</span><span class="o">()</span> <span class="c1">// 여기서 Intstream이 생성된다</span>
+        <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="nc">Character</span><span class="o">.</span><span class="na">getNumericValue</span><span class="o">(</span><span class="n">x</span><span class="o">))</span> 
+        <span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
+<span class="c1">// chars()를 만들면 각 char 값이 아스키코드값이 되기 때문에 </span>
+<span class="c1">// 이를 다시 원래 숫자값으로 해석해줘야 한다.</span>
+</code></pre></div></div>
+
+<p>같은 기능을 하는 코드지만, 좀 더 간결해졌다.<br />
+이런 코드를 보고있으면 왠지모르게 심적으로 편안해진다.</p>
+
+<h1 id="2-사용법">2. 사용법</h1>
+<p>: stream은 <strong>대개</strong> 다음과 같은 절차를 거친다.</p>
+
+<ol>
+  <li>생성</li>
+  <li>가공</li>
+  <li>소비</li>
+</ol>
+
+<p>위 3단계 절차에 대해서, 아주 <strong>“간략하게”</strong> 다룰 것이며,  <br />
+자세한 사용법을 모두 서술하는 것은 포스팅이 너무 길어지므로 <br />
+다른 분들의 포스팅을 참고하길 바란다.</p>
+
+<h2 id="1-생성">1) 생성</h2>
+<h3 id="배열">배열</h3>
+<p>: 배열은 클래스가 아니므로 Arrays라는 클래스를 통해 스트림으로 만들어줘야 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">[]</span> <span class="n">intArr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>
+<span class="nc">IntStream</span> <span class="n">stream</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">array</span><span class="o">);</span>
+
+<span class="nc">String</span><span class="o">[]</span> <span class="n">strArr</span> <span class="o">=</span> <span class="o">{</span><span class="s">"hello"</span><span class="o">,</span> <span class="s">"world"</span><span class="o">};</span>
+<span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">strStream</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">strArr</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h3 id="collection">Collection</h3>
+<p>: Collection (e.g. List, stream)의 경우, <br />
+Collection interface에 추가된 method인 .stream()을 통해 만들 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">));</span>
+<span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">();</span>
+</code></pre></div></div>
+
+<h3 id="자체-생성">자체 생성</h3>
+<p>: Stream.of() method를 이용하는 방법도 있다.<br />
+이는 입력받은 값을 stream으로 변환해주는 기능을 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h2 id="2-가공">2) 가공</h2>
+<p>: 다음과 같은 String의 stream을 기준으로 가공하는 예시를 들어보겠다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"hello"</span><span class="o">,</span> <span class="s">"world"</span><span class="o">,</span> <span class="s">"java"</span><span class="o">,</span> <span class="s">"stream"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>이 떄 주의해야할 것은,<br />
+첫 째로, <strong>“각각의 요소”</strong>에 접근해서 사용한다는 것을,<br />
+둘 째로, 가공하는 method가 <strong>return</strong>하는 객체는 <strong>또 다시 stream</strong>이라는 것을 <br />
+기억해야 한다.</p>
+
+<h3 id="filter">.filter()</h3>
+<p>: 이름 그대로, 조건에 부합하는 요소들만 남기는 작업을 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+                            <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">"o"</span><span class="o">));</span>
+<span class="c1">// {"hello", "world"}</span>
+</code></pre></div></div>
+
+<p>“o” 라는 문자열이 포함된 요소만 남기겠다는 의미이므로,<br />
+o를 포함하고 있는 hello, world 가 남게 된다.</p>
+
+<p>이때, x 라는 녀석은 임의로 붙이는 <strong>“임시변수”</strong> 이다.<br />
+파이썬의 for loop, java의 for-each 에서 각 요소를 접근하는 법을 생각하면 된다.</p>
+
+<h3 id="map">.map()</h3>
+<p>: map 또한 이름과 마찬가지로, 각각의 요소를 mapping 하는 역할을 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+                            <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">2</span><span class="o">));</span>
+<span class="c1">// {"he", "wo", "ja", "st"}</span>
+</code></pre></div></div>
+
+<p>각각의 요소에 접근하면서, 
+x 라고 붙인 임시변수를 substring, 즉 index 기준으로 잘라내겠다는 의미가 된다.</p>
+
+<h2 id="sorted">.sorted()</h2>
+<p>: 정렬을 하는 기능을 해준다.<br />
+내부 객체(요소)가 스스로 Compartor를 갖고 있다면 이에 기반해서 default 정렬을 할 것이고,<br />
+없거나, 커스텀 정렬을 할 경우 Compartor를 넘겨줄 수도 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">sorted</span><span class="o">();</span>
+<span class="c1">// {"hello", "java", "stream", "world"}</span>
+<span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">sorted</span><span class="o">(</span><span class="nc">Collections</span><span class="o">.</span><span class="na">reverseOrder</span><span class="o">());</span>
+<span class="c1">// {"world", "stream", "java", "hello"}</span>
+</code></pre></div></div>
+<h2 id="peek">.peek()</h2>
+<p>: 자료구조에서 사용하는 peek()과 비슷하다.<br />
+stream을 소비하지 않고, 각각의 요소를 한번 “확인” 하는 정도의 역할만 하고,<br />
+return 되는 <strong>결과에는 영향을 미치지 않는다.</strong></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">peek</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">2</span><span class="o">));</span>
+<span class="c1">// 아무런 영향을 미치지 않으므로, {"hello", "world", "java", "stream"}을 유지</span>
+
+<span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">peek</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">));</span>
+<span class="c1">// hello, world, java, steram 순서대로 출력</span>
+</code></pre></div></div>
+
+<h2 id="3-소비">3) 소비</h2>
+<h3 id="min-max-sum">.min(), .max(), .sum()</h3>
+<p>숫자형일 때 최소, 최대, 합의 값을 구해주는 연산이다.</p>
+
+<p><em>String은 계산이 불가능하므로 잠깐 다른 예시를 활용한다.</em></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">};</span>
+<span class="nc">OptionalInt</span> <span class="n">oMax</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">arr</span><span class="o">).</span><span class="na">max</span><span class="o">();</span> <span class="c1">// OptionalInt[4]</span>
+<span class="nc">OptionalInt</span> <span class="n">oMin</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">arr</span><span class="o">).</span><span class="na">min</span><span class="o">();</span> <span class="c1">// OptionalInt[1]</span>
+<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">arr</span><span class="o">).</span><span class="na">sum</span><span class="o">();</span> <span class="c1">// 10</span>
+
+</code></pre></div></div>
+
+<p>이 때, max()와 min()으로 나온 값은 Optional 객체이므로,<br />
+이를 getAsInt()를 뒤에 붙여줘야 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">oMax</span><span class="o">.</span><span class="na">getAsInt</span><span class="o">();</span>
+<span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">oMin</span><span class="o">.</span><span class="na">getAsInt</span><span class="o">();</span>
+</code></pre></div></div>
+
+<h3 id="toarray">.toArray()</h3>
+<p>: stream을 배열로 변환해주는 작업이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span><span class="o">[]</span> <span class="n">strArr</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">2</span><span class="o">))</span>
+                    <span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">String</span><span class="o">[</span><span class="n">x</span><span class="o">]);</span>
+<span class="c1">// {"he", "wo", "ja", "st"}</span>
+</code></pre></div></div>
+
+<p>parameter를 넘기지 않으면 Object 객체의 배열로 넘어가게 된다.</p>
+
+<h3 id="collect">.collect()</h3>
+<p>: Collection 객체로 모으는 역할을 한다.<br />
+이 때, Collector 객체를 파라미터로 넘겨줘야 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+                        <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">2</span><span class="o">))</span>
+                        <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toSet</span><span class="o">());</span>
+<span class="c1">// Set = {"he", "wo", "ja", "st"}</span>
+</code></pre></div></div>
+
+<h3 id="foreach">.forEach()</h3>
+<p>: 각 요소에 대해서, “어떤 작업”을 하고 그대로 실행하는 Consumer를 받는다.<br />
+대표적으로, System.out.println() 이 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span><span class="mi">2</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">));</span>
+<span class="c1">// 순서대로, he, wo, ja, st 가 출력</span>
+</code></pre></div></div>
+
+<h1 id="3-주의점">3. 주의점</h1>
+<p>: 이렇듯 막강한 stream에도, 주의해야할 점이 있다.</p>
+
+<ol>
+  <li>너무 <strong>복잡한 경우</strong>, stream 보다 그냥 <strong>일반적인 for-loop를</strong> 쓰는 것이 낫다.</li>
+  <li>stream은 한번 <strong>“소비”</strong>하면, 그대로 사라진다.</li>
+</ol>
+
+<p>2번의 경우, <a href="https://hamait.tistory.com/547">여기</a>를 참고하자.</p>
+
+<p>앞서도 언급했듯이 위 예시 이외에도 여러 메소드들이 있고, <br />
+응용에 따라 사용법은 무궁무진해지므로,<br />
+이를 <strong>적절히</strong> 활용하면 정말 편리함을 느낄 수 있을 것이다.</p>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li><a href="https://wraithkim.wordpress.com/2017/04/13/java-8-%EC%8A%A4%ED%8A%B8%EB%A6%BC-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC/">JAVA 8 스트림 튜토리얼</a></li>
+  <li><a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html">Oracle - Package java.util.stream</a></li>
+  <li><a href="https://homoefficio.github.io/2016/06/26/for-loop-%EB%A5%BC-Stream-forEach-%EB%A1%9C-%EB%B0%94%EA%BE%B8%EC%A7%80-%EB%A7%90%EC%95%84%EC%95%BC-%ED%95%A0-3%EA%B0%80%EC%A7%80-%EC%9D%B4%EC%9C%A0/">for-loop 를 Stream.forEach() 로 바꾸지 말아야 할 3가지 이유</a></li>
+  <li><a href="https://hamait.tistory.com/547">자바8 Streams API 를 다룰때 실수하기 쉬운것 10가지</a></li>
+</ul>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/jsp/jsp_learning_07">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 7. JSP 학습기록 - MVC 패턴과 JSP Model 1, Model 2</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/btb/solid_principles">
+					<span class="page-number"># 객체지향 설계원칙 - SOLID(번역)</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/java/java_stream',
+    'title': '# (Java) Stream API 첫걸음'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

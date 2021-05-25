@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 백준[No.17140] - 이차원 배열과 연산 ( Java )</title>
+  <meta name="description" content="문제 링크">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="문제 링크" />
+  <meta property="og:url" content="https://cjlee38.github.io/problem-solving/problem_solving_8">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 백준[No.17140] - 이차원 배열과 연산 ( Java )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 백준[No.17140] - 이차원 배열과 연산 ( Java )">
+  <meta name="twitter:description" content="문제 링크">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/problem-solving/problem_solving_8">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/problem-solving/problem_solving_8">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 백준[No.17140] - 이차원 배열과 연산 ( Java )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 18, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/problem-solving">Problem-solving</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p><a href="https://www.acmicpc.net/problem/17140">문제 링크</a></p>
+
+<h1 id="problem">Problem</h1>
+<p><img src="/assets/images/2020-09-18-20-00-00_2020-09-18-problem_solving_8.png" alt="17140번-이차원-배열과-연산" class="alignCenter" /></p>
+
+<h1 id="solve">Solve</h1>
+<p>: 문제 자체를 푸는데도 꽤 걸렸지만, 쓸데 없는 부분에서 고생했던 문제라서, 살짝 열받아서 가져왔다.</p>
+
+<p>문제의 지문 자체가 그리 어렵지는 않지만, 시뮬레이션해서 이를 만들어줘야 하기 때문에, 이 부분에서 난이도가 좀 오르는 것 같다.</p>
+
+<h2 id="접근-방법">접근 방법</h2>
+<p>: 다음의 순서를 반복하면 된다</p>
+
+<ol>
+  <li>행과 열 중, size가 더 긴 곳(같다면 행)을 선택한다.</li>
+  <li>더 긴 곳을 기준으로 돌면서(즉, 행이라면 하나의 행을 가져와서) 정렬을 수행한다.<br />
+1) 정렬은 <strong>“숫자의 등장 횟수를 기준으로 오름차순”</strong><br />
+2) 숫자의 등장 횟수가 같다면, <strong>숫자 자체의 크기를 기준으로 오름차순</strong></li>
+  <li>각 정렬을 수행하면서, 달라진 최대 길이를 구한다.</li>
+  <li>최대 길이만큼, 짧은 길이를 0으로 채워서 늘려준다.</li>
+  <li>1로 가서 반복한다. 만약, 반복 횟수가 100 이상이면 -1을 리턴한다.</li>
+</ol>
+
+<h2 id="구현">구현</h2>
+
+<h3 id="첫-번째-설계---이중배열">첫 번째 설계 - 이중배열</h3>
+
+<p>: 주어진 이중배열을 다루기 위해, 두 가지 방법이 존재한다.</p>
+<ol>
+  <li>이중배열의 크기를 100,100으로 고정시키고, 이를 계속 변경시키는 방법</li>
+  <li>반복이 진행될때마다, 배열을 새로 만들어서 갈아끼우는 방법</li>
+</ol>
+
+<p>두 가지 방법 중, 1번 방법을 선택했는데, 그 이유는<br />
+1) 최대 100번 반복하는 동안, 배열을 새로 만드는 작업은 <strong>자원의 낭비</strong>라고 생각했다.<br />
+2) 배열의 최대 크기가 100,100 이고 나머지는 버린다고 문제에서 제시했으므로, 이를 따르지 않을 이유가 없었다.</p>
+
+<p>1번 방법을 택했으므로, 계속해서 배열의 <strong>“실제 사이즈”</strong> 를 track 할 수 있는 변수인 rSize와 cSize를 만들었다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">rSize</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">cSize</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>그리고, 최대 길이를 구하고 나면, 한번의 반복이 끝났을 때 최대 길이로 기존의 길이를 바꿔줘야 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">newCSize</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// 새로 구한 최대 길이는 기존의 길이보다 짧을 수 있기 때문에, cSize로 초기화 하면 안된다.</span>
+<span class="n">newCSize</span> <span class="o">=</span> <span class="no">PQ</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="n">newCSize</span> <span class="o">?</span> <span class="nc">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="no">PQ</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">*</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">100</span><span class="o">)</span> <span class="o">:</span> <span class="n">newCSize</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>PriorityQueue에서 두개의 요소를 꺼낼 것 이므로 * 2 를 해줘야 한다.<br />
+또한, 최대 길이는 100을 넘으면 안되므로,<br />
+현재 line의 길이 vs 지금까지 나온 최대 길이 vs 100 을 비교해야 한다.</p>
+
+<h3 id="두-번째-설계---정렬">두 번째 설계 - 정렬</h3>
+<p>: 정렬을 할 때, 어떤 방법으로 정렬할지에 대해서 고민했다.<br />
+우선순위큐라는 지금 문제에 딱 걸맞는 자료구조가 있으므로, 이를 사용하지 않을 이유가 없었다.</p>
+
+<p>문제를 풀고 나서 다른 사람들의 코드를 보니, 그냥 List를 정렬하는 사람도 있었는데, 이는 취향의 차이라고 생각한다.</p>
+
+<p>어쨌든, 우선순위큐를 만드려면, 이를 비교할 수 있도록 Comparable 인터페이스를 구현해야 하고,<br />
+우리는 1. 숫자의 등장 횟수, 2. 숫자의 크기 순서대로 비교할 것이므로,<br />
+Comparable 인터페이스를 구현하는 Number 클래스를 만들었다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Number</span> <span class="kd">implements</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="nc">Number</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">num</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">count</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Number</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">,</span> <span class="kt">int</span> <span class="n">count</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">num</span> <span class="o">=</span> <span class="n">num</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">count</span> <span class="o">=</span> <span class="n">count</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getNum</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">num</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getCount</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">count</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="nc">Number</span> <span class="n">number</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">count</span> <span class="o">==</span> <span class="n">number</span><span class="o">.</span><span class="na">count</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">num</span> <span class="o">&gt;</span> <span class="n">number</span><span class="o">.</span><span class="na">num</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">count</span> <span class="o">&gt;</span> <span class="n">number</span><span class="o">.</span><span class="na">count</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="세-번째-설계---정렬을-위한-counter">세 번째 설계 - 정렬을 위한 Counter</h3>
+<p>: Python에서는 collections 모듈에 Counter라는 편리한 방법이 있지만, 자바에서는 딱히 없으므로 이를 흉내내기 위해 HashMap을 사용했다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="no">KV</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">size</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">values</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+         <span class="no">KV</span><span class="o">.</span><span class="na">compute</span><span class="o">(</span><span class="n">values</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">v</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이쯤 되면, 거의 다 끝났다. 이제 계산을 해서 PriorityQueue를 만든 후, 하나씩 꺼내서 배열의 요소를 하나하나 바꿔주기만 하면 된다.</p>
+
+<p>이 때, <strong>바꾼 요소 이외의 나머지 요소들은 0으로 초기화 해야 함</strong>을 잊지 말자.(길이가 기존보다 짧아질 수 있으므로)<br />
+가령, 1 1 1 이라는 line이 들어왔다면, 1 3 으로 바꿔주고, 나머지는 0으로 초기화 해야 한다.<br />
+그렇지 않는다면, 1 3 1 … 이런식으로 되기 때문에, 문제가 된다.</p>
+
+<p>코드 전체는 다음과 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="no">BOJ</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">bj17140</span> <span class="o">{</span> <span class="c1">// need to be renamed as main</span>
+
+    <span class="kd">static</span> <span class="nc">Solution</span> <span class="nf">init</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">{</span>
+
+
+        <span class="nc">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="nc">InputStreamReader</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">));</span>
+        <span class="nc">StringTokenizer</span> <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringTokenizer</span><span class="o">(</span><span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">());</span>
+        <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">())</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">())</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">());</span>
+
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">101</span><span class="o">][</span><span class="mi">101</span><span class="o">];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringTokenizer</span><span class="o">(</span><span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">());</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">map</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">());</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Solution</span><span class="o">(</span><span class="n">r</span><span class="o">,</span> <span class="n">c</span><span class="o">,</span> <span class="n">k</span><span class="o">,</span> <span class="n">map</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">Solution</span> <span class="n">s</span> <span class="o">=</span> <span class="n">init</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">answer</span><span class="o">);</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">r</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">c</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">k</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">map</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Solution</span><span class="o">(</span><span class="kt">int</span> <span class="n">r</span><span class="o">,</span> <span class="kt">int</span> <span class="n">c</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">,</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">map</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">map</span> <span class="o">=</span> <span class="n">map</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">time</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">rSize</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">cSize</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+        <span class="k">while</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">time</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">time</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">map</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">==</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">rSize</span> <span class="o">&gt;=</span> <span class="n">cSize</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">cSize</span> <span class="o">=</span> <span class="n">operateR</span><span class="o">(</span><span class="n">rSize</span><span class="o">,</span> <span class="n">cSize</span><span class="o">);</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">rSize</span> <span class="o">=</span> <span class="n">operateC</span><span class="o">(</span><span class="n">rSize</span><span class="o">,</span> <span class="n">cSize</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">time</span><span class="o">++;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">time</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">Number</span><span class="o">&gt;</span> <span class="nf">countValues</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">values</span><span class="o">,</span> <span class="kt">int</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="no">KV</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">Number</span><span class="o">&gt;</span> <span class="no">Q</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PriorityQueue</span><span class="o">&lt;&gt;();</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">size</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">values</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="no">KV</span><span class="o">.</span><span class="na">compute</span><span class="o">(</span><span class="n">values</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">v</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">for</span><span class="o">(</span><span class="nc">Integer</span> <span class="n">key</span> <span class="o">:</span> <span class="no">KV</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
+            <span class="no">Q</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="k">new</span> <span class="nc">Number</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="no">KV</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">)));</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="no">Q</span><span class="o">;</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">operateR</span><span class="o">(</span><span class="kt">int</span> <span class="n">rSize</span><span class="o">,</span> <span class="kt">int</span> <span class="n">cSize</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">newCSize</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">rSize</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">Number</span><span class="o">&gt;</span> <span class="no">PQ</span> <span class="o">=</span> <span class="n">countValues</span><span class="o">(</span><span class="n">map</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">cSize</span><span class="o">);</span>
+            <span class="n">newCSize</span> <span class="o">=</span> <span class="no">PQ</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="n">newCSize</span> <span class="o">?</span> <span class="nc">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="no">PQ</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">*</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">100</span><span class="o">)</span> <span class="o">:</span> <span class="n">newCSize</span><span class="o">;</span>
+            <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="k">while</span><span class="o">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="no">PQ</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+                    <span class="nc">Number</span> <span class="n">number</span> <span class="o">=</span> <span class="no">PQ</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+                    <span class="n">map</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">idx</span><span class="o">++]</span> <span class="o">=</span> <span class="n">number</span><span class="o">.</span><span class="na">getNum</span><span class="o">();</span>
+                    <span class="n">map</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">idx</span><span class="o">++]</span> <span class="o">=</span> <span class="n">number</span><span class="o">.</span><span class="na">getCount</span><span class="o">();</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">map</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">idx</span><span class="o">++]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">newCSize</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="nf">operateC</span><span class="o">(</span><span class="kt">int</span> <span class="n">rSize</span><span class="o">,</span> <span class="kt">int</span> <span class="n">cSize</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">newRSize</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">cSize</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="kt">int</span><span class="o">[]</span> <span class="n">col</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">rSize</span><span class="o">];</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">rSize</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">col</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">map</span><span class="o">[</span><span class="n">j</span><span class="o">][</span><span class="n">i</span><span class="o">];</span>
+            <span class="o">}</span>
+            <span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">Number</span><span class="o">&gt;</span> <span class="no">PQ</span> <span class="o">=</span> <span class="n">countValues</span><span class="o">(</span><span class="n">col</span><span class="o">,</span> <span class="n">rSize</span><span class="o">);</span>
+            <span class="n">newRSize</span> <span class="o">=</span> <span class="no">PQ</span><span class="o">.</span><span class="na">size</span><span class="o">()*</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="n">newRSize</span> <span class="o">?</span> <span class="nc">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="no">PQ</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">*</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">100</span><span class="o">)</span> <span class="o">:</span> <span class="n">newRSize</span><span class="o">;</span>
+            <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="k">while</span><span class="o">(</span><span class="n">idx</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="no">PQ</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+                    <span class="nc">Number</span> <span class="n">number</span> <span class="o">=</span> <span class="no">PQ</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+                    <span class="n">map</span><span class="o">[</span><span class="n">idx</span><span class="o">++][</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">number</span><span class="o">.</span><span class="na">getNum</span><span class="o">();</span>
+                    <span class="n">map</span><span class="o">[</span><span class="n">idx</span><span class="o">++][</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">number</span><span class="o">.</span><span class="na">getCount</span><span class="o">();</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">map</span><span class="o">[</span><span class="n">idx</span><span class="o">++][</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">newRSize</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+<span class="o">}</span>
+
+
+<span class="kd">class</span> <span class="nc">Number</span> <span class="kd">implements</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="nc">Number</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">num</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">count</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Number</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">,</span> <span class="kt">int</span> <span class="n">count</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">num</span> <span class="o">=</span> <span class="n">num</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">count</span> <span class="o">=</span> <span class="n">count</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getNum</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">num</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getCount</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">count</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="nc">Number</span> <span class="n">number</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">count</span> <span class="o">==</span> <span class="n">number</span><span class="o">.</span><span class="na">count</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">num</span> <span class="o">&gt;</span> <span class="n">number</span><span class="o">.</span><span class="na">num</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">count</span> <span class="o">&gt;</span> <span class="n">number</span><span class="o">.</span><span class="na">count</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+</code></pre></div></div>
+
+</article>
+
+
+
+<section class="tags">
+  <strong>Tags:</strong> <a href="/tag/baekjoon">baekjoon</a>
+</section>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/jsp/jsp_learning_02">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 2. JSP 학습기록 - Tomcat 구조 파악부터 Servlet 만들기까지</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/jsp/jsp_learning_03">
+					<span class="page-number"># 3. JSP 학습기록 - Servlet을 이용한 입출력</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/problem-solving/problem_solving_8',
+    'title': '# 백준[No.17140] - 이차원 배열과 연산 ( Java )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 4. JSP 학습기록 - POST handling과 Servlet Filter</title>
+  <meta name="description" content="POST 다루기: 지난 3편에 이어서, POST를 다뤄보자.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="POST 다루기: 지난 3편에 이어서, POST를 다뤄보자." />
+  <meta property="og:url" content="https://cjlee38.github.io/jsp/jsp_learning_04">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 4. JSP 학습기록 - POST handling과 Servlet Filter" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 4. JSP 학습기록 - POST handling과 Servlet Filter">
+  <meta name="twitter:description" content="POST 다루기: 지난 3편에 이어서, POST를 다뤄보자.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/jsp/jsp_learning_04">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/jsp/jsp_learning_04">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 4. JSP 학습기록 - POST handling과 Servlet Filter</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 21, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/jsp">Jsp</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="post-다루기">POST 다루기</h1>
+<p>: <a href="https://cjlee38.github.io/jsp/jsp_learning_03">지난 3편</a>에 이어서, POST를 다뤄보자.</p>
+
+<p>이를 위해, 지난 편에 작성했던 html 코드를 조금 더 업그레이드 시켜보자.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"firstServlet"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;label&gt;</span> input your title <span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name = </span><span class="s">"title"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;label&gt;</span> input your content <span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"click here to submit"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+</code></pre></div></div>
+
+<p>기존과 달라진 점이라면<br />
+1) 입력을 받는 area가 title과 content로 구분되었고,<br />
+2) <code class="highlighter-rouge">&lt;form&gt;</code> 태그에 method=”POST”가 추가 되었다.</p>
+
+<p>이렇게하면, title과 content과 POST를 통해 넘어가게 된다.<br />
+한번 테스트 해보자.</p>
+
+<p><img src="/assets/images/2020-09-21-16-29-32_2020-09-21-jsp_learning_04.md.png" alt="html_test" class="alignCenter" /></p>
+
+<p>위와 같이, 작성하고, <strong>submit을 누르기 전에</strong>,<br />
+F12를 눌러 개발자도구를 열고, Network 탭을 열어놓자.<br />
+그리고, submit을 누르자.</p>
+
+<p><img src="/assets/images/2020-09-21-16-30-40_2020-09-21-jsp_learning_04.md.png" alt="submit_result" class="alignCenter" /></p>
+
+<p>submit을 누르고 나면, 위와 같이, Network tab에 firstServlet이라는 document가 있는 것을 볼 수 있다.</p>
+
+<p>아래 쪽을 보면, Form data라고 쓰인 부분에,<br />
+title: some title here<br />
+content: this is content<br />
+를 볼 수 있다.</p>
+
+<p>그렇다면, 이를 서버에서 받아보자. 받는 법은 get을 받을 때와 같다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/firstServlet"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">firstServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+
+        <span class="nc">String</span> <span class="n">title</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"title"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">content</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"content"</span><span class="o">);</span>
+
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"title : "</span> <span class="o">+</span> <span class="n">title</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"content : "</span> <span class="o">+</span> <span class="n">content</span><span class="o">);</span>
+
+        
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>똑같이 getParameter()를 활용해서, String으로 받은 뒤, 이를 출력하면 된다.<br />
+그 결과는 다음과 같다.</p>
+
+<p><img src="/assets/images/2020-09-21-16-35-48_2020-09-21-jsp_learning_04.md.png" alt="server_response" class="alignCenter" /></p>
+
+<p>잘 나타나는 모습을 볼 수 있다.</p>
+
+<p>이렇게 GET과 POST의 차이는 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">GET</th>
+      <th style="text-align: center">POST</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">상대적으로 빠름</td>
+      <td style="text-align: center">상대적으로 느림</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">데이터를 URL로 전송</td>
+      <td style="text-align: center">데이터를 Body로 전송</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">256Byte 제한</td>
+      <td style="text-align: center">데이터 제한 없음</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="encoding--content-type">Encoding &amp; Content-Type</h1>
+<p>: 그런데, Title과 Content에 한글을 넣어서 submit을 해보자.</p>
+
+<p><img src="/assets/images/2020-09-21-16-37-50_2020-09-21-jsp_learning_04.md.png" alt="submit_korean" class="alignCenter" /></p>
+
+<p><img src="/assets/images/2020-09-21-16-38-15_2020-09-21-jsp_learning_04.md.png" alt="submit_korean_result" class="alignCenter" /></p>
+
+<p>위와 같이, 결과가 <strong>깨져서</strong> 나오는 것을 볼 수 있다.</p>
+
+<p>이는 Client와 Server의 <strong>Encoding이 서로 달라</strong> 발생하는 문제이다.<br />
+이 외에도, ContentType의 문제가 발생할 수 있다.</p>
+
+<p>지금 당장의 문제는 encoding이 원인인데, 겸사겸사 해서 ContentType 문제까지 해결해보자.</p>
+
+<h3 id="1-encoding">1. Encoding</h3>
+<p>: 간단하다. request와 response에 둘다 setCharacterEncoding을 통해 setting 해주면 된다. <br />
+주의할 점은, <strong>“둘 다”</strong> 해줘야 한다는 것이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">req</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+<span class="n">resp</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>가령, response에만 encoding 을 설정하고,  <code class="highlighter-rouge">out.println("안녕하세요");</code> 를 작성하고 실행하게 되면,<br />
+“안녕하세요” 는 정상적으로 출력 된다. 그러나, 위 예시와 같이 입력을 받는다면,<br />
+UTF-8이 아니기 때문에 <strong>애초에 받을 때부</strong>터 String이 깨지게 된다.</p>
+
+<p>따라서, 이를 주의해야 한다.</p>
+
+<h3 id="2-contenttype">2. ContentType</h3>
+<p>: Content Type이란, “이 문서가 무슨 형식으로 되어있는지” 와 관련되어 있다.<br />
+우리가, txt 파일을 읽으면, 메모장가 열려서 txt파일을 해석해준다.<br />
+docx 파일을 열면, Microsoft Word(혹은 다른 편집기)가 열려서 이를 해석해준다.</p>
+
+<p>웹도 마찬가지다. 우리가 보낸것이, 단순 txt인지, 혹은 html 인지를 알려줘야 한다.<br />
+한번 테스트 해보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"this is content-Type test&lt;br&gt;"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>기존 코드에 위 코드를 추가하고, (구시대의 유물인)<em>Internet Explorer</em>에서 열어보자.</p>
+
+<p><img src="/assets/images/2020-09-21-16-56-39_2020-09-21-jsp_learning_04.md.png" alt="Internet_explorer" class="alignCenter" /></p>
+
+<p class="caption">익스플로러 결과</p>
+
+<p><img src="/assets/images/2020-09-21-16-57-36_2020-09-21-jsp_learning_04.md.png" alt="Chrome" class="alignCenter" /></p>
+
+<p class="caption">크롬 결과</p>
+
+<p>위와 같이, 익스플로러에서는 줄바꿈도 이루어지지 않았고, br 태그 또한 보이지 않는다.<br />
+(url에 곧바로 접근했으므로 null이 나타나는 것은 정상이다.)</p>
+
+<p>이는, 받은 문서를 <strong>익스플로러는 “HTML”</strong>로 해석했고,<br />
+<strong>크롬은 “TEXT”</strong>로 해석했기 때문이다.</p>
+
+<p>따라서, 이런 브라우저 간 차이를 막기 위해, ContentType을 지정해야 한다.</p>
+
+<p>html로 지정하는 방법 또한 간단하다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">resp</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"text/html; charset=UTF-8"</span><span class="o">);</span>
+</code></pre></div></div>
+<p>이 코드를 추가해주면 된다.</p>
+
+<h3 id="3-뭔가-좀-아쉽다">3. 뭔가 좀 아쉽다.</h3>
+<p>: 이렇게만 하면, 굉장히 뭔가 아쉽다.<br />
+만약 우리가, 실제 프로젝트를 진행한다면, 돌아다닐 페이지가 한 두개가 아닐텐데,<br />
+이를 각각 다 set, set, set.. 해주는 것은 너무 귀찮다.</p>
+
+<p>또한, 일종의 configuration 인데, 이렇게 class 마다 지정해주는 것도 조금 이상하다.</p>
+
+<p>그런데 그렇다고해서, <em>모~~든 서비스에 인코딩을 지정해주고자 톰캣 자체에 세팅을 하는것</em> 또한 이상하다.</p>
+
+<p>따라서, 우리는 서블릿 필터를 활용해서, <strong>“하나의 컨텍스트에 설정”</strong>을 해줄 것이다.</p>
+
+<h1 id="servlet-filter">Servlet Filter</h1>
+<p>: filter란 이름 그대로, 무언가가 행해지기 전에,<br />
+이 filter를 반드시 거쳐야 한다.</p>
+
+<p>모든 컨텐츠에 대해서, 우리는 위와 같은 Encoding과 ContentType을 설정할 것이므로,<br />
+이 Filter에다가 해당 코드를 집어넣어보자.</p>
+
+<p>먼저, myProject/src/main/java 하위에, 다음과 같이 myFilter 라는 java file을 하나 만들자.</p>
+
+<p><img src="/assets/images/2020-09-21-17-07-11_2020-09-21-jsp_learning_04.md.png" alt="Filter.java" class="alignCenter" /></p>
+
+<p>그리고, 이 myFilter class는, <code class="highlighter-rouge">javax.servlet.Filter</code>를 구현해야 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">javax.servlet.*</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">myFilter</span> <span class="kd">implements</span> <span class="nc">Filter</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이때, doFilter 라는 method를 구현해야 하므로, IDE의 도움을 받아 자동완성 시켜보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">doFilter</span><span class="o">(</span><span class="nc">ServletRequest</span> <span class="n">servletRequest</span><span class="o">,</span> <span class="nc">ServletResponse</span> <span class="n">servletResponse</span><span class="o">,</span> <span class="nc">FilterChain</span> <span class="n">filterChain</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">,</span> <span class="nc">ServletException</span> <span class="o">{</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>기존의 다른 코드들과 다르게, FilterChain 이라는 인자가 하나 더 늘어났다.<br />
+이 filterChain.doFilter()를 통해서, <br />
+<strong>“야, 지금 이 request와 response 의 설정을 적용해라”</strong> 라고 지정해주는 것이다.<br />
+그리고, 필터를 적용한 후에 뭔가 해야할 일이 있으면, 이 filterChian.doFilter() 뒤에 넣어주면 된다.</p>
+
+<p>어쨌든, 우리가 하고자 하는 Encoding과 ContentType 설정은 필터에 적용할 대상이므로,<br />
+filterChain.doFilter이전에 작성하면 된다.</p>
+
+<p><strong>그리고 마지막으로,</strong> 역시 이 Filter 또한 url을 mapping 시켜줘야 한다.</p>
+
+<p>똑같이 WebServlet을 쓰면 안되고, 이번에는 WebFilter라는 것이 필요하다.<br />
+우리는, 해당 Context의 모든 page에 적용할 것이므로, “/*” 의 와일드카드를 통해 적용시키자.</p>
+
+<p>그리고, 기존의 firstServlet 안에 있는 setCharacterEndoing, setContentType을 다 지워주고,<br />
+잘 동작하는지 확인해보자.</p>
+
+<p>완성된 코드는 다음과 같다.</p>
+
+<p>myFilter.java</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@WebFilter</span><span class="o">(</span><span class="s">"/*"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">myFilter</span> <span class="kd">implements</span> <span class="nc">Filter</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doFilter</span><span class="o">(</span><span class="nc">ServletRequest</span> <span class="n">servletRequest</span><span class="o">,</span> <span class="nc">ServletResponse</span> <span class="n">servletResponse</span><span class="o">,</span> <span class="nc">FilterChain</span> <span class="n">filterChain</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">,</span> <span class="nc">ServletException</span> <span class="o">{</span>
+        <span class="n">servletRequest</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+        <span class="n">servletResponse</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">"UTF-8"</span><span class="o">);</span>
+        <span class="n">servletResponse</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"text/html; charset=UTF-8"</span><span class="o">);</span>
+
+        <span class="n">filterChain</span><span class="o">.</span><span class="na">doFilter</span><span class="o">(</span><span class="n">servletRequest</span><span class="o">,</span> <span class="n">servletResponse</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>firstServlet.java</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/firstServlet"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">firstServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+
+        <span class="nc">String</span> <span class="n">title</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"title"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">content</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"content"</span><span class="o">);</span>
+
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"title : "</span> <span class="o">+</span> <span class="n">title</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"content : "</span> <span class="o">+</span> <span class="n">content</span><span class="o">);</span>
+
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"this is content-Type test&lt;br&gt;"</span><span class="o">);</span>
+
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/2020-09-21-17-20-03_2020-09-21-jsp_learning_04.md.png" alt="filter_result" class="alignCenter" /></p>
+
+<p>위와 같이, html로 지정되었기 때문에, <br /> 태그가 보이지 않게 되었고,<br />
+한글도 깨지지 않는 모습을 확인할 수 있다.</p>
+
+<p>다음 포스팅에선, application, session, cookie에 대해서 다뤄보자.</p>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/jsp/jsp_learning_03">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 3. JSP 학습기록 - Servlet을 이용한 입출력</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/data-structure/what_is_stack">
+					<span class="page-number"># 마음으로 이해하는 자료구조 : Stack ( feat. C )</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/jsp/jsp_learning_04',
+    'title': '# 4. JSP 학습기록 - POST handling과 Servlet Filter'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># Expression과 Statement의 차이 ( feat. Python, Java )</title>
+  <meta name="description" content="0. 들어가며: 코드를 작성하다보면 한번쯤은, 그런 생각을 해본다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 들어가며: 코드를 작성하다보면 한번쯤은, 그런 생각을 해본다." />
+  <meta property="og:url" content="https://cjlee38.github.io/btb/expression_and_statement">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# Expression과 Statement의 차이 ( feat. Python, Java )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# Expression과 Statement의 차이 ( feat. Python, Java )">
+  <meta name="twitter:description" content="0. 들어가며: 코드를 작성하다보면 한번쯤은, 그런 생각을 해본다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/btb/expression_and_statement">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/btb/expression_and_statement">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># Expression과 Statement의 차이 ( feat. Python, Java )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 25, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/btb">Btb</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-들어가며">0. 들어가며</h1>
+<p>: 코드를 작성하다보면 한번쯤은, 그런 생각을 해본다.</p>
+
+<center> "변수명도 동적으로 선언할 수는 없을까?" </center>
+
+<p>물론, Key-Value 를 갖는 Java의 Hashmap, Python의 Dictionary가 있지만,<br />
+때로는 편의성 때문에 변수명 자체가 그 값에 의해서 자동으로 선언될 수 있으면 좋겠다는 생각을 해본다.</p>
+
+<p>이럴때, Python에서는 eval() 혹은 exec() 이라는 내장함수를 이용해볼 수 있는데,<br />
+쓰다보면 expression과 statement 라는 용어가 등장한다.</p>
+
+<p>생각해보니, expression 이라는 단어도, statement라는 단어도, 둘 다 한 번쯤은<br />
+어디선가 들어본 용어인데, 갑자기 두 개의 차이가 있다고 하니 당혹스러울 수 밖에 없다.</p>
+
+<p>오늘은 이 두 용어의 차이에 대해서 알아보고자 한다.</p>
+
+<h1 id="1-eval과-exec">1. eval()과 exec()</h1>
+<h2 id="eval">eval()</h2>
+
+<p>: 먼저, 다음의 코드를 보자.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"eval"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="s">"a"</span><span class="p">))</span>
+<span class="c1"># -&gt; eval
+# -&gt; 1
+</span></code></pre></div></div>
+<p>eval() 함수 안에, “a”라는 string을 넣었더니 변수 a에 해당하는 값이 튀어나오고,<br />
+print() 함수는 이를 받아서 1이라는 값을 실행하는 모습을 볼 수 있다.</p>
+
+<p>그렇다면, a=2로 바꿀수도 있을까?</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"eval"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="s">"a=2"</span><span class="p">))</span>
+<span class="c1"># -&gt; eval
+# -&gt; SyntaxError : invalid synatx
+</span></code></pre></div></div>
+
+<p>문법이 잘못 작성되었다고, SyntaxError가 튀어나오는 모습을 볼 수 있다.<br />
+즉, 우리는 print(a=1) 이라고 작성한 셈이다.</p>
+
+<h2 id="exec">exec()</h2>
+<p>: 그렇다면, exec()은 어떨까?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"exec"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="k">exec</span><span class="p">(</span><span class="s">"a"</span><span class="p">))</span>
+<span class="c1"># -&gt; exec
+# -&gt; None
+</span></code></pre></div></div>
+
+<p>보는바와 같이, exec(“a”) 의 결과로는 아무것도 반환되지 않는다.<br />
+그렇다면, 마찬가지로 a=2 는 어떨까?</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"exec"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="k">exec</span><span class="p">(</span><span class="s">"a=2"</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1"># -&gt; exec
+# -&gt; None
+# -&gt; 2
+</span></code></pre></div></div>
+
+<p>이번에는 다르다. 역시 exec()의 return값은 존재하지 않았지만,<br />
+a가 2로 변경된 것을 볼 수 있다.</p>
+
+<h2 id="whats-the-difference">What’s the difference?</h2>
+<p>: 왜 이런 차이가 발생하는 것일까? help()함수를 통해 두 함수를 확인해보자.</p>
+
+<hr />
+
+<blockquote>
+  <p><strong>eval()</strong><br />
+Help on built-in function eval in module builtins:</p>
+
+  <p>eval(source, globals=None, locals=None, /)<br />
+    <em>Evaluate</em> the given source in the context of globals and locals.</p>
+
+  <p>The source may be a string representing a Python <em>expression</em><br />
+or a code object as returned by compile().<br />
+The globals must be a dictionary and locals can be any mapping,<br />
+defaulting to the current globals and locals.<br />
+If only globals is given, locals defaults to it.</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><strong>exec()</strong>
+Help on built-in function exec in module builtins:</p>
+
+  <p>exec(source, globals=None, locals=None, /)<br />
+<em>Execute</em> the given source in the context of globals and locals.</p>
+
+  <p>The source may be a string representing one or more Python <em>statements</em><br />
+or a code object as returned by compile().<br />
+The globals must be a dictionary and locals can be any mapping,<br />
+defaulting to the current globals and locals.<br />
+If only globals is given, locals defaults to it.</p>
+</blockquote>
+
+<hr />
+
+<p>두 함수에 대한 설명은 거의 유사하다.<br />
+그런데, eval() 함수는 “Expression”을, exec() 함수는 “statements”를 받는다는 것을 알 수 있다.</p>
+
+<p>다시 위 코드로 돌아가서, <br />
+eval()과 exec()이 의도한 대로 실행된 경우는, <br />
+eval()은 <code class="highlighter-rouge">eval("a")</code> 를 작성했던 경우고,<br />
+exec()은 <code class="highlighter-rouge">exec("a=2")</code> 를 작성했던 경우다.</p>
+
+<p>만약 Python에서 단순하게 <code class="highlighter-rouge">a</code> 라고 작성한다면, print()가 아닌 output에 변수 a의 값이 튀어나오고,</p>
+
+<p><code class="highlighter-rouge">a=2</code> 라고 작성한다면, output은 없지만 a가 2로 변경된다.</p>
+
+<p>따라서, 우리는 “아, <code class="highlighter-rouge">a</code>와 같이 <strong>output이 있으면 expression</strong>이고,<br />
+<code class="highlighter-rouge">a=2</code>와 같이 <strong>output이 없는, 값의 변경과 같은 경우라면 statement 구나</strong>” 라고 유추해볼 수 있다.</p>
+
+<h1 id="2-expression--statement">2. Expression &amp; Statement</h1>
+<h2 id="difference-between-expression-and-statement">Difference between expression and statement</h2>
+<p>: 이 가설을 검증하기 위해, 구선생님께 여쭤본 결과는 다음과 같다.</p>
+
+<blockquote>
+  <p>In programming language terminology, an “expression” is a combination of values and functions that are combined and interpreted by the compiler to create a new value, as opposed to a “statement” which is just a standalone unit of execution and doesn’t return anything. One way to think of this is that the purpose of an expression is to create a value (with some possible side-effects), while the sole purpose of a statement is to have side-effects.</p>
+</blockquote>
+
+<p>짧은 번역 실력으로 해석해보면, 다음과 같다.</p>
+
+<blockquote>
+  <p>프로그래밍 언어의 용어 중에서, epxression은 값 또는 함수의 조합으로서, 새로운 값을 만들기 위해 컴파일러에 의해 조합되거나 해석된다. 반면, statemnet는 독립적인 실행의 단위이며, 아무것도 return 하지 않는다. expression은 새로운 값을 만드는 것이 목적이고(side-effect가 있을 수 있다), statement는 side-effect를 갖는 것 자체가 목적이라고 생각해볼 수 있다.</p>
+</blockquote>
+
+<p>즉, 우리가 변수 a를 그대로 파이썬에 작성해서 넣으면, output으로 변수 a에 해당하는 값이 튀어나온다.<br />
+혹은, <code class="highlighter-rouge">1+2</code> 라고 작성하면, <strong>3</strong>이라는 값이 튀어나온다.
+이런식으로, <strong>“새로운 값”을 만드는 것</strong>이 expression이다.</p>
+
+<p>반대로, a=1 과 같이 작성하면, 아무것도 return되는 것이 없지만, a에는 1이라는 값이 할당된다.<br />
+다시 말해, side-effect가 생긴다.</p>
+
+<h2 id="are-they-exclusive">Are they exclusive?</h2>
+<p>: 이렇게보면 expression과 statement는 서로 배타적인 관계라고 생각할 수 있지만,<br />
+사실은 statement가 expression의 superset이다.</p>
+
+<p>아까의 코드로 다시 돌아가서 보면,</p>
+
+<p><code class="highlighter-rouge">print(eval("a=2"))</code> 는 에러를 내뱉은 반면,<br />
+<code class="highlighter-rouge">print(exec("a"))</code> 는 아무것도 return되지 않을지언정, 에러가 발생하지는 않았다.</p>
+
+<p>즉, 다시 말해서,<br />
+<strong>모든 expression은 statement지만, 모든 statement가 expression은 아니다.</strong> 라는 것을 알 수 있다.</p>
+
+<h1 id="3-usage">3. Usage</h1>
+<p>: 이렇게까지 알았다면, 우리는 이제 동적으로 변수명을 정할수도 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">some_json</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"0"</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s">"title"</span> <span class="p">:</span> <span class="s">"some_title"</span><span class="p">,</span>
+        <span class="s">"content"</span> <span class="p">:</span> <span class="s">"some_content"</span>
+    <span class="p">},</span> 
+    <span class="s">"1"</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="s">"title"</span> <span class="p">:</span> <span class="s">"some_second_title"</span><span class="p">,</span>
+        <span class="s">"content"</span><span class="p">:</span> <span class="s">"some_second_content"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">some_json</span><span class="p">:</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">some_json</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s">'title'</span><span class="p">]</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">some_json</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s">'content'</span><span class="p">]</span>
+    <span class="k">exec</span><span class="p">(</span><span class="n">f</span><span class="s">"{title}=content"</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">some_title</span><span class="p">)</span>
+<span class="c1"># -&gt; some_content
+</span><span class="k">print</span><span class="p">(</span><span class="n">some_second_title</span><span class="p">)</span>
+<span class="c1"># -&gt; some_second_content
+</span></code></pre></div></div>
+
+<p>위의 코드에서, exec() 함수 내부를 보면,<br />
+title이라는 변수 안에는 some_title 혹은 some_second_title 이 들어있으므로,<br />
+최종적으로는 <strong>exec(“some_title=some_content”)</strong> 혹은 <strong>exec(“some_second_title=some_second_content”)</strong>  가 실행된다.</p>
+
+<h1 id="4-의문점"><strong>4. 의문점</strong></h1>
+<p>: if문을 영어로 검색하게되면, “if statement” 라고 하는데,<br />
+역시 생각해보면, if문의 결과는 어떤 return 값이 주어지지 않으므로, statement 라고 하는 것은 타당하다.</p>
+
+<p>그런데, 지난 <a href="https://cjlee38.github.io/java/journey_to_java_hashmap">Java Hasmap으로의 여행</a> 편을 읽어보면,<br />
+이러한 작성법을 볼 수 있다. (혹은, C 계열 언어를 자주 쓰는 사람은 이런 작성법도 종종 볼 수 있을 것이다.)</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">((</span><span class="n">tab</span> <span class="o">=</span> <span class="n">table</span><span class="o">)</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="o">(</span><span class="n">n</span> <span class="o">=</span> <span class="n">tab</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>tab=table 을 실행하면, 이는 expression이 아닌 statement이므로, null일텐데,<br />
+이를 어떻게 비교할 수 있는 것일까?</p>
+
+<p>Python에서 또한, 다음과 같이 작성하는 것은 허용되지 않는다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">someFunc</span><span class="p">())</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="c1"># do something
+</span></code></pre></div></div>
+
+<p><a href="https://www.python.org/dev/peps/pep-0572/">PEP 572</a> 에서, python 3.8 이후로,<br />
+<strong>Named Expression</strong> 이라는 이름으로 <code class="highlighter-rouge">:=</code> 를 이용해서 이런 작성 방법이 허용되지만,</p>
+
+<p>java에서 위와 같이 사용하는게 허락되는 것이 어떻게 가능한건지 잘 이해가 되지 않는다.<br />
+나중에 여유가 되면 disassemble 이라도 해봐야 하나..</p>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li><a href="https://fsharpforfunandprofit.com/posts/expressions-vs-statements/">Expressions vs. statements</a></li>
+  <li><a href="https://shoark7.github.io/programming/knowledge/expression-vs-statement">코드 단위인 Expression과 Statement의 차이를 알아보자</a></li>
+</ul>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/problem-solving/problem_solving_9">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 프로그래머스[Lv.2] - 카펫 ( java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/jsp/jsp_learning_06">
+					<span class="page-number"># 6. JSP 학습기록 - doGet, doPost와 JSP, 그리고 EL(Expression Language) </span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/btb/expression_and_statement',
+    'title': '# Expression과 Statement의 차이 ( feat. Python, Java )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

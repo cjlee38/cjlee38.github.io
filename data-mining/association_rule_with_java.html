@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># Java로 구현하는 연관규칙분석(Association Rule) ( feat. Apriori Algorithm )</title>
+  <meta name="description" content="0. 들어가며: 2020년 1학기에 수강했던 종합설계 과목에서, 우리 조의 주제는 “시간표 추천 시스템” 이었다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 들어가며: 2020년 1학기에 수강했던 종합설계 과목에서, 우리 조의 주제는 “시간표 추천 시스템” 이었다." />
+  <meta property="og:url" content="https://cjlee38.github.io/data-mining/association_rule_with_java">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# Java로 구현하는 연관규칙분석(Association Rule) ( feat. Apriori Algorithm )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/data-mining.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# Java로 구현하는 연관규칙분석(Association Rule) ( feat. Apriori Algorithm )">
+  <meta name="twitter:description" content="0. 들어가며: 2020년 1학기에 수강했던 종합설계 과목에서, 우리 조의 주제는 “시간표 추천 시스템” 이었다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/data-mining.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/data-mining/association_rule_with_java">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/data-mining/association_rule_with_java">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/data-mining.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># Java로 구현하는 연관규칙분석(Association Rule) ( feat. Apriori Algorithm )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">August 30, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/data-mining">Data-mining</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-들어가며">0. 들어가며</h1>
+<p>: 2020년 1학기에 수강했던 종합설계 과목에서, 우리 조의 주제는 “시간표 추천 시스템” 이었다.</p>
+
+<p>본인이 원하는 공강시간, 학점 범위, 그리고 내가 미리 골라놓은 듣고자 하는 수업을 선택하면, 이전에 내가 수강했던 과목들을 기반으로 “남는 시간에, 이걸 듣는건 어때?” 라는 개념으로 시간표를 구성해서, 제공해주는 시스템을 제작하고자 하였다.</p>
+
+<p>그 과정에서, “비즈니스프로그래밍2” 수업에서 배웠던 “연관규칙”을 활용할 수 있을 것이라 판단했고, 이에 대해서 공부하기 시작하였다.</p>
+
+<h1 id="1-연관규칙이란">1. 연관규칙이란?</h1>
+<p>: 흔히, 장바구니 분석이라고도 한다. 경영학을 전공하고 있는 사람이라면, 마케팅 수업에서 <strong>“맥주를 사는 사람은 대개 기저귀도 같이 산다”(혹은 반대로, 기저귀를 사는 사람은 대개 맥주도 사더라)</strong>  라는 이야기를 들어본 적이 있을 것이다.</p>
+
+<p>전혀 연관이 없어 보이는 두 item이 왜 자주 같이 등장하는가? 를 살펴봤더니, 퇴근한 아빠가 집에서 아이를 돌보던 엄마로부터 “기저귀좀 사와라” 라는 말에 마트를 들리면서, 겸사겸사 맥주도 한 캔 산다는 이야기다.</p>
+
+<p>즉, <strong>“하나의 item을 샀을 때, 다른 item이 얼마나 자주 등장하는가?”</strong> 를 다루는게 연관규칙 분석이다.</p>
+
+<p>조금 어려운 말로는, <strong>“연관규칙은 데이터베이스에서 Transaction(거래)의 동시출현성향에 대한 관계성을 표현한다”</strong> 고 한다.</p>
+
+<hr />
+<blockquote>
+  <p>Note. Transaction 이란?<br />
+Transaction이란 “하나의 거래”를 의미한다. 위 예시에서는, “맥주와 기저귀를 구매한 이력”이 된다. <br />
+달리 말하면, 하나의 영수증이 Transaction이 된다.</p>
+</blockquote>
+
+<hr />
+
+<h1 id="2-연관규칙의-평가척도">2. 연관규칙의 평가척도</h1>
+<p>: 그렇다면, 단순하게 “A를 샀을 때, B가 자주 등장한다” 면, 이를 무조건 연관지어서 생각할 수 있을까? 이를 평가하는 방법에는 여러가지가 있을 것이다.</p>
+
+<p>이를 찾아보면 정말 다양한 분석 기법이 있지만, 이번 포스팅에서는 이 평가 척도를 <strong>“지지도(Support), 신뢰도(Confidence), 향상도(Lift)”</strong> 의 세가지만 다룬다.</p>
+
+<h3 id="1-지지도support">1) 지지도(Support)</h3>
+<p>: 먼저, 지지도란 물건 X와 Y가 있을 때, <strong>“X와 Y가 동시에 등장하는 비율”</strong>을 의미한다. 가령, 전체 거래수가 1,000 건인데, 이 중에서 X와 Y가 동시에 등장하는 횟수가 200이라면, Support는 20%, 즉 0.2 가 된다.</p>
+
+<p>따라서, Support의 범위는 0 부터 1까지가 된다.</p>
+
+<hr />
+<blockquote>
+  <p>Note 1. 간혹, Support를 “단순등장횟수”로, 즉 위 예시라면 200으로 표현하는 경우도 있긴 한데, 이는 비즈니스 전문가가 판단할 영역이라고 본다.</p>
+
+  <p>그러나, 내가 진행하는 시간표 추천 시스템은 새로이 제작하는 시스템이고, 이 이용자의 수를 측정할 수 없기 때문에, 전체 Transaction 수로 나누어주었다.</p>
+</blockquote>
+
+<hr />
+<blockquote>
+  <p>Note 2. “다른 물건과의 비교”가 필요한 다른 평가 척도와 달리, Support는 단독으로 측정될 수도 있다.<br />
+ 즉, 물건 X에 대한 Support, 물건 Y에 대한 Support를 따로 구할 수 있다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="2-신뢰도confidence">2) 신뢰도(Confidence)</h3>
+<p>: 다음으로, 신뢰도란, 물건 X와 Y가 있을 때, <strong>“X를 구매한 Transaction 중, Y가 얼마나 포함되는가?”</strong> 를 이야기 한다.</p>
+
+<p>즉, 전체 Transaction이 1,000 건인데, X를 구매한 Transaction이 200건이고, 이 중 Y가 포함된 거래가 100건이라면, 100/200 인 0.5가 된다.</p>
+
+<p>따라서, Support와 마찬가지로 Range는 0부터 1까지가 된다.</p>
+
+<hr />
+<blockquote>
+  <p>Note. 위와 같이 “X를 구매했을 때, Y를 얼마나 구매한다.” 라고 할 때, <br />
+“X를 구매했을 때” 부분을 조건절(Antecedent)<br />
+“Y를 얼마나 구매한다” 부분을 결과절(Consequent) 이라고 칭한다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="3-향상도lift">3) 향상도(Lift)</h3>
+<p>: 마지막으로 향상도란, 물건 X와 Y가 있을 때, “Y가 없을 때 X를 구매한 횟수 vs Y가 있을 때 X를 구매한 횟수” 가 된다. 팀원은 이를 기울기로 비유했다.</p>
+
+<p>마찬가지로, 전체 Transaction이 1,000 건인데, X를 구매한 Transaction이 200건, Y를 구매한 Transaction이 400건이라고 해보자.<br />
+이 때, Y를 구매했을 때 X가 50건, Y를 구매하지 않았을 때 X가 150건이라면,</p>
+
+<p>((50/1000) / (200/1000) * (400/1000)) = (0.05 / 0.08) = 0.625가 된다.</p>
+
+<p>따라서, Lift 값이 1이라는 것은 서로 연관이 없다는 것을 의미한다.</p>
+
+<p>이를 수식으로 표현하면 다음과 같다.</p>
+
+<p><img src="/assets/images/2020-08-30-22-19-25_datamining_1.md.png" alt="assess" class="alignCenter" /></p>
+
+<p>이러한 평가 척도는 비즈니스 전문가가 이를 섞어서 사용한다. 즉, 상황에 맞춰서 여러 평가척도를 결합하여 활용해야 한다는 것이다.</p>
+
+<p>가령, 무조건 신뢰도가 높은 itemset만을 활용한다면, 전체 Transaction에서 얼마 등장하지도 않은(극단적으로, 한 번만 등장한) itemset에 대해서 유의미하다고 판단할 것이다.</p>
+
+<p>혹은, 높은 지지도, 낮은 신뢰도의 itemset에 집중하는 것이, 낮은 지지도, 높은 신뢰도의 itemset에 집중하는 것 보다 더욱 높은 수익을 안겨줄 수도 있다.</p>
+
+<h1 id="3-apriori-algorithm">3. Apriori Algorithm</h1>
+
+<h3 id="1-assocation-rule-as-vanilla">1) Assocation Rule as Vanilla</h3>
+<p>: 위와 같이 평가척도가 존재하는 것을 알았다. 그렇다면, 이에 대해서 연관규칙을 분석 하려면 얼마나 많은 경우의 수가 생길까?</p>
+
+<p>가령, 다루고 있는 item이 A,B,C,D의 4개가 있다고 해보자. 그러면, 이에 대한 집합은 <br />
+Level 1. [(A),(B),(C),(D)] –&gt; 4개<br />
+Level 2. [(A,B), (A,C), (A,D), (B,C), (B,D), (C,D)]  –&gt; 6개<br />
+Level 3. [(A,B,C), (A,B,D), (A,C,D), (B,C,D)] –&gt; 4개<br />
+Level 4. [(A,B,C,D)] –&gt; 1개</p>
+
+<p>총 15개, 즉 2<sup>4</sup> -1 개가 생긴다.
+다루고 있는 item이 10개만 되더라도 2<sup>10</sup>-1 , 즉 1023개가 생긴다.</p>
+
+<hr />
+<blockquote>
+  <p>Note. (A), (B), (C) … (A,B,C,D)와 같은 집합을, 연관규칙에선 항목집합(Itemset) 이라고 부른다.</p>
+</blockquote>
+
+<hr />
+
+<p>또한, 이 Itemset들에 대한 연관규칙을 분석하는 것도 상당히 많다.<br />
+가령, (A,B,C) 라는 항목집합에 대해서 Confidence를 구한다고 생각해보자.</p>
+
+<p>조건절 A &amp; 결과절 B,C<br />
+조건절 B &amp; 결과절 A,C<br />
+조건절 C &amp; 결과절 A,B</p>
+
+<p>즉, A를 구매했을 때, B,C 가 같이 구매될 확률을 구하는 것이다.</p>
+
+<p>앞서, 2<sup>n</sup> -1 개의 경우의 수에, 위와 같은 경우의 수가 추가된다면, 이를 계산하는 것은 대단한 미친짓이다.</p>
+
+<p><a href="https://rfriend.tistory.com/192?category=706118">여기</a>를 참고하면, 이러한 Rule의 개수는 3<sup>n</sup>-2<sup>n+1</sup>+1 개가 된다고 한다.</p>
+
+<h3 id="2-association-rule-with-apriori-algorithm">2) Association Rule with Apriori Algorithm</h3>
+<p>: 위와 같은 참사가 발생하는 것을 막기 위해, Apriori Algorithm이 고안되었다.</p>
+
+<hr />
+<blockquote>
+  <p>Note 1. 연관규칙에서, 연산을 줄이는 전략은 Apriori Algorithm뿐만이 아니라, FP-growth, DHP 등의 다른 알고리즘이 있다. 그러나, Apriori의 장점은, 구현하기가 용이하고, 다른 사람에게 설명하기 좋다는 장점이 있다.</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p>Note 2. Apriori Algorithm과 Association Rule을 동일시하는 글도 본 적이 있는데, 내가 봤을 때에는 엄연히 다르다. Association Rule은 여러 평가 척도를 기반으로 한 분석 기법이고, Apriori는 Association Rule의 비효율성을 방지하기 위한 Algorithm이다.</p>
+</blockquote>
+
+<hr />
+
+<p>이 알고리즘은 “한 항목이 비빈발(infrequent)집합이라면, 이 항목집합(subset)을 포함하는 모든 항목집합(superset)은 비빈발 항목집합이다” 라는 원칙을 갖고 있다.</p>
+
+<p>무슨말이냐 하면, 위와 같은 A,B,C,D 의 예시에서, 만약 (A) 라는 Itemset이 자주 등장하지 않는다면, 이 (A) 를 포함하는 Itemset[ (A,B), (A,C) … (A,B,C,D) ]은 쳐다보지도 않는 것이다.</p>
+
+<p>또한, (A)와 같은 단일항목집합에만 해당하는 것이 아니고, (A,B)와 같은 여러개의 item을 포함하고 있는 Itemset에서 출발할 수도 있다.</p>
+
+<p>그렇다면, 비빈발(infrequent)의 기준은 어떻게 정할까? 이 또한 비즈니스 전문가가 정한다. 이를 <strong>“최소지지도”</strong> 라 한다.
+(어찌보면, 도메인 지식을 갖고 있는 사람이 이 기준을 정하는 것은 당연하기도 하다.)<br />
+그러나, <strong>“통상적”</strong> 으로, 0.5를 기준으로 둔다고 <strong>“카더라.”</strong></p>
+
+<p>따라서, Apriori 알고리즘의 순서는 다음과 같다.</p>
+<ol>
+  <li>최소 지지도는 0.5 이다.</li>
+  <li>Level.1의 Itemset[(A),(B),(C),(D)]를 만든다. (이를 C1 이라 한다.)</li>
+  <li>Level.1 에서, 최소지지도를 만족하지 못하는 Itemset을 <strong>쳐낸다.</strong> 여기선, <strong>A와 B가 살아남았다</strong>고 해보자.</li>
+  <li>다음으로, 살아남은 녀석들에 대한 Level.2 의 Itemset [(A,B), (A,C), (A,D), (B,C), (B,D)] 를 만든다. (C2)</li>
+  <li>Level.2에서, 최소지지도를 만족하지 못하는 Itemset을 <strong>쳐낸다.</strong></li>
+  <li>Level이 item의 개수(A,B,C,D의 4개)가 될 때까지 계속해서 반복.</li>
+</ol>
+
+<p>이를 그림으로 표현하면 다음과 같다.</p>
+
+<p><img src="/assets/images/2020-08-30-23-31-35_2020-08-30-datamining_1.md.png" alt="apriori" class="alignCenter" /></p>
+
+<p><a href="https://blog.naver.com/winipe/150162405537?proxyReferer=https%3A%2F%2Fwww.google.com%2F">사진 출처</a></p>
+
+<p>위 그림에서, 우리가 앞으로 “연관규칙분석 할 대상”은 L1, L2, L3 이다.</p>
+
+<h1 id="4-코드로-구현해보자">4. 코드로 구현해보자.</h1>
+<p>: 자바에 익숙치 않아, 클래스 설계를 이렇게 하는 것이 맞는지는 모르겠다.</p>
+
+<p>Apriori.java</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">com.google.common.collect.Sets</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="cm">/**
+ * Apriori Algorithm implementation 
+ * @author  cjlee
+ * @see     cjlee38.github.io
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Apriori</span> <span class="o">{</span>
+    <span class="cm">/**
+     * Example :
+     * 
+     * Set&lt;Set&lt;String&gt;&gt; transactions = getTransactions(); // superset : set of transactions, subset : set of items
+     * Float minSupport = (float) 0.5;
+     * Apriori apriori = new Apriori(minSupport, transactions)
+     * apriori.run();
+     */</span>
+    <span class="kd">private</span> <span class="nc">Float</span> <span class="n">minSupport</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;&gt;</span> <span class="n">dataset</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;,</span> <span class="nc">Float</span><span class="o">&gt;</span> <span class="n">result</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Apriori</span><span class="o">(</span><span class="nc">Float</span> <span class="n">minSupport</span><span class="o">,</span> <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;&gt;</span> <span class="n">dataset</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">minSupport</span> <span class="o">=</span> <span class="n">minSupport</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;,</span> <span class="nc">Float</span><span class="o">&gt;</span> <span class="nf">getResult</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">itemset</span> <span class="o">=</span> <span class="n">createSet</span><span class="o">(</span><span class="n">dataset</span><span class="o">);</span>
+        <span class="nc">Integer</span> <span class="n">level</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="nc">Integer</span> <span class="n">maxLevel</span> <span class="o">=</span> <span class="n">itemset</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+
+        <span class="k">while</span> <span class="o">(</span><span class="n">level</span> <span class="o">&lt;</span> <span class="n">maxLevel</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;&gt;</span> <span class="n">combinations</span> <span class="o">=</span> <span class="n">getCombinations</span><span class="o">(</span><span class="n">itemset</span><span class="o">,</span> <span class="n">level</span><span class="o">);</span>
+            <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;,</span> <span class="nc">Float</span><span class="o">&gt;</span> <span class="n">supportedItemset</span> <span class="o">=</span> <span class="n">getSupportedItemset</span><span class="o">(</span><span class="n">combinations</span><span class="o">);</span>
+            <span class="n">result</span><span class="o">.</span><span class="na">putAll</span><span class="o">(</span><span class="n">supportedItemset</span><span class="o">);</span>
+            <span class="n">itemset</span> <span class="o">=</span> <span class="n">createSet</span><span class="o">(</span><span class="n">supportedItemset</span><span class="o">.</span><span class="na">keySet</span><span class="o">());</span>
+            <span class="n">level</span><span class="o">++;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">itemset</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// means current itemsets are all pruned</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;&gt;</span> <span class="nf">getCombinations</span><span class="o">(</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">set</span><span class="o">,</span> <span class="nc">Integer</span> <span class="n">level</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nc">Sets</span><span class="o">.</span><span class="na">combinations</span><span class="o">(</span><span class="n">set</span><span class="o">,</span> <span class="n">level</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 중복없는 데이터를 구하는 함수</span>
+    <span class="kd">public</span> <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="nf">createSet</span><span class="o">(</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;&gt;</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashSet</span><span class="o">&lt;&gt;();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">transaction</span> <span class="o">:</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span> <span class="nc">String</span> <span class="n">item</span> <span class="o">:</span> <span class="n">transaction</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">set</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">Float</span> <span class="nf">calcSupport</span><span class="o">(</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">itemset</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Integer</span> <span class="n">occurence</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span> <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">transaction</span> <span class="o">:</span> <span class="n">dataset</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">transaction</span><span class="o">.</span><span class="na">containsAll</span><span class="o">(</span><span class="n">itemset</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">occurence</span><span class="o">++;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">occurence</span> <span class="o">/</span> <span class="o">((</span><span class="kt">float</span><span class="o">)</span><span class="n">dataset</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;,</span> <span class="nc">Float</span><span class="o">&gt;</span> <span class="nf">getSupportedItemset</span><span class="o">(</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;&gt;</span> <span class="n">itemset</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;,</span> <span class="nc">Float</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">comb</span> <span class="o">:</span> <span class="n">itemset</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">Float</span> <span class="n">support</span> <span class="o">=</span> <span class="n">calcSupport</span><span class="o">(</span><span class="n">comb</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">support</span> <span class="o">&gt;</span> <span class="n">minSupport</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">comb</span><span class="o">,</span> <span class="n">support</span><span class="o">)</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">map</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>AssociationRule.java</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">com.google.common.collect.Sets</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+
+<span class="cm">/*
+* 참고문헌
+* Association Rule implementation
+* @author  cjlee
+* @see     cjlee38.github.io
+* @refer   김용, Apriori 알고리즘 기반의 개인화 정보 추천 시스템 설계 및 구현에 관한 연구(한국비블리아학회지 VOL.23. NO.4 (2012):283-308,)
+* */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AssociationRule</span> <span class="o">{</span>
+    <span class="cm">/**
+     * Example : 
+     *
+     * String metric = "lift";
+     * Float minLift = (float)1.0;
+     * AssociationRule associationRule = new AssociationRule(apriori.getResult(), metric, minLift); // apriori initialized
+     * associationRule.run();
+     */</span>
+    <span class="kd">private</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;,</span> <span class="nc">Float</span><span class="o">&gt;</span> <span class="n">itemset</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">metric</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Float</span> <span class="n">min_threshold</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">AssociationRuleObj</span><span class="o">&gt;</span> <span class="n">rules</span><span class="o">;</span>
+
+
+    <span class="kd">public</span> <span class="nf">AssociationRule</span><span class="o">(</span><span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;,</span> <span class="nc">Float</span><span class="o">&gt;</span> <span class="n">itemset</span><span class="o">,</span> <span class="nc">String</span> <span class="n">metric</span><span class="o">,</span> <span class="nc">Float</span> <span class="n">min_threshold</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">itemset</span> <span class="o">=</span> <span class="n">itemset</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">metric</span> <span class="o">=</span> <span class="n">metric</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">min_threshold</span> <span class="o">=</span> <span class="n">min_threshold</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">rules</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinkedList</span><span class="o">&lt;&gt;();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">AssociationRuleObj</span><span class="o">&gt;</span> <span class="nf">getRules</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">rules</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="nc">Float</span> <span class="nf">scoreByMetric</span><span class="o">(</span><span class="nc">String</span> <span class="n">metric</span><span class="o">,</span> <span class="nc">Float</span> <span class="n">sAC</span><span class="o">,</span> <span class="nc">Float</span> <span class="n">sA</span><span class="o">,</span> <span class="nc">Float</span> <span class="n">sC</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Float</span> <span class="n">score</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">metric</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"support"</span><span class="o">))</span> <span class="o">{</span> <span class="n">score</span> <span class="o">=</span> <span class="n">getSupport</span><span class="o">(</span><span class="n">sAC</span><span class="o">);</span> <span class="o">}</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">metric</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"confidence"</span><span class="o">))</span> <span class="o">{</span> <span class="n">score</span> <span class="o">=</span> <span class="n">getConfidence</span><span class="o">(</span><span class="n">sAC</span><span class="o">,</span> <span class="n">sA</span><span class="o">);</span> <span class="o">}</span>
+        <span class="k">else</span> <span class="nf">if</span><span class="o">(</span><span class="n">metric</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"lift"</span><span class="o">))</span> <span class="o">{</span> <span class="n">score</span> <span class="o">=</span> <span class="n">getLift</span><span class="o">(</span><span class="n">sAC</span><span class="o">,</span> <span class="n">sA</span><span class="o">,</span> <span class="n">sC</span><span class="o">);</span> <span class="o">}</span>
+        <span class="k">else</span> <span class="o">{</span> <span class="n">score</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span> <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">score</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="nc">Float</span> <span class="nf">getSupport</span><span class="o">(</span><span class="nc">Float</span> <span class="n">sAC</span><span class="o">)</span> <span class="o">{</span> <span class="k">return</span> <span class="n">sAC</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">private</span> <span class="nc">Float</span> <span class="nf">getConfidence</span><span class="o">(</span><span class="nc">Float</span> <span class="n">sAC</span><span class="o">,</span> <span class="nc">Float</span> <span class="n">sA</span><span class="o">)</span> <span class="o">{</span> <span class="k">return</span> <span class="n">sAC</span> <span class="o">/</span> <span class="n">sA</span><span class="o">;</span> <span class="o">}</span>
+    <span class="kd">private</span> <span class="nc">Float</span> <span class="nf">getLift</span><span class="o">(</span><span class="nc">Float</span> <span class="n">sAC</span><span class="o">,</span> <span class="nc">Float</span> <span class="n">sA</span><span class="o">,</span> <span class="nc">Float</span> <span class="n">sC</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">sAC</span><span class="o">/</span><span class="n">sA</span><span class="o">)</span> <span class="o">/</span> <span class="n">sC</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">filterItemset</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">itemset</span><span class="o">.</span><span class="na">entrySet</span><span class="o">().</span><span class="na">removeIf</span><span class="o">(</span><span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">.</span><span class="na">getKey</span><span class="o">().</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">filterItemset</span><span class="o">();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">item</span> <span class="o">:</span> <span class="n">itemset</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nc">Float</span> <span class="n">sAC</span> <span class="o">=</span> <span class="n">itemset</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+            <span class="k">for</span> <span class="o">(</span><span class="nc">Integer</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="na">size</span><span class="o">()-</span><span class="mi">1</span><span class="o">;</span> <span class="n">idx</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">;</span> <span class="n">idx</span><span class="o">--)</span> <span class="o">{</span>
+                <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;&gt;</span> <span class="n">combination</span> <span class="o">=</span> <span class="nc">Sets</span><span class="o">.</span><span class="na">combinations</span><span class="o">(</span><span class="n">item</span><span class="o">,</span> <span class="n">idx</span><span class="o">);</span>
+                <span class="k">for</span> <span class="o">(</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">comb</span> <span class="o">:</span> <span class="n">combination</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">antecedent</span>  <span class="o">=</span> <span class="n">comb</span><span class="o">;</span>
+                    <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">consequent</span> <span class="o">=</span> <span class="nc">Sets</span><span class="o">.</span><span class="na">difference</span><span class="o">(</span><span class="n">item</span><span class="o">,</span> <span class="n">comb</span><span class="o">);</span>
+
+                    <span class="nc">Float</span> <span class="n">sA</span> <span class="o">=</span> <span class="n">itemset</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">antecedent</span><span class="o">);</span>
+                    <span class="nc">Float</span> <span class="n">sC</span> <span class="o">=</span> <span class="n">itemset</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">consequent</span><span class="o">);</span>
+                    <span class="nc">Float</span> <span class="n">score</span> <span class="o">=</span> <span class="n">scoreByMetric</span><span class="o">(</span><span class="n">metric</span><span class="o">,</span> <span class="n">sAC</span><span class="o">,</span> <span class="n">sA</span><span class="o">,</span> <span class="n">sC</span><span class="o">);</span>
+                    <span class="k">if</span> <span class="o">(</span><span class="n">score</span> <span class="o">&gt;=</span> <span class="n">min_threshold</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">rules</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">AssociationRuleObj</span><span class="o">(</span><span class="n">antecedent</span><span class="o">,</span> <span class="n">consequent</span><span class="o">,</span> <span class="n">sAC</span><span class="o">,</span> <span class="n">getConfidence</span><span class="o">(</span><span class="n">sAC</span><span class="o">,</span> <span class="n">sA</span><span class="o">),</span> <span class="n">getLift</span><span class="o">(</span><span class="n">sAC</span><span class="o">,</span> <span class="n">sA</span><span class="o">,</span> <span class="n">sC</span><span class="o">)));</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>AssociationRuleObj.java</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">lombok.Getter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
+
+<span class="cm">/**
+ * Apriori Algorithm implementation 
+ * @author  cjlee
+ * @see     cjlee38.github.io
+ */</span>
+<span class="nd">@Getter</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AssociationRuleObj</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">antecedent</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">consequent</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Float</span> <span class="n">support</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Float</span> <span class="n">confidence</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Float</span> <span class="n">lift</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">AssociationRuleObj</span><span class="o">(</span><span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">antecedent</span><span class="o">,</span> <span class="nc">Set</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">consequent</span><span class="o">,</span>
+                              <span class="nc">Float</span> <span class="n">support</span><span class="o">,</span> <span class="nc">Float</span> <span class="n">confidence</span><span class="o">,</span> <span class="nc">Float</span> <span class="n">lift</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">antecedent</span> <span class="o">=</span> <span class="n">antecedent</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">consequent</span> <span class="o">=</span> <span class="n">consequent</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">support</span> <span class="o">=</span> <span class="n">support</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">confidence</span> <span class="o">=</span> <span class="n">confidence</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">lift</span> <span class="o">=</span> <span class="n">lift</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>사용법은 코드 내에 작성하였다.<br />
+또한, AssociationRule은 python의 mlxtend 라이브러리를 참고하였다.</p>
+
+<h1 id="5-활용">5. 활용</h1>
+<p>: 이렇게 구현한 연관 규칙을, 어떻게 활용할까?</p>
+
+<p>우리 시스템 상에서의 목적은, 연관규칙을 통해, “해당 사용자”에게 걸맞는 “과목별 점수”를 부여하는 것이다.<br />
+따라서, 최소 지지도를 0.5, 향상도가 1 이상인 연관규칙에 대하여, 신뢰도를 점수로 부여하였다.</p>
+
+<p>또한, <a href="https://academic.naver.com/article.naver?doc_id=56754379">참고논문</a>에 근거하여, 한 itemset의 item이 2인 경우로 한정하였다.</p>
+
+<p>그 결과의 예시는 다음과 같다.(지난 발표자료에서 가져왔다.)</p>
+
+<p><img src="/assets/images/2020-08-31-00-21-10_2020-08-30-datamining_1.md.png" alt="1" class="alignCenter" /></p>
+
+<p>위와 같이 1,2,3,4의 인물이 기존 사용자로 존재한다. 그리고, <strong>5번의 새로운 인물이 새로이 들어왔다</strong>고 해보자. 이에 대한 결과는 다음과 같다.</p>
+
+<p><img src="/assets/images/2020-08-31-00-22-10_2020-08-30-datamining_1.md.png" alt="2" class="alignCenter" /></p>
+
+<p>위와 같은 가중치를 기반으로, “수강가능 과목”에 대한 List를 정렬한 뒤, 앞쪽에서부터 시작하여 Backtracking 기법을 활용해 시간표를 구성하고, 이를 추천하였다.</p>
+
+<h1 id="6-마치며">6. 마치며</h1>
+<p>: Association Rule, Apriori의 library가 존재하기는 하지만, 대부분 Database와 연동해서 가져오는 것으로 보았다.<br />
+또한, 우리 입맛에 맞게 Customizing을 할 수 없었기 때문에, 직접 구현하는.. 사서 고생을 했다.</p>
+
+<p>또한, “가중치”라는 결과로 내뱉기 위한 metric을 어떻게 설정할 것인가에 대해서도 팀원과 논의하면서 어려움을 좀 겪었다. <br />
+혹여나 이 글, 그리고 이러한 방법론이 누군가에게 도움이 된다면 뿌듯하겠다.</p>
+
+<h3 id="reference">Reference</h3>
+<ul>
+  <li><a href="https://ratsgo.github.io/machine%20learning/2017/04/08/apriori/">https://ratsgo.github.io/machine%20learning/2017/04/08/apriori/</a></li>
+  <li><a href="https://rfriend.tistory.com/191">https://rfriend.tistory.com/191</a></li>
+  <li>김용, Apriori 알고리즘 기반의 개인화 정보 추천 시스템 설계 및 구현에 관한 연구<br />
+한국비블리아학회지 VOL.23. NO.4 (2012):283-308</li>
+</ul>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/problem-solving/problem_solving_4">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 프로그래머스[Lv.2] - 올바른 괄호 ( java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/web-crawling/how_to_crawl_0">
+					<span class="page-number"># Step by Step, Web crawling 학습하기 (0) - 이것 만큼은 알고 가자</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/data-mining/association_rule_with_java',
+    'title': '# Java로 구현하는 연관규칙분석(Association Rule) ( feat. Apriori Algorithm )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

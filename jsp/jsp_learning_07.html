@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 7. JSP 학습기록 - MVC 패턴과 JSP Model 1, Model 2</title>
+  <meta name="description" content="들어가며">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="들어가며" />
+  <meta property="og:url" content="https://cjlee38.github.io/jsp/jsp_learning_07">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 7. JSP 학습기록 - MVC 패턴과 JSP Model 1, Model 2" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 7. JSP 학습기록 - MVC 패턴과 JSP Model 1, Model 2">
+  <meta name="twitter:description" content="들어가며">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/jsp/jsp_learning_07">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/jsp/jsp_learning_07">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 7. JSP 학습기록 - MVC 패턴과 JSP Model 1, Model 2</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">October 6, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/jsp">Jsp</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="들어가며">들어가며</h1>
+
+<p>: 지난 포스팅에서, Jasper 라는 도구를 이용하여 HTML Code에 직접 자바코드를 때려박는 방법을,<br />
+그리고 이렇게 생성되는 파일을 JSP 라고 부른다는 것을 배웠다.</p>
+
+<p>그렇다면, 기존의 Java Code는 다 그대로 JSP로 옮겨버려도 될까?<br />
+흠.. 뭔가 그렇지는 않을 것 같은데, 명확히 이유를 짚어내기는 어렵다.</p>
+
+<p>이번 포스팅에서는 그 “이유”에 대해서 알아보자.</p>
+
+<h1 id="코드-구분의-필요성">코드 구분의 필요성</h1>
+<p>: 우선, 다음과 같이, 기본적인 덧셈, 뺄셈을 계산해주는 코드를 만들어보자.</p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>calculator<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"Adder.jsp"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;label&gt;</span> first_number <span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"n1"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;label&gt;</span> second_number <span class="nt">&lt;/label&gt;</span>
+                <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"n2"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"calc"</span> <span class="na">value=</span><span class="s">"add"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"calc"</span> <span class="na">value=</span><span class="s">"minus"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;%</span>
+        <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="nc">String</span> <span class="n">num1_</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"n1"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">num2_</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"n2"</span><span class="o">);</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">num1_</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">num1_</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">num1</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">num1_</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">num2_</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">num2_</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">num2</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">num2_</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="nc">String</span> <span class="n">op</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"calc"</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">op</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">op</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span> <span class="o">{</span>
+            <span class="c1">// do nothing</span>
+        <span class="o">}</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">op</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"add"</span><span class="o">))</span> <span class="o">{</span>
+    <span class="nt">%&gt;</span>
+    result of add is <span class="nt">&lt;%=</span> <span class="n">num1</span><span class="o">+</span><span class="n">num2</span> <span class="nt">%&gt;</span>
+    <span class="nt">&lt;%</span> <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="nt">%&gt;</span>
+    result of minus is <span class="nt">&lt;%=</span> <span class="n">num1</span><span class="o">-</span><span class="n">num2</span> <span class="nt">%&gt;</span>
+    <span class="nt">&lt;%</span> <span class="o">}</span> <span class="nt">%&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>테스트 해보면, 다음과 같다.</p>
+
+<p><img src="/assets/images/2020-10-08-21-05-04_2020-10-06-jsp_learning_07.md.png" alt="" /></p>
+
+<p class="caption">초기 화면</p>
+
+<p><img src="/assets/images/2020-10-08-21-05-22_2020-10-06-jsp_learning_07.md.png" alt="" /></p>
+
+<p class="caption">덧셈 결과</p>
+
+<p><img src="/assets/images/2020-10-08-21-05-41_2020-10-06-jsp_learning_07.md.png" alt="" /></p>
+
+<p class="caption">뺄셈 결과</p>
+
+<hr />
+
+<blockquote>
+  <p>Note. 실수로 이름을 Adder.jsp 라고 지었는데, 이후 Calculator.jsp 로 수정하였다.</p>
+</blockquote>
+
+<hr />
+
+<p>두개의 입력을 받기 전에는 0으로 두고,<br />
+하나 혹은 두개의 값을 입력받으면, 두, 세 번째와 같이 결과를 출력한다.</p>
+
+<p>그러나, 이 정도로 간단한 코드는 괜찮지만,<br />
+만약 내가 실제로 어떤 서비스를 제공하고자 한다면,<br />
+그 코드의 길이는 얼마나 될까?</p>
+
+<p>당장 이 글을 쓰고 있는 Jekyll 의 Layout만 보더라도,<br />
+Liquid를 몇번 사용하고나면, <strong>굉장히 가독성이 떨어진다.</strong></p>
+
+<p>또한,  JSP의 뼈대가 되는 HTML 의 길이 또한 꽤 되는데,<br />
+여기에 Java Code까지 추가하면 <strong>얼마나 길어질까?</strong></p>
+
+<p>이를 해결하기 위한, 다시 말해 코드를 구분하기 위한 방법론은 크게 두 가지가 있으며,<br />
+이를 각각 Model 1, Model 2 라고 부른다.</p>
+
+<p>MVC 패턴이 무엇인지에 대해서 먼저 잠깐 짚고, 그리고 Model 1, 2에 대해서 알아보자.</p>
+
+<h1 id="mvc-pattern">MVC Pattern</h1>
+
+<dl>
+  <dt><img src="/assets/images/2020-10-08-21-51-17_2020-10-06-jsp_learning_07.md.png" alt="" /></dt>
+  <dd>
+    <p>MVC pattern이란, 소프트웨어 공학에서 제시하는 소프트웨어 개발 방법론 중 하나이다. <br />
+즉, “이런 식으로 개발하면, 알차고 우아하게 짤 수 있습니다” 라고 제시하는 방법론 중 하나이다.<br />
+MVC 에서 각각의 M, V, C가 의미하는 바는 다음과 같다.</p>
+  </dd>
+</dl>
+
+<ul>
+  <li>M : Model - Controller에 의해 제어되어, View로 전달되는 객체</li>
+  <li>V : View - 사용자에게 보여지는 UI, 결과물.</li>
+  <li>C : Controller - 사용자의 요청을 적절히 제어해서, View로 명령을 보냄.</li>
+</ul>
+
+<p>이러한 식으로 프로젝트를 구성하면, UI와 비즈니스 로직을 분리해서,<br />
+서로의 변경에 의한 영향을 최소화하면서 수정할 수 있다는 장점이 있다.</p>
+
+<!-- 앞으로 설명할 Model 1, Model 2에 대해서 읽을 때에,   
+**"곱셈, 나눗셈을 추가해야 한다면 코드 작성에 얼마나 차이가 있을까?"**  
+를 염두해보자. -->
+
+<h1 id="model-1">Model 1</h1>
+<dl>
+  <dt><img src="/assets/images/2020-10-08-21-07-01_2020-10-06-jsp_learning_07.md.png" alt="" /></dt>
+  <dd>
+    <p>Model 1은, 쉽게 말해서 단순히 코드만을 구분짓는 것을 의미한다.
+JSP page로 들어온 요청에 대해서, 요청 및 로직을 처리하는 행위를 해당 JSP가 책임지고 핸들링한다.</p>
+  </dd>
+</dl>
+
+<p>그러나, <strong>“가독성”</strong> 을 위해서,(다시말해 유지보수를 위해서)<br />
+요청을 받은 부분과, 로직을 처리하는 부분만을 구분해서 흐름을 제어하는 것이 Model 1의 특징이다.</p>
+
+<p>역시, 말로 하면 잘 이해가 안된다. 위에서 보여줬던 예시를 수정하면 다음과 같다.</p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">contentType=</span><span class="s">"text/html;charset=UTF-8"</span><span class="na"> language=</span><span class="s">"java"</span> <span class="nt">%&gt;</span>
+<span class="nt">&lt;%</span>
+    <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+    <span class="nc">String</span> <span class="n">num1_</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"n1"</span><span class="o">);</span>
+    <span class="nc">String</span> <span class="n">num2_</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"n2"</span><span class="o">);</span>
+
+    <span class="k">if</span><span class="o">(</span><span class="n">num1_</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">num1_</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span> <span class="o">{</span>
+        <span class="n">num1</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">num1_</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">num2_</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">num2_</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span> <span class="o">{</span>
+        <span class="n">num2</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">num2_</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nc">String</span> <span class="n">op</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"calc"</span><span class="o">);</span>
+    <span class="nc">String</span> <span class="n">outString</span> <span class="o">=</span> <span class="s">" "</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">op</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">op</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span> <span class="o">{</span>
+        <span class="c1">// do nothing</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">op</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"add"</span><span class="o">))</span> <span class="o">{</span>
+        <span class="n">outString</span> <span class="o">=</span> <span class="s">"result of "</span> <span class="o">+</span> <span class="n">op</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="o">(</span><span class="n">num1</span><span class="o">+</span><span class="n">num2</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">outString</span> <span class="o">=</span> <span class="s">"result of "</span> <span class="o">+</span> <span class="n">op</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="o">(</span><span class="n">num1</span><span class="o">-</span><span class="n">num2</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="nt">%&gt;</span>
+
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>calculator<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"Adder.jsp"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;label&gt;</span> first_number <span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"n1"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;label&gt;</span> second_number <span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"n2"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"calc"</span> <span class="na">value=</span><span class="s">"add"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"calc"</span> <span class="na">value=</span><span class="s">"minus"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;%=</span> <span class="n">outString</span> <span class="nt">%&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>바뀐 점은 다음과 같다.</p>
+
+<ol>
+  <li>parameter를 int형으로 변환하는 과정을, 위쪽으로 옮겼다.</li>
+  <li>if else문을 위쪽에서 처리하고, HTML 태그에서는 곧바로 출력만 하도록 했다.</li>
+</ol>
+
+<p>이렇게 함으로서, 3개의 코드블럭을 2개로 줄일 수 있었다.<br />
+또한, 곱셈, 나눗셈에 대해서 처리할 때에도 크게 귀찮지는 않을 것이다.</p>
+
+<p>또한, MVC 패턴을 따랐다고 볼 수도 있다.<br />
+<strong>위쪽의 Code Block이 Controller</strong><br />
+<strong>아래쪽의 HTML 코드가 View</strong><br />
+<strong>outString이 Model</strong><br />
+이 된다.</p>
+
+<p>그러나, 여전히 문제점은 남아 있다.</p>
+
+<ol>
+  <li>파일이 하나이기 때문에, 다른 사람과 <strong>협업</strong>을 하려고 한다면, 어려움을 크게 겪을 것이다.</li>
+  <li>만약 한 page에 대해서 처리하는 양이 많다면, page에 대한 요청이 들어올 때마다,
+<strong>무거운</strong> servlet으로 <strong>변환하고</strong>, <strong>컴파일</strong>하는 행위를 <strong>반복</strong>해야 한다.</li>
+</ol>
+
+<h1 id="model-2">Model 2</h1>
+
+<dl>
+  <dt><img src="/assets/images/2020-10-08-21-11-36_2020-10-06-jsp_learning_07.md.png" alt="" /></dt>
+  <dd>
+    <p>Model 2의 형태로 구성하기 위해서는 우선, Model 1에서<br />
+<strong>“코드를 물리적으로 구분하는 것”</strong>이 첫번째다.</p>
+  </dd>
+</dl>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/calculator"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Adder</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="nc">String</span> <span class="n">num1_</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"n1"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">num2_</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"n2"</span><span class="o">);</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">num1_</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">num1_</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">num1</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">num1_</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">num2_</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">num2_</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">num2</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">num2_</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="nc">String</span> <span class="n">op</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"calc"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">outString</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">op</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">op</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">))</span> <span class="o">{</span>
+            <span class="c1">// do nothing</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">op</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"add"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">outString</span> <span class="o">=</span> <span class="s">"result of "</span> <span class="o">+</span> <span class="n">op</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="o">(</span><span class="n">num1</span><span class="o">+</span><span class="n">num2</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">outString</span> <span class="o">=</span> <span class="s">"result of "</span> <span class="o">+</span> <span class="n">op</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="o">(</span><span class="n">num1</span><span class="o">-</span><span class="n">num2</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>그러므로 기존의 코드블럭을 모두 <strong>잘라내서</strong>, calculator.java에 <strong>집어넣자</strong>.
+그런데, 이렇게만 하면 아무것도 할 수 없다.</p>
+
+<p>calculator.jsp 에서 calculator.java 로 넘어왔으면,<br />
+여기서 받은 값을 다시 calculator.jsp 에서 <strong>“지속”</strong> 할 수 있어야 하지 않을까?</p>
+
+<p>이 때 사용할 수 있는 것이 <strong>dispatcher</strong> 라는 녀석의 <strong>forward</strong> 다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// request라는 저장소에 outString을 "outString" 이라는 이름으로 저장.</span>
+<span class="n">req</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"outString"</span><span class="o">,</span> <span class="n">outString</span><span class="o">);</span> 
+
+
+<span class="nc">RequestDispatcher</span> <span class="n">dispatcher</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getRequestDispatcher</span><span class="o">(</span><span class="s">"calculator.jsp"</span><span class="o">);</span>
+<span class="n">dispatcher</span><span class="o">.</span><span class="na">forward</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">resp</span><span class="o">);</span>
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <p>Note. 다른 페이지로 넘겨주는 방식에는, redirect와, forward가 있다.<br />
+redirect를 통해 calculator.jsp 로 넘겨주면, <strong>“새로운”</strong> calculator servlet이 생성된다.
+따라서, 유지한 상태를 <strong>넘겨주기</strong> 위해서는 forward를 통해서 값을 넘겨줘야 한다.</p>
+</blockquote>
+
+<hr />
+
+<p>이렇게 forward로 넘겨받은 값을, jsp 에서 활용하면 된다.</p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>calculator<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+    <span class="c">&lt;!-- calculator.jsp에서 calculator로 바꿔줘야 한다 --&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"calculator"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;label&gt;</span> first_number <span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"n1"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;label&gt;</span> second_number <span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"n2"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"calc"</span> <span class="na">value=</span><span class="s">"add"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"calc"</span> <span class="na">value=</span><span class="s">"minus"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;%=</span> <span class="n">request</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"outString"</span><span class="o">)</span> <span class="nt">%&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>여기서 잠깐,<br />
+<code class="highlighter-rouge">&lt;%= request.getAttribute("outString") %&gt;</code><br />
+이 녀석을, 지난 시간에 배웠던 <strong>EL</strong> 이라는 녀석으로 대체하자.<br />
+<code class="highlighter-rouge">${outString}</code></p>
+
+<p>이렇게 하면, jsp에 있던 모든 코드블럭을 없앰으로써,<br />
+<strong>여전히 JSP, 즉 동적 페이지로서의 기능은 하면서</strong><br />
+<strong>MVC 패턴을 지켰기 때문에 유지보수에도 용이한</strong><br />
+코드를 작성할 수 있다.</p>
+
+<p>이와 더불어, Model 1 에서 겪었던 단점도 해결하였다.</p>
+
+<ol>
+  <li>파일이 하나이기 때문에, 다른 사람과 <strong>협업</strong>을 하려고 한다면, 어려움을 크게 겪을 것이다. <br />
+==&gt; <strong>파일 자체를 구분하였기 때문에, 협업에 용이하다</strong></li>
+  <li>만약 한 page에 대해서 처리하는 양이 많다면, page에 대한 요청이 들어올 때마다,
+<strong>무거운</strong> servlet을 <strong>만들고</strong>, <strong>컴파일</strong>하는 행위를 <strong>반복</strong>해야 한다.<br />
+==&gt; Controller, Dispatcher는 미리 Compile되어있고, <strong>JSP만 Servlet</strong>으로 변환하면 된다.</li>
+</ol>
+
+<h1 id="정리">정리</h1>
+<p>: 기존의 Code Block이 있던 JSP, Model 1, Model 2 로 옮겼을때를 짧게 정리하면 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">기존</th>
+      <th style="text-align: center">Model 1</th>
+      <th style="text-align: center">Model 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">개발편의성(러닝커브)</td>
+      <td style="text-align: center">좋음</td>
+      <td style="text-align: center">보통</td>
+      <td style="text-align: center">나쁨</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">유지보수(가독성)</td>
+      <td style="text-align: center">나쁨</td>
+      <td style="text-align: center">보통</td>
+      <td style="text-align: center">좋음</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">적합한규모</td>
+      <td style="text-align: center">소</td>
+      <td style="text-align: center">소</td>
+      <td style="text-align: center">대</td>
+    </tr>
+  </tbody>
+</table>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/java/exception_in_java">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># (Java) 예외처리를 위한 Try-Catch</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/java/java_stream">
+					<span class="page-number"># (Java) Stream API 첫걸음</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/jsp/jsp_learning_07',
+    'title': '# 7. JSP 학습기록 - MVC 패턴과 JSP Model 1, Model 2'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

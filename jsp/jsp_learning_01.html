@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 1. JSP 학습기록 - 기본 개념과 Tomcat 실행해보기.</title>
+  <meta name="description" content="1. 기본 개념: Web server, Web application server, Servlet, Servlet Container…">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="1. 기본 개념: Web server, Web application server, Servlet, Servlet Container…" />
+  <meta property="og:url" content="https://cjlee38.github.io/jsp/jsp_learning_01">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 1. JSP 학습기록 - 기본 개념과 Tomcat 실행해보기." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 1. JSP 학습기록 - 기본 개념과 Tomcat 실행해보기.">
+  <meta name="twitter:description" content="1. 기본 개념: Web server, Web application server, Servlet, Servlet Container…">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/jsp/jsp_learning_01">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/jsp/jsp_learning_01">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 1. JSP 학습기록 - 기본 개념과 Tomcat 실행해보기.</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 17, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/jsp">Jsp</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="1-기본-개념">1. 기본 개념</h1>
+<p>: Web server, Web application server, Servlet, Servlet Container…</p>
+
+<p>처음 봤을 때에는, 각각이 무엇을 의미하는지, 무슨 차이가 있는지에 대해서 알지 못했다.</p>
+
+<p>이에 대해서 기본 개념을 정립하면 다음과 같다.</p>
+
+<h2 id="1-web-server-web-application-serverwas">1) Web server, Web application server(WAS)</h2>
+
+<p><img src="/assets/images/2020-09-17-12-33-12_2020-09-17-jsp_learning_01.md.png" alt="webserver" class="alignCenter" /></p>
+
+<hr />
+
+<p>: 우리가 html 파일을 만들고, 이를 더블클릭해서 열면, (대체로) 브라우저가 이 화면을 보여준다.<br />
+이 때에는 Client와 Server의 개념이 딱히 없다. html이라는 양식을 통해 구성된, 어떤 화면을 Browser가 해석해서 우리에게 보여주는 것이다.</p>
+
+<p>이를 다른 사람에게 보여주려고 하면, 이 때부터 <strong>client와 server의 개념</strong>이 등장한다.</p>
+
+<p>client는 말 그대로, 사용자다.<br />
+우리가 네이버나 구글에 크롬 같은 Web browser로 접속을 하면,<br />
+http 라는 프로토콜(규약)을 통해 해당 server. 즉 네이버 본사에 인터넷으로 요청을 하게 된다.</p>
+
+<p>그리고, web server는 요청을 받고, <br />
+해당 사용자가 어떤 브라우저를 쓰는지 등의 데이터를 바탕으로 우리에게 화면을 보여준다.</p>
+
+<h2 id="2-static-page-dynamic-page">2) Static Page, Dynamic Page</h2>
+
+<p>: 그리고 이 때, Static(정적) 페이지와, Dynamic(동적) 페이지로 구분이 된다.</p>
+
+<p>Static Page는, 우리가 어떤 요청을 하면, <strong>항상 같은 결과</strong>를 보여준다.<br />
+현재 지금 포스팅을 작성하고 있는 이 페이지도, 정적인 페이지이므로, 우리가 뭔가 특별한 행동을 할 수는 없다.</p>
+
+<p>Dynamic Page는, <strong>우리가 요구하는 사항에 걸맞게 Contents를 반환</strong>한다.</p>
+
+<p>Static Page는 마치 비유하자면, Java로 <code class="highlighter-rouge">System.out.println("안녕하세요");</code> 를 작성하는 것과 같다</p>
+
+<p>반대로 Dynamic Page는,  <code class="highlighter-rouge">Scanner sc = new Scanner(System.in);</code> 과 같이, <br />
+console에서 입력을 받고, 해당 내용을 <code class="highlighter-rouge">System.out.println(sc.next());</code> 로 출력하는 것과 같다.</p>
+
+<p>똑같이 안녕하세요를 출력할 수 있지만, <br />
+정적인 페이지의 경우 <strong>코드를 수정하지 않는 한 내가 무슨 짓을 하더라도 “안녕하세요” 만 출력될 것</strong>이고, <br />
+동적인 페이지의 경우, 내가 <strong>“반갑습니다” 를 입력하면, “반갑습니다”를 출력할 것</strong>이다.</p>
+
+<p>Static Page를 돌려주는 Server를 Web Server, 그리고 Dynamic Page를 돌려주는 Server를 Web application Server(WAS)라고 한다.</p>
+
+<p>Web server에는 Apache Server, Nginx, IIS 등이 있고, <br />
+Web application Server는 <strong>Tomcat</strong>, JBoss, Jeus, Web Sphere 등이 있다.</p>
+
+<h2 id="3-web-server-and-web-application-are-not-exclusive">3) Web server and Web application are not exclusive</h2>
+<p>: 또한, Web server와 WAS는 배타적으로 서로 하나를 선택해야 하는 관계는 아니다.</p>
+
+<p>만약, 누가 언제 들어와도 같은 결과를 보여줘야 하는, 즉 Static Page가 있는데, <br />
+이를 DB에서 읽어와서, 이를 코드 레벨에서 html로 잘 바꿔서 돌려주는 작업을 하는 것은 자원의 낭비이다. <br />
+즉, 굳이 WAS로 구성할 필요가 없다. <br />
+(이에 더해, 물리적으로 분리해서 보안을 강화시키거나, 하나의 Web server에 여러개의 WAS를 붙여서 부하를 감당하게 할 수 있다.)</p>
+
+<p>따라서, 기본적으로 Web server를 앞에 하나 두고, <br />
+Static Page 일 경우 Web server가 처리하고, <br />
+Dynamic Page일 경우 Web server가 Web application server로 넘겨줘서 처리하면 된다.</p>
+
+<hr />
+
+<blockquote>
+  <p>Note. <a href="https://pjh3749.tistory.com/267">여기</a>를 참고하면, <br />
+Tomcat은 정확하게는 Web application server보다는 Servlet Container에 가깝다고 한다. <br />
+아직 배움이 부족해서, EJB가 무엇인지 몰라 그런갑다 하고 넘겼다..</p>
+</blockquote>
+
+<hr />
+
+<h2 id="4-servlet-servlet-container">4) Servlet, Servlet Container</h2>
+<p>: Servlet이란, <strong>Server Application + let(조각) 의 약자</strong>라고 한다.<br />
+즉, 어떤 요청이 들어왔을 때, 이에 담당하는 하나의 프로그램(가시적으로는 .java, .class 파일)을 말한다.</p>
+
+<p>내가 Home directory에서 갈 수 있는 페이지가 A page, B page의 두 개의 Dynamic page라고 한다면, <strong>각 페이지를 담당하는 프로그램을 servlet</strong>이라고 한다.</p>
+
+<p>그리고,<strong>Servlet Container</strong>는, 이렇게 여러 개의 Servlet을 갖고 있다가,
+A page에 대한 요청이 들어오면, A servlet으로 <strong>Mapping</strong>해서,<br />
+<strong>요청사항(request)을 전달 한 뒤, 결과 값을 반환(response) 해주는 역할</strong>을 한다.</p>
+
+<p>이 또한, 음식점으로 비유해볼 수 있을 것 같다.<br />
+만약 어떤 중국집에서, 짜장, 짬뽕과 같은 면 요리를 담당하는 요리사,<br />
+그리고 탕수육, 깐풍기와 같은 튀김 요리를 담당하는 요리사가 둘이 있다고 해보자.</p>
+
+<p>이 <strong>각각의 요리사는 하나의 Servlet</strong>이다.<br />
+고객으로부터 짜장이라는 요청이 들어오면, 면 요리사가 짜장을 요리해서 return한다.</p>
+
+<p>그리고, 매니저가 Servlet Container가 될 것이다. <br />
+짜장이라는 Request가 들어왔다면, 짜장 요리사에게 전달해준다. <br />
+그리고, 조리가 완료되면 이를 받아서 다시 고객에게 잘 플레이팅해서 Response 해준다.</p>
+
+<h1 id="2-tomcat-실행해보기">2. Tomcat 실행해보기</h1>
+<p>: 우선, Tomcat을 <a href="http://tomcat.apache.org/">공식홈페이지</a> 에서 다운받았다. <br />
+작성일자(2020.09.17) 기준 최신 버전은 9.0.38 이다.</p>
+
+<p><img src="/assets/images/2020-09-17-12-53-47_2020-09-17-jsp_learning_01.md.png" alt="tomcat_download" class="alignCenter" /></p>
+
+<p>압축을 푼 뒤, 폴더를 열어서, /bin/startup.bat를 더블클릭해서 실행해보자.<br />
+(실행이 안될 경우, 8080 port가 사용중인지, java 환경변수 설정을 했는지 확인해보자.)</p>
+
+<p>그리고, localhost:8080 으로 웹브라우저에 접속하면, 다음과 같은 화면을 볼 수 있다.
+<img src="/assets/images/2020-09-17-13-16-30_2020-09-17-jsp_learning_01.md.png" alt="tomcat_localhost" class="alignCenter" /></p>
+
+<p>다음 포스팅에서, Tomcat 을 직접 수정하면서 다뤄보자.</p>
+
+<h3 id="reference">Reference</h3>
+<ul>
+  <li><a href="https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html">Web Server와 WAS의 차이와 웹 서비스 구조</a></li>
+</ul>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/python/asterisk_of_python">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># Python Asterisk(*) 다루기</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/jsp/jsp_learning_02">
+					<span class="page-number"># 2. JSP 학습기록 - Tomcat 구조 파악부터 Servlet 만들기까지</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/jsp/jsp_learning_01',
+    'title': '# 1. JSP 학습기록 - 기본 개념과 Tomcat 실행해보기.'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

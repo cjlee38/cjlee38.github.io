@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 주피터 노트북 서버 열기</title>
+  <meta name="description" content="#0. 서버의 필요성">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="#0. 서버의 필요성" />
+  <meta property="og:url" content="https://cjlee38.github.io/data-mining/how_to_run_jupyter_server">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 주피터 노트북 서버 열기" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/data-mining.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 주피터 노트북 서버 열기">
+  <meta name="twitter:description" content="#0. 서버의 필요성">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/data-mining.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/data-mining/how_to_run_jupyter_server">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/data-mining/how_to_run_jupyter_server">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/data-mining.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 주피터 노트북 서버 열기</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">April 30, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/data-mining">Data-mining</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-서버의-필요성">#0. 서버의 필요성</h1>
+
+<p>저번 방학 때, 공모전을 진행하면서 여러가지 난관에 부딪혔다. 지금도 아직 많이 부족한 나부랭이이지만, 그때 당시에는 서로가 갖고 있는 노트북으로 작업을 진행하기에는, 컴퓨팅 파워도, 시간도 부족했다. 그래서 서버의 필요성을 느꼈다. 결국에는 아마존에서 EC2를 하나 빌려다가 쓰긴 했지만, 그 전에 “이거부터 한번 해보고, 안되면 아마존을 쓰자” 라는 생각으로 개인 데스크탑을 서버로 열었다. </p>
+
+<h1 id="1-본론으로">#1. 본론으로</h1>
+
+<p>여러가지 이야기는 제쳐두고, 그래서 어떻게 하느냐..</p>
+
+<p>일단 아나콘다 프롬프트를 열어서</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ jupyter notebook --generate-config
+</code></pre></div></div>
+
+<p>로 configuration 파일을 생성한다.</p>
+
+<p><img src="/assets/images/2020-08-27-05-55-30_2020-08-27-data_1.md.png" alt="1" class="alignCenter" /><br />
+그리고 자기 사용자폴더 안에</p>
+
+<p>(윈도우라면 C:/Users/”사용자이름”/.jupyter </p>
+
+<p>리눅스라면 /home/”사용자이름”/.jupyter)</p>
+
+<p>jupyter_notebook_config.py 라는 파일이 생성된다.</p>
+
+<p>이 파일을 수정해야 하는데, 일단은 잠시 미뤄놓자.</p>
+
+<h2 id="2-ddns">#2. DDNS</h2>
+
+<p>네트워크를 조금이라도 공부해보신 분은 알겠지만, 가정집에서 사용하는 IP는 유동IP이다. 고정되어 있지 않다.</p>
+
+<p>이 IP 주소가 결국 내 집주소라는 이야기 인데, 내가 매일 택배를 시키는데 3일마다 이사를 다닌다고 생각하면, 택배기사는 매일 바뀌는 내 집 주소를 Track 할 수 없다.</p>
+
+<p>하지만 만약, 어떤 사람이 전국민의 주소를 실시간으로 꿰뚫고 있다면, 전화한통걸어서 “ㅇㅇㅇ씨 집이 어딘가요?”를 물어보면 된다.</p>
+
+<p>DDNS가 그런 역할을 해준다. 내 실제 IP가 바뀌더라도, 내 IP 주소가 어디인지 알려준다.</p>
+
+<p>이는 본인이 DDNS를 사용하는 공유기를 쓰고 있다면(모르면 모델명 넣어서 검색해보자) 해결할 수 있다.</p>
+
+<p>나는 그냥 우연히 받은 iptime 공유기를 쓰고 있기에, 이를 기준으로 설명할 것이다.</p>
+
+<p>일단 아무 웹브라우저나 열어서 192.168.0.1을 친 뒤에, 로그인을 해보자.</p>
+
+<p>비밀번호를 까먹었으면, 공유기를 초기화시켜서 admin으로 만들고, 로그인하자</p>
+
+<p>다음으로, 고급 설정 - 특수기능 - DDNS 설정 으로 가서 내 DDNS를 등록하자.</p>
+
+<p>만약 iptime 공유기가 아니라면, 무료로 도메인 서비스를 제공해주는 사이트에서 등록을 따로 해야하는 불편함을 감수해야 할 수 있다.</p>
+
+<p><img src="/assets/images/2020-08-27-06-01-32_2020-08-27-data_1.md.png" alt="2" class="alignCenter" /></p>
+<h1 id="3-포트-포워딩">#3. 포트 포워딩</h1>
+
+<p>여기까지 했으면 일단 대~충 주소는 알려준 정도이다. “진짜” 우리집으로 오려면, 몇번지 몇호인지 알려줘야 한다.</p>
+
+<p>다른 비유를 하자면, 우리집 주소는 알려줬는데, “어디로 들어와야 내가 문을 열어줄지” 를 정하는 것이다.</p>
+
+<p>해서, </p>
+
+<p>다시 고급설정 - NAT/라우터 관리 - 포트포워드 설정으로 들어가서,</p>
+
+<p>규칙 이름은 본인이 원하는 네이밍을 해주고, 내부 IP 주소는 현재 접속된 IP 주소를 선택한다.</p>
+
+<p>프로토콜은 TCP, 포트는 내외부 둘다 3389로 해주자. 임의의 높은 숫자를 택해도 상관 없다.</p>
+
+<h2 id="4-방화벽-개방">#4. 방화벽 개방</h2>
+
+<p>아까 설정한 포트는, 어디로 오세요 주소만 알려준 상태이지, 문을 열어놓은 상태는 아니다. 각 OS마다 포트 개방하는 법이 다르고, 쉬우니까 구글링을 해보자..</p>
+
+<h2 id="5-주피터-설정">#5. 주피터 설정</h2>
+
+<p>자 이제, 주피터노트북을 키던, 혹은 아나콘다 프롬프트를 열어서 ipython을 치던 한 다음에,</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">notebook.auth</span> <span class="kn">import</span> <span class="n">passwd</span>
+<span class="n">passwd</span><span class="p">()</span>
+</code></pre></div></div>
+<p>를 입력하여 비밀번호를 input해주자. sha256(맞나? 암튼 sha임)으로 해싱된 암호가 튀어나온다.</p>
+
+<p>이걸 잘 복사해놓자.</p>
+
+<p>그리고, 아까 만들었던 configuration 파일을 열어서 다음과 같이 수정한다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c.NotebookApp.password = u'(방금 만든 해싱된 암호)'
+c.NotebookApp.allow_origin = '*'
+c.NotebookApp.ip = "(아까 포트포워드 설정에서 만든 규칙의 내부IP)"
+c.NotebookApp.port = 3389
+</code></pre></div></div>
+<p>그리고 이부분은 선택사항</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">open_browser</span> <span class="o">=</span> <span class="bp">False</span> <span class="c1">#주피터 노트북 실행시켰을 때, 웹브라우저 열리는걸 막음
+</span><span class="n">c</span><span class="o">.</span><span class="n">NotebookApp</span><span class="o">.</span><span class="n">notebook_dir</span> <span class="o">=</span> <span class="s">'(디렉토리)'</span> <span class="c1"># 주피터 노트북이 처음으로 열리는 디렉토리. 특정 디렉토리로 제한시키기 위해 쓰일 수 있음
+</span></code></pre></div></div>
+<p>저장하고, 주피터 노트북 연다음에, 서버를 열은 컴퓨터 혹은 아무 곳에서나
+아까 본인이 설정한 DDNS( ~.iptime.org:3389 ) 를 입력하면 접속이 될 것이다.</p>
+
+<h1 id="6-여기서-끝나면-아쉽다">#6. 여기서 끝나면 아쉽다</h1>
+
+<p>가정집에서 쓰는 데스크탑을 항상 켜놓는다면 상관이 없지만, 보통 밖에 나가면 집 컴퓨터는 끄기 마련이다. 쓸때 키고 안쓸때 끄는게 정상이니까.</p>
+
+<p>근데, 밖에 나가 있을때 내가 실수로 컴퓨터를 안키고 나왔다면, 다시 집으로 돌아가기는 귀찮다. 이를 위해서 WOL이란게 존재한다.</p>
+
+<p>Wake on LAN의 약자로, 즉 내가 컴퓨터를 인터넷을 통해서 키겠다는 얘기다.</p>
+
+<p><strong>그 전에, 먼저 본인 컴퓨터가 “WOL을 지원하는지”에 대해서 한번 검색해보고, 지원한다면 ON 시켜놓자</strong></p>
+
+<h1 id="7-wol-wake-on-lan">#7. WOL (Wake on LAN)</h1>
+
+<p>아까 들어갔던 192.168.0.1로 다시 들어가보자.<br />
+고급설정 - 특수기능 - WOL 기능이 있다. 눌러보자.<br />
+보면 MAC주소와 PC 설명을 넣고 “추가”를 할 수가 있다. <br />
+당연하게도, “현재 접속된 PC의 주소로 설정”을 체크하면 본인이 사용하고 있는 MAC주소가 입력되고<br />
+PC설명은 그냥 대충 붙인다음에 추가를 하자.</p>
+
+<p>다음으로, 고급설정 - 보안 기능 - 공유기 접속/보안관리 를 들어가보자.<br />
+아까 설정한 포트는 “주피터 노트북을 위해 개방한 포트” 이고,  
+지금 설정할 포트는 “공유기한테 명령을 내리기 위해 개방하는 포트”이다.</p>
+
+<p>외부접속보안 밑에 “원격 관리 포트 사용”을 체크하고, 적당한 1024 이상의 번호를 집어넣고, 적용을 누른다.</p>
+
+<p>그럼 이제 내 컴퓨터에 뭘로 명령을 줄 것이냐? 항상 갖고 다니는 핸드폰으로 하자.</p>
+
+<p><img src="/assets/images/2020-08-27-06-05-21_2020-08-27-data_1.md.png" alt="3" class="alignCenter" /></p>
+
+<p>iptime wol을 다운받고, “공유기 수동 추가”를 누르자.</p>
+
+<p>이름은 적당히 아무거나 붙이고,</p>
+
+<p>외부 IP or DDNS 주소 : 내가 설정한 DDNS 주소( ~.iptime.org )<br />
+원격접속 포트 : 1024 이상의 내가 설정한 포트 <strong>(주피터 포트 아님 ! 유의 )</strong><br />
+Login ID와 암호 –&gt; 내가 192.186.0.1에서 관리자 로그인할때 사용한 ID와 비밀번호</p>
+
+<p>공유기 연결을 하자. 아까 내가 7번의 WOL 기능에서 설정한 이름이 보인다.</p>
+
+<h1 id="8-시작프로그램-설정">#8. 시작프로그램 설정</h1>
+
+<p>컴퓨터만 키면 뭐하나, 주피터를 열어야지. </p>
+
+<p>리눅스의 경우 startup application(아마도)<br />
+윈도우의 경우 실행(윈+R 단축키) –&gt; shell:startup에서 뜨는 폴더에 jupyter 바로가기를 집어넣자.</p>
+
+<p>jupyter 바로가기를 못찾겠다면, 윈도우 키를 누른 뒤에 jupyter 까지만 쳐도 자동완성으로 보일 것이다.</p>
+
+<p>이러면 준비는 끝났다. </p>
+
+<h2 id="9-테스트">#9. 테스트</h2>
+
+<p>컴퓨터를 끄고, 먼저 휴대폰으로 컴퓨터를 깨워보자.</p>
+
+<p>켜진다. Good.</p>
+
+<p>컴퓨터는 아무것도 건들지 말고, 주피터가 켜지는지 확인해보고,</p>
+
+<p>외부(다른 컴퓨터 혹은 핸드폰)에서 내 DDNS를 입력해봐서, 성공하면 끝이다.</p>
+
+<p><img src="/assets/images/2020-08-27-06-06-26_2020-08-27-data_1.md.png" alt="4" class="alignCenter" />
+잘 된다.</p>
+
+<h2 id="10-디렉토리-설정이-안될-경우">#10. 디렉토리 설정이 안될 경우</h2>
+
+<p>왜인진 모르겠는데 내가 config 파일에서 설정을 했는데도, 그냥 사용자 폴더가 열려버렸었다.</p>
+
+<p>구글링에 시간을 좀만 투자해보니, 다음과 같은 해결책이 있었다.</p>
+
+<p>내가 아까 시작프로그램에 넣어놓은 jupyter notebook 바로가기를 속성으로 열은 뒤에, <br />
+대상 부분의 맨 뒤로 가면 어떤 경로가 있다. 이걸 수정해주면 된다.</p>
+
+<p>만약 내가 바탕화면으로 설정하고 싶다면</p>
+
+<p>“C:\Users\(사용자이름)\Desktop/”<br />
+(\랑 /를 잘 구분해야 함)</p>
+
+<p>로 집어넣으면 된다.</p>
+
+<h2 id="11-여담">#11. 여담</h2>
+
+<p>이번에 이사가면서 인터넷을 새로 달면서 공유기를 받았는데, DDNS 주소를 고칠수가 없게 되어 있었다.</p>
+
+<p>즉, iptime.org 부분이 다른걸로 고정되어 있었는데, 그 도메인 서비스 제공하는 홈페이지를 들어가보니 유료였다.</p>
+
+<p>어떻게 방법이 없을까 한참 애먹다가, 결국 기존에 갖고있던 iptime 공유기를 이중으로 달았다.</p>
+
+<p>근데 또 서버가 안들어가져서, 찾아보니까 뭐 받은 IP를 iptime으로 넘겨줘야 하느니….</p>
+
+<p>몇시간에 걸쳐서 간신히 해결하고 나니까, 더이상 손도대기 싫고, 잘 기억도 안나고, 해서.. 여기서는 스킵했다.</p>
+
+<p>만약 누군가가 도움을 요청한다면 다시 찾아보겠읍니다..</p>
+
+<p>아무튼, 끝!</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/linux/tablet_as_dual_monitor">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 다시 우분투로, 그리고 태블릿을 듀얼 모니터로 활용하기</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/python/python_prefix">
+					<span class="page-number"># Python string prefix에 관하여</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/data-mining/how_to_run_jupyter_server',
+    'title': '# 주피터 노트북 서버 열기'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

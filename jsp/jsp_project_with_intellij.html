@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 0. JSP 학습기록 - Intellij JSP 프로젝트 생성</title>
+  <meta name="description" content="Prerequisite  Intellij Ultimate  JDK  Tomcat  Environment Variable Settings">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Prerequisite  Intellij Ultimate  JDK  Tomcat  Environment Variable Settings" />
+  <meta property="og:url" content="https://cjlee38.github.io/jsp/jsp_project_with_intellij">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 0. JSP 학습기록 - Intellij JSP 프로젝트 생성" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 0. JSP 학습기록 - Intellij JSP 프로젝트 생성">
+  <meta name="twitter:description" content="Prerequisite  Intellij Ultimate  JDK  Tomcat  Environment Variable Settings">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/jsp/jsp_project_with_intellij">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/jsp/jsp_project_with_intellij">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 0. JSP 학습기록 - Intellij JSP 프로젝트 생성</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 11, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/jsp">Jsp</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="prerequisite">Prerequisite</h1>
+<ol>
+  <li>Intellij <strong>Ultimate</strong></li>
+  <li>JDK</li>
+  <li>Tomcat</li>
+  <li>Environment Variable Settings</li>
+</ol>
+
+<h1 id="create">Create</h1>
+<p>:</p>
+
+<p>1) Welcome 화면에서, 새 프로젝트(New Project) 만든다.</p>
+
+<p>2) Java - Project SDK에서 JDK를 설정하고,</p>
+
+<p>3) Additional Libraries and Frameworks에서 JAVE EE - Web Application - WebService를 체크하고 Next 버튼을 누른다..?</p>
+
+<p><img src="/assets/images/2020-09-11-16-47-45_2020-09-11-jsp_project_with_intellij.md.png" alt="failed" class="alignCenter" /></p>
+
+<p>왠지 모르겠는데 나는 없다.</p>
+
+<p><a href="https://www.jetbrains.com/help/idea/preparing-to-develop-a-web-service.html">공식 문서</a>에도 이렇게 하라고 하는데, 나는 없다.</p>
+
+<p>각고의 구글링 끝에, <a href="https://intellij-support.jetbrains.com/hc/en-us/community/posts/360009485660-No-Java-EE-tab-in-New-Project-">나와 비슷한 문제가 있던 질문 글을 발견</a></p>
+
+<p>얘기인즉, 좌측 Java Enterprise로 가서, SDK를 설정하고 Next 버튼을 누르면, 이를 선택할 수 있는 옵션이 나온다.</p>
+
+<p>(추가)<br />
+<a href="https://stackoverflow.com/questions/63606475/how-to-create-a-new-java-ee-project-in-intellij-2020-2-without-gradle-or-maven/63606566#63606566">스택오버플로우</a>에 따르면, 2020.2 버전부터 사라졌다고 한다. 다음을 참고하자</p>
+
+<hr />
+
+<blockquote>
+  <p>It’s no longer possible. The only option is to downgrade to 2020.1 version.</p>
+
+  <p>The previous wizard was using obsolete technologies and frameworks with the libraries hosted on JetBrains servers always lagging updates and extremely hard to maintain. Now &gt; we moved to Gradle/Maven projects where all the dependencies can be fetched from the public servers and the project can use up-to-date Java EE and library versions.</p>
+</blockquote>
+
+<hr />
+
+<p><img src="/assets/images/2020-09-11-16-49-58_2020-09-11-jsp_project_with_intellij.md.png" alt="success" class="alignCenter" /></p>
+
+<p>4) Web Profile을 체크한 후 Next.</p>
+
+<p><img src="/assets/images/2020-09-11-16-52-27_2020-09-11-jsp_project_with_intellij.md.png" alt="framework" class="alignCenter" /></p>
+
+<p>5) 적당히 이름을 붙여주고 프로젝트 생성</p>
+
+<p>6) 상단의 Run - Edit Configurations 클릭</p>
+
+<p>7) 좌측 상단의 + 버튼 누른 후, Tomcat Server - local 클릭</p>
+
+<p><img src="/assets/images/2020-09-11-16-58-01_2020-09-11-jsp_project_with_intellij.md.png" alt="tomcat" class="alignCenter" /></p>
+
+<p>8) 위 사진처럼, Application Server의 Configure 를 클릭하여 톰캣이 설치된 위치 설정</p>
+
+<p>9) 우측 하단의 Fix 클릭 -&gt; artifact를 projectName:war 로 선택</p>
+
+<p>10) Deployment 탭으로 넘어와서, Application context를 /ProjectName_war 를 /로 변경</p>
+
+<p>11) webapp 우클릭 -&gt; new -&gt; JSP/JSPX로 index.jsp 생성</p>
+
+<p>12) body 태그 사이에 Hello world! 작성
+<img src="/assets/images/2020-09-11-17-05-16_2020-09-11-jsp_project_with_intellij.md.png" alt="" class="alignCenter" /></p>
+
+<p>13) Run &amp; 브라우저 열어서 localhost:8080</p>
+
+<p><img src="/assets/images/2020-09-11-17-04-17_2020-09-11-jsp_project_with_intellij.md.png" alt="done" class="alignCenter" /></p>
+
+<p>잘 된다. 중간에 이상했던 부분때문에 꽤 애를 먹었다 ㅠ.</p>
+
+<p>if 안될 경우.. Check list</p>
+<ol>
+  <li>JDK 경로 설정 확인</li>
+  <li>Tomcat 경로 설정 확인</li>
+  <li>환경변수 확인(cmd.exe -&gt; java -version , javac -version)</li>
+  <li>기존에 Tomcat을 실행시켰는지 확인</li>
+  <li>8080 port가 이미 사용중인지 확인.</li>
+</ol>
+
+<p>끝!</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/java/journey_to_java_hashmap">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># (Java) HashMap 으로의 여행</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/python/asterisk_of_python">
+					<span class="page-number"># Python Asterisk(*) 다루기</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/jsp/jsp_project_with_intellij',
+    'title': '# 0. JSP 학습기록 - Intellij JSP 프로젝트 생성'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

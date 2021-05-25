@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># (Java) Parameter를 활용하는 방법 ( feat. varargs, kwargs )</title>
+  <meta name="description" content="varargs: varargs 는 variable arguments의 약자로, 한국어로는 “가변인자” 로 해석된다.이는 지난번에 포스팅했던 파이썬의 Asterisk(*) 다루기 와 비슷한데,arguments를 몇 개를 받을지 지정하지 않고, 호출하는 쪽에서 정해주겠다는 의미가 된다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="varargs: varargs 는 variable arguments의 약자로, 한국어로는 “가변인자” 로 해석된다.이는 지난번에 포스팅했던 파이썬의 Asterisk(*) 다루기 와 비슷한데,arguments를 몇 개를 받을지 지정하지 않고, 호출하는 쪽에서 정해주겠다는 의미가 된다." />
+  <meta property="og:url" content="https://cjlee38.github.io/java/java_parameters">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# (Java) Parameter를 활용하는 방법 ( feat. varargs, kwargs )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# (Java) Parameter를 활용하는 방법 ( feat. varargs, kwargs )">
+  <meta name="twitter:description" content="varargs: varargs 는 variable arguments의 약자로, 한국어로는 “가변인자” 로 해석된다.이는 지난번에 포스팅했던 파이썬의 Asterisk(*) 다루기 와 비슷한데,arguments를 몇 개를 받을지 지정하지 않고, 호출하는 쪽에서 정해주겠다는 의미가 된다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/java/java_parameters">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/java/java_parameters">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># (Java) Parameter를 활용하는 방법 ( feat. varargs, kwargs )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">October 25, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/java">Java</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="varargs">varargs</h1>
+<p>: varargs 는 variable arguments의 약자로, 한국어로는 “가변인자” 로 해석된다.<br />
+이는 지난번에 포스팅했던 <a href="https://cjlee38.github.io/python/asterisk_of_python">파이썬의 Asterisk(*) 다루기</a> 와 비슷한데,<br />
+arguments를 몇 개를 받을지 지정하지 않고, 호출하는 쪽에서 정해주겠다는 의미가 된다.</p>
+
+<p>다음의 예시를 보자.<br />
+구현하고자 하는 코드는, 입력받은 여러 개의 문자열을 하나씩 출력하고자 한다.</p>
+
+<p><strong>가변인자를 사용하지 않는 방식</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Main</span> <span class="n">main</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Main</span><span class="o">();</span>
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">strs</span> <span class="o">=</span> <span class="o">{</span><span class="s">"hello"</span><span class="o">,</span> <span class="s">"world"</span><span class="o">,</span> <span class="s">"java"</span><span class="o">};</span>
+        <span class="n">main</span><span class="o">.</span><span class="na">foo1</span><span class="o">(</span><span class="n">strs</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">foo1</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">strs</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">str</span> <span class="o">:</span> <span class="n">strs</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"str = "</span> <span class="o">+</span> <span class="n">str</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 결과</span>
+<span class="c1">// str = hello</span>
+<span class="c1">// str = world</span>
+<span class="c1">// str = java</span>
+</code></pre></div></div>
+
+<p>정상적으로 잘 동작하는 모습을 볼 수 있다.<br />
+그러나, 이렇게 작성하지 않고, 가변인자를 사용하면 다음과 같다.</p>
+
+<p><strong>가변인자를 사용하는 방식</strong></p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Main</span> <span class="n">main</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Main</span><span class="o">();</span>
+        <span class="n">main</span><span class="o">.</span><span class="na">foo2</span><span class="o">(</span><span class="s">"hello"</span><span class="o">,</span> <span class="s">"world"</span><span class="o">,</span> <span class="s">"java"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">foo2</span><span class="o">(</span><span class="nc">String</span> <span class="o">...</span> <span class="n">strs</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">str</span> <span class="o">:</span> <span class="n">strs</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"str = "</span> <span class="o">+</span> <span class="n">str</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="c1">// 결과</span>
+<span class="c1">// str = hello</span>
+<span class="c1">// str = world</span>
+<span class="c1">// str = java</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">foo2()</code> 라는 메소드를 호출할 때, Array가 아닌 3개의 문자열을 따로 전달해주었다.<br />
+그리고 이를 받는 메소드 <code class="highlighter-rouge">foo2()</code>는 <code class="highlighter-rouge">...</code> 표시를 통해 배열이 아닌 varargs를 받도록 했다.</p>
+
+<p>코드는 변하였지만, 결과는 기존의 방식과 차이가 없다.<br />
+그렇다면 어떤 효용성이 있을까?</p>
+
+<h4 id="첫-번째로는-formatting에-있다">첫 번째로는, <strong>formatting</strong>에 있다.</h4>
+<p><code class="highlighter-rouge">System.out.printf()</code> 혹은, <code class="highlighter-rouge">String.format()</code> 이 이러한 방식으로 동작한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span><span class="o">[]</span> <span class="n">strs</span> <span class="o">=</span> <span class="o">{</span><span class="s">"hello"</span><span class="o">,</span> <span class="s">"world"</span><span class="o">,</span> <span class="s">"java"</span><span class="o">};</span>
+<span class="nc">String</span> <span class="n">sout</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"numOfStrings = %d, first String = %s "</span><span class="o">,</span> <span class="n">strs</span><span class="o">.</span><span class="na">length</span><span class="o">,</span> <span class="n">strs</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sout</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>위 코드에서, sout의 인자 전달을 보면,<br />
+첫 번째로는 ““로 작성된 <code class="highlighter-rouge">String literal</code>을, <br />
+두 번째로는 <code class="highlighter-rouge">strs.length</code> 라는 숫자를,<br />
+세 번째로는 <code class="highlighter-rouge">strs[0]</code>, 즉 <code class="highlighter-rouge">"hello"</code> 를 넘겨주었다.</p>
+
+<p>뒤에 몇 개를 전달하더라도, <br />
+앞 literal의 이스케이프 시퀀스와 짝을 맞춰주면 정상적으로 동작한다.</p>
+
+<p>내부는 다음과 같이 작성되어 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">format</span><span class="o">(</span><span class="nc">String</span> <span class="n">format</span><span class="o">,</span> <span class="nc">Object</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span> 
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">Formatter</span><span class="o">().</span><span class="na">format</span><span class="o">(</span><span class="n">format</span><span class="o">,</span> <span class="n">args</span><span class="o">).</span><span class="na">toString</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="두-번째로는-arraysaslist가-있다">두 번째로는, Arrays.asList()가 있다.</h4>
+
+<p>배열을 List로 전환하는 가장 쉬운 방법은,<br />
+루프를 돌면서 하나씩 더하는 것이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span><span class="o">[]</span> <span class="n">strs</span> <span class="o">=</span> <span class="o">{</span><span class="s">"hello"</span><span class="o">,</span> <span class="s">"world"</span><span class="o">,</span> <span class="s">"java"</span><span class="o">};</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+<span class="k">for</span><span class="o">(</span><span class="nc">String</span> <span class="n">str</span> <span class="o">:</span> <span class="n">strs</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>그러나, 좀 더 심플하게 넣는 방법은 <code class="highlighter-rouge">Arrays.asList()</code> 메소드를 활용하는 것이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span><span class="o">[]</span> <span class="n">strs</span> <span class="o">=</span> <span class="o">{</span><span class="s">"hello"</span><span class="o">,</span> <span class="s">"world"</span><span class="o">,</span> <span class="s">"java"</span><span class="o">};</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">strs</span><span class="o">));</span>
+</code></pre></div></div>
+
+<p>한 발 더 나가서,<br />
+이 <code class="highlighter-rouge">Arrays.asList()</code> 메소드 또한, varargs를 받기 때문에, <br />
+다음과 같이 작성해도 무리가 없다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"hello"</span><span class="o">,</span> <span class="s">"world"</span><span class="o">,</span> <span class="s">"java"</span><span class="o">));</span>
+</code></pre></div></div>
+
+<p><strong>이 때</strong>, 눈치가 빠르면 알겠지만, <br />
+<code class="highlighter-rouge">Arrays.asList()</code>를 첫 번째 방식과, 두 번째 방식으로 사용할 때, <br />
+<strong>넘겨준 인자가 서로 다르다.</strong></p>
+
+<p>첫 번째 녀석은 <code class="highlighter-rouge">strs</code> 라는 배열을 넘겨줬지만, 두 번째는 3개의 문자열을 넘겨주었다.</p>
+
+<p>이것이 가능한 이유는, 자바 컴파일러가 <code class="highlighter-rouge">...</code> 라는 syntax를 보고,<br />
+이를 array로 바꾸어주기 때문이다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">원본</th>
+      <th style="text-align: center">컴파일 이후</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">메소드</td>
+      <td style="text-align: center">public void method(String … args)</td>
+      <td style="text-align: center">public void method(String[] args)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">호출</td>
+      <td style="text-align: center">method(“hello”, “world”);</td>
+      <td style="text-align: center">method(new String[]{“hello”, world”});</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>varargs 를 사용할 때 주의할 점은,<br />
+이를 파라미터의 가장 마지막에 넣어야 한다는 것이다.</p>
+
+<p>다음과 같은 메소드가 있다고 생각해보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">method</span><span class="o">(</span><span class="nc">String</span> <span class="o">...</span> <span class="n">args</span><span class="o">,</span> <span class="nc">String</span> <span class="n">specific</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// do something</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이 메소드를 호출할 때, specific 이라는 곳에 값을 넣어줄 수 있는 방법이 없다.<br />
+따라서, IDE는 곧바로 에러를 띄워준다.</p>
+
+<p><code class="highlighter-rouge">Vararg parameter must be the last in the list</code></p>
+
+<h1 id="keyword-arguments">keyword-arguments</h1>
+<p>: keyword-argument, keyword-parameter, named-argument, named-parameter…<br />
+모두 같은 이야기이다.</p>
+
+<p>이는, 함수를 호출 할 때에, 값만 넘겨주는 것이 아니라, <br />
+명시적으로 이름까지 지정하는 것이다.</p>
+
+<p>가령, 파이썬에서의 예시는 다음과 같다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"안녕하세요, 제 이름은"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">"이고, 나이는"</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">"입니다."</span><span class="p">)</span>
+
+<span class="n">introduce</span><span class="p">(</span><span class="s">"홍길동"</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span> <span class="c1"># without keyword
+</span><span class="n">introduce</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"홍길동"</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">)</span> <span class="c1"># with keyword
+</span></code></pre></div></div>
+
+<p>어느 파라미터에 어떤 변수를 집어넣을 것인지 명확하게 볼 수 있다.<br />
+이러한 기능의 장점은, 파라미터의 변수가 많아질 때 극명하게 드러난다.</p>
+
+<p>아쉽게도, <strong>자바는 이러한 기능을 지원하지 않는다.</strong><br />
+그러나, 이를 유사하게 흉내낼 수 있는 방법을 몇 가지 소개한다.</p>
+
+<hr />
+
+<blockquote>
+  <p>Note. named parameter를 지원하지 않는 이유는, <a href="https://softwareengineering.stackexchange.com/questions/219593/why-do-many-languages-not-support-named-parameters">여기</a>를 읽어보자.</p>
+</blockquote>
+
+<hr />
+
+<p>위 파이썬 같은 코드를, 자바로 구현했다고 가정해보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">introduce</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"안녕하세요, 제 이름은 "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">" 이고, 나이는 "</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s">" 입니다."</span> <span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>기본적으로 사용할 때에는, 다음과 같이 사용한다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Foo</span> <span class="n">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Foo</span><span class="o">();</span>
+        <span class="n">foo</span><span class="o">.</span><span class="na">introduce</span><span class="o">(</span><span class="s">"홍길동"</span><span class="o">,</span> <span class="mi">25</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>첫 번째로는, 변수를 lazy 하게 정의하는 방법이 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Foo</span> <span class="n">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Foo</span><span class="o">();</span>
+        <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+
+        <span class="n">foo</span><span class="o">.</span><span class="na">introduce</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"홍길동"</span><span class="o">,</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">25</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>두 번째 방법은, 받은 값을 그대로 돌려주는 static method를 이용하는 방법이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">com</span><span class="o">.</span><span class="na">company</span><span class="o">.</span><span class="na">Foo</span><span class="o">.*;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Foo</span> <span class="n">foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Foo</span><span class="o">();</span>
+
+        <span class="n">foo</span><span class="o">.</span><span class="na">introduce</span><span class="o">(</span><span class="n">name</span><span class="o">(</span><span class="s">"홍길동"</span><span class="o">),</span> <span class="n">age</span><span class="o">(</span><span class="mi">25</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">introduce</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"안녕하세요, 제 이름은 "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">" 이고, 나이는 "</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s">" 입니다."</span> <span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">name</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">age</span><span class="o">(</span><span class="nc">String</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">age</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>마지막 세 번째는 다른 방법들과 약간 궤를 달리하지만,<br />
+마치 stream을 사용하듯이, Builder pattern을 사용하는 것이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Foo</span> <span class="n">foo</span> <span class="o">=</span> <span class="nc">Foo</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">"홍길동"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setAge</span><span class="o">(</span><span class="mi">25</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+        
+        <span class="n">foo</span><span class="o">.</span><span class="na">introduce</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Foo</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="nf">Foo</span><span class="o">(</span><span class="nc">Builder</span> <span class="n">builder</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">age</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">age</span><span class="o">;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Builder</span> <span class="nf">builder</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Builder</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">introduce</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"안녕하세요, 제 이름은 "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">" 이고, 나이는 "</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s">" 입니다."</span> <span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Builder</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nc">Foo</span> <span class="nf">build</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">Foo</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="nc">Builder</span> <span class="nf">setAge</span><span class="o">(</span><span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+
+
+        <span class="kd">public</span> <span class="nc">Builder</span> <span class="nf">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>클래스의 instance를 직접 생성하지 않고, <br />
+<code class="highlighter-rouge">Builder</code> 라는 static class 를 통해서 만든다.</p>
+
+<p>이 <code class="highlighter-rouge">Builder</code>는 setter method 가 void가 아니고, <br />
+자기 자신(instnace)를 return 해서, <br />
+계속 set, set, set.. 을 할 수 있도록 한다.</p>
+
+<p>최종적으로 <code class="highlighter-rouge">build()</code> 메소드를 호출하면,<br />
+<code class="highlighter-rouge">Foo</code> 클래스의 생성자로 지금까지 만든 <code class="highlighter-rouge">Builder</code>를 넘겨주어,<br />
+<code class="highlighter-rouge">Foo</code> 의 instance를 만들도록 하는 방법이다.</p>
+
+<p>약간 난해하게 생겼는데, 차분히 코드를 따라가면 이해할 수 있을 것이다.</p>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li><a href="https://www.programiz.com/java-programming/varargs">Java Varargs</a></li>
+  <li><a href="https://dzone.com/articles/named-parameters-java-0">Named Parameters in Java</a></li>
+  <li><a href="https://stackoverflow.com/questions/1988016/named-parameter-idiom-in-java">Stackoverflow - Named Parameter idiom in Java</a></li>
+</ul>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/java/how-junit_works_without_main">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># (Java) Junit은 어떻게 Main method 없이 실행될까? </span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/problem-solving/problem_solving_16">
+					<span class="page-number"># 프로그래머스[Lv.2] 더 맵게 ( Java )</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/java/java_parameters',
+    'title': '# (Java) Parameter를 활용하는 방법 ( feat. varargs, kwargs )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

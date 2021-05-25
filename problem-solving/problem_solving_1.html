@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 프로그래머스[Lv.1] - 크레인 인형 뽑기 ( python )</title>
+  <meta name="description" content="문제 링크">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="문제 링크" />
+  <meta property="og:url" content="https://cjlee38.github.io/problem-solving/problem_solving_1">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 프로그래머스[Lv.1] - 크레인 인형 뽑기 ( python )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 프로그래머스[Lv.1] - 크레인 인형 뽑기 ( python )">
+  <meta name="twitter:description" content="문제 링크">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/problem-solving/problem_solving_1">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/problem-solving/problem_solving_1">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 프로그래머스[Lv.1] - 크레인 인형 뽑기 ( python )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">August 8, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/problem-solving">Problem-solving</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p><a href="https://programmers.co.kr/learn/courses/30/lessons/64061">문제 링크</a></p>
+
+<p>알고리즘 공부를 어제부터 시작해서, Lv.1 문제부터 차근차근 풀어나가고 있다. 첫 번째 문제로 선택한 크레인 인형뽑기 게임 문제의 다음과 같다.</p>
+
+<h1 id="problem">PROBLEM</h1>
+
+<hr />
+
+<p>게임개발자인 죠르디는 크레인 인형뽑기 기계를 모바일 게임으로 만들려고 합니다.<br />
+죠르디는 게임의 재미를 높이기 위해 화면 구성과 규칙을 다음과 같이 게임 로직에 반영하려고 합니다.</p>
+
+<p><img src="/assets/images/2020-08-27-09-15-05_2020-08-27-ps_1.md.png" alt="1" class="alignCenter" /></p>
+
+<p>게임 화면은 <strong>1 x 1</strong> 크기의 칸들로 이루어진 <strong>N x N</strong> 크기의 정사각 격자이며 위쪽에는 크레인이 있고 오른쪽에는 바구니가 있습니다. (위 그림은 5 x 5 크기의 예시입니다). 각 격자 칸에는 다양한 인형이 들어 있으며 인형이 없는 칸은 빈칸입니다. 모든 인형은 1 x 1 크기의 격자 한 칸을 차지하며 <strong>격자의 가장 아래 칸부터 차곡차곡 쌓여 있습니다.</strong> 게임 사용자는 크레인을 좌우로 움직여서 멈춘 위치에서 가장 위에 있는 인형을 집어 올릴 수 있습니다. 집어 올린 인형은 바구니에 쌓이게 되는 데, 이때 바구니의 가장 아래 칸부터 인형이 순서대로 쌓이게 됩니다. 다음 그림은 [1번, 5번, 3번] 위치에서 순서대로 인형을 집어 올려 바구니에 담은 모습입니다.</p>
+
+<p><img src="/assets/images/2020-08-27-09-15-22_2020-08-27-ps_1.md.png" alt="2" class="alignCenter" /></p>
+
+<p>만약 같은 모양의 인형 두 개가 바구니에 연속해서 쌓이게 되면 두 인형은 터뜨려지면서 바구니에서 사라지게 됩니다. 위 상태에서 이어서 [5번] 위치에서 인형을 집어 바구니에 쌓으면 같은 모양 인형 <strong>두 개</strong>가 없어집니다.</p>
+
+<p><img src="/assets/images/2020-08-27-09-15-36_2020-08-27-ps_1.md.png" alt="3" class="alignCenter" /></p>
+
+<p>크레인 작동 시 인형이 집어지지 않는 경우는 없으나 만약 인형이 없는 곳에서 크레인을 작동시키는 경우에는 아무런 일도 일어나지 않습니다. 또한 바구니는 모든 인형이 들어갈 수 있을 만큼 충분히 크다고 가정합니다. (그림에서는 화면표시 제약으로 5칸만으로 표현하였음)</p>
+
+<p>게임 화면의 격자의 상태가 담긴 2차원 배열 board와 인형을 집기 위해 크레인을 작동시킨 위치가 담긴 배열 moves가 매개변수로 주어질 때, 크레인을 모두 작동시킨 후 터트려져 사라진 인형의 개수를 return 하도록 solution 함수를 완성해주세요.</p>
+
+<h3 id="제한사항"><strong>[제한사항]</strong></h3>
+
+<ul>
+  <li>board 배열은 2차원 배열로 크기는 5 x 5 이상 30 x 30 이하입니다.</li>
+  <li>board의 각 칸에는 0 이상 100 이하인 정수가 담겨있습니다.</li>
+  <li>0은 빈 칸을 나타냅니다.</li>
+  <li>1 ~ 100의 각 숫자는 각기 다른 인형의 모양을 의미하며 같은 숫자는 같은 모양의 인형을 나타냅니다.</li>
+  <li>moves 배열의 크기는 1 이상 1,000 이하입니다.</li>
+  <li>moves 배열 각 원소들의 값은 1 이상이며 board 배열의 가로 크기 이하인 자연수입니다.</li>
+</ul>
+
+<hr />
+
+<h1 id="solve">SOLVE</h1>
+
+<h3 id="1-접근-방법"> 1) 접근 방법</h3>
+
+<p>: 먼저, 가장 핵심이 되는 내용들과 주의해야할 점들을 기억했다.</p>
+
+<ul>
+  <li> 정사각 격자에서, 인형들은 가장 아래부터 “쌓여” 있다.</li>
+  <li> 오른쪽 바구니의 크기에는 모든 인형이 들어갈 만큼 충분히 크다 ( ≒ 바구니의 크기에는 제약이 없다 )</li>
+  <li> 인형 <strong>두개 </strong>가 만나면 터뜨려지면서 <strong>두개 다 </strong>사라진다.</li>
+  <li> 인형이 없는 곳에서 크레인을 작동시키면, 아무런 일도 일어나지 않는다.</li>
+</ul>
+
+<h4 id="2-첫-번째-방법"> 2) 첫 번째 방법</h4>
+
+<p>다음으로, <strong>인형을 뽑아서 바구니에 담는 과정</strong>과, <strong>바구니에 들어 있는 인형이 터지는 상황</strong>을 구분하여 고려한 뒤, 다음과 같이 작성하였다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">moves</span><span class="p">):</span>
+
+<span class="c1"># SECTOR A
+</span>    <span class="n">basket</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="n">moves</span><span class="p">:</span> <span class="c1"># 크레인 동작
+</span>        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">board</span><span class="p">:</span> <span class="c1"># 2차원배열 board를 vertically 접근하므로
+</span>            <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="n">move</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># 0이면 empty이므로 pass
+</span>                <span class="n">basket</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">move</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">move</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 인형은 사라지게 함
+</span>                <span class="k">break</span> <span class="c1"># 같은 열(column)의 다음 인형을 뽑지 않기 위해 break
+</span> 
+<span class="c1"># SECTOR B
+</span>    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 인형 터짐 횟수
+</span>    <span class="n">escape_flag</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># 탈출 flag
+</span>    <span class="k">while</span> <span class="n">escape_flag</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>       
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">basket</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">basket</span><span class="p">)):</span> <span class="c1"># index와 index + 1 을 비교하여, 같으면 pop
+</span>            <span class="k">if</span> <span class="n">basket</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="o">==</span> <span class="n">basket</span><span class="p">[</span><span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="n">basket</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+                <span class="n">basket</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">break</span>
+            <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">basket</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># index 이므로 -1 &amp; IndexError(out of range) 방지를 위해 -1
+</span>                <span class="n">escape_flag</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">break</span>
+
+    <span class="k">return</span> <span class="n">count</span> <span class="o">*</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p>가장 먼저, 첫 for문을 돌면서 basket이라는 빈 배열을 만들어 준 뒤, 뽑은 인형들을 전부 담았다. ( Sector A )</p>
+
+<p>다음으로, basket의 크기가 2 이상, escape_flag가 0 인 동안 반복하는 while loop 내에서, basket for문을 돌면서</p>
+
+<p>조건에 맞을 경우 제거 및 count, 그리고 최종적으로 count * 2 (인형이 두 개가 터지므로)를 return 하도록 하였다. ( Sector B )</p>
+
+<p>결과는 all clear. </p>
+
+<p><img src="/assets/images/2020-08-27-09-16-14_2020-08-27-ps_1.md.png" alt="4" class="alignCenter" /></p>
+
+<h3 id="3-두-번째-방법"> 3) 두 번째 방법</h3>
+
+<p>: 그러나, 뭔가 찜찜하다. <strong>첫 번째 방식에는 분명히 문제가 있다</strong>.</p>
+
+<p>처음에 위 방식과 같이 구분을 한 이유는, 코드 상 line 15 - 20 에서, 본디 다음과 같이 구현하고자 하였기 때문이다.</p>
+
+<p>[ 1차적으로 터뜨릴 인형을 모은 뒤, 한번에 터뜨리고, 그 이후에 터져야 할 인형이 남아있다면 2차적으로 인형을 터뜨리고… 최종적으로 터뜨릴 인형이 없을 때 결과 출력.]</p>
+
+<p>( 마치, 애니팡 게임에서 하나를 움직였는데, 새로운 줄이 추가되면서 연쇄적으로 터지듯이 )</p>
+
+<p>그런데, 이렇게 할 경우에는 문제가 발생한다.</p>
+
+<p>만일, A 인형을 뽑은 뒤, 같은 모양의 인형 B 세 개를 연속으로 뽑는다고 해보자.</p>
+
+<p>[A, B, B, B]</p>
+
+<p>그렇다면, 정상적으로 진행이 되었을 경우에는 다음과 같은 모양이 남아 있어야 한다.</p>
+
+<p>[A, B]</p>
+
+<p>그런데, 방금 말한 방식대로 하면 모든 B가 사라지고, A만 남게 될 것이다.</p>
+
+<p>[A]</p>
+
+<p><strong>왜냐면, index 1, 2의 B는 터뜨릴 인형이지만, 2, 3도 조건에 부합하기 때문에 터뜨릴 인형에 포함되기 때문이다.</strong></p>
+
+<p>이런 현상이 발생할 수 있기 때문에, break( line 20 )을 넣어서, 터뜨릴 인형을 발견한다면, 곧바로 터뜨리고, 다시 처음부터 검사하는 방식으로 진행하였다.</p>
+
+<p>그러나, 이렇게 break를 걸고, 동작한다고 해서 좋아할 게 아니다. 왜냐면, 이러한 방식은 <strong>검사를 처음부터 다시 시작하기 때문에,</strong> <strong>멀쩡한 부분 또한 다시 검사하기</strong> 때문이다. 상상해보자. 바구니에 서로 다른 인형 100개가 들어 있고, 101번 째부터 폭발할 인형들이 모여 있다. 그렇다면 100번째 인형까지는, 검사할 필요가 있을까? 전혀 없다.</p>
+
+<p>따라서, 결론적으로 첫 번째 방식은 잘못 되었고, 다음과 같이 다시 수정하였다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">moves</span><span class="p">):</span>
+    <span class="n">basket</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="n">moves</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">board</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="n">move</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">basket</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="n">move</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">move</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">basket</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">basket</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">basket</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]:</span>
+                    <span class="n">basket</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                    <span class="n">basket</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+                    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">break</span>
+    
+    <span class="k">return</span> <span class="n">count</span> <span class="o">*</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p>훨씬 간결하고, 보기도 좋다. 어렵지도 않으니 따로 설명할 필요는 없으리라 생각된다.</p>
+
+<p>이에 더해, 다음과 같은 장점도 있다</p>
+
+<ul>
+  <li>첫 번째 방법에 비해, 중복 연산이 훨씬 적다.</li>
+  <li>만약, “실시간으로 board를 확인하고 싶어요.” 혹은 “실시간으로 basket”을 확인하고 싶어요”라는 추가 요구 사항이 생겼을 때, 해결하기 쉽다.</li>
+</ul>
+
+<hr />
+
+<h1 id="마치며">마치며</h1>
+
+<p>: 첫 알고리즘 문제를 푸는데, 머릿 속에서 여러 가지 해결 방법이 떠올랐고, 두 번째 방법보다는 첫 번째 방법이 구현하기에 용이할 것 같아서 작성했는데, 쓰고 보니 훨씬 복잡하고, 보기에도 좋지 않았다. </p>
+
+<p>또한, 학교 수업에서 배웠던 알고리즘을 실제로 연습해보니, 생각보다 까다롭고 쉽지 않음을 깨달았다. 최소 일주일에 세 문제, 일반적으로 하루에 한문제를 잡고 매일 연습하는 습관을 들여야겠다.</p>
+
+</article>
+
+
+
+<section class="tags">
+  <strong>Tags:</strong> <a href="/tag/programmers">programmers</a>
+</section>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/python/python_prefix">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># Python string prefix에 관하여</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/problem-solving/problem_solving_2">
+					<span class="page-number"># 백준[No.2477] - 참외밭 ( python )</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/problem-solving/problem_solving_1',
+    'title': '# 프로그래머스[Lv.1] - 크레인 인형 뽑기 ( python )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

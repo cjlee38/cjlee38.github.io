@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 백준[No.2457] - 공주님의 정원 ( Java )</title>
+  <meta name="description" content="문제 링크">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="문제 링크" />
+  <meta property="og:url" content="https://cjlee38.github.io/problem-solving/problem_solving_6">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 백준[No.2457] - 공주님의 정원 ( Java )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 백준[No.2457] - 공주님의 정원 ( Java )">
+  <meta name="twitter:description" content="문제 링크">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/problem-solving/problem_solving_6">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/problem-solving/problem_solving_6">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 백준[No.2457] - 공주님의 정원 ( Java )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 4, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/problem-solving">Problem-solving</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p><a href="https://www.acmicpc.net/problem/2457">문제 링크</a></p>
+
+<h1 id="problem">PROBLEM</h1>
+
+<p><img src="/assets/images/2020-09-04-08-41-21_2020-09-04-ps_6.md.png" alt="question" class="alignCenter" /></p>
+
+<h2 id="예제-입력">예제 입력</h2>
+<p>4<br />
+1 1 5 31<br />
+1 1 6 30<br />
+5 15 8 31<br />
+6 10 12 10</p>
+
+<h2 id="예제-출력">예제 출력</h2>
+<p>2</p>
+
+<h1 id="solve">SOLVE</h1>
+
+<h2 id="1-주의점">1) 주의점</h2>
+<p>: 처음에는 “꽃들의 총 개수” 라는 말이, literal 하게 꽃의 count 인 줄 알았는데, 곰곰히 생각해보니 “꽃의 종류의 개수” 라는 말이 더 정확한 것 같다. 즉, “3월 1일부터 11월 30일까지 최소 한 가지 이상의 꽃이 피어있어야 함을 의미한다.</p>
+
+<p>아무튼, 해당 문제에서 주의해야 할 점은 다음과 같다.</p>
+
+<ol>
+  <li><strong>꽃이 지는 날짜는, 그 날에는 꽃이 이미 져있다는 것을 의미한다. 즉, 6월 13일이라고 표시되어 있다면, 6월 12일까지만 꽃이 피어 있다.</strong></li>
+  <li>정원에 심을 꽃의 개수는 “최소한” 이어야 한다.</li>
+  <li>3월1일부터 11월 30일까지 꽃이 피어있어야 한다.</li>
+  <li><strong>주어진 꽃들이, 조건을 만족할 수 없는 경우가 존재할 수 있다.</strong></li>
+</ol>
+
+<h2 id="2-접근-방법">2) 접근 방법</h2>
+<p>: 두 가지의 아이디어를 코드로 녹여내는 것이 중요하다.</p>
+
+<p>A. 날짜를 어떻게 비교할 것인지? (즉, 대소비교를 어떻게 할 것인지?)<br />
+B. 최소 개수를 어떻게 구할 것인지?</p>
+
+<h3 id="a-날짜-비교">A. 날짜 비교</h3>
+<p>: 우선, 입력을 받은 후에, 입력 받은 각 시작날짜와 종료날짜를 대소비교를 위해 month와 date를 Integer로 바꾼 뒤, month에 100을 곱했다.</p>
+
+<p>우리가 원하는 것은 <strong>“날짜 간의 비교”</strong> 이지, “날짜 간의 연산”이 아니기 때문에, 이렇게 해도 문제가 없다. 날짜 간의 연산이었다면, month를 date에 통합하는 과정이 필요했을 것이다.</p>
+
+<h3 id="b-최소-개수">B. 최소 개수</h3>
+<p>: 꽃의 개수가 최소한이어야 한다는 말은, 바꿔 말하면 꽃이 최대한 오래 살아남을 수록 좋다는 의미가 된다.</p>
+
+<p>따라서, 그리디 알고리즘의 아이디어를 적용하면, 다음과 같은 순서를 반복하면 된다.</p>
+
+<ol>
+  <li>3월 1일을 초기 기준으로 잡는다.</li>
+  <li>3월 1일보다 앞선(이른) 날짜가 start인 꽃 들(즉, 3월 1일을 포함하여, 그 이전에 피는 꽃들) 중에서, 가장 늦게 지는 꽃의 end 날짜를 구한다.</li>
+  <li>2번에서 구한 가장 늦게 지는 꽃의 날짜를 기준으로 잡는다.</li>
+  <li>3번에서 정한 기준보다 앞선 날짜가 start인 꽃(e.g. 5월20일 이었다면, 5월 20일 이전이 start인 꽃 들 중에서, 가장 늦게 지는 꽃)의 날짜를 구한다…. 이 과정을 반복한다.</li>
+  <li>가장 늦게 지는 꽃의 날짜가 11월 30일 초과인 경우, 이를 중단하고, 그 때 까지의 count를 센다.</li>
+</ol>
+
+<p>이를 그림으로 표현하면 다음과 같다.(문제의 예제 입력을 토대로 진행한다.)<br />
+(S : 3월1일 / E : 11월 30일 / C : 기준)<br />
+–&gt; 1. 초기는 아래와 같다.</p>
+
+<hr />
+
+<p>　　S　　　　　　　E <br />
+------------------ <br />
+　　C(3월 1일)</p>
+
+<hr />
+
+<p>–&gt; 2. 3월1일보다 앞서서 피는 꽃들 중(1 1 5 31, 1 1 6 30), 가장 늦게 지는 꽃의 end 날짜를 구한다. 해당 예제에서는, 6월 30일이다. <br />
+–&gt; 3. 6월 30일이 새로운 기준이 된다. 또한, 6월 30일은 11월 30일 이전이므로, 중단하지 않고 계속 진행된다. 따라서, 아래 그림과 같이 된다.</p>
+
+<hr />
+
+<p>　　S　　　　　　　E <br />
+------------------ <br />
+　　　　　　C(6월30일)</p>
+
+<hr />
+
+<p>–&gt; 4. 6월 30일보다 일찍 피는 꽃들(1 1 5 31, 1 1 6 30, 5 15 8 31, 6 10 12 10) 중에서, 가장 늦게 지는 꽃의 end날짜를 구한다. 여기서는 12월 10일이 된다.<br />
+–&gt; 5. 12월 10일이 새로운 기준이 된다. 그러나, 11월 30일 이후이므로, loop를 중단한다.</p>
+
+<hr />
+
+<p>　　S　　　　　　　E <br />
+------------------ <br />
+　　　　　　　　　　　C(12월10일)</p>
+
+<hr />
+
+<p>이런식으로 반복하면, 정상적인 경우의 꽃 종류의 최소 개수를 구할 수 있다.</p>
+
+<p><strong>그러나,</strong></p>
+
+<p>주어진 꽃들이, 조건을 만족하지 않는 경우가 존재한다.</p>
+
+<p>가령,<br />
+3월1일 이전에 피는 꽃이 없다거나,<br />
+혹은 중간에 계속 연결되어서 필 수 있는 꽃이 없다거나,<br />
+혹은 11월30일까지 피는 꽃이 없다거나..</p>
+
+<p>따라서, 우리가 고려해야 할 Case는 다음과 같다.</p>
+
+<h3 id="정상-처리되는-경우">[정상 처리되는 경우]</h3>
+<p><strong>Case 1. 일반적으로 연결되는 경우</strong><br />
+e.g. <br />
+문제의 예제 입력과 같음</p>
+
+<p><strong>Case 2. 한번에 연결되는 경우</strong><br />
+e.g.<br />
+2<br />
+1 5 12 20<br />
+3 5 8 3<br />
+(출력 : 1)</p>
+
+<h3 id="비정상-처리되는-경우">[비정상 처리되는 경우]</h3>
+<p><strong>Case 3. 앞쪽이 없는 경우 (모든 시작일이 3월1일 이후)</strong><br />
+e.g.<br />
+3<br />
+3 5 5 20<br />
+5 15 8 20<br />
+6 10 12 20<br />
+(출력 : 0)</p>
+
+<p><strong>Case 4. 중간에 연결이 안되는 경우</strong><br />
+e.g.<br />
+2<br />
+1 1 5 20<br />
+5 25 12 20<br />
+(출력 : 0)</p>
+
+<p><strong>Case 5. 뒤쪽이 없는 경우 (모든 종료일이 11월 30일 이전)</strong><br />
+e.g. <br />
+2<br />
+1 5 5 20<br />
+5 15 11 30  <br />
+(출력 : 0)</p>
+
+<p>Case 3, 4, 5 인 경우는 loop를 중단하고 count를 0으로 초기화시켜야 한다.</p>
+
+<p>해당 Case인지 알아내는 방법은 간단하다. 위 순서를 반복하면서, 만약 <strong>“새로운 기준이 정해진다면”</strong> (즉, 위 예시에서는 기존의 3월1일이라는 기준에서 6월 30일이라는 기준으로 새로이 변경되는 경우를 의미한다.), 이는 곧 정상적으로 처리되었음을 의미한다.</p>
+
+<p>바꿔 말해서, 기준이 변하지 않는다면, 모두 비정상적인 상황이므로 count는 0이 되어야 한다.</p>
+
+<p>위 5가지 상황을 고려해서, 코드로 구현하면 다음과 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="no">BOJ</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">p2457</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getCalendarDate</span><span class="o">(</span><span class="nc">String</span> <span class="n">month</span><span class="o">,</span> <span class="nc">String</span> <span class="n">date</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="o">(</span><span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">month</span><span class="o">)</span> <span class="o">*</span> <span class="mi">100</span><span class="o">)</span> <span class="o">+</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">final</span> <span class="kt">int</span> <span class="no">START_DATE</span> <span class="o">=</span> <span class="mi">301</span><span class="o">;</span>
+        <span class="kd">final</span> <span class="kt">int</span> <span class="no">END_DATE</span> <span class="o">=</span> <span class="mi">1201</span><span class="o">;</span>
+        
+        <span class="nc">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Scanner</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="no">N</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">());</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        
+        <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">flower</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+
+        <span class="c1">// data를 입력 받아서 HashMap에 저장함. </span>
+        <span class="c1">// 이 때, key는 중복될 수 있으므로, 중복되는 경우 end_date(지는 날짜)가 더 긴 flower가 put 되야함.</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="no">N</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">String</span><span class="o">[]</span> <span class="n">rawDate</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextLine</span><span class="o">().</span><span class="na">split</span><span class="o">(</span><span class="s">" "</span><span class="o">);</span>
+            <span class="kt">int</span> <span class="n">start</span> <span class="o">=</span> <span class="n">getCalendarDate</span><span class="o">(</span><span class="n">rawDate</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">rawDate</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span> 
+            <span class="kt">int</span> <span class="n">end</span> <span class="o">=</span> <span class="n">getCalendarDate</span><span class="o">(</span><span class="n">rawDate</span><span class="o">[</span><span class="mi">2</span><span class="o">],</span> <span class="n">rawDate</span><span class="o">[</span><span class="mi">3</span><span class="o">]);</span>
+            
+            <span class="k">if</span> <span class="o">(</span><span class="n">flower</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">start</span><span class="o">)</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">flower</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">start</span><span class="o">)</span> <span class="o">&lt;</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 새로운 end가 기존의 end보다 길다면</span>
+                <span class="n">flower</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">start</span><span class="o">,</span> <span class="n">end</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        
+        <span class="kt">boolean</span> <span class="n">flag</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">current</span> <span class="o">=</span> <span class="no">START_DATE</span><span class="o">;</span> <span class="c1">// 기준. 초기값은 301(3월1일)</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">current</span> <span class="o">&lt;</span> <span class="no">END_DATE</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 기준이 11월30일을 넘어서면 stop</span>
+            <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">current</span><span class="o">;</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">key</span> <span class="o">:</span> <span class="n">flower</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="o">{</span> <span class="c1">// 전체 꽃을 돌면서</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">key</span> <span class="o">&lt;=</span> <span class="n">current</span> <span class="o">&amp;&amp;</span> <span class="n">max</span> <span class="o">&lt;</span> <span class="n">flower</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">))</span> <span class="o">{</span> 
+                    <span class="c1">// 여기가 핵심이다.</span>
+                    <span class="c1">// 기준 날짜보다 먼저 피는(기준날짜도 포함해서) 꽃들 중에서, 가장 날짜가 멀리 있는 꽃을 찾는다.</span>
+                    <span class="n">max</span> <span class="o">=</span> <span class="n">flower</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span> 
+                    <span class="n">flag</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+
+            <span class="k">if</span> <span class="o">(</span><span class="n">flag</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 정상처리 되었다면, 가장 먼 날짜를 기준으로 변경한다.</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">max</span><span class="o">;</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+                <span class="n">count</span><span class="o">++;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="c1">// flag가 false라는 것은, 기준이 변경되지 않았음을 의미한다.</span>
+                     <span class="c1">// 따라서, 비정상인 경우이므로 count를 0으로 초기화하고 loop를 중단한다.</span>
+                <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+            
+        <span class="o">}</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">count</span><span class="o">);</span>
+        <span class="n">sc</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h1 id="마치며">마치며.</h1>
+<p>: 문제 자체의 난이도는 그리 높지 않으나, 구현하기가 꽤 까다로운 문제이다.</p>
+
+<p>또, 두 개의 꽃이 (1 1 5 20,5 20 12 20)과 같이, 딱 알맞게 떨어지는 경우도 고려해야 하고, 여러모로 신경써야 할 부분이 많다.</p>
+
+<p>여담으로, 문제를 풀고나서 다른 사람들은 어떻게 했나 구글링해보니 죄다 C++ 이어서 약간 당혹스러웠다. 진정한 알고리즘 고수들은 C++을 쓰는건가..?</p>
+
+</article>
+
+
+
+<section class="tags">
+  <strong>Tags:</strong> <a href="/tag/programmers">programmers</a>
+</section>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/problem-solving/problem_solving_5">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 프로그래머스[Lv.2] - 오픈채팅방 ( java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/python/play_with_python_list">
+					<span class="page-number"># Python list 다뤄보기 ( a.k.a. 잡기술 )</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/problem-solving/problem_solving_6',
+    'title': '# 백준[No.2457] - 공주님의 정원 ( Java )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

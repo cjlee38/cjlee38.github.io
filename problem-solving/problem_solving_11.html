@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 프로그래머스[Lv.2] N진수 게임( Java )</title>
+  <meta name="description" content="문제 링크ProblemN진수 게임">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="문제 링크ProblemN진수 게임" />
+  <meta property="og:url" content="https://cjlee38.github.io/problem-solving/problem_solving_11">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 프로그래머스[Lv.2] N진수 게임( Java )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 프로그래머스[Lv.2] N진수 게임( Java )">
+  <meta name="twitter:description" content="문제 링크ProblemN진수 게임">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/problem-solving/problem_solving_11">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/problem-solving/problem_solving_11">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 프로그래머스[Lv.2] N진수 게임( Java )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 30, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/problem-solving">Problem-solving</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p><a href="https://programmers.co.kr/learn/courses/30/lessons/17687">문제 링크</a></p>
+<h1 id="problem">Problem</h1>
+<p><strong>N진수 게임</strong></p>
+
+<p>튜브가 활동하는 코딩 동아리에서는 전통적으로 해오는 게임이 있다. <br />
+이 게임은 여러 사람이 둥글게 앉아서 숫자를 하나씩 차례대로 말하는 게임인데, 규칙은 다음과 같다.</p>
+
+<ol>
+  <li>숫자를 0부터 시작해서 차례대로 말한다. 첫 번째 사람은 0, 두 번째 사람은 1, … 열 번째 사람은 9를 말한다.</li>
+  <li>10 이상의 숫자부터는 한 자리씩 끊어서 말한다. 즉 열한 번째 사람은 10의 첫 자리인 1, 열두 번째 사람은 둘째 자리인 0을 말한다.</li>
+</ol>
+
+<p>이렇게 게임을 진행할 경우,<br />
+<code class="highlighter-rouge">0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 0, 1, 1, 1, 2, 1, 3, 1, 4, …</code><br />
+순으로 숫자를 말하면 된다.</p>
+
+<p>한편 코딩 동아리 일원들은 컴퓨터를 다루는 사람답게 이진수로 이 게임을 진행하기도 하는데, 이 경우에는<br />
+<code class="highlighter-rouge">0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, …</code><br />
+순으로 숫자를 말하면 된다.</p>
+
+<p>이진수로 진행하는 게임에 익숙해져 질려가던 사람들은 좀 더 난이도를 높이기 위해 <br />
+이진법에서 십육진법까지 모든 진법으로 게임을 진행해보기로 했다. <br />
+숫자 게임이 익숙하지 않은 튜브는 게임에 져서 벌칙을 받는 굴욕을 피하기 위해, <br />
+자신이 말해야 하는 숫자를 스마트폰에 미리 출력해주는 프로그램을 만들려고 한다.</p>
+
+<p>튜브의 프로그램을 구현하라.</p>
+
+<p><strong>입력 형식</strong></p>
+
+<p>진법 n, 미리 구할 숫자의 갯수 t, 게임에 참가하는 인원 m, 튜브의 순서 p 가 주어진다.</p>
+
+<ul>
+  <li>2 ≦ n ≦ 16</li>
+  <li>0 ＜ t ≦ 1000</li>
+  <li>2 ≦ m ≦ 100</li>
+  <li>1 ≦ p ≦ m</li>
+</ul>
+
+<p><strong>출력 형식</strong>
+튜브가 말해야 하는 숫자 t개를 공백 없이 차례대로 나타낸 문자열.   <br />
+단, 10~15는 각각 대문자 A~F로 출력한다.</p>
+
+<p><strong>입출력 예제</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">n</th>
+      <th style="text-align: center">t</th>
+      <th style="text-align: center">m</th>
+      <th style="text-align: center">p</th>
+      <th style="text-align: center">result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">“0111”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">16</td>
+      <td style="text-align: center">16</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">“02468ACE11111111”</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">16</td>
+      <td style="text-align: center">16</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">“13579BDF01234567”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="answer">Answer</h1>
+<p>: N 진수를 구하는것만 해결한다면, 어렵지 않게 해결할 수 있는 문제다.<br />
+처음에는 2,8,10,16 의 기본적인 진수만 고려했는데, <br />
+문제를 다시 읽어보니 2부터 16까지의 진수가 나올 수 있다는 것을 알았다.<br />
+즉, 9진수, 13진수 등과 같은 경우도 생길 수 있다는 뜻이다.</p>
+
+<p>직접 구하기 위해서, 다음과 같이 작성하였다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="kd">static</span> <span class="kd">private</span> <span class="nc">String</span><span class="o">[]</span> <span class="no">BASE</span> <span class="o">=</span> <span class="o">{</span><span class="s">"0"</span><span class="o">,</span><span class="s">"1"</span><span class="o">,</span><span class="s">"2"</span><span class="o">,</span><span class="s">"3"</span><span class="o">,</span><span class="s">"4"</span><span class="o">,</span><span class="s">"5"</span><span class="o">,</span><span class="s">"6"</span><span class="o">,</span><span class="s">"7"</span><span class="o">,</span><span class="s">"8"</span><span class="o">,</span><span class="s">"9"</span><span class="o">,</span><span class="s">"A"</span><span class="o">,</span><span class="s">"B"</span><span class="o">,</span><span class="s">"C"</span><span class="o">,</span><span class="s">"D"</span><span class="o">,</span><span class="s">"E"</span><span class="o">,</span><span class="s">"F"</span><span class="o">};</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">getNumberString</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">();</span>
+
+    <span class="k">do</span> <span class="o">{</span>
+        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="no">BASE</span><span class="o">[</span><span class="n">num</span><span class="o">%</span><span class="n">n</span><span class="o">]);</span>
+        <span class="n">num</span> <span class="o">/=</span> <span class="n">n</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">num</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">);</span>
+
+    <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">reverse</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+<p>0부터 F까지의 숫자를 구해놓고, num이 0 이 아닐때까지 해당 진수의 값을 구하는 방법이다.</p>
+
+<p>즉, 가령 16진수가 조건으로 들어왔고, 10진수로 <code class="highlighter-rouge">10</code> 이라는 숫자가 들어왔다면,<br />
+10%16 = 10 이므로, “A”가 StringBuilder에 append 된다.</p>
+
+<p>만약 31 이라는 숫자가 들어왔다면, <br />
+31 % 16 =  “F” <em>(append)</em> <br />
+31 / 16 = 1 <br />
+1 % 16 = “1” <em>(append)</em><br />
+1 / 16 = 0 <em>(break)</em></p>
+
+<p>StringBuilder(“F1”).reverse().toString = “1F”</p>
+
+<p>가 된다.</p>
+
+<p>이 때, <strong>num이 0부터 시작</strong>하므로 <br />
+while loop 가 아닌 <strong>do while loop</strong> 를 사용하였다.</p>
+
+<p>2~16 진수에 대한 값을 구할 수 있다면, 나머지는 간단하다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">programmers</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">p17687</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="kd">static</span> <span class="kd">private</span> <span class="nc">String</span><span class="o">[]</span> <span class="no">BASE</span> <span class="o">=</span> <span class="o">{</span><span class="s">"0"</span><span class="o">,</span><span class="s">"1"</span><span class="o">,</span><span class="s">"2"</span><span class="o">,</span><span class="s">"3"</span><span class="o">,</span><span class="s">"4"</span><span class="o">,</span><span class="s">"5"</span><span class="o">,</span><span class="s">"6"</span><span class="o">,</span><span class="s">"7"</span><span class="o">,</span><span class="s">"8"</span><span class="o">,</span><span class="s">"9"</span><span class="o">,</span><span class="s">"A"</span><span class="o">,</span><span class="s">"B"</span><span class="o">,</span><span class="s">"C"</span><span class="o">,</span><span class="s">"D"</span><span class="o">,</span><span class="s">"E"</span><span class="o">,</span><span class="s">"F"</span><span class="o">};</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">16</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">16</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="nc">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">solution</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">t</span><span class="o">,</span> <span class="n">m</span><span class="o">,</span> <span class="n">p</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">solution</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">t</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">();</span>
+        
+        <span class="c1">// T*M = 튜브가 말해야 하는 숫자 T 개 * 게임에 참가하는 인원 M 명</span>
+        <span class="c1">// 자릿수가 두 개 이상 넘어가면 사용하지 않는 영역이 생기지만,</span>
+        <span class="c1">// 어쨌든 부족할 일은 없다.</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">t</span><span class="o">*</span><span class="n">m</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> 
+            <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">getNumberString</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">i</span><span class="o">));</span>
+        <span class="o">}</span>
+
+
+
+        <span class="nc">StringBuilder</span> <span class="n">tube</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">sb</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">tube</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">==</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">m</span> <span class="o">==</span> <span class="o">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="o">))</span> <span class="o">{</span> <span class="c1">// p가 1부터 시작하므로 p-1로 0으로 맞춰줌.</span>
+                <span class="n">tube</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">tube</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">getNumberString</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">();</span>
+
+        <span class="k">do</span> <span class="o">{</span>
+            <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="no">BASE</span><span class="o">[</span><span class="n">num</span><span class="o">%</span><span class="n">n</span><span class="o">]);</span>
+            <span class="n">num</span> <span class="o">/=</span> <span class="n">n</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">num</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">reverse</span><span class="o">().</span><span class="na">toString</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</article>
+
+
+
+<section class="tags">
+  <strong>Tags:</strong> <a href="/tag/programmers">programmers</a>
+</section>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/problem-solving/problem_solving_10">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 백준[No.17144] - 미세먼지 안녕! ( Java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/java/all_of_string_in_java">
+					<span class="page-number"># (Java) 추석맞이 String 종합선물세트</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/problem-solving/problem_solving_11',
+    'title': '# 프로그래머스[Lv.2] N진수 게임( Java )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

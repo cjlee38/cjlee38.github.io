@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 만자로 기본 설정</title>
+  <meta name="description" content="1. 한글 설정리눅스에는 여러가지 한글 입력기가 있지만, 대체로 많이 알려진 것은 ibus와 uim인듯 하다. 우분투를 처음 깔았었을 당시만 하더라도 뭣도 모르고 두개를 동시에 다 깔았고, ibus로 한글입력을 했었지만, 이번에 다시 한번 찾아보니 대체로 uim이 오류가 적다고 해...">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="1. 한글 설정리눅스에는 여러가지 한글 입력기가 있지만, 대체로 많이 알려진 것은 ibus와 uim인듯 하다. 우분투를 처음 깔았었을 당시만 하더라도 뭣도 모르고 두개를 동시에 다 깔았고, ibus로 한글입력을 했었지만, 이번에 다시 한번 찾아보니 대체로 uim이 오류가 적다고 해..." />
+  <meta property="og:url" content="https://cjlee38.github.io/linux/manjaro_linux_settings">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 만자로 기본 설정" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 만자로 기본 설정">
+  <meta name="twitter:description" content="1. 한글 설정리눅스에는 여러가지 한글 입력기가 있지만, 대체로 많이 알려진 것은 ibus와 uim인듯 하다. 우분투를 처음 깔았었을 당시만 하더라도 뭣도 모르고 두개를 동시에 다 깔았고, ibus로 한글입력을 했었지만, 이번에 다시 한번 찾아보니 대체로 uim이 오류가 적다고 해...">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/logo.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/linux/manjaro_linux_settings">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/linux/manjaro_linux_settings">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title"># 만자로 기본 설정</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">March 9, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/linux">Linux</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="1-한글-설정">1. 한글 설정</h1>
+<p>리눅스에는 여러가지 한글 입력기가 있지만, 대체로 많이 알려진 것은 ibus와 uim인듯 하다. 우분투를 처음 깔았었을 당시만 하더라도 뭣도 모르고 두개를 동시에 다 깔았고, ibus로 한글입력을 했었지만, 이번에 다시 한번 찾아보니 대체로 uim이 오류가 적다고 해서, uim으로 설치했다.</p>
+
+<p><img src="/assets/images/2020-08-27-05-34-02_2020-08-27-linux_1.md.png" alt="1" class="alignCenter" /></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo pacman -S uim
+</code></pre></div></div>
+
+<p>명령어를 통해서 uim을 설치한 뒤에, vim으로 .xprofile을 다음과 같이 수정하였다. ( xprofile을 처음 열어보는 거라면, 아무 것도 없어서 ‘내가 잘못열은건가?’ 할 수도 있다. 사실, “수정”이라는 단어가 아니라 “생성”으로 봐도 무방하다. )</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vim ~/.xprofile
+
+export GTK_IM_MODULE=uim
+export QT_IM_MODULE=uim
+uim-xim &amp;
+export XMODIFIERS=@im=uim
+</code></pre></div></div>
+
+<p>그리고, 아래의 명령어로 설정창을 열어준 뒤에, 다음 사진들과 같이 세팅을 해주고 재부팅을 하면, 끝이다. 간단하다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ uim-pref-gtk
+</code></pre></div></div>
+<p><img src="/assets/images/2020-08-27-05-39-27_2020-08-27-linux_1.md.png" alt="2" class="alignCenter" /><br />
+<img src="/assets/images/2020-08-27-05-39-51_2020-08-27-linux_1.md.png" alt="3" class="alignCenter" /><br />
+<img src="/assets/images/2020-08-27-05-40-07_2020-08-27-linux_1.md.png" alt="4" class="alignCenter" /></p>
+
+<p>저번에 우분투를 썼을 당시에, 한글 키 입력에 고생을 좀 많이해서, 한영변환을 컨트롤+스페이스로 하는것에 익숙해져있어서 딱히 수정하지 않았는데 (이번에도 또 골머리 아플 것 같아서..)</p>
+
+<p>만약 이에 익숙해있지 않은 사람이라면, 다음을 테스트해보면 좋을 것 같다. 잘 되는지는 안해봐서 모르겠다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vim ~/.xprofile
+
+xmodmap -e 'remove mod1 = Alt_R'
+xmodmap -e 'keycode 108 = Hangul'
+xmodmap -e 'remove control = Control_R'
+xmodmap -e 'keycode 105 = Hangul_Hanja'
+
+:wq
+</code></pre></div></div>
+
+<p>그리고 벼루 키 바인딩 1에서 벼루on, off를 기존에 사용하던 한글 버튼으로 grab해주면 된다.</p>
+
+<h1 id="2-터치패드-제스처">2. 터치패드 제스처</h1>
+<p>아무래도 랩탑을 사용하다 보니, 터치패드+마우스를 동시에 사용하는데 적응 되어있었고, 또 윈도우에서도 맥 못지않게 여러손가락으로 터치패드를 사용하도록 제공해줘서 편리하게 사용했는데, 리눅스에서는 이런 부분이 좀 부족하다.</p>
+
+<p><a href="https://github.com/bulletmark/libinput-gestures/blob/master/README.md">libinput-gestures</a> 라는 녀석이 멀티터치 제스쳐를 제공해준다고 한다.</p>
+
+<p>아주 친절하게 설치 방법을 알려주므로, 고대로 따라하면 된다. 이거보다 더 쉽게 설명하기는 어려울 듯</p>
+
+<h1 id="3-카카오톡">3. 카카오톡</h1>
+<p>사실 카카오톡이 우분투를 메인os로 사용하다가 버리게 된 가장 큰 이유일 것이다. 걸핏하면 죽어버리고, 안되는 것도 많고.. 그렇다고 리눅스를 버릴지언정 카카오톡을 버릴순 없으니, 이번에 다시 한번 깔아보았다. 문제가 생기는건 여전하지만;</p>
+
+<p>일단 기본적으로 카카오톡은 리눅스를 지원하지 않는다. 해줄게요~ 라는 말이 나온지가 약 2년전인거같은데, 아직도 안해주는거보니까 그냥 말만 해놓고…. 아무튼, 그래서 wine이라는 녀석이 필요한데 얘는 “리눅스에서 윈도우 프로그램을 실행하게 해주는 놈”이라고 생각하면 된다. 물론 완벽하게 호환이 되지는 않는다.</p>
+
+<p>아무튼, 그래서 설치 방법은</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+$ sudo pacman -S wine winetricks cabextract
+$ WINEARCH=win32 WINEPREFIX=~/.wine wine wineboot
+$ wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+$ chmod 777 winetricks
+$ winetricks
+-&gt; Select the default wineprefixaa 체크
+-&gt; Install a Windows DLL or component 체크
+-&gt; gdiplus, msxml6, riched30, wmp9 체크한 뒤에 설치 (찾기가 상당히 귀찮다)
+
+</code></pre></div></div>
+
+<p>이렇게까지 마치고 난 뒤에, 카카오톡 홈페이지에 가서 윈도우용 설치파일을 다운받는다.</p>
+
+<p>설치된 경로로 이동한 뒤에, 터미널에서</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wine KakaoTalk_Setup.exe
+
+</code></pre></div></div>
+
+<p>를 하면 익숙한 설치 절차가 진행된다.</p>
+
+<p>그런데, 나처럼 영문판을 기본으로 쓰고있다면 한글이 이상하게 깨진다던지, 혹은 한글 자체는 멀쩡하게 보이는데 한글입력기가 제대로 먹지 않는다. 이럴 때에는</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ~/.local/share/applications/wine/Programs/KakaoTalk
+$ vim KakaoTalk.desktop
+</code></pre></div></div>
+
+<p>그리고 굵은 글씨로 표시된 부분을 대충 집어넣어주자.</p>
+
+<p>[Desktop Entry]
+Name=KakaoTalk
+Exec=env WINEPREFIX=”/home/cjlee/.wine” LANG=”ko_KR.UTF-8” wine C:\\windows\\command\\start.exe /Unix /home/cjlee/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/KakaoTalk/KakaoTalk.lnk
+Type=Application
+StartupNotify=true
+Path=/home/cjlee/.wine/dosdevices/c:/Program Files/Kakao/KakaoTalk
+Icon=12CF_KakaoTalk.0
+StartupWMClass=kakaotalk.exe</p>
+
+<p>이렇게하면 애지간하면 잘 될것으로 보인다.</p>
+
+<p>근데, 문제는 와인 업데이트하고나니까 갑자기 한글이 안된다… 한숨이 절로 나오더라.</p>
+
+<p>그리고 아직 많이 써보지 못했지만, 두 가지의 크리티컬한 문제점을 발견했는데,</p>
+
+<p>첫 번째는, 알림이 오면 카톡이 죽어버린다. 카톡에서 알림을 꺼놨는데도 자꾸 죽어버리더라</p>
+
+<p>두 번째는, 사진 전송이 안된다; 파일 전송까지는 괜찮은데 사진을 전송할 수가 없다.</p>
+
+<p>두 번째 문제야 어떻게 하더라도, 첫 번째 문제가 아주 골머리가 아파서, 아직은 미뤄두고 있는 상태이긴 한데, 시도해볼만한 것으로는 1. PlayOnLinux를 깔고 그 위에 카카오톡을 설치하는 것, 2. (많이 비효율적이지만) 가상머신을 돌리는것.</p>
+
+<p>사실 가상머신을 띄워놓으면 왠만한 윈도우 프로그램을 사용하는데에는 문제가 없겠지만, 그럼 리눅스를 쓰는 의미가 퇴색되는 것 같아서 최후의 보루로 미뤄놓고 있는 상태이긴 한데, 지금같은 흐름이라면… 많이 좋지는 않다.</p>
+
+<h1 id="4-오피스">4. 오피스</h1>
+<p>사실 wine 을 이용해서 오피스를 설치하려고 했는데, 설치방법 찾아보기도 귀찮고 해서, 나름 마소 오피스와 잘 호환이 된다는 오픈오피스를 사용해보려고 한다. 물론 다시 학기가 시작되고, 여러가지 문서작업이나 pdf에 주석다는 짓거리를 하다보면 언제 또 욕나오는 상황에 맞닥드릴지는 모르겠지만 ..</p>
+
+<h1 id="5-배터리-관리">5. 배터리 관리</h1>
+<p>정신없이 이것저것 설치하다보면, 어느새 박살나있는 배터리를 보고 “원래 이랬나?” 싶은 숫자가 눈앞에 나타나있다. 리눅스 자체에서 배터리 관리에 크게 신경을 쓰지 않는다니, 뭐..( DIY 정신이 너무 많이 깃들어있는거 아닌가 싶기도 한데)</p>
+
+<p>아무튼, 자세히 잘 알지도 못하고, 알고 싶지도 않아서, 대충 tlp라는 놈을 설치했다</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo pacman -S tlp
+$ sudo tlp start
+</code></pre></div></div>
+
+<p>한 번 실행해놓으면 다음부터 자동으로 실행된다니, 잊어버리고 살아도 되는 듯 하다.</p>
+
+<p>이정도로 대충 기본적인 세팅 정도는 해두었는데, 쓰면서 얼마나 많은 윈도우 프로그램과 마주하고, 또 와인을 얼마나 많이 파악해둬야 할지 감이 안오니, 이건 뭐 가상머신을 진짜 띄워야 하나.. 물론 아직 써보지는 않았지만, 각종 은행 혹은 정부기관의 공인인증서나, 혹은 여러가지 아주 진드기같은 보안 프로그램들을 설치할 상상을 하니 벌써부터 행복해서 죽을 것 같다.</p>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/linux/how_to_install_manjaro_inux">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 만자로 리눅스 설치</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/linux/tablet_as_dual_monitor">
+					<span class="page-number"># 다시 우분투로, 그리고 태블릿을 듀얼 모니터로 활용하기</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/linux/manjaro_linux_settings',
+    'title': '# 만자로 기본 설정'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

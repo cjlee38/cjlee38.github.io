@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 백준[No.1748] - 수 이어 쓰기 1 ( Python )</title>
+  <meta name="description" content="문제 링크">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="문제 링크" />
+  <meta property="og:url" content="https://cjlee38.github.io/problem-solving/problem_solving_3">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 백준[No.1748] - 수 이어 쓰기 1 ( Python )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 백준[No.1748] - 수 이어 쓰기 1 ( Python )">
+  <meta name="twitter:description" content="문제 링크">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/problem-solving/problem_solving_3">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/problem-solving/problem_solving_3">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 백준[No.1748] - 수 이어 쓰기 1 ( Python )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">August 23, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/problem-solving">Problem-solving</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p><a href="https://www.acmicpc.net/problem/1748">문제 링크</a></p>
+
+<h1 id="problem">PROBLEM</h1>
+
+<p><img src="/assets/images/2020-08-27-09-21-28_2020-08-27-ps_3.md.png" alt="1" class="alignCenter" /></p>
+<h1 id="solve">SOLVE</h1>
+
+<p>: 이번 문제는 이해 하기에 그리 어렵지 않으므로, 바로 해결 방법으로 진행한다.</p>
+
+<h3 id="1-첫-번째-방법--feat-out-of-memory-"> 1) 첫 번째 방법 ( feat. Out of Memory )</h3>
+
+<p>: 첫 번째 잘못된 접근은, 모든 숫자를 다 구해서 String으로 캐스팅해서 리스트에 담은 뒤, 이를 모두 concatenate 하는 것이다. 문제를 그대로 이해하고 그대로 해결하고자 하는 것이다. </p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">numbers</span><span class="p">)))</span>
+</code></pre></div></div>
+
+<p>그러나, 입력의 최대 값이 1억이므로, 이를 모두 이어 붙이게 되면 굉~장히 긴 String이 등장할 것이다.</p>
+
+<hr />
+
+<blockquote>
+  <p>여담으로, python의 String 크기에 대해서 구글링 해보니, 메모리 상의 String의 크기는 “Overhead + 실제 String”으로 구성되고, 직접 확인해보니 Overhead는 Python version 3.7.4 기준 49로 나타났다. 실제 String이 차지하는 bytes의 크기는 character의 종류에 따라 다르고 ( 가령, 알파벳은 1, 한자는 2, 이모지는 4를 차지한다고 한다. ) 숫자의 문자열의 크기는 1 임을 확인할 수 있었다. </p>
+
+  <p>입력이 1억일 때의 숫자의 길이는 788888898이고, 따라서, 788888898 + 49 = 788888947 약 752메가로 나타났다. 간단한 문제를 해결하기엔 너무 큰 메모리 소모다.</p>
+
+  <p>이에 더해, Python의 String은 immutable 객체다. 1억 번의 메모리를 할당하는 것은 잠깐만 생각해도 비효율적으로 느껴진다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="2-두-번째-방법--feat-time-complexity-"> 2) 두 번째 방법 ( feat. Time Complexity )</h3>
+
+<p>: 두 번째 잘못 된 접근법은, 곧바로 하나하나 계산해서 더하는 것이다.</p>
+
+<p>예제의 입력이 120이므로, 1부터 120까지 loop를 돌면서</p>
+
+<p>‘1의 자릿수의 길이(1)’ + ‘2의 자릿수의 길이(1)’ + … + ‘10의 자릿수의 길이(2)’ + ‘11의 자릿수의 길이(2)’ + … + ‘119의 자릿수의 길이(3)’ + ‘120의 자릿수의 길이(3)’ = 252</p>
+
+<p>를 구하게 되면, 아주 간단해 보인다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>But, 역시 입력의 최대 값은 1억이다. 따라서, 이를 모두 계산하게 되면 매우 긴 시간이 걸릴 것은 자명하다. </p>
+
+<p>이 역시 한번 실제로 테스트를 해보니, <strong>1억번 연산하는데 약 50초 가량</strong>이 걸렸다. </p>
+
+<h3 id="3-세-번째-방법"> 3) 세 번째 방법 </h3>
+
+<p>: 이 문제의 아주 자명하면서도 간단한 사실은 바로 <strong>“특정 자릿수의 길이”를 갖고 있는 숫자의 범위를 파악하기가 매우 쉽다</strong>는 것이다.</p>
+
+<p> 1 - 9 까지의 숫자의 자릿수의 길이는 1이다.</p>
+
+<p> 10 - 99 까지의 숫자의 자릿수의 길이는 2이다.</p>
+
+<p> 100 - 999 까지의 숫자의 자릿수의 길이는 3이다.</p>
+
+<p>따라서, 다음과 같이 해결하면 된다.</p>
+
+<ul>
+  <li>입력값의 ‘최대 자릿수의 길이 미만’의 ‘자릿수의 길이’를 계산할 때는, 최종 값에 <strong>‘해당 자릿수의 길이 * 해당 자릿수의 개수’</strong>를 더해준다.</li>
+  <li>‘최대 자릿수의 길이’를 계산할 때에는, <strong>‘최대 자릿수의 길이 * 나머지 자릿수의 개수’</strong>를 더해준다.</li>
+</ul>
+
+<p>말로 설명하니 무슨 말인지 헷갈린다. 문제의 예시를 통해 풀어서 설명하면 다음과 같다.</p>
+
+<ul>
+  <li>“최대 자릿수의 길이”는 3이다.</li>
+  <li>따라서, 그 미만의 길이일 때에는 ( 즉, 1, 2 일 때에는 각 자릿수의 개수인 9와 90을 각각 곱한 뒤 더해준다 ) </li>
+  <li>따라서, 처음 1부터 9까지를 더하면, 1(길이) * 9(개수)이므로,  result는 9다.</li>
+  <li>10부터 99까지를 더하면, 2(길이) * 90(개수) 인 180이 더해지므로, result는 189다.</li>
+  <li>마지막으로 100부터 120까지를 더하면, 3(길이) * 21(개수) 인 63이 더해지므로, result는 252이다.</li>
+</ul>
+
+<p>이를 코드로 구현하면 다음과 같다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">nines</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="s">'9'</span><span class="o">+</span><span class="s">'0'</span><span class="o">*</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">N</span><span class="p">)))]</span> <span class="c1"># if 120 --&gt; [9, 90, 900]
+</span><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nines</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="n">nines</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span> <span class="c1"># 마지막 자릿수를 계산할 때
+</span>        <span class="n">result</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">nines</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span> <span class="c1"># result += 3 * 21
+</span>    <span class="k">else</span> <span class="p">:</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="o">*</span><span class="n">s</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>252번의 iteration이 발생하는 첫 번째 방법이나, 두 번째 방법과 달리, <strong>단 3번의 iteration</strong>만으로 답을 구할 수 있다. 1<strong>억까지 계산하더라도 9번의 연산</strong>으로 끝낼 수 있다.</p>
+
+<h1 id="마치며">마치며</h1>
+
+<p>아직도 부족한 점이 느껴진다. 머릿속으로 세 번째 방법에 대해서 떠올리고 설계하는 데에는 오래 걸리지 않았지만, 이를 코드로 구현함에 있어서 손가락이 자꾸 멈추니 스스로가 답답하게 느껴진다.</p>
+
+</article>
+
+
+
+<section class="tags">
+  <strong>Tags:</strong> <a href="/tag/baekjoon">baekjoon</a>
+</section>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/problem-solving/problem_solving_2">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 백준[No.2477] - 참외밭 ( python )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/problem-solving/problem_solving_4">
+					<span class="page-number"># 프로그래머스[Lv.2] - 올바른 괄호 ( java )</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/problem-solving/problem_solving_3',
+    'title': '# 백준[No.1748] - 수 이어 쓰기 1 ( Python )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

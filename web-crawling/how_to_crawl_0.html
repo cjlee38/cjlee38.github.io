@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># Step by Step, Web crawling 학습하기 (0) - 이것 만큼은 알고 가자</title>
+  <meta name="description" content="0. 웹 크롤링이란?: 내가 보고 있는 웹페이지는, HTML, CSS, Javascript에 의해서 이리저리 요리된 다음, 내 웹브라우저에서 보기 좋게 플레이팅 되서 나온다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 웹 크롤링이란?: 내가 보고 있는 웹페이지는, HTML, CSS, Javascript에 의해서 이리저리 요리된 다음, 내 웹브라우저에서 보기 좋게 플레이팅 되서 나온다." />
+  <meta property="og:url" content="https://cjlee38.github.io/web-crawling/how_to_crawl_0">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# Step by Step, Web crawling 학습하기 (0) - 이것 만큼은 알고 가자" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/web-crawling.jpg" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# Step by Step, Web crawling 학습하기 (0) - 이것 만큼은 알고 가자">
+  <meta name="twitter:description" content="0. 웹 크롤링이란?: 내가 보고 있는 웹페이지는, HTML, CSS, Javascript에 의해서 이리저리 요리된 다음, 내 웹브라우저에서 보기 좋게 플레이팅 되서 나온다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/web-crawling.jpg">
+  <meta name="twitter:url" content="https://cjlee38.github.io/web-crawling/how_to_crawl_0">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/web-crawling/how_to_crawl_0">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/web-crawling.jpg);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># Step by Step, Web crawling 학습하기 (0) - 이것 만큼은 알고 가자</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 3, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/web-crawling">Web-crawling</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-웹-크롤링이란">0. 웹 크롤링이란?</h1>
+<p>: 내가 보고 있는 웹페이지는, HTML, CSS, Javascript에 의해서 이리저리 요리된 다음, 내 웹브라우저에서 보기 좋게 플레이팅 되서 나온다.</p>
+
+<p>이렇게 요리된 결과물을, 내 컴퓨터로 갖고와서, 내 입맛대로 다시 요리한 다음, 원하는대로 활용하는 것이 우리가 알고 있는 웹 크롤링이다.</p>
+
+<p>그러나, <strong>“엄밀하게는” 웹 크롤링은 위 내용과는 조금 다르다.</strong> 이는 2번에서 다시 설명하겠다.</p>
+
+<h1 id="1-크롤링-합법인가">1. 크롤링, 합법인가?</h1>
+<p>: 웹 사이트를 무단으로 크롤링하는 것은 불법이다. <a href="http://news.bizwatch.co.kr/article/mobile/2017/09/27/0023/prev_ver">이 뉴스</a>를 보면, ‘사람인’ 이 ‘잡코리아’의 채용공고를 무단으로 크롤링하여 게재하였다가, 잡코리아로부터 소송을 당한 판례가 나타나 있다.</p>
+
+<p>그렇다면, 모든 크롤링은 불법인가? 그렇지만은 않다. <a href="http://www.ddaily.co.kr/news/article/?no=151940">이 뉴스</a> 에서는, 다음과 같이 이야기 하고 있다.</p>
+
+<hr />
+
+<blockquote>
+  <p>모든 크롤링 행위가 위법이라고 단정하기는 곤란하며, 합법적인 크롤링과 불법적인 크롤링으로 구별하는 것이 바람직하다. <strong>합법적인 크롤링은 사이트 운영자의 의사에 반하지 않은 크롤링</strong>을 의미하고, 반대로 불법적인 크롤링은 사이트 운영자의 의사에 반하거나 또는 실정법을 어긴 크롤링을 의미한다.</p>
+
+  <p>대표적으로 웹사이트 운영자가 <strong>웹서버의 홈디렉토리에 위치한 robots.txt 파일</strong>에 포괄적인 크롤링 금지 또는 특정 검색엔진의 크롤링 금지, 특정 디렉토리에 대한 크롤링 금지 등을 표시하였음에도 불구하고, 그 표시를 무시하고 크롤링을 하였다면 이는 사이트 운영자의 의사에 반한 크롤링에 해당하는 것이다.</p>
+</blockquote>
+
+<hr />
+
+<p>가령, 네이버의 robots.txt를 보자 (https://www.naver.com/robots.txt)</p>
+
+<blockquote>
+  <p>User-agent: *<br />
+Disallow: /<br />
+Allow : /$</p>
+</blockquote>
+
+<p>모든 user-agent에 대해서, 모든 사이트는 금지하고, 첫 페이지만 허용한다는 의미를 갖는다. 자세한 내용은 <a href="http://www.robotstxt.org/">공식 사이트</a>를 참고하자.</p>
+
+<p>웬만한 대형 웹사이트는 위와 같은 robots.txt를 갖고 있으므로, 크롤링을 하기 전에 이를 확인해보는 것이 좋다.</p>
+
+<h1 id="2-내가-만든-프로그램-web-crawler-인가">2. 내가 만든 프로그램, Web Crawler 인가?</h1>
+
+<p>: 그렇지 않다. “Crawling을 하는 프로그램이니, Cralwer 아닌가요?” 할 수 있겠지만, 엄연히 구분하자면, 내가 만든 프로그램은 Crawler가 아니다.</p>
+
+<p>다음의 논문은, 웹 크롤링에 대해서 다음과 같이 정의하고 있다.</p>
+
+<hr />
+
+<blockquote>
+  <p>웹 크롤링(Web Crawling)이란 방대한 양의 웹페이지를 방문하고 해당 웹 페이지가 보유하고 있는 정보나 데이터 등을 자동적으로 수집하는 프로그램으로서 워싱턴 대학교의 브라이언 핑커튼(Brian Pinkerton)에 의해 개발되었다. 웹 크롤링의 수행 과정은 크게 2가지 단계로 나타나는데, 첫 번째로 웹 사이트의 주소와 그 주소에 대한 HTML 태그 전체를 불러오는 크롤링(Crawling) 단계와 두 번째로 크롤링 된 HTML 태그 내에서 원하는 데이터를 추출하는 작업인 스크래핑(Scraping) 단계이다.</p>
+</blockquote>
+
+<blockquote class="caption">
+  <p>Source : 김성우, 강동현. (2019). 실제 환경과 가상머신 환경에서의 웹 크롤링 성능 비교. 한국정보과학회 학술발표논문집, (), 2067-2069.</p>
+</blockquote>
+
+<hr />
+
+<p>구글과 네이버같이 검색엔진을 보유하고 있는 웹사이트들은, 저마다의 “Crawler”를 갖고 있다. 이 “Crawler”는, 각종 웹사이트를 돌면서, 그 내부에 있는 URL을 찾아가면서, 계속해서 URL과 그 내용을 저장한다. 그리고 이렇게 저장된 내용을 우리가 “검색” 했을 때, 잘 정리정돈해서 보여주는 것이고, 그 과정 속에서 SEO 전략 등이 고안되는 것이다.</p>
+
+<hr />
+<blockquote>
+  <p>Note. 인터넷을 많이 사용해본 사람이라면, 이런 경험을 해본 적이 있을 것이다.
+ 예를 들어, 스타크래프트 라는 키워드로 검색을 했는데, 어떤 블로그에서 <br />
+“스타크래프트 ~ 버전 … 다운로드 만두를 먹고싶은 사람이 … 어제 선풍기를 틀고 잤더니 감기에 걸렸다”
+이런 정신나간 듯한 글이 여러 개가 작성되어 있는 것이다. 이런 것들이, 예~전 웹 크롤러의 SEO 알고리즘에 대응하여, 단순 조회수, 방문수를 늘리기 위하여 작성된 글이다.</p>
+</blockquote>
+
+<hr />
+
+<p>따라서, 우리가 만든 프로그램은 Crawler 라고 볼 수 없다. 단순히 http get request를 통해 얻은 결과물을 우리 입맛대로 조리할 뿐이다.</p>
+
+<p>좀 더 자세하게 알고 싶다면 <a href="https://velog.io/@mowinckel/%EC%9B%B9-%ED%81%AC%EB%A1%A4%EB%A7%81-I">여기</a>를 참고해보자. 약간의 비속어가 섞여 있긴 하지만, 내 개인적인 생각과 일맥상통한다.</p>
+
+<h1 id="3-따라서">3. 따라서</h1>
+<p>: 우리가 만들고자 하는 프로그램은, 정확히는 Crawler라고 보기는 어려우며, 단순히 “데이터를 수집하는 프로그램” 이라고 칭할 수 있겠다.</p>
+
+<p>따라서, Web crawling이라고 칭하고, 이에 대해서 작성하겠지만, 정확히는 단순 http request이다.</p>
+
+<p>또한, 이는 단발성으로 “과제”를 해결하는 용도로, 합법적인 선 내에서 수행하길 바라며, 이에 대한 법적인 책임은 본인에게 있다는 사실을 명심하자.</p>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/data-mining/association_rule_with_java">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># Java로 구현하는 연관규칙분석(Association Rule) ( feat. Apriori Algorithm )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/web-crawling/how_to_crawl_1">
+					<span class="page-number"># Step by Step, Web crawling 학습하기 (1) - OpenAPI 이용하기</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/web-crawling/how_to_crawl_0',
+    'title': '# Step by Step, Web crawling 학습하기 (0) - 이것 만큼은 알고 가자'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

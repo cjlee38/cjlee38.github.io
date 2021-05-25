@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># [Spring 학습 정리] Spring Framework 란?</title>
+  <meta name="description" content="What ?: 스프링, 정확히는 스프링 프레임워크란, 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크이다. 기존의 Java EE(Enterprise Edition)의 스펙을 구현한 EJB는 기술의 복잡도가 높아, 성능도 느리고 러닝커브도 높았다. 이를 ‘겨울’로 빗대서, 개발...">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="What ?: 스프링, 정확히는 스프링 프레임워크란, 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크이다. 기존의 Java EE(Enterprise Edition)의 스펙을 구현한 EJB는 기술의 복잡도가 높아, 성능도 느리고 러닝커브도 높았다. 이를 ‘겨울’로 빗대서, 개발..." />
+  <meta property="og:url" content="https://cjlee38.github.io/spring/what_is_spring">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# [Spring 학습 정리] Spring Framework 란?" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/spring.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# [Spring 학습 정리] Spring Framework 란?">
+  <meta name="twitter:description" content="What ?: 스프링, 정확히는 스프링 프레임워크란, 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크이다. 기존의 Java EE(Enterprise Edition)의 스펙을 구현한 EJB는 기술의 복잡도가 높아, 성능도 느리고 러닝커브도 높았다. 이를 ‘겨울’로 빗대서, 개발...">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/spring.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/spring/what_is_spring">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/spring/what_is_spring">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/spring.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># [Spring 학습 정리] Spring Framework 란?</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">November 11, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/spring">Spring</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="what-">What ?</h1>
+<p>: 스프링, 정확히는 스프링 프레임워크란, <strong>자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크</strong>이다. 기존의 Java EE(Enterprise Edition)의 스펙을 구현한 EJB는 기술의 복잡도가 높아, 성능도 느리고 러닝커브도 높았다. 이를 ‘겨울’로 빗대서, 개발자들의 ‘봄’이 도래했다는 의미로 스프링이라는 명칭을 갖게 되었다.</p>
+
+<p>그러나, 이렇게만 이야기하면, 겨우 특정 언어의 문법 정도나 갓 뗀 사람들에게는 어렵고 생소하게만 다가온다. 오픈소스? 애플리케이션? 프레임워크? 무슨 뜻일까? 하나씩 살펴보자.</p>
+
+<h2 id="1-오픈-소스">1) 오픈 소스</h2>
+
+<dl>
+  <dt><img src="/assets/images/2020-11-13-10-41-24_2020-11-13-what_is_spring.md.png" alt="" /></dt>
+  <dd>
+    <p>오픈 소스란, 어떤 소프트웨어 프로그램을 개발하는 과정에 있어서 필요한 소스 코드를 누구나 볼 수 있도록 공개하는 것을 의미한다. 즉, 내가 어떤 기가 막힌 프로그램을 개발했다고 해보자. 그 프로그램은 결국 내가 소스코드로 정성스럽게 한줄한줄 타이핑했을 것이다. 그리고 그 소스코드를, 다른 사람들이 <strong>누구나 볼 수 있도록</strong> <strong>공개</strong>하면, 이는 해당 프로그램(소프트웨어) 는 곧 오픈 소스 소프트웨어가 된다.</p>
+  </dd>
+</dl>
+
+<h2 id="2-애플리케이션">2) 애플리케이션</h2>
+
+<dl>
+  <dt><img src="/assets/images/2020-11-13-10-42-25_2020-11-13-what_is_spring.md.png" alt="" /></dt>
+  <dd>
+    <p>애플리케이션(이하, 앱) 이란, 흔히 모바일 앱을 생각해볼 수 있다. 우리가 사용하는 모바일 앱은, 안드로이드, 혹은 iOS 라는 모바일 운영체제 위에서 동작하며, 카카오톡과 같이 특정 목적을 위해 제작되었고, 또 사용된다. 그러나, 이는 모바일에만 국한되는 이야기는 아니다. 우리가 당장에 컴퓨터 사용하는 크롬과 같은 웹 브라우저, 코딩을 위해 사용하는 Intellij, Eclipse와 같은 IDE 들도 모두 앱이다. 웹 브라우저는 네트워크 통신을 이용한 웹이라는 것을 이용하기 위함이며, IDE는 한층 더 편리하고, 실수 없이 코딩을 할 수 있도록 제작된 <strong>응용 프로그램</strong>이다. 참고로, Windows, Linux와 같은 운영체제들은 응용 프로그램(앱)이 아닌, 시스템 프로그램에 속한다.</p>
+  </dd>
+</dl>
+
+<h2 id="3-프레임워크">3) 프레임워크</h2>
+<dl>
+  <dt><img src="/assets/images/2020-11-13-10-45-31_2020-11-13-what_is_spring.md.png" alt="" /></dt>
+  <dd>
+    <p>프레임워크란 개념은 라이브러리와 비교했을 때 자주 헷갈리는 개념이다.</p>
+  </dd>
+</dl>
+
+<p>먼저 라이브러리부터 이야기하자면, 가령 C언어에서 <code class="highlighter-rouge">#include &lt;stdio.h&gt;</code>, 혹은 파이썬에서 <code class="highlighter-rouge">import pandas</code> , 혹은 자바에서 <code class="highlighter-rouge">import java.util.*;</code> 이러한 코드를 작성해본 적이 있을 것이다. 이는 우리가 모두 어떤 라이브러리를 사용하겠다고 명시함을 의미한다.<br />
+생각해보자. 라이브러리란, 이름 그대로 <strong>도서관</strong>이라는 의미를 갖는다. 우리가 도서관에 가서 어떤 책을 읽는다는 것은, 누군가가 특정 지식에 대해서 잘 정리해놓은 것을 배우는것이다. 마찬가지로, 프로그래밍에서도 특정 분야에 대해서 누군가가 잘 만들어서 정리해놓은 것을, 쉽게 이용할 수 있도록 만들어 놓은 것이다. 즉, 한마디로 라이브러리는 <strong>“도구”</strong> 이다.</p>
+
+<p>반대로, 프레임워크란, <strong>뼈대</strong>를 의미한다. 즉, 기본적인 구조는 다 구성이 되어 있고, 그 안에서 내가 작업을 하는 것을 말한다. 이 또한, 안드로이드 프레임워크를 생각해볼 수 있다. 안드로이드 프로그래밍을 할 때에는 주로 자바, 혹은 코틀린이라는 언어를 사용한다. 이 언어를 가지고, 내가 안드로이드 앱을 만든다고 생각해보자. 만약 안드로이드 프레임워크 라는 개념이 없더라면, 앱을 만드는 과정이 얼마나 힘들까? 자그마한 버튼 하나를 만들기 위해서, 위치, 크기, 색깔 등을 직접 만들어줘야 할 것이고, 또 이 버튼이 클릭되었을 때 어떻게 동작할 것인지, 그리고 이것이 다른 요소들과 통신했을 때 <strong>모두 정상적으로 작동하는지</strong>에 대한 아~주 많은 노력이 필요할 것이다. 그러나, 안드로이드 프레임워크 안에서는, 누군가가 이미 잘 만들어서, 문제 없이 잘 동작하는 버튼이라는 개념이 있고, 우리는 이것이 클릭되었을 때 어떤 동작을 할 것인지에 대한, 특수 케이스만 고려하면 된다.</p>
+
+<p>이 두가지 개념을 다음과 같이 비교할 수 있다.</p>
+
+<p>가령, 우리가 <strong>나무의자를 만든다</strong>고 해보자.</p>
+
+<p>라이브러리와 프레임워크가 둘 다 없다면, 마치 어렸을 적 마인크래프트 게임을 하듯이, 처음부터 모든 것을 다 만들어야 한다. 나무의자를 만들 것이므로, 나무를 베어야 하는데, 그 나무를 베기 위해선 도끼라는 것이 필요하고, 도끼는 철로 만들어져있으니 철도 구해야하고, 철을 구하기 위해서 불도 필요하고 … 상상만해도, 얼마나 힘들지 눈에 선히 보인다.</p>
+
+<p>그러나, “도끼” 라는 라이브러리가 주어진다면 어떨까? 나무를 베는 정도는, 그리 어렵지 않을 것이다. 그리고 이를 잘 다듬기 위한, “톱” 이라는 라이브러리, 이렇게 조각 낸 나무를 잘 조립시키기 위한, “못과 망치” 라는 라이브러리 등을 활용하면, 비교적 수월하게 나무의자를 만들어낼 수 있을 것이다.</p>
+
+<p>프레임워크는, 마치 공방과 같다. 공방에 가면, 우리가 원하는 것들이 다 구비되어 있다. 입맛에 따라 나무를 가져와서, 필요하면 잘라내고, 조립함으로써 손쉽게 나무의자를 만들어낼 수 있다.</p>
+
+<hr />
+
+<p>즉, 스프링 프레임워크란, 우리가 자바로 어떤 <strong>소프트웨어를 제작하는데 있어서</strong> <strong>편리하게</strong> 만들어낼 수 있도록 도움을 주는 <strong>무료 공방</strong>인 셈이다.</p>
+
+<h1 id="why-">Why ?</h1>
+<p>: 그렇다면, 기존의 EJB 를 밀어내고 Spring이 대세로 자리잡게 된 이유는 무엇일까? 이는 스프링을 지탱하는 몇 가지 기술을 기반으로 한다.</p>
+
+<p><img src="/assets/images/2020-11-14-00-48-23_2020-11-11-what_is_spring.md.png" alt="" /></p>
+
+<p>스프링은, Dependency Injecton, Aspect Oriented Programming , 그리고 Portable service Abstraction을 뒷받침으로 개발자가 빠르고, 간단하면서도 생산성까지 잡아낼 수 있는 앱을 개발할 수 있도록 지원한다. 각 요소에 대해서는 나중에 자세히 다룰 예정이지만, 다음과 같이 간단하게 정리할 수 있겠다.</p>
+
+<h2 id="dependency-injection-di">Dependency Injection (DI)</h2>
+<p>: 흔히 IoC, Inversion of Control 이라고 표현되기도 한다. 객체지향 프로그래밍에서 중요시하는 요소 중 하나는, 느슨한 결합력이다. 객체끼리 강한 결합이 아닌 느슨한 결합 관계를 맺음으로써, 부품의 교체가 용이하도록 만드는 것이다. 그리고 이를 위해 Dependency Injection 이라는 방법이 사용되는데, 스프링에서는 이 DI 를 몇 가지 설정을 통해 알아서 지원해준다. 즉, 개발자들이 자연스럽게 객체지향적인 개발을 할 수 있도록, 다시 말해 비즈니스 로직에 집중할 수 있도록 도와준다.</p>
+
+<h2 id="aspect-oriented-programming">Aspect Oriented Programming</h2>
+<p>: 가령, 우리가 어떤 프로그램을 개발하는데 성공했는데, 이 프로그램의 성능을 측정하기 위해 모든 메소드의 속도를 측정해야 한다고 가정해보자. 메소드가 한 두개라면 괜찮겠지만, 100개, 1000개 라면 어떨까? 각 메소드마다 <code class="highlighter-rouge">System.CurrentTimeMillis();</code>를 작성할 수는 없는 노릇이다.</p>
+
+<p>즉, 여러 곳에서 사용되는 공통적인 코드를 모듈화함으로써, cross-concern(공통 관심사)를 비즈니스 로직과 분리해내고, 각 사항별로 따로 집중할 수 있도록 하는 기능을 스프링이 제공해준다.</p>
+
+<h2 id="portable-service-abstraction">Portable Service Abstraction</h2>
+<p>: 스프링은 다른 여러 모듈을 사용함에 있어서, 별도의 추상화 레이어를 사용한다. 대표적인 예시로는 JDBC가 있다. Java에서 DB로 곧바로 접근하는 것이 아닌, JDBC 라는 추상화를 이용함으로써, 그 뒤에서 DBMS가 오라클이던, MySQL이던 관계 없이, 공통된 방식으로 코드를 작성할 수 있다. 그리고 이를 일관성있게 제어할 수 있도록 한 것이 PSA 인 것이다.<br />
+현실로 비유하자면, 중국집에 가서 “짜장면 하나 주세요” 라고 했다고 해보자. 이 때, 주방장이 춘장을 얼마나 사용했든, 면을 직접 뽑았든 수타를 쳤든, 관계없이 짜장면이라는 결과를 얻을 수 있는 것과 같다.</p>
+
+<hr />
+
+<p>스프링이 웹개발을 기반으로 발전되어 오긴 했지만, 현재는 Java 라는 언어 위에서, 다양한 분야에서 지원하고 있으므로, 디 팩토인 스프링은 자바를 공부하는 사람이라면 반드시 공부해야 한다고 생각한다.</p>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li><a href="https://12bme.tistory.com/157">[스프링] 스프링이란 무엇인가?</a></li>
+  <li><a href="https://ko.wikipedia.org/wiki/%EC%8A%A4%ED%94%84%EB%A7%81_%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC"> wikipedia - 스프링 프레임워크</a></li>
+</ul>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/btb/ways_to_find_prime_number">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 소수(Prime Number)를 찾는 방법 ( feat. Java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/problem-solving/problem_solving_19">
+					<span class="page-number"># 프로그래머스[Lv.3] - 순위 ( Java )</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/spring/what_is_spring',
+    'title': '# [Spring 학습 정리] Spring Framework 란?'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

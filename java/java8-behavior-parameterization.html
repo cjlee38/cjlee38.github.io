@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># (Java8) 동작(≒메소드) 파라미터화 </title>
+  <meta name="description" content="  모던 자바 인 액션(라울-게이브리얼 우르마 저, 한빛미디어)을 기반으로 작성하였습니다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="  모던 자바 인 액션(라울-게이브리얼 우르마 저, 한빛미디어)을 기반으로 작성하였습니다." />
+  <meta property="og:url" content="https://cjlee38.github.io/java/java8-behavior-parameterization">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# (Java8) 동작(≒메소드) 파라미터화 " />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# (Java8) 동작(≒메소드) 파라미터화 ">
+  <meta name="twitter:description" content="  모던 자바 인 액션(라울-게이브리얼 우르마 저, 한빛미디어)을 기반으로 작성하였습니다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/java/java8-behavior-parameterization">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/java/java8-behavior-parameterization">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># (Java8) 동작(≒메소드) 파라미터화 </h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">December 21, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/java">Java</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <blockquote>
+  <p>모던 자바 인 액션(라울-게이브리얼 우르마 저, 한빛미디어)을 기반으로 작성하였습니다.</p>
+</blockquote>
+
+<h1 id="0-들어가며">0. 들어가며</h1>
+<p>: 스트림이나 람다 같은 프로그래밍 테크닉들을 사용하면서, “이게 어떻게 동작하지?” 라는 그 원리에 대해서는 전혀 생각을 해보지 못했었다. 모던 자바 인 액션을 보면서 이런 동작 원리에 대해서 새로운 시야가 트인 느낌이라, 각 내용을 내 입맛에 맞게 정리해보고자 한다. 그런 기념에서, 첫 번째 포스팅은 2장의 <strong>동작(동적,Dynamic이 아니다.) 파라미터화 코드 전달하기</strong> 이다.</p>
+
+<h1 id="1-예제">1. 예제</h1>
+<p>: 가령 예를들어서, 과일 재고 목록을 관리하는 애플리케이션이 있다고 해보자. 그리고, 처음에는 “녹색 사과를 모두 찾고 싶어요” 라고 요구사항이 들어왔다.</p>
+
+<h2 id="step1">step.1</h2>
+<p>이에 대한 메소드는, 지금까지는 아마 당연하게도 이런식으로 작성했을 것이다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="nf">filterGreenApples</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">inventory</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="nc">Apple</span> <span class="n">apple</span> <span class="o">:</span> <span class="n">inventory</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="s">"GREEN"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">apple</span><span class="o">.</span><span class="na">getColor</span><span class="o">()))</span> <span class="o">{</span>
+            <span class="n">result</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">apple</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>그런데, 요구사항이 변경되어서, 녹색사과 뿐만이 아니라 빨간색 사과도 찾고 싶어졌다고 해보자.</p>
+
+<h2 id="step2">step.2</h2>
+<p>빨간색 사과를 찾는, 위와 같은 형태의 <code class="highlighter-rouge">filterRedApples()</code> 메소드를 만드는 것은 꽤나 바보같은 짓일 것 같다. 그렇다면, 조금 더 현명하게 처리해서, <code class="highlighter-rouge">"GREEN"</code> 이라고 하드코딩되어 있는 부분을, 파라미터에 의해 결정되도록 수정할 수 있을 것이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="nf">filterApplesByColor</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">inventory</span><span class="o">,</span> <span class="nc">String</span> <span class="n">color</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="nc">Apple</span> <span class="n">apple</span> <span class="o">:</span> <span class="n">inventory</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">apple</span><span class="o">.</span><span class="na">getColor</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">color</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">result</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">apple</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>그런데, 이걸로 끝일까? 흔히 말해, <strong>어떤 것이 와도 두렵지 않으려면,</strong> 이정도 코드로는 아마 감당하기 힘들 것이다. 가령, 무게가 150g 이상인 사과를 찾고싶다면 어떻게 해야할까?</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="nf">filterApplesByWeight</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">inventory</span><span class="o">,</span> <span class="kt">int</span> <span class="n">weight</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="nc">Apple</span> <span class="n">apple</span> <span class="o">:</span> <span class="n">inventory</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">apple</span><span class="o">.</span><span class="na">getWeight</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">weight</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">result</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">apple</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>이런 코드를 추가하는 것만으로 만족할 수 있을까? 게다가, if 조건문을 제외하면 나머지 코드가 색깔로 필터링하는 코드와 전부 동일하다는 것을 확인할 수 있다. 중복되는 코드를 지양해야 하는 개발자에게는, 이는 딱히 좋은 선택지로는 보이지 않는다.</p>
+
+<h2 id="step3">step.3</h2>
+
+<p>심지어, 다음과 같은 코드는 더욱 최악이다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="nf">filterApples</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">inventory</span><span class="o">,</span> <span class="nc">String</span> <span class="n">color</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">flag</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">for</span><span class="o">(</span><span class="nc">Apple</span> <span class="n">apple</span> <span class="o">:</span> <span class="n">inventory</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">flag</span> <span class="o">&amp;&amp;</span> <span class="n">apple</span><span class="o">.</span><span class="na">getColor</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">color</span><span class="o">)</span> <span class="o">||</span>
+        <span class="o">(!</span><span class="n">flag</span> <span class="o">&amp;&amp;</span> <span class="n">apple</span><span class="o">.</span><span class="na">getWeight</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">weight</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">result</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">apple</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이런 코드는 도대체 무엇을 의미할까? 게다가, 사용하는 입장에서도 이는 껄끄럽다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">greenApples</span> <span class="o">=</span> <span class="n">filterApples</span><span class="o">(</span><span class="n">inventory</span><span class="o">,</span> <span class="s">"GREEN"</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>이 true와 false는 무엇을 의미하는걸까? 이 또한 알 수 없다.</p>
+
+<p>결국 지금까지 문제가 되었고, 우리가 개선해야 할 부분은 저 if문이고, 따라서 우리가 원하는 것은 <strong>요구사항을 밖에서 전달하는 것</strong> 이다. 그렇다면 요구사항을 밖에서 전달하기 위해, 전략패턴을 사용할 수 있다.</p>
+
+<h2 id="step4">step.4</h2>
+
+<p>이를 위해, <strong>프레디케이트를 갖는 인터페이스를 만들어서 이를 활용해보자.</strong></p>
+
+<hr />
+
+<blockquote>
+  <p>Note. 참 또는 거짓을 반환하는 메소드를 Predicate라 칭한다.</p>
+</blockquote>
+
+<hr />
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ApplePredicate</span> <span class="o">{</span>
+    <span class="kt">boolean</span> <span class="nf">test</span><span class="o">(</span><span class="nc">Apple</span> <span class="n">apple</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>그리고, 이를 구현하는 클래스를 만들어보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 무게가 150 초과면 참, 아니면 거짓.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppleHeavyWeightPredicate</span> <span class="kd">implements</span> <span class="nc">ApplePredicate</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">test</span><span class="o">(</span><span class="nc">Apple</span> <span class="n">apple</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">apple</span><span class="o">.</span><span class="na">getWeight</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 사과의 색깔이 초록색이면 참, 아니면 거짓</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppleGreenColorPredicate</span> <span class="kd">implements</span> <span class="nc">ApplePredicate</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">test</span><span class="o">(</span><span class="nc">Apple</span> <span class="n">apple</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"GREEN"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">apple</span><span class="o">.</span><span class="na">getColor</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>그리고, 이에 맞게 기존의 filter 메소드를 수정해보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="nf">filterApples</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">inventory</span><span class="o">,</span> <span class="nc">ApplePredicate</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">for</span><span class="o">(</span><span class="nc">Apple</span> <span class="n">apple</span> <span class="o">:</span> <span class="n">inventory</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">test</span><span class="o">(</span><span class="n">apple</span><span class="o">))</span> <span class="n">result</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">apple</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>기존 코드와의 차이점이 보이는가? 우린 앞으로 어떤 조건이 주어지더라도, 저 <code class="highlighter-rouge">filterApples()</code> 라는 메소드는 <strong>전혀 고칠 필요가 없다.</strong> 새로운 요구사항이 주어지는 대로, <code class="highlighter-rouge">ApplePredicate</code>를 구현하는 새로운 클래스를 만들어서 그 인스턴스를 파라미터로 전달해주면 된다. 가령 다음과 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">AppleGreenColorPredicate</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AppleGreenColorPredicate</span><span class="o">();</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">greenApples</span> <span class="o">=</span> <span class="n">filterApples</span><span class="o">(</span><span class="n">inventory</span><span class="o">,</span> <span class="n">p</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>그런데 위 코드는, 다음과 같이 수정해볼 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">greenApples</span> 
+        <span class="o">=</span> <span class="n">filterApples</span><span class="o">(</span><span class="n">inventory</span><span class="o">,</span> <span class="k">new</span> <span class="nc">AppleGreenColorPredicate</span><span class="o">());</span>
+</code></pre></div></div>
+
+<p>이러한 코드 작성은 우리가 아주 자연스럽게 해왔던 것이다. <code class="highlighter-rouge">p</code> 라는 녀석이 앞으로 재활용될 가능성이 없다면, 변수를 할당할 필요 없이 곧바로 메소드의 인자로 인스턴스를 넘겨주는것. 같은 말을 또 하자면, <strong>우리는 인스턴스를 넘겨주었다.</strong></p>
+
+<h2 id="step5">step.5</h2>
+
+<p>인스턴스를 넘겨주었다는 사실에 기반해, 우리는 또 하나의 아이디어를 떠올릴 수 있다. 그것은 바로 <strong>익명 클래스</strong>이다. 익명 클래스는 말 그대로, 이름이 없는 클래스이다. 그리고 이 녀석은, 클래스의 선언과 인스턴스화가 <strong>동시에 수행된다.</strong></p>
+
+<p>우리는 <code class="highlighter-rouge">ApplePredicate</code> 를 구현하는 <code class="highlighter-rouge">AppleGreenColorPredicate</code> 라는 <strong>이름의</strong> 클래스를 만들었다. 그렇다면, 익명 클래스라는 녀석은 ApplePredicate를 구현하지만, 위와 같은 <strong>이름이 존재하지 않는 클래스</strong>를 말하는 것이다. 어떻게 생겼는가 하면, 다음과 같이 생겼다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">greenApples</span> <span class="o">=</span> <span class="n">filterApples</span><span class="o">(</span><span class="n">inventory</span><span class="o">,</span> <span class="k">new</span> <span class="nc">ApplePredicate</span><span class="o">()</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">test</span><span class="o">(</span><span class="nc">Apple</span> <span class="n">apple</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="s">"GREEN"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">apple</span><span class="o">.</span><span class="na">getColor</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">})</span>
+</code></pre></div></div>
+
+<p>보다시피, <code class="highlighter-rouge">ApplePredicate</code> 를 구현하는 클래스이긴 하지만, 어떤 이름을 갖지는 않는다. 이와 더불어, 기존의 전략패턴에서 사용했던 클래스들이 <strong>만약 일회용으로 사용되고 버려질 경우 생기는</strong> 코드의 낭비에 대해서도 나름대로 대처할 수 있다.</p>
+
+<h2 id="step6">step.6</h2>
+<p>그런데, 여기서도 아직 불만족스럽다. 개발자란 종족은 끝없이 편의성을 추구하고, 쓸데없는 짓을 하면 몸에 두드러기가 난다. 다시 위 코드를 보자. <code class="highlighter-rouge">new ApplePredicate()</code> 라는 코드, 그리고 <code class="highlighter-rouge">public boolean test(Apple apple)</code> 이라는 코드는 꼭 필요한가? 익명 클래스를 여러 개 사용한다면, 딱히 중요해보이지는 않는데 저 코드를 또 써야 한다.</p>
+
+<p>똑똑한 intellij 또한 <code class="highlighter-rouge">Anonymous new ApplePredicate() can be replaced with lambda</code> 라는 안내 문구를 보여준다. 따라서 이를 람다로 수정하면 다음과 같이 수정할 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">greenApples</span> 
+        <span class="o">=</span> <span class="n">filterApples</span><span class="o">(</span><span class="n">inventory</span><span class="o">,</span> <span class="n">apple</span> <span class="o">-&gt;</span> <span class="s">"GREEN"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">apple</span><span class="o">.</span><span class="na">getColor</span><span class="o">()));</span>
+</code></pre></div></div>
+
+<h2 id="step7">step.7</h2>
+<p>마지막으로는, 사과가 아니라, 오렌지 등의 다른 경우에 대처할 수 있도록 업그레이드 해보자. 즉, 메소드 이름이 <code class="highlighter-rouge">filterApples()</code> 가 아니라 <code class="highlighter-rouge">filter</code>가 되는 것이다. 특별할건 없고, 제네릭을 이용하기만 하면 된다.</p>
+
+<p>Predicate 인터페이스와 filter 메소드를 다음과 같이 수정하면 된다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Predicate</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kt">boolean</span> <span class="nf">test</span><span class="o">(</span><span class="no">T</span> <span class="n">t</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nc">List</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">filter</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="nc">Predicate</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="k">for</span><span class="o">(</span><span class="no">T</span> <span class="n">e</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">test</span><span class="o">(</span><span class="n">e</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">result</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    
+    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>그리고, 사용할 때는 다음과 같이 사용하면 된다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 사과</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">greenApples</span> <span class="o">=</span> <span class="n">filter</span><span class="o">(</span><span class="n">appleInventory</span><span class="o">,</span> <span class="n">apple</span> <span class="o">-&gt;</span> <span class="s">"GREEN"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">apple</span><span class="o">.</span><span class="na">getColor</span><span class="o">()));</span>
+
+<span class="c1">// 오렌지</span>
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">Orange</span><span class="o">&gt;</span> <span class="n">heavyOranges</span> <span class="o">=</span> <span class="n">filter</span><span class="o">(</span><span class="n">orangeInveotry</span><span class="o">,</span> <span class="n">orange</span> <span class="o">-&gt;</span> <span class="n">orange</span><span class="o">.</span><span class="na">getWeight</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h1 id="2-생각해볼-점">2. 생각해볼 점.</h1>
+<p>: 이렇게 각 단계별로 코드가 유연함과 간결함의 두 마리 토끼를 잡을 수 있도록 발전해나가면서, 요구사항에 우아하게 대처할 수 있는 모습을 볼 수 있었다. 그런데, 단순히 이렇게 감탄하고 끝날 것이 아니라, 이 과정 속에서 한 가지 거대한 격변이 있었음을 기억해야 한다.</p>
+
+<p>프로그래밍에서 가장 핵심이 되는 것은, <strong>값을 변경하는 것</strong>이다. Query가 아닌 Command의 특성을 갖는 메소드에서, 기존에 우리는 <strong>변화할 수 있는 값</strong>을 넘겨주었다. int, double 등의 primitive type의 데이터부터 시작해서, 객체(인스턴스) 또한 변화할 수 있는 값이다. 그리고 이런 녀석들을 우리는 <strong>일급 값</strong> 이라고 부른다.</p>
+
+<p>그리고 이렇게 인자로 전달할 수 없는 녀석은 <strong>이급 값</strong>이라고 부른다. 무엇이 해당할까? 바로 <strong>클래스와 메소드</strong>이다.</p>
+
+<p>이전에는, 우리는 다음과 같은 코드는 본 적이 없다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Apple</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">filter</span><span class="o">(</span><span class="n">inventory</span><span class="o">,</span> <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">my_function</span><span class="o">(...)</span> <span class="o">{</span>
+    <span class="c1">// do something</span>
+<span class="o">})</span>
+</code></pre></div></div>
+
+<p>메소드의 인자로 메소드를 넘기는 경우는 본 적이 없다. 그런데, step.6 를 보면, 람다라는 <strong>익명 함수</strong>를 넘겨줄 수 있다. 이는 기존의 <strong>이급 값</strong>이었던 메소드를, <strong>일급 값으로 만들 수 있게 되었음을 의미</strong>한다!</p>
+
+<p>사실, step.6 에서 <strong>어떻게 함수를 파라미터로 받을 수 있는가?</strong> 에 대해서는 다루지 않았는데, 이는 다음 장의 <strong>람다 표현식의 원리</strong>에 대해서 자세히 다뤄야할 내용이라 생략했다. 역시, 다음 포스팅에서 마저 알아보기로 하자.</p>
+
+<p>이상으로 포스팅을 마칩니다.</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/algorithm/ways_to_get_LIS_length">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 마음으로 이해하는 알고리즘 : LIS의 길이구하기 ( feat. Java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/spring/Dependency_injection">
+					<span class="page-number"># [Spring 학습 정리] Dependency Injection 의 필요성</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/java/java8-behavior-parameterization',
+    'title': '# (Java8) 동작(≒메소드) 파라미터화 '
+  });
+</script>
+
+
+
+  </body>
+
+</html>

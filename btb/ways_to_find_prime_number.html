@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 소수(Prime Number)를 찾는 방법 ( feat. Java )</title>
+  <meta name="description" content="0. 들어가며: 우아한 테크코스 코딩테스트를 준비하며, 이전에 풀었던 PS 문제들을 하나씩 둘러보던 중, 소수 문제를 발견했다. 소수를 구하는 방법에 여러 가지가 있는 것은 알았는데, 막상 쓰려니까 손가락이 잘 움직이지 않았다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 들어가며: 우아한 테크코스 코딩테스트를 준비하며, 이전에 풀었던 PS 문제들을 하나씩 둘러보던 중, 소수 문제를 발견했다. 소수를 구하는 방법에 여러 가지가 있는 것은 알았는데, 막상 쓰려니까 손가락이 잘 움직이지 않았다." />
+  <meta property="og:url" content="https://cjlee38.github.io/btb/ways_to_find_prime_number">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 소수(Prime Number)를 찾는 방법 ( feat. Java )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 소수(Prime Number)를 찾는 방법 ( feat. Java )">
+  <meta name="twitter:description" content="0. 들어가며: 우아한 테크코스 코딩테스트를 준비하며, 이전에 풀었던 PS 문제들을 하나씩 둘러보던 중, 소수 문제를 발견했다. 소수를 구하는 방법에 여러 가지가 있는 것은 알았는데, 막상 쓰려니까 손가락이 잘 움직이지 않았다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/btb/ways_to_find_prime_number">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/btb/ways_to_find_prime_number">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 소수(Prime Number)를 찾는 방법 ( feat. Java )</h1>
+      <p class="info">by <strong></strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">November 8, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/btb">Btb</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-들어가며">0. 들어가며</h1>
+<p>: 우아한 테크코스 코딩테스트를 준비하며, 이전에 풀었던 PS 문제들을 하나씩 둘러보던 중, 소수 문제를 발견했다. 소수를 구하는 방법에 여러 가지가 있는 것은 알았는데, 막상 쓰려니까 손가락이 잘 움직이지 않았다.</p>
+
+<p>해서 생각난 김에, 이번 포스팅에서 주어진 숫자가 소수인지 확인하는 방법에 대해서  알아보고자 한다.</p>
+
+<h1 id="1-소수prime-number">1. 소수(Prime Number)</h1>
+<p>: 소수를 모르는 사람은 없을 것이다. 그래도 굳이 한번 적어보자면, 소수의 정의는 다음과 같다.</p>
+
+<blockquote>
+  <p><strong>1과 자기자신 이외의 수로 나누어 떨어지지 않는, 즉 약수를 갖지 않는 자연수</strong></p>
+</blockquote>
+
+<h1 id="2-methods-to-find-prime-number">2. Methods to find Prime Number</h1>
+
+<h2 id="1-method-1">1) Method 1</h2>
+<p>: 소수의 정의에 충실하게, n 부터 2까지 하나씩 약분해봄으로써 구할 수 있을 것이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPrime</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>num을 num와 2 사이의 값으로 나누었을 때 나머지 값이 0이 된다는 것은, 나누어 떨어진다는 것을 의미하고, 이는 곧 약수가 존재함을 의미하니, 소수인지 아닌지 여부를 간단하게 판별해낼 수 있다.</p>
+
+<h2 id="2-method-2">2) Method 2</h2>
+
+<p>: 그런데, 여기서 <strong>한 걸음 더</strong> 나아가보자. 어떤 주어진 수 X 에 대해서, X/2초과, X미만까지의 값을 Y라고 했을 때, <code class="highlighter-rouge">X / Y</code> 는 반드시 1 초과, 2 미만의 값을 가진다.</p>
+
+<p>정말일까? 예시를 갖고 살펴보자.  <br />
+X를 12로 두었을 때, Y가 될 수 있는 값들은 (7, 8, 9, 10, 11)이 된다.  <br />
+(7, 8, 9, 10, 11) 을 분모로 두는, <code class="highlighter-rouge">X / Y</code> 는 (1.714, 1.5, … , 1.090)인 실수가 되므로, 나누어 떨어지지 않는다.</p>
+
+<p>이를 바꿔말하면, <strong>X/2 초과의 값은 살펴볼 필요가 없다</strong>는 말이 된다.<br />
+따라서 우리는 주어진 num 까지가 아닌, num/2까지만 살펴보면 된다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPrime</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="o">/</span><span class="mi">2</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이 때 주의할 점은, num/2 를 포함해서 살펴봐야 하므로, <code class="highlighter-rouge">&lt;</code> 기호가 아닌 <code class="highlighter-rouge">&lt;=</code> 기호를 사용해야 한다.</p>
+
+<h2 id="3-method-3">3) Method 3</h2>
+
+<p>: 마지막 한걸음만 더 내딛어 보자. 사실, num/2 까지 갈 필요도 없고, sqrt(num) 까지만 살펴보면 된다. 다음의 예시를 보자.</p>
+
+<ul>
+  <li>num이 12인 경우, sqrt(12) 는 약 3.464 이다. 이 때, 후보 (2, 3) 중 2(또는 3)를 넣는 경우 0으로 나누어 떨어진다.</li>
+  <li>num이 13인 경우, sqrt(13) 은 약 3.606 이다. 이 때, 후보 (2, 3) 중 어느 값을 넣어도 0으로 나누어 떨어지지 않는다.</li>
+</ul>
+
+<p>이것이 어떻게 가능한 것일까? 원리는 간단하다.</p>
+
+<p>어떤 수의 약수를 쭉 나열하면, 다음과 같은 규칙을 발견할 수 있다.</p>
+
+<ol>
+  <li>약수의 개수는 반드시 짝수이다.</li>
+  <li>index(i) , index(n-i-1) (n은 약수의 길이, i는 n보다 작은 임의의 수) 를 곱하면 원래의 수가 나온다.</li>
+</ol>
+
+<p>즉, 가령 40 이라는 숫자의 약수는 [1, 2, 4, 5, 8, 10, 20, 40] 으로, 총 <strong>8개(짝수)</strong>의 약수를 갖는다. 그리고, index(0)과 index(8-0-1, 7)은 1과 40이고, 이 둘을 곱하면 원래의 수 40이 나온다. index(1)과 index(8-1-1, 6)은 2와 20이고, 이 둘을 곱하면 원래의 수 40이 나온다. 즉, pair로 묶으면, 이 약수의 리스트 중에서 <strong>index(n/2)까지만(앞 절반만)</strong> 살펴보면 된다.</p>
+
+<p>그런데 범위를 정수가 아닌 실수로 확장시켜보면, <code class="highlighter-rouge">sqrt(n) * sqrt(n)</code> 이라는 실수의 약수도 있다. 즉, <em>억지를 부려서,</em> 다음과 같이 약수의 리스트를 만들 수도 있는 것이다.</p>
+
+<p>[1, 2, 4, 5, 6.325, 6.325, 8, 10, 20, 40]<br />
+ * sqrt(40) = 6.325</p>
+
+<p>즉 바꿔말하면, sqrt(n)은 약수 pair의 중앙값이 되고, 2 이상 sqrt(n) 미만의 값에 정수의 약수가 존재한다면, 이는 곧 합성수라는 의미가 된다.</p>
+
+<p>잘 이해가 되지 않는다면, 다음의 예시를 보자.</p>
+
+<ul>
+  <li>num이 65 인 경우 -&gt; 약수는 (1, 5, 13, 65) 이고 sqrt(65)는 약 8.062 이다. 따라서, 8.062 는 5와 13 사이에 끼어들어 갈 수 있다. 그리고, 2 이상 8.062 이하의 값 중에, 5 라는 약수가 존재하므로, 합성수다.</li>
+  <li>num이 67 인 경우 -&gt; 약수는 (1, 67) 이다. sqrt(67) 약 8.185 는 1 과 67 사이에 끼어들어 갈 수 있다. 그리고, 2 이상 8.185 이하의 약수가 존재하지 않으므로, 소수다.</li>
+</ul>
+
+<p>따라서, 코드로는 다음과 같이 작성할 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPrime</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">num</span><span class="o">);</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>위 방법들은, 숫자가 주어졌을 때, <strong>이것이 소수인가요?</strong> 에 대답할 수 있는 방법들이다. 거꾸로, <strong>소수의 목록을 주세요.</strong> 라고 하면 어떻게 해야할까? 가령 100 까지의 소수를 달라고 하면, 2 부터 100 까지 위 isPrime()을 반복할까? 그것보다는, 소수를 한 번에 생성해놓는 것이 나을것이다.</p>
+
+<p>(2020.11.16 수정)</p>
+
+<p>미리 소수를 다 생성을 해놓는 방식을 대개 체(체에 거른다 할 때의 그 체가 맞다.) 라고 부르는데, 여기에는 여러가지 방법이 있다.</p>
+
+<p>에라토스테네스, 오일러, 순다람, 앳킨… 의 체가 있는데, 에라토스테네스의 체를 제외한 나머지 방법들은 방법도 어려울뿐더러, 수학자가 아닌데 이것까지 알아야 하나 싶어서 작성을 포기하였다. 여기서는 에라토스테네스의 체만 알아보고, 나머지가 궁금한 사람은 다음의 링크를 참고하자.</p>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#Euler's_sieve">sieve of euler</a></li>
+  <li><a href="https://www.geeksforgeeks.org/sieve-sundaram-print-primes-smaller-n/">sieve of sundaram</a></li>
+  <li><a href="https://www.geeksforgeeks.org/sieve-of-atkin/">sieve of atkin</a></li>
+</ul>
+
+<h1 id="에라토스테네스의-체">에라토스테네스의 체</h1>
+
+<p>: 에라토스테네스의 체라는, 고대의 수학자가 발견해낸 방법이 있다. 이 또한 원리는 어렵지 않은데, X 가 소수일 때, X를 제외한 나머지 X의 배수는 모두 합성수일 것은 자명하다. 따라서, 2부터 시작해서, 합성수라고 mark 되지 않은 모든 (X가 아닌) X의 배수를 합성수라고 mark 하면 된다.</p>
+
+<p>이 흐름은 다음의 애니메이션으로 쉽게 이해할 수 있다.</p>
+
+<p><img src="/assets/images/Sieve_of_Eratosthenes_animation.gif" alt="" /></p>
+
+<p>코드로는 다음과 같이 작성할 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPrime</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">boolean</span><span class="o">[]</span> <span class="n">prime</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span> <span class="c1">//</span>
+    <span class="nc">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">prime</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span> <span class="c1">// 모든 숫자가 소수라고 가정</span>
+    <span class="n">prime</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">prime</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span> <span class="c1">// 0과 1은 소수의 정의에서 벗어남.</span>
+
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">prime</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="o">;</span> <span class="n">j</span> <span class="o">+=</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">prime</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">prime</span><span class="o">[</span><span class="n">num</span><span class="o">];</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>잡다한 부분은 쳐내고, for loop만 보자.</p>
+
+<p>첫 번째 for문의 Math.sqrt(num) 부분은, 위에서 설명했던 부분과 같다. 그 뒷부분은 살펴볼 필요가 없다.</p>
+
+<p>그리고 이 for문을 반복하면서, 어떤 숫자가 소수라고 mark 되어 있다면, 해당 숫자의 <code class="highlighter-rouge">i * i</code> 부터, num 까지. 즉 i의 배수를 합성수로 mark 한다. 이 때, j가 왜 <code class="highlighter-rouge">i * i</code> 부터 시작하는지 의문을 가질 수 있는데, <code class="highlighter-rouge">i * 2</code> 이상 <code class="highlighter-rouge">i * (i - 1)</code> 이하 에서, <code class="highlighter-rouge">2</code>와 <code class="highlighter-rouge">i - 1</code> 에 해당하는 값 k 는 이미 검사되었으므로(<strong>즉, k 는 이전에 i 였있다.</strong>) <code class="highlighter-rouge">i * i</code> 부터 시작할 수 있다.</p>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/problem-solving/problem_solving_18">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 백준[No.10227] - 삶의 질 ( Java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/spring/what_is_spring">
+					<span class="page-number"># [Spring 학습 정리] Spring Framework 란?</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/btb/ways_to_find_prime_number',
+    'title': '# 소수(Prime Number)를 찾는 방법 ( feat. Java )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># Python Asterisk(*) 다루기</title>
+  <meta name="description" content="들어가며: Python을 다루다 보면, 어떤 함수에서 여러개의 인자를 받고 싶을때가 있다.이럴 때는 보통, list로 묶어서 보내는 경우가 대부분이다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="들어가며: Python을 다루다 보면, 어떤 함수에서 여러개의 인자를 받고 싶을때가 있다.이럴 때는 보통, list로 묶어서 보내는 경우가 대부분이다." />
+  <meta property="og:url" content="https://cjlee38.github.io/python/asterisk_of_python">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# Python Asterisk(*) 다루기" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# Python Asterisk(*) 다루기">
+  <meta name="twitter:description" content="들어가며: Python을 다루다 보면, 어떤 함수에서 여러개의 인자를 받고 싶을때가 있다.이럴 때는 보통, list로 묶어서 보내는 경우가 대부분이다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/python/asterisk_of_python">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/python/asterisk_of_python">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># Python Asterisk(*) 다루기</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 17, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/python">Python</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="들어가며">들어가며</h1>
+<p>: Python을 다루다 보면, 어떤 함수에서 여러개의 인자를 받고 싶을때가 있다.<br />
+이럴 때는 보통, list로 묶어서 보내는 경우가 대부분이다.</p>
+
+<p>그러나, Python을 계속해서 쓰다가 보면, 일종의 debugging을 위해 print()함수를 쓸 때가 종종 있는데,<br />
+print() 함수에 다음과 같이 여러개의 인자를 넘겨줄 때에는 list로 묶어서 보내지 않는 것을 볼 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"안녕하세요, 제 이름은"</span><span class="p">,</span> <span class="n">myName</span><span class="p">,</span> <span class="s">"입니다."</span><span class="p">)</span>
+<span class="c1"># "안녕하세요, 제 이름은 홍길동 입니다"
+</span></code></pre></div></div>
+
+<p>위 코드는, “안녕하세요, 제 이름은” 이라는 문자열, myName이라는 변수, 그리고 “입니다.” 라는 문자열의<br />
+총 세개의 변수를 넘겨줬는데, 정상적으로 처리가 되는 모습을 볼 수 있다.</p>
+
+<p>이것이 어떻게 가능한 것일까? 이에 대해서 알아보자.</p>
+
+<h1 id="what-is-asterisk-">What is Asterisk ?</h1>
+<p>: Asterisk 라는 거창한 이름이 붙었지만, 한글로는 결국 “별표”다.</p>
+
+<p><code class="highlighter-rouge">2*3</code>과 같은 곱하기나, <code class="highlighter-rouge">2**3</code>과 같은 제곱을 제외하고,<br />
+이 asterisk를 가장 대표적으로 많이 쓰는 케이스는, 함수다.<br />
+다음의 예시를 보자.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">myFunction</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="n">myFunction</span><span class="p">(</span><span class="s">'alice'</span><span class="p">,</span> <span class="s">'tom'</span><span class="p">,</span> <span class="s">'john'</span><span class="p">)</span>
+<span class="c1"># &lt;class 'tuple'&gt;
+# ('alice', 'tom', 'john')
+# alice tom john
+</span></code></pre></div></div>
+<p>위와 같이, 여러개의 인자를 넘기더라도, 이를 tuple로 받을 수 있고, <br />
+<code class="highlighter-rouge">print(*args)</code>를 통해 unpacking이 이루어 지는 모습을 볼 수 있다.<br />
+(다시 말해, <code class="highlighter-rouge">print(*args)</code> 는 <code class="highlighter-rouge">print('alice', 'tom', 'john')</code> 으로 변환된 것이다)</p>
+
+<p>즉, “내가 인자를 몇 개 받아야 할 지 모를 때” 사용할 수 있다.</p>
+
+<p>그러나, 다음의 코드를 보면, “그냥 리스트를 써도 되는거 아닌가?” 싶을 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sayHello</span><span class="p">(</span><span class="o">*</span><span class="n">nameList</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">nameList</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="n">sayHello</span><span class="p">(</span><span class="s">'alice'</span><span class="p">,</span> <span class="s">'tom'</span><span class="p">,</span> <span class="s">'john'</span><span class="p">)</span>
+<span class="c1"># Hello alice
+# Hello tom
+# Hello john
+</span></code></pre></div></div>
+<hr />
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sayHello</span><span class="p">(</span><span class="n">nameList</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">nameList</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="c1"># Hello alice
+# Hello tom
+# Hello john
+</span></code></pre></div></div>
+
+<p>그러나, 만약 Hello 뒤에 <code class="highlighter-rouge">Hello alice tom john</code>과 같이 여러 개의 이름을 붙이고 싶다면 어떻게 해야 할까?</p>
+
+<p>아마 asterisk를 쓰지 않는다면, 이렇게 무식한 방법을 취할 수도 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sayHello</span><span class="p">(</span><span class="n">nameList</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">nameList</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s">' '</span><span class="p">)</span>
+<span class="c1"># Hello alice tom alice
+</span></code></pre></div></div>
+
+<p>이렇게 하는 것보단, 다음과 같이 쓰는 것이 깔끔하게 쓸 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sayHello</span><span class="p">(</span><span class="n">nameList</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="o">*</span><span class="n">nameList</span><span class="p">)</span>
+<span class="c1"># Hello alice tom alice
+</span></code></pre></div></div>
+
+<p>또 다른 사용법으로는, 여러 개의 vector를 받아서, 이를 덧셈 연산하는 것에 활용할 수도 있다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sumVector</span><span class="p">(</span><span class="n">vectorList</span><span class="p">):</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">pos</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vectorList</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="n">sum_</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">vector</span> <span class="ow">in</span> <span class="n">vectorList</span><span class="p">:</span>
+            <span class="n">sum_</span><span class="o">+=</span> <span class="n">vector</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span>
+        <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sum_</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret</span>
+<span class="n">sumVector</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="c1"># [9, 12]
+</span></code></pre></div></div>
+
+<p>별로 보기 좋은 코드는 아니다. zip() 함수를 응용하자.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sumVector</span><span class="p">(</span><span class="n">vectorList</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">vectorList</span><span class="p">)]</span>
+<span class="n">sumVector</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="c1"># [9, 12]
+</span></code></pre></div></div>
+
+<p>아주 간단명료하게 해결할 수 있다.</p>
+
+<p>또한, asterisk를 두 개 써서, dictionary와 같은 key-value의 형태로도 받을 수 있다.<br />
+kwargs 는 keyword arguments의 약자다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"제 이름은"</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s">'name'</span><span class="p">],</span> <span class="s">"입니다."</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"제 나이는"</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s">'age'</span><span class="p">],</span> <span class="s">"입니다."</span><span class="p">)</span>
+<span class="n">introduce</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"홍길동"</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="c1"># 제 이름은 홍길동 입니다.
+# 제 나이는 25 입니다.
+</span></code></pre></div></div>
+
+<p>이렇게 알고 나면, print() 함수가 어떻게 구성되어 있는지에 대한 감이 잡힐 것이다.</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/jsp/jsp_project_with_intellij">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 0. JSP 학습기록 - Intellij JSP 프로젝트 생성</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/jsp/jsp_learning_01">
+					<span class="page-number"># 1. JSP 학습기록 - 기본 개념과 Tomcat 실행해보기.</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/python/asterisk_of_python',
+    'title': '# Python Asterisk(*) 다루기'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

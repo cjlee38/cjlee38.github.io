@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 프로그래머스[Lv.3] 단속카메라 ( Java )</title>
+  <meta name="description" content="Problem">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Problem" />
+  <meta property="og:url" content="https://cjlee38.github.io/problem-solving/problem_solving_12">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 프로그래머스[Lv.3] 단속카메라 ( Java )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 프로그래머스[Lv.3] 단속카메라 ( Java )">
+  <meta name="twitter:description" content="Problem">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/problem-solving/problem_solving_12">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/problem-solving/problem_solving_12">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 프로그래머스[Lv.3] 단속카메라 ( Java )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">October 4, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/problem-solving">Problem-solving</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="problem">Problem</h1>
+
+<p><strong>문제 설명</strong></p>
+
+<p>고속도로를 이동하는 모든 차량이 고속도로를 이용하면서 단속용 카메라를 한 번은 만나도록 카메라를 설치하려고 합니다.</p>
+
+<p>고속도로를 이동하는 차량의 경로 routes가 매개변수로 주어질 때, 모든 차량이 한 번은 단속용 카메라를 만나도록 하려면 최소 몇 대의 카메라를 설치해야 하는지를 return 하도록 solution 함수를 완성하세요.</p>
+
+<p><strong>제한사항</strong></p>
+
+<ul>
+  <li>차량의 대수는 1대 이상 10,000대 이하입니다.</li>
+  <li>routes에는 차량의 이동 경로가 포함되어 있으며 routes[i][0]에는 i번째 차량이 고속도로에 진입한 지점, routes[i][1]에는 i번째 차량이 고속도로에서 나간 지점이 적혀 있습니다.</li>
+  <li>차량의 진입/진출 지점에 카메라가 설치되어 있어도 카메라를 만난것으로 간주합니다.</li>
+  <li>차량의 진입 지점, 진출 지점은 -30,000 이상 30,000 이하입니다.</li>
+</ul>
+
+<p><strong>입출력 예</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">routes</th>
+      <th style="text-align: center">return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">[[-20,15], [-14,-5], [-18,-13], [-5,-3]]</td>
+      <td style="text-align: center">2</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>입출력 예 설명</strong></p>
+
+<p>-5 지점에 카메라를 설치하면 두 번째, 네 번째 차량이 카메라를 만납니다.</p>
+
+<p>-15 지점에 카메라를 설치하면 첫 번째, 세 번째 차량이 카메라를 만납니다.</p>
+
+<h1 id="answer">Answer</h1>
+<p>: 입출력 예에서, <strong>15가 아니라 -15다</strong>. <strong>오타</strong>인 듯 싶다.</p>
+
+<p>문제 예시를 대충 그려보면 다음과 같다.</p>
+
+<p><img src="/assets/images/2020-10-05-06-26-23_2020-10-04-problem_solving_12.md.png" alt="problem" /></p>
+
+<p>지난번에 풀었던 <a href="https://cjlee38.github.io/problem_solving/problem_solving_6">공주님의 정원</a> 문제와 흡사하다.</p>
+
+<p>핵심 키포인트는, <strong>모든 차량이 한번이라도 단속카메라를 만나야 한다는 것</strong>,<br />
+그리고 <strong>최소한의 카메라를 구해야 한다는 것</strong>이다.</p>
+
+<p>가장 먼저, <strong>진입지점을 우선순위</strong>로, <strong>진출지점을 차순위</strong>로 하여 차량을 내림차순 정렬했다.
+(이 방법이 답을 구하는 유일한 방법은 아니다.)</p>
+
+<p>다음으로, <strong>진입지점이 가장 큰 차량</strong>을 우선 기준으로 삼은 뒤, <br />
+index 1번부터 loop를 돌면서 <strong>“진출지점이 기준에 해당하지 않는”</strong> 차량을 발견한다면,<br />
+<strong>그 차량의 진입지점</strong>을 <strong>다음 기준</strong>으로 삼는다.</p>
+
+<p><strong>문제 예시</strong>로 설명하면 다음과 같다.</p>
+
+<p>우선, 정렬을 하고 나면 배열은 다음과 같이 구성된다.</p>
+
+<p>-5 -3<br />
+-14 -5<br />
+-18 -13<br />
+-20 -15</p>
+
+<p>이후, 먼저 -5를 기준으로 삼고, loop를 시작한다.</p>
+
+<p>-14 -5 는 진출지점인 -5가 기준에 해당한다(즉, 카메라에 찍힌다.) <br />
+-18 -13 은, 진출지점인 -13이 기준에 해당하지 않으므로, 이 차량의 진입지점인 -18을 기준으로 삼는다(즉, 카메라를 설치한다.)<br />
+-20 -15 는 진출지점인 -15가 -18인 기준에 해당한다.(즉, 카메라에 찍힌다.)</p>
+
+<p>카메라는 <strong>첫 기준인 -5</strong>와, <strong>두번째 기준인 -18</strong> 의 두개로, 2를 return한다.</p>
+
+<p>코드는 다음과 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">programmers</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+
+<span class="c1">// 프로그래머스 - 단속카메라</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">p42884</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">routes</span> <span class="o">=</span> <span class="o">{</span>
+                <span class="o">{-</span><span class="mi">20</span><span class="o">,</span> <span class="mi">15</span><span class="o">},</span>
+                <span class="o">{-</span><span class="mi">14</span><span class="o">,</span> <span class="o">-</span><span class="mi">5</span><span class="o">},</span>
+                <span class="o">{-</span><span class="mi">18</span><span class="o">,</span> <span class="o">-</span><span class="mi">13</span><span class="o">},</span>
+                <span class="o">{-</span><span class="mi">5</span><span class="o">,</span> <span class="o">-</span><span class="mi">3</span><span class="o">}</span>
+        <span class="o">};</span>
+
+        <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">solution</span><span class="o">(</span><span class="n">routes</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">answer</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">solution</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">routes</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">routes</span><span class="o">,</span> <span class="o">(</span><span class="n">o1</span><span class="o">,</span> <span class="n">o2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">o1</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">o2</span><span class="o">[</span><span class="mi">0</span><span class="o">])</span> <span class="k">return</span> <span class="n">o1</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">o2</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+            <span class="k">else</span> <span class="k">return</span> <span class="n">o1</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">o2</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">});</span>
+
+        <span class="kt">int</span> <span class="n">std</span> <span class="o">=</span> <span class="n">routes</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="mi">0</span><span class="o">];</span>
+        <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">routes</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"std : "</span> <span class="o">+</span> <span class="n">std</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">routes</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">std</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">std</span> <span class="o">=</span> <span class="n">routes</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">0</span><span class="o">];</span>
+                <span class="n">answer</span><span class="o">++;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+
+
+        <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+</article>
+
+
+
+<section class="tags">
+  <strong>Tags:</strong> <a href="/tag/programmers">programmers</a>
+</section>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/java/all_of_string_in_java">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># (Java) 추석맞이 String 종합선물세트</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/java/exception_in_java">
+					<span class="page-number"># (Java) 예외처리를 위한 Try-Catch</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/problem-solving/problem_solving_12',
+    'title': '# 프로그래머스[Lv.3] 단속카메라 ( Java )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

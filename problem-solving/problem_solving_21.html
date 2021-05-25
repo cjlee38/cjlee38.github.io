@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 알고스팟 [ID:PICNIC] 소풍 ( Java )</title>
+  <meta name="description" content="문제 링크">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="문제 링크" />
+  <meta property="og:url" content="https://cjlee38.github.io/problem-solving/problem_solving_21">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 알고스팟 [ID:PICNIC] 소풍 ( Java )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 알고스팟 [ID:PICNIC] 소풍 ( Java )">
+  <meta name="twitter:description" content="문제 링크">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/problem-solving/problem_solving_21">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/problem-solving/problem_solving_21">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 알고스팟 [ID:PICNIC] 소풍 ( Java )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">December 10, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/problem-solving">Problem-solving</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p><a href="https://algospot.com/judge/problem/read/PICNIC">문제 링크</a></p>
+
+<h1 id="problem">Problem</h1>
+
+<p><strong>문제</strong><br />
+안드로메다 유치원 익스프레스반에서는 다음 주에 율동공원으로 소풍을 갑니다. 원석 선생님은 소풍 때 학생들을 두 명씩 짝을 지어 행동하게 하려고 합니다. 그런데 서로 친구가 아닌 학생들끼리 짝을 지어 주면 서로 싸우거나 같이 돌아다니지 않기 때문에, 항상 서로 친구인 학생들끼리만 짝을 지어 줘야 합니다.</p>
+
+<p>각 학생들의 쌍에 대해 이들이 서로 친구인지 여부가 주어질 때, 학생들을 짝지어줄 수 있는 방법의 수를 계산하는 프로그램을 작성하세요. 짝이 되는 학생들이 일부만 다르더라도 다른 방법이라고 봅니다. 예를 들어 다음 두 가지 방법은 서로 다른 방법입니다.</p>
+
+<p>(태연,제시카) (써니,티파니) (효연,유리)<br />
+(태연,제시카) (써니,유리) (효연,티파니)</p>
+
+<p><strong>입력</strong><br />
+입력의 첫 줄에는 테스트 케이스의 수 C (C &lt;= 50) 가 주어집니다. 각 테스트 케이스의 첫 줄에는 학생의 수 n (2 &lt;= n &lt;= 10) 과 친구 쌍의 수 m (0 &lt;= m &lt;= n*(n-1)/2) 이 주어집니다. 그 다음 줄에 m 개의 정수 쌍으로 서로 친구인 두 학생의 번호가 주어집니다. 번호는 모두 0 부터 n-1 사이의 정수이고, 같은 쌍은 입력에 두 번 주어지지 않습니다. 학생들의 수는 짝수입니다.</p>
+
+<p><strong>출력</strong><br />
+각 테스트 케이스마다 한 줄에 모든 학생을 친구끼리만 짝지어줄 수 있는 방법의 수를 출력합니다.</p>
+
+<p><strong>예제 입력</strong><br />
+3 <br />
+2 1 <br />
+0 1 <br />
+4 6 <br />
+0 1 1 2 2 3 3 0 0 2 1 3 <br />
+6 10 <br />
+0 1 0 2 1 2 1 3 1 4 2 3 2 4 3 4 3 5 4 5</p>
+
+<p><strong>예제 출력</strong><br />
+1
+3
+4</p>
+
+<h1 id="solve">Solve</h1>
+
+<p>: 책의 카테고리도 그렇지만, 문제 자체의 내용도 읽어보면, 완전탐색을 통해서 구할 수 있음을 알 수 있다.</p>
+
+<p>즉, 아직 짝이 맺어지지 않은 학생을 두 명 (A, B) 고른 다음에, 그 둘이 친구인지 확인해보고, 맞다면 짝을 맺어주는 방식을 계속 반복하면 된다.</p>
+
+<p>따라서, 자연스럽게 재귀함수와, 짝이 맺어졌는지 확인하는 boolean 배열(대개 visited 배열로 표현되는) 이 필요하단 것을 머릿속에 떠올릴 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">int</span> <span class="nf">countPairings</span><span class="o">(</span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">paired</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="kt">int</span> <span class="n">target</span> <span class="o">=</span> <span class="n">findTarget</span><span class="o">(</span><span class="n">paired</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">target</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+
+    <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">target</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">paired</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">areFriends</span><span class="o">[</span><span class="n">target</span><span class="o">][</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+            <span class="n">paired</span><span class="o">[</span><span class="n">target</span><span class="o">]</span> <span class="o">=</span> <span class="n">paired</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="n">ret</span> <span class="o">+=</span> <span class="n">countPairings</span><span class="o">(</span><span class="n">paired</span><span class="o">);</span>
+            <span class="n">paired</span><span class="o">[</span><span class="n">target</span><span class="o">]</span> <span class="o">=</span> <span class="n">paired</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>위 함수는 paried 라는 boolean 배열을 받아서, 짝을 찾아서 맺어주는 역할을 하는 재귀함수이다. 그런데 여기서 눈여겨보아야 할 것이, 바로 <code class="highlighter-rouge">target</code> 변수다. <code class="highlighter-rouge">target</code> 변수는 <strong>1.</strong> 아직 짝을 구하지 못한 학생 A 를 나타내기도 하지만, <strong>2.</strong> 동시에 재귀 함수의 호출을 종료하는 Base case이기도 하며, <strong>3.</strong> 또한 <strong>짝의 쌍을 중복으로 찾지 않도록 해주는 역할</strong> 까지 해준다.</p>
+
+<p>이게 무슨 말일까? 우선, <code class="highlighter-rouge">target</code> 변수를 할당해주는 <code class="highlighter-rouge">findTarget()</code> 함수를 살펴보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">findTarget</span><span class="o">(</span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">paired</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">target</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">paired</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="n">target</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>특별할 것 없이, target을 -1로 설정해놓은 뒤에 for 문을 돌면서, false인, 즉 다시 말해 아직 짝이 맺어지지 않은 학생을 발견하면, 해당 학생을 target으로 return 해주는 함수이다. 따라서, 1번에서 언급한 아직 짝을 구하지 못한 학생 A를 나타낸다.</p>
+
+<p>만약 짝이 맺어지지 않은 학생을 발견하지 못한다면, 이는 모든 학생이 짝이 맺어졌다는 뜻이므로 target은 -1 로 return 될 것이고, 따라서 <code class="highlighter-rouge">if (target == -1) return 1;</code> 라는 Base case의 조건에 부합하게 된다.</p>
+
+<p>다시 <code class="highlighter-rouge">countPairings()</code> 로 돌아가서, for 문을 살펴보자.</p>
+
+<p><code class="highlighter-rouge">for (int i = target + 1; i &lt; n; i++)</code></p>
+
+<p>짝이 맺어지지 않은 학생 B(코드 상 i)를 찾는 for문이, target + 1 부터 시작한다. 0부터 시작하지 않은 이유가 바로 3번의 <strong>짝의 쌍을 중복으로 찾지 않기 위함</strong> 이다.</p>
+
+<p>잠깐 다른 이야기를 하자면, 수학의 순열과 조합을 떠올려보자. <br />
+순열은 “서로 다른 n 개의 원소를 가진 집합에서, r 개를 <strong>순서를 따져서</strong> 나열” 한다. <br />
+반면 조합은 “서로 다른 n 개의 원소를 가진 집합에서, r 개를 <strong>순서를 따지지 않고</strong> 나열” 한다.</p>
+
+<p>[1, 2, 3] 이라는 배열에서,</p>
+
+<p>3P2 는 (1, 2), (2, 1), (1, 3), (3, 1), (2, 3), (3, 2)  이 되고,<br />
+3C2 는 (1, 2), (1, 3), (2, 3) 이 된다.</p>
+
+<p>이쯤되면 아마 눈치를 챘을텐데, 우리가 구하고자 하는 것은 <strong>조합</strong> 이지, 순열이 아니다. 즉, (1, 2)와 (2, 1)은 같은 취급을 한다.</p>
+
+<p>다시 코드로 돌아가서, 만약 for 문이 target + 1 이 아닌, 0 부터 시작했다고 해보자.</p>
+
+<p>0번 학생과 5번 학생이 짝이라고 하고, 재귀 함수를 호출하는 과정 속에서 5번이 짝이 맺어지지 않아 A 로 선정되었다고 할 때, 0 번 학생은 B로 선정되어 그 둘을 짝으로 맺어줄 것이다. 이는 우리가 원하는 결과가 아니다. 왜냐면, 그 전에 이미 A 가 0 이었을 때 B 가 5 임을 발견해서, 짝을 맺어주었을 것이기 때문이다.</p>
+
+<p>즉, 정리하자면, (5, 0) 이라는 쌍을 생성하게 되는 꼴이고, 이는 조합으로 고려하겠다는 의미가 아닌, 순열로 고려하겠다는 의미이므로, 중복된 쌍을 만들게 된다. 이는 우리가 원하는 것이 아니다.</p>
+
+<hr />
+
+<p>핵심이 되는 target 을 이해하고 나면, 나머지 코드는 쉽게 따라갈 수 있다. 전체 코드는 다음과 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">algospot</span><span class="o">;</span>
+
+<span class="cm">/*
+
+3
+2 1
+0 1
+4 6
+0 1 1 2 2 3 3 0 0 2 1 3
+6 10
+0 1 0 2 1 2 1 3 1 4 2 3 2 4 3 4 3 5 4 5
+
+*/</span>
+
+<span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.*</span><span class="o">;</span>
+
+<span class="c1">// 소풍</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Picnic</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Solution</span><span class="o">&gt;</span> <span class="n">problems</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="nc">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="nc">InputStreamReader</span><span class="o">((</span><span class="nc">System</span><span class="o">.</span><span class="na">in</span><span class="o">)));</span>
+        <span class="nc">StringTokenizer</span> <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringTokenizer</span><span class="o">(</span><span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">());</span>
+        <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">());</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">c</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringTokenizer</span><span class="o">(</span><span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">());</span>
+            <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">());</span>
+            <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">());</span>
+
+            <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringTokenizer</span><span class="o">(</span><span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">());</span>
+            <span class="kt">boolean</span><span class="o">[][]</span> <span class="n">areFriends</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">n</span><span class="o">][</span><span class="n">n</span><span class="o">];</span>
+
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">());</span>
+                <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">st</span><span class="o">.</span><span class="na">nextToken</span><span class="o">());</span>
+
+                <span class="n">areFriends</span><span class="o">[</span><span class="n">a</span><span class="o">][</span><span class="n">b</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+                <span class="n">areFriends</span><span class="o">[</span><span class="n">b</span><span class="o">][</span><span class="n">a</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="o">}</span>
+
+
+            <span class="n">problems</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">Solution</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">m</span><span class="o">,</span> <span class="n">areFriends</span><span class="o">));</span>
+
+        <span class="o">}</span>
+
+
+        <span class="k">for</span> <span class="o">(</span><span class="nc">Solution</span> <span class="n">problem</span> <span class="o">:</span> <span class="n">problems</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">problem</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">answer</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="kt">int</span> <span class="n">n</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kt">int</span> <span class="n">m</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kt">boolean</span><span class="o">[][]</span> <span class="n">areFriends</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nf">Solution</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">boolean</span><span class="o">[][]</span> <span class="n">areFriends</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">n</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">m</span> <span class="o">=</span> <span class="n">m</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">areFriends</span> <span class="o">=</span> <span class="n">areFriends</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kt">int</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+
+            <span class="kt">boolean</span><span class="o">[]</span> <span class="n">paired</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">n</span><span class="o">];</span>
+
+            <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">countPairings</span><span class="o">(</span><span class="n">paired</span><span class="o">);</span>
+
+            <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kd">private</span> <span class="kt">int</span> <span class="nf">countPairings</span><span class="o">(</span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">paired</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="kt">int</span> <span class="n">target</span> <span class="o">=</span> <span class="n">findTarget</span><span class="o">(</span><span class="n">paired</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">target</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
+
+            <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">target</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">paired</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">areFriends</span><span class="o">[</span><span class="n">target</span><span class="o">][</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+                    <span class="n">paired</span><span class="o">[</span><span class="n">target</span><span class="o">]</span> <span class="o">=</span> <span class="n">paired</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+                    <span class="n">ret</span> <span class="o">+=</span> <span class="n">countPairings</span><span class="o">(</span><span class="n">paired</span><span class="o">);</span>
+                    <span class="n">paired</span><span class="o">[</span><span class="n">target</span><span class="o">]</span> <span class="o">=</span> <span class="n">paired</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+
+            <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kt">int</span> <span class="nf">findTarget</span><span class="o">(</span><span class="kt">boolean</span><span class="o">[]</span> <span class="n">paired</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">target</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(!</span><span class="n">paired</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+                    <span class="n">target</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="o">}</span>
+
+            <span class="o">}</span>
+
+            <span class="k">return</span> <span class="n">target</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</article>
+
+
+
+<section class="tags">
+  <strong>Tags:</strong> <a href="/tag/programmers">programmers</a>
+</section>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/problem-solving/problem_solving_20">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 프로그래머스[Lv.4] - 숫자 블록 ( Java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/algorithm/ways_to_get_LIS_length">
+					<span class="page-number"># 마음으로 이해하는 알고리즘 : LIS의 길이구하기 ( feat. Java )</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/problem-solving/problem_solving_21',
+    'title': '# 알고스팟 [ID:PICNIC] 소풍 ( Java )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

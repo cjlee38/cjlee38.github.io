@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># (Java) Static Field, Method, 그리고 Block</title>
+  <meta name="description" content="Concept of Static: static을 한글로 해석하면 정적이라는 뜻인데, 크게 와닿지는 않는 해석이다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="Concept of Static: static을 한글로 해석하면 정적이라는 뜻인데, 크게 와닿지는 않는 해석이다." />
+  <meta property="og:url" content="https://cjlee38.github.io/java/java_static">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# (Java) Static Field, Method, 그리고 Block" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# (Java) Static Field, Method, 그리고 Block">
+  <meta name="twitter:description" content="Concept of Static: static을 한글로 해석하면 정적이라는 뜻인데, 크게 와닿지는 않는 해석이다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/java/java_static">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/java/java_static">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># (Java) Static Field, Method, 그리고 Block</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">October 10, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/java">Java</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="concept-of-static">Concept of Static</h1>
+<p>: static을 한글로 해석하면 정적이라는 뜻인데, 크게 와닿지는 않는 해석이다.</p>
+
+<p>흔히, 객체지향에서 자주 하는 비유 중 하나가 붕어빵 틀과 붕어빵이다.<br />
+클래스는 붕어빵 틀로, 붕어빵을 찍어낼 수 있고, 인스턴스는 찍혀진 붕어빵이다.<br />
+따라서, 찍힌 붕어빵은 서로 다른 객체로 인식해야한다.</p>
+
+<p>그러나, 붕어빵을 만들기 위해 사용하는 <strong>반죽</strong>은 어떨까? <br />
+붕어빵 장사를 하는 사람이, 아주 기가막힌 비율의 반죽을 만들어내서,<br />
+<em>(말은 안되지만)</em> 이미 만들어진, 그리고 앞으로 만들 모든 붕어빵의 반죽을<br />
+new 반죽으로 바꾸고 싶다고 해보자.</p>
+
+<p>모든 instance의 반죽을 하나하나 전부 변경해야할까?<br />
+이를 instance로는 해결하려 하기 보다는, 모든 객체가 바라보는 class 자체에 박아넣고, <br />
+이를 수정하는 것이 나을 것이다.</p>
+
+<p>다른 비유를 들자면 <strong>Class계의 공지사항</strong> 정도가 될 수 있을 것 같다.</p>
+
+<h1 id="static-field">Static Field</h1>
+<p>: 붕어빵 예시를 코드로 한번 작성해보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="err">붕어빵</span> <span class="err">{</span>
+    <span class="nc">private</span> <span class="nc">String</span> <span class="err">반죽</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="err">속재료</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="err">크기</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="err">붕어빵</span><span class="o">(</span><span class="nc">String</span> <span class="err">반죽</span><span class="o">,</span> <span class="nc">String</span> <span class="err">속재료</span><span class="o">,</span> <span class="nc">String</span> <span class="err">크기</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="err">반죽</span> <span class="o">=</span> <span class="err">반죽</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="err">속재료</span> <span class="o">=</span> <span class="err">속재료</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="err">크기</span> <span class="o">=</span> <span class="err">크기</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">// Getter, Setter, toString 메소드 생략</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="err">붕어빵</span> <span class="n">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="err">붕어빵</span><span class="o">(</span><span class="s">"기본"</span><span class="o">,</span> <span class="s">"팥"</span><span class="o">,</span> <span class="s">"중간"</span><span class="o">);</span>
+        <span class="err">붕어빵</span> <span class="n">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="err">붕어빵</span><span class="o">(</span><span class="s">"기본"</span><span class="o">,</span> <span class="s">"슈프림"</span><span class="o">,</span> <span class="s">"중간"</span><span class="o">);</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b1</span><span class="o">);</span>
+        <span class="c1">// 붕어빵{반죽='기본', 속재료='팥', 크기='중간'}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b2</span><span class="o">);</span>
+        <span class="c1">// 붕어빵{반죽='기본', 속재료='슈프림', 크기='중간'}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>여기서 <code class="highlighter-rouge">"기본"</code> 이라는 반죽이 <code class="highlighter-rouge">"혁신"</code> 이라는 혁신적인 반죽으로 바뀌어야 한다면 어떨까?</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b1</span><span class="o">.</span><span class="na">set</span><span class="err">반죽</span><span class="o">(</span><span class="s">"혁신"</span><span class="o">);</span>
+<span class="n">b2</span><span class="o">.</span><span class="na">set</span><span class="err">반죽</span><span class="o">(</span><span class="s">"혁신"</span><span class="o">);</span>
+<span class="o">...</span>
+</code></pre></div></div>
+<p>벌써부터 끔찍하다.</p>
+
+<p>하지만, 반죽 앞에 static 이라는 키워드를 붙일 수 있다.<br />
+(<code class="highlighter-rouge">private String 반죽</code> -&gt; <code class="highlighter-rouge">static String 반죽</code>)<br />
+이 때, 생성자와 Setter에 다음과 같은 Warning이 나온다.</p>
+
+<p><code class="highlighter-rouge">Static member 'com.company.붕어빵.반죽' accessed via instance reference </code></p>
+
+<p>따라서, 생성자와 Setter를 다음과 같이 수정하면 된다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="err">붕어빵</span><span class="o">(</span><span class="nc">String</span> <span class="err">반죽</span><span class="o">,</span> <span class="nc">String</span> <span class="err">속재료</span><span class="o">,</span> <span class="nc">String</span> <span class="err">크기</span><span class="o">)</span> <span class="o">{</span>
+    <span class="err">붕어빵</span><span class="o">.</span><span class="err">반죽</span> <span class="o">=</span> <span class="err">반죽</span><span class="o">;</span> <span class="c1">// 혹은 </span>
+    <span class="k">this</span><span class="o">.</span><span class="err">속재료</span> <span class="o">=</span> <span class="err">속재료</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="err">크기</span> <span class="o">=</span> <span class="err">크기</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="n">set</span><span class="err">반죽</span><span class="o">(</span><span class="nc">String</span> <span class="err">반죽</span><span class="o">)</span> <span class="o">{</span>
+    <span class="err">붕어빵</span><span class="o">.</span><span class="err">반죽</span> <span class="o">=</span> <span class="err">반죽</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>다시 Main Method로 돌아가서, 한줄만 추가해서 실행해보자.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="err">붕어빵</span> <span class="n">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="err">붕어빵</span><span class="o">(</span><span class="s">"기본"</span><span class="o">,</span> <span class="s">"팥"</span><span class="o">,</span> <span class="s">"중간"</span><span class="o">);</span>
+        <span class="err">붕어빵</span> <span class="n">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="err">붕어빵</span><span class="o">(</span><span class="s">"기본"</span><span class="o">,</span> <span class="s">"슈프림"</span><span class="o">,</span> <span class="s">"중간"</span><span class="o">);</span>
+
+        <span class="n">b2</span><span class="o">.</span><span class="na">set</span><span class="err">반죽</span><span class="o">(</span><span class="s">"혁신"</span><span class="o">);</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b1</span><span class="o">);</span>
+        <span class="c1">// 붕어빵{반죽='혁신', 속재료='팥', 크기='중간'}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b2</span><span class="o">);</span>
+        <span class="c1">// 붕어빵{반죽='혁신', 속재료='슈프림', 크기='중간'}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>b2를 통해서 실행했을 뿐인데, b1또한 혁신으로 바뀌는 것을 볼 수 있다.</p>
+
+<h1 id="static-method">Static Method</h1>
+<p>: 그런데, 코드를 다시 보면 이상한 점이 느껴진다.<br />
+모두 <code class="highlighter-rouge">"혁신"</code> 으로 잘 바뀌기는 했는데, <br />
+b2를 통해서 <code class="highlighter-rouge">set반죽()</code> 메소드를 호출하는 것이 어울릴까?  <br />
+그렇지는 않아보인다.</p>
+
+<p>잠깐 다른 이야기를 하자면, 우리가 출력을 위해 사용하는
+<code class="highlighter-rouge">System.out.println()</code> 이라는 메소드는, <br />
+우리가 <strong>instance를 만들어서</strong> 실행하지 않는다.<br />
+그저 곧바로 System.out.println() 을 실행할 수 있다.</p>
+
+<p>이렇게 사용할 수 있는 이유는, println() 이라는 메소드가 static method 이었기 때문이다.</p>
+
+<p>따라서, <code class="highlighter-rouge">set반죽()</code> 메소드 또한 static으로 바꾸어서,<br />
+(<code class="highlighter-rouge">public void set반죽()</code> -&gt; <code class="highlighter-rouge">public static void set반죽()</code>)<br />
+<strong>클래스로 접근해 사용할 수 있도록 만들면 좋겠다</strong>는 생각이 든다.</p>
+
+<p><code class="highlighter-rouge">b2.set반죽("혁신");</code> 을 <code class="highlighter-rouge">붕어빵.set반죽("혁신");</code> 로 바꿔서 실행해보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="err">붕어빵</span> <span class="n">b1</span> <span class="o">=</span> <span class="k">new</span> <span class="err">붕어빵</span><span class="o">(</span><span class="s">"기본"</span><span class="o">,</span> <span class="s">"팥"</span><span class="o">,</span> <span class="s">"중간"</span><span class="o">);</span>
+        <span class="err">붕어빵</span> <span class="n">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="err">붕어빵</span><span class="o">(</span><span class="s">"기본"</span><span class="o">,</span> <span class="s">"슈프림"</span><span class="o">,</span> <span class="s">"중간"</span><span class="o">);</span>
+
+        <span class="c1">// b2.set반죽("혁신");</span>
+        <span class="err">붕어빵</span><span class="o">.</span><span class="na">set</span><span class="err">반죽</span><span class="o">(</span><span class="s">"혁신"</span><span class="o">);</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b1</span><span class="o">);</span>
+        <span class="c1">// 붕어빵{반죽='혁신', 속재료='팥', 크기='중간'}</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b2</span><span class="o">);</span>
+        <span class="c1">// 붕어빵{반죽='혁신', 속재료='슈프림', 크기='중간'}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>똑같은 결과가 나타나는 것을 볼 수 있다.</p>
+
+<h1 id="static-block">Static Block</h1>
+<p>: C++과 다르게, <br />
+자바는 클래스의 static 초기화에 사용될 수 있는 static block, <br />
+혹은 static clause 라고 불리는 특별한 block을 지원한다.</p>
+
+<p>지금껏 우리는 생성자, 혹은 set반죽() 메소드를 통해서,<br />
+반죽을 결정할 수 있었다.</p>
+
+<p>하지만, 붕어빵의 반죽이라는 것은, 붕어빵을 <strong>만들 때</strong>  결정되는 것이 아니고, <br />
+붕어빵 장사를 하는 사람이 <strong>집에서부터</strong>  만들어서 준비를 해놓는다.<br />
+다시 말해, 반죽은 붕어빵에 종속되지 않는다.</p>
+
+<p>그러나, 지금 코드는 붕어빵이 있어야, 그제서야 붕어빵의 반죽이 결정되는 꼴과 다름없다.</p>
+
+<p>잠깐의 테스트를 위해, <code class="highlighter-rouge">반죽</code> 변수의 접근제어자를 public으로 바꾸고, <br />
+<code class="highlighter-rouge">System.out.println(붕어빵.반죽)</code>을 가장 먼저 호출해보면,<br />
+null이 return 되는 것을 볼 수 있다.<br />
+이를, <code class="highlighter-rouge">"기본"</code> 이라는 문자열로 초기화 될 수 있도록 해보자.</p>
+
+<p><strong>붕어빵의 생성과 관계 없이 반죽은 미리 결정되어야 하므로,</strong> 생성자에서도 빼버리자.</p>
+
+<p>그리고 나면, 붕어빵의 반죽을 초기화 할 수 있는 방법은 총 세가지가 된다.</p>
+
+<ol>
+  <li>처음 변수를 선언할 때, 정의하기</li>
+  <li>처음 변수를 선언할 때, private static method를 콜 해서, 그 결과값을 받기</li>
+  <li>선언해놓고, Static Block 이용하기</li>
+</ol>
+
+<p>1번의 방법은, 초기화가 복잡한 경우에는 쓰고싶어도 쓸 수 없는 방법이다. <br />
+(e.g. 1부터 100까지의 숫자가 담긴 ArrayList를 받아야 한다면?)</p>
+
+<p>2번과 3번은 거의 유사하다. 다음의 예제를 보자.</p>
+
+<p>Case. 2</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="err">붕어빵</span> <span class="err">{</span>
+    <span class="nc">static</span> <span class="kd">public</span> <span class="nc">String</span> <span class="err">반죽</span> <span class="o">=</span> <span class="err">반죽만들기</span><span class="o">();</span>
+    <span class="c1">// 중간 생략</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">String</span> <span class="err">반죽만들기</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"static method called"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="s">"기본"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Case. 3</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="err">붕어빵</span> <span class="err">{</span>
+    <span class="nc">static</span> <span class="kd">public</span> <span class="nc">String</span> <span class="err">반죽</span><span class="o">;</span>
+    <span class="c1">// 중간 생략</span>
+    <span class="kd">static</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"static block called"</span><span class="o">);</span>
+        <span class="err">반죽</span> <span class="o">=</span> <span class="s">"기본"</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Main</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="err">붕어빵</span><span class="o">.</span><span class="err">반죽</span><span class="o">);</span>
+        <span class="c1">// static method called 또는 static block called</span>
+        <span class="c1">// 기본</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이렇게 단순한 경우에는 거의 차이가 없지만,<br />
+여러 개의 static 변수를 초기화해야하고, 이 변수들이 <strong>의존적</strong>이라면,<br />
+static block을 쓰는것이 훨씬 편할 것이다.</p>
+
+<p>가령, 위 예시에서, <code class="highlighter-rouge">String 반죽2</code> 는 기본 반죽이 두개, <br />
+즉 <code class="highlighter-rouge">기본기본</code>을 만들고 싶다고 해보자.</p>
+
+<p>Case. 2</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="err">붕어빵</span> <span class="err">{</span>
+    <span class="nc">static</span> <span class="kd">public</span> <span class="nc">String</span> <span class="err">반죽</span> <span class="o">=</span> <span class="err">반죽만들기</span><span class="o">();</span>
+    <span class="kd">static</span> <span class="kd">public</span> <span class="nc">String</span> <span class="err">반죽</span><span class="mi">2</span> <span class="o">=</span> <span class="err">반죽만들기</span><span class="mi">2</span><span class="o">(</span><span class="err">반죽</span><span class="o">);</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">String</span> <span class="err">반죽만들기</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"static method called"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="s">"기본"</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">String</span> <span class="err">반죽만들기</span><span class="mi">2</span><span class="o">(</span><span class="nc">String</span> <span class="err">반죽</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"static method 2 called"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="err">반죽</span> <span class="o">+</span> <span class="err">반죽</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Case. 3</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="err">붕어빵</span> <span class="err">{</span>
+    <span class="nc">static</span> <span class="kd">public</span> <span class="nc">String</span> <span class="err">반죽</span><span class="o">;</span>
+    <span class="kd">static</span> <span class="kd">public</span> <span class="nc">String</span> <span class="err">반죽</span><span class="mi">2</span><span class="o">;</span>
+
+    <span class="kd">static</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"static block called"</span><span class="o">);</span>
+        <span class="err">반죽</span> <span class="o">=</span> <span class="s">"기본"</span><span class="o">;</span>
+        <span class="err">반죽</span><span class="mi">2</span> <span class="o">=</span> <span class="err">반죽</span> <span class="o">+</span> <span class="err">반죽</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Main</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="err">붕어빵</span><span class="o">.</span><span class="err">반죽</span><span class="mi">2</span><span class="o">);</span>
+        <span class="c1">// static method called , static method2 called </span>
+        <span class="c1">// 또는 static block called</span>
+        <span class="c1">// 기본기본</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>2번의 방법을 사용하나, 3번의 방법을 사용하나 차이는 거의 없지만,<br />
+상황에 따라 편리한 방법을 골라서 사용하는 것이 좋다고 본다.</p>
+
+<h1 id="사용-시-주의점">사용 시 주의점</h1>
+<p>: static의 붙은 변수는, 메모리의 static 영역에 할당되어서, <strong>프로그램이 끝날 때 까지 생존한다.</strong><br />
+다시 말해, Garbage Collection의 대상이 되지 않는다.<br />
+그렇기에, static 변수를 남발하는 것은 좋은 선택은 아니다.</p>
+
+<blockquote>
+  <p>이에 더해, <a href="https://stackoverflow.com/questions/7026507/why-are-static-variables-considered-evil%22">스택오버플로우의 한 질문글</a> 에서는, static 키워드를 사용하는 것 <strong>자체</strong>를 금기시 하고 있다.<br />
+한줄 요약하면, static 사용은  <strong>객체지향적이지 않다.</strong> 라는 것이 요지이다.</p>
+</blockquote>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li><a href="https://stackoverflow.com/questions/11618551/static-block-vs-private-static-method-for-static-member-initialization">static block vs private static method for static member initialization</a></li>
+  <li><a href="https://stackoverflow.com/questions/7026507/why-are-static-variables-considered-evil%22">Why are static variables considered evil?</a></li>
+  <li><a href="https://www.geeksforgeeks.org/g-fact-79/">Static blocks in Java</a></li>
+  <li><a href="https://onsil-thegreenhouse.github.io/programming/java/2017/11/12/java_static_method_block/">[Java] static method, static block</a></li>
+</ul>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/java/java_enum">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># (Java) [짧] Enum 뜯어보기</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/problem-solving/problem_solving_13">
+					<span class="page-number"># 프로그래머스[Lv.3] 야근지수 ( Java )</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/java/java_static',
+    'title': '# (Java) Static Field, Method, 그리고 Block'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># (Java) 예외처리를 위한 Try-Catch</title>
+  <meta name="description" content="0. 들어가며: 예외처리는, 그 이름만 들어도 두려움이 생긴다.간단하게 생각하자면 if else문의 연장선인 것 같으면서도,또 뭔가 시스템의 장애를 덕지덕지 막아내는 것 같은 찝찝함도 동시에 든다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 들어가며: 예외처리는, 그 이름만 들어도 두려움이 생긴다.간단하게 생각하자면 if else문의 연장선인 것 같으면서도,또 뭔가 시스템의 장애를 덕지덕지 막아내는 것 같은 찝찝함도 동시에 든다." />
+  <meta property="og:url" content="https://cjlee38.github.io/java/exception_in_java">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# (Java) 예외처리를 위한 Try-Catch" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# (Java) 예외처리를 위한 Try-Catch">
+  <meta name="twitter:description" content="0. 들어가며: 예외처리는, 그 이름만 들어도 두려움이 생긴다.간단하게 생각하자면 if else문의 연장선인 것 같으면서도,또 뭔가 시스템의 장애를 덕지덕지 막아내는 것 같은 찝찝함도 동시에 든다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/java/exception_in_java">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/java/exception_in_java">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># (Java) 예외처리를 위한 Try-Catch</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">October 5, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/java">Java</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-들어가며">0. 들어가며</h1>
+<p>: 예외처리는, 그 이름만 들어도 두려움이 생긴다.<br />
+간단하게 생각하자면 if else문의 연장선인 것 같으면서도,<br />
+또 뭔가 시스템의 장애를 덕지덕지 막아내는 것 같은 찝찝함도 동시에 든다.</p>
+
+<p>예외처리문을 쓸때면 항상<br />
+“애초에 코드를 잘 짜면 되지 않나?” 라는 <br />
+바보같은 의문이 남기도 한다.</p>
+
+<p>아무튼, 오늘 다루고자 하는 내용은<br />
+“예외 처리는 이렇게 해야한다!” 하는 거창한 내용은 못되고(쓸 실력도 안되고),<br />
+기본적으로 알고 있었던, 그리고 글을 쓰면서 새로 배운,<br />
+이러이러한 것들이 존재한다~ 정도의 Introduction 느낌만 가져가려고 한다.</p>
+
+<h1 id="1-예외란-무엇인가">1. 예외란 무엇인가?</h1>
+<p>: Error와 Exception은 다르다.</p>
+
+<h3 id="--error">- Error</h3>
+<p>: 시스템 레벨에서 발생하는 <strong>심각한</strong> 수준의 오류. 프로그램 내에서 처리할 수 없음.<br />
+e.g. OutOfMemoryError, StackOverflowError</p>
+
+<h3 id="--exception">- Exception</h3>
+<p>: 개발자의 설계 미숙 등으로 인해, 로직 상의 문제. 미리 예측하고, 처리할 수 있다.<br />
+e.g. NullPointerException, IndexOutOfBoundException</p>
+
+<h1 id="1-try---catch---finally">1. try - catch - finally</h1>
+<p>: 아마 try-catch 문을 배웠다면, <br />
+가장 먼저 배우는 기본적인 형태는 다음과 같을 것이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">myException</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">myException</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"try here"</span><span class="o">);</span>
+<span class="c1">//            throw new IllegalStateException("exception here");</span>
+        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"catch here"</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"e : "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"finally here"</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+<p>중간에 주석처리된 throw new … 는 예외를 발생시키는 코드다.<br />
+저 키워드에 대해서는 후술하겠다.</p>
+
+<p>어쨌든, myException() 이라는 함수가 실행되면,<br />
+try 구문에서 <code class="highlighter-rouge">try here</code>를 출력하고,<br />
+에러가 발생한다면(<strong>주석이 해제된다면</strong>) <code class="highlighter-rouge">catch here</code> 와 <code class="highlighter-rouge">e : exception here</code> 를,<br />
+그리고 마지막으로 finally의 <code class="highlighter-rouge">finally here</code>를 출력하고 함수가 종료된다.</p>
+
+<p>만약 이러한 exception에 대한 처리를 해주지 않았더라면,<br />
+NullPointerException, ArrayIndexOutOfBoundsException 등이 발생했을 때<br />
+프로그램이 개복치처럼 죽어버렸을 것이다.</p>
+
+<hr />
+
+<blockquote>
+  <p>Note. 적절한 예외처리에 대한 내용은 잘 모르기도 하고, 이 포스팅의 취지에 맞지 않아<br />
+최대한 빼려고 했는데, 그래도 이 부분은 중요한 것 같아서 꼭 넣어야 할 것 같다. <br />
+무엇이냐 하면, <strong>모든 예외를 Handling 해버리는, 상위 클래스인 Exception으로 예외처리하지 않는 것을 권장한다.</strong><br />
+다시 말해, <strong>특정 예외만을 받아내는 Exception으로 처리해야 한다.</strong></p>
+</blockquote>
+
+<hr />
+
+<p>또한, finally가 <strong>언제까지 살아있느냐?</strong>를 주의깊게 봐야한다.<br />
+다음의 코드를 보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">myException</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">myException</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"try here"</span><span class="o">);</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"exception here"</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"catch here"</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"e : "</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"finally here"</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>위에서 작성한 코드와의 차이는 딱 두 가지다.</p>
+<ol>
+  <li>try문에서, throw keyword의 주석을 해제했다.</li>
+  <li>myException() 함수의 return을 int로 바꾼 뒤, -1 <em>(임의의 값)</em> 을 return하도록 해서, 이를 출력하도록 했다.</li>
+</ol>
+
+<p>try-catch가 익숙치 않은 사람이라면, finally가 있다 하더라도 return이 있기 때문에<br />
+<code class="highlighter-rouge">finally here</code>는 출력되지 않을 것으로 생각할 수 있지만,<br />
+실제로는 <code class="highlighter-rouge">finally here</code>까지 출력이 되고, return 이 이루어진다.</p>
+
+<p>따라서, 실제 출력은 다음과 같이 이루어진다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>try here
+catch here
+e : exception here
+finally here
+-1
+</code></pre></div></div>
+
+<p>함수를 바로 종료시켜버리는 막강한 return조차 기다리게 만드는 finally라니, 도대체 어떻게 가능한 것일까?<br />
+이를 알아보기 위해, 위 코드를 컴파일 시킨뒤, IDE를 이용하여 다시 디컴파일 시켜보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//</span>
+<span class="c1">// Source code recreated from a .class file by IntelliJ IDEA</span>
+<span class="c1">// (powered by FernFlower decompiler)</span>
+<span class="c1">//</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">Main</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">var0</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">var1</span> <span class="o">=</span> <span class="n">myException</span><span class="o">();</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">var1</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">myException</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kt">byte</span> <span class="n">var1</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"try here"</span><span class="o">);</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"exception here"</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">var5</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"catch here"</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"e : "</span> <span class="o">+</span> <span class="n">var5</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+            <span class="n">var1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"finally here"</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">var1</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<p>디컴파일 시킨 코드를 보니, 우리가 작성했던 return 문이 catch 안에서 실행되는 것이 아니고,<br />
+var1 이라는 byte 변수에 담아 놓은 뒤에, finally 이후에 return 되는 것을 볼 수 있다.</p>
+
+<p>즉, 우리가 catch안에 return을 작성하더라도, <strong>컴파일러에 의해 뒤로 미뤄진다.</strong></p>
+
+<h1 id="2-exception-class">2. Exception class</h1>
+<p>: 예외 클래스는 다음과 같은 구조를 가진다.</p>
+
+<p><img src="/assets/images/2020-10-20-19-38-58_2020-10-05-exception_in_java.md.png" alt="" /></p>
+
+<p>(인터페이스의 네이밍을 가진) Throwable이라는 클래스 하위에,<br />
+아까 보았던 Exception과 Error가 구분되고,<br />
+그 하위에 Exception을 직접 상속하는 클래스들,<br />
+그리고 Exception을 상속하는 RunTimeException을 상속하는 클래스들로 이루어진다.</p>
+
+<p>이 때, Checked와 Unchecked는 다음과 같은 차이가 있다.</p>
+
+<h3 id="--checked-exception">- Checked Exception</h3>
+<p>: 컴파일시에 “에러를 처리하는지”의 여부를 확인한다.<br />
+예외 발생 시 transaction을 roll-back 하지 않는다.</p>
+
+<h3 id="--unchecked-exception">- Unchecked Exception</h3>
+<p>: 예외가 런타임시에 발생할수도, 발생하지 않을수도 있으므로,<br />
+컴파일할 때에는 에러 처리 여부를 확인하지 않는다.<br />
+예외 발생 시 transaction을 roll-back 한다.</p>
+
+<h1 id="3-throw와-throws">3. throw와 throws</h1>
+<p>: 이 두가지 키워드가 수행하는 역할은 다르지만, 비슷하게 생겨서 묶었다.</p>
+
+<h3 id="--throw">- throw</h3>
+
+<p>: 위에서 적어놓았던 <code class="highlighter-rouge">throw new IllegalStateException();</code> 은,<br />
+<strong>IllegalStateException 이라는 예외를 “발생”시킨다.</strong><br />
+즉, throw는 예외를 발생시키는 역할을 한다.</p>
+
+<h3 id="--throws">- throws</h3>
+<p>: 반면, throws는 예외를 <strong>던진다.</strong>
+무슨말인가 하면, 예외가 발생했을 때 이를 메소드 자기 자신이 처리하지 않고,<br />
+자기 자신을 <strong>호출한</strong> 메소드에게 “이거 처리해주세요” 하고 던진다.</p>
+
+<p>계속해서 stack을 타고 가다보면, 최종적으로는 main 메소드를 실행한 JVM 에게 던진다.</p>
+
+<p>다음의 코드의 흐름을 잘 살펴보면, 위 두 키워드의 차이에 대해서 알 수 있으리라 생각한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">myException</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="nc">IllegalStateException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">myException</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">IllegalStateException</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"exception"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h1 id="4-try-with-resources">4. try-with-resources</h1>
+<p>: 버퍼 입출력을 지원하는 클래스인 BufferedWriter는 Checked Exception중 하나이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Path</span> <span class="n">file</span> <span class="o">=</span>  <span class="nc">Paths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">" ... "</span><span class="o">);</span>
+<span class="nc">BufferedWriter</span> <span class="n">writer</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+<span class="n">writer</span> <span class="o">=</span> <span class="nc">Files</span><span class="o">.</span><span class="na">newBufferedWriter</span><span class="o">(</span><span class="n">file</span><span class="o">);</span> <span class="c1">// IOException</span>
+<span class="n">writer</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">" ... "</span><span class="o">);</span> <span class="c1">// IOException</span>
+<span class="n">writer</span><span class="o">.</span><span class="na">close</span><span class="o">();</span> <span class="c1">// IOException</span>
+</code></pre></div></div>
+
+<p>위 세 곳에서 IOException이 발생하므로, <br />
+IDE에서 Unhandled Exception이 있다면서 빨간 줄을 쭉 그어준다.</p>
+
+<p>그러나, close()의 경우 <strong>반드시 실행되어야 하기 때문에,</strong><br />
+try가 아닌 finally block에 들어가야 하는데, 이 또한 IOException이 발생할 수 있다.<br />
+따라서, finally에 try-catch를 한번 더 써야하는데, 이는 꽤 귀찮은 일이다.</p>
+
+<p>이를 위해, try-with-resources 라는 것이 생겼다.<br />
+형태는 다음과 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="o">(</span><span class="nc">BufferedWriter</span> <span class="n">writer</span> <span class="o">=</span> <span class="nc">Files</span><span class="o">.</span><span class="na">newBufferedWriter</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
+    <span class="n">writer</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">" ... "</span><span class="o">);</span>
+<span class="o">}</span> <span class="n">catach</span><span class="o">(</span><span class="nc">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// do something</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>마치, 파이썬에서 Context Manager라고 불리는 with 과 비슷하다.<br />
+파이썬의 Context Manager는 close() 함수를 호출하지 않아도,<br />
+with 구문이 끝나면 알아서 호출해준다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">"foo.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">file</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>아무튼, 이러한 try-with-resources 의 resources가 되기 위해서는<br />
+<code class="highlighter-rouge">java.lang.AutoCloseable</code> 인터페이스를 구현해야 한다.</p>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/problem-solving/problem_solving_12">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 프로그래머스[Lv.3] 단속카메라 ( Java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/jsp/jsp_learning_07">
+					<span class="page-number"># 7. JSP 학습기록 - MVC 패턴과 JSP Model 1, Model 2</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/java/exception_in_java',
+    'title': '# (Java) 예외처리를 위한 Try-Catch'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># (Java) HashMap 으로의 여행</title>
+  <meta name="description" content="0. 들어가며: 나는 프로그래밍에서 Naming이 정말 Critical한 중요성을 갖는다고 생각한다.새로운 무언가에 대해서 배우고 나서, 그 이름을 다시 떠올려보면,왜 이걸 만든 사람들이 이 이름을 지었는지에 대해서 가닥이 잡힌다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 들어가며: 나는 프로그래밍에서 Naming이 정말 Critical한 중요성을 갖는다고 생각한다.새로운 무언가에 대해서 배우고 나서, 그 이름을 다시 떠올려보면,왜 이걸 만든 사람들이 이 이름을 지었는지에 대해서 가닥이 잡힌다." />
+  <meta property="og:url" content="https://cjlee38.github.io/java/journey_to_java_hashmap">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# (Java) HashMap 으로의 여행" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# (Java) HashMap 으로의 여행">
+  <meta name="twitter:description" content="0. 들어가며: 나는 프로그래밍에서 Naming이 정말 Critical한 중요성을 갖는다고 생각한다.새로운 무언가에 대해서 배우고 나서, 그 이름을 다시 떠올려보면,왜 이걸 만든 사람들이 이 이름을 지었는지에 대해서 가닥이 잡힌다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/java/journey_to_java_hashmap">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/java/journey_to_java_hashmap">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># (Java) HashMap 으로의 여행</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 10, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/java">Java</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-들어가며">0. 들어가며</h1>
+<p>: 나는 프로그래밍에서 Naming이 정말 <strong>Critical한 중요성</strong>을 갖는다고 생각한다.<br />
+새로운 무언가에 대해서 배우고 나서, 그 이름을 다시 떠올려보면,<br />
+왜 이걸 만든 사람들이 이 이름을 지었는지에 대해서 가닥이 잡힌다.</p>
+
+<p>Python에서의 dictionary, 그리고 Java에서의 HashMap은 Key-Value의 구조를 갖는<br />
+데이터를 저장하는 가장 대표적인 클래스다.</p>
+
+<p>Python의 dictionary 라는 이름을 보면, <br />
+“음, 사전이니까, 마치 단어사전 혹은 백과사전처럼, 어떤 이름과 그 안에 내용물을 갖춘 무언가겠군!”<br />
+이라고 유추해 볼 수 있지만,</p>
+
+<p>Java의 HashMap을 보면 잘 이해가 되지 않는다.<br />
+Map이야 Key랑 Value를 Mapping한다는 의미로 쓰인것 같은데,<br />
+“Hash? 내가 아는 그 Hash의 의미로 쓴게 맞나? 왜 Hash라는 이름을 쓴거지?” <br />
+라는 의구심이 든다.</p>
+
+<p>또한, 흔히 “Key-Value의 시간복잡도는 O(1) 이다” 라고 한다. 왜일까?<br />
+Key라고 하는 것은 결국, Index나 Memory의 위치가 아니라, Object일텐데,<br />
+어떻게 O(1)이 나올 수 있을까?</p>
+
+<p>궁금증을 해결하기 위해,<br />
+세계 모든 지식을 총망라하신 구선생님께 여쭤보았다.<br />
+(공부하면서 작성한 것이니, 틀린 부분이 있다면 말씀해주세요.)</p>
+
+<h1 id="1-hash">1. Hash</h1>
+<p>: Hash 자체에 대한 내용은 이 포스팅에서 다루지 않는다. <br />
+Hash에 대한 이해가 없으면, 이 글을 읽기가 조금 어려울 수 있다.</p>
+
+<p>(2020.09.25 수정)<br />
+<a href="https://cjlee38.github.io/btb/what_is_hash">Hash 맛보기</a> <br />
+Hash에 관해서 포스팅했습니다.</p>
+
+<h1 id="2-hashmap의-구조">2. HashMap의 구조</h1>
+<p>: HashMap에 왜 Hash라는 이름이 붙었는지 이해하기 위해선,<br />
+먼저 그 구조를 파악하는 것이 우선이다.</p>
+
+<p><img src="/assets/images/2020-09-10-15-07-31_journey_to_java_hashmap.md.png" alt="Structure of Hashmap" class="alignCenter" /></p>
+
+<p><a href="https://www.javatpoint.com/working-of-hashmap-in-java">사진 출처</a></p>
+
+<p>먼저, bucket 이라는 <strong>Array</strong>가 있고,<br />
+그 Array 내부에는 <strong>Node로 구성된 “LinkedList”</strong> 가 존재한다.</p>
+
+<p>즉, 이렇게 생긴 것을 <strong>“Hash table”</strong> 이라고 하고, Hash table을 통해 Key-Value를 관리하게 된다.<br />
+<em>기수정렬(Radix Sort) 할 때의 모습을 상상해보면 된다.</em></p>
+
+<h1 id="3-hashmap의-동작-이론편">3. HashMap의 동작 (이론편)</h1>
+<p>: 대충 어떻게 생겨 먹었는지는 알겠으니, 어떻게 동작하는지에 대해서 한번 간략하게 익혀보자.</p>
+
+<p>데이터를 집어 넣는 과정을 이해하면, 꺼내는 것을 이해하는 것은 당연하게 여겨진다.<br />
+HashMap에 put() 함수를 사용해서, 데이터를 넣고자 하면, 다음과 같은 과정이 일어난다.</p>
+
+<ol>
+  <li>Key로 들어온 Object를 Hash화를 한다</li>
+  <li>Hash화한 값을 <strong>“배열의 인덱스”</strong> 로 지정한다.</li>
+  <li>해당 배열에 값이 존재하지 않으면, 그 위치에 Node라는 클래스로 Key-Value Object를 저장한다.</li>
+  <li>해당 배열에 값이 존재하면, 그 <strong>다음</strong> 위치에 새로운 Node를 연결하고 Key-Value Object를 저장한다.(즉, LinkedList로 관리한다.)</li>
+  <li>List가 너무 길게 이어진다면, Tree로 변환한다.</li>
+  <li>Hash충돌(Collision)이 너무 많이 발생한다면, Bucket. 즉 배열의 크기를 늘린다.</li>
+</ol>
+
+<p>이해력이 좋은 사람이라면, 여기까지만 봐도 아하 할 수 있다.<br />
+나같은 멍청이는 뭔소리야? 싶어서 결국 코드를 뜯어보고야 만다.</p>
+
+<h1 id="4-hashmap의-동작-코드편">4. HashMap의 동작 (코드편)</h1>
+<p>: HashMap 에 데이터를 넣고자 하는, put() 함수로 이동해보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="no">V</span> <span class="nf">put</span><span class="o">(</span><span class="no">K</span> <span class="n">key</span><span class="o">,</span> <span class="no">V</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nf">putVal</span><span class="o">(</span><span class="n">hash</span><span class="o">(</span><span class="n">key</span><span class="o">),</span> <span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>보는 바와 같이, <br />
+1) hash()라는 함수를 실행한 key<br />
+2) 원래 key<br />
+3) value<br />
+4) 뭔지 모를 false<br />
+5) 뭔지 모를 true</p>
+
+<p>가 있다.</p>
+
+<p>hash() 함수로 슬쩍 발 하나 담궈보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="nf">hash</span><span class="o">(</span><span class="nc">Object</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">h</span><span class="o">;</span>
+    <span class="k">return</span> <span class="o">(</span><span class="n">key</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="o">(</span><span class="n">h</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="na">hashCode</span><span class="o">())</span> <span class="o">^</span> <span class="o">(</span><span class="n">h</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">16</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>key가 null이라면 0을,
+null이 아니라면 <strong>key의 hashCode() 라는 함수를 실행한 값</strong>과,
+<strong>key의 Hash코드를 unsigned로 쉬프트 연산한 값</strong>을 <strong>XOR 연산</strong>한 것을 확인할 수 있다.</p>
+
+<p>이렇게 하면 어떤 값이 나온다는 것을 예측할 수 있다.<br />
+이번 포스팅에서의 목적은 Hash가 어떻게 구현되는지가 아니므로, <br />
+뭐 대충 어떤 숫자가 나왔다고 이해하고 넘어가자.</p>
+
+<p>다시 돌아와서, 이제 putVal() 이라는 곳으로 구경 가보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">final</span> <span class="no">V</span> <span class="nf">putVal</span><span class="o">(</span><span class="kt">int</span> <span class="n">hash</span><span class="o">,</span> <span class="no">K</span> <span class="n">key</span><span class="o">,</span> <span class="no">V</span> <span class="n">value</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">onlyIfAbsent</span><span class="o">,</span>
+                <span class="kt">boolean</span> <span class="n">evict</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Node</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;[]</span> <span class="n">tab</span><span class="o">;</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;</span> <span class="n">p</span><span class="o">;</span> <span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="n">i</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">((</span><span class="n">tab</span> <span class="o">=</span> <span class="n">table</span><span class="o">)</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="o">(</span><span class="n">n</span> <span class="o">=</span> <span class="n">tab</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="o">(</span><span class="n">tab</span> <span class="o">=</span> <span class="n">resize</span><span class="o">()).</span><span class="na">length</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">((</span><span class="n">p</span> <span class="o">=</span> <span class="n">tab</span><span class="o">[</span><span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">&amp;</span> <span class="n">hash</span><span class="o">])</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="n">tab</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">(</span><span class="n">hash</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+    <span class="k">else</span> <span class="o">{</span>
+        <span class="nc">Node</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;</span> <span class="n">e</span><span class="o">;</span> <span class="no">K</span> <span class="n">k</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">hash</span> <span class="o">==</span> <span class="n">hash</span> <span class="o">&amp;&amp;</span>
+            <span class="o">((</span><span class="n">k</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">key</span><span class="o">)</span> <span class="o">==</span> <span class="n">key</span> <span class="o">||</span> <span class="o">(</span><span class="n">key</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">key</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">k</span><span class="o">))))</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
+        <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">p</span> <span class="k">instanceof</span> <span class="nc">TreeNode</span><span class="o">)</span>
+            <span class="n">e</span> <span class="o">=</span> <span class="o">((</span><span class="nc">TreeNode</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;)</span><span class="n">p</span><span class="o">).</span><span class="na">putTreeVal</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">tab</span><span class="o">,</span> <span class="n">hash</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+        <span class="k">else</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">binCount</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">;</span> <span class="o">++</span><span class="n">binCount</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">((</span><span class="n">e</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">next</span><span class="o">)</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">p</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">(</span><span class="n">hash</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+                    <span class="k">if</span> <span class="o">(</span><span class="n">binCount</span> <span class="o">&gt;=</span> <span class="no">TREEIFY_THRESHOLD</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="c1">// -1 for 1st</span>
+                        <span class="n">treeifyBin</span><span class="o">(</span><span class="n">tab</span><span class="o">,</span> <span class="n">hash</span><span class="o">);</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">hash</span> <span class="o">==</span> <span class="n">hash</span> <span class="o">&amp;&amp;</span>
+                    <span class="o">((</span><span class="n">k</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">key</span><span class="o">)</span> <span class="o">==</span> <span class="n">key</span> <span class="o">||</span> <span class="o">(</span><span class="n">key</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">key</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">k</span><span class="o">))))</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="n">e</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">e</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// existing mapping for key</span>
+            <span class="no">V</span> <span class="n">oldValue</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">onlyIfAbsent</span> <span class="o">||</span> <span class="n">oldValue</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+            <span class="n">afterNodeAccess</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+            <span class="k">return</span> <span class="n">oldValue</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="o">++</span><span class="n">modCount</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(++</span><span class="n">size</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="o">)</span>
+        <span class="n">resize</span><span class="o">();</span>
+    <span class="n">afterNodeInsertion</span><span class="o">(</span><span class="n">evict</span><span class="o">);</span>
+    <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>꽤 길다. 그리고 복잡하다. 코드를 머릿속으로 Deserialize 하는데 좀 시간이 걸렸다.<br />
+Section을 조금 나눠서 살펴보자.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">((</span><span class="n">tab</span> <span class="o">=</span> <span class="n">table</span><span class="o">)</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="o">(</span><span class="n">n</span> <span class="o">=</span> <span class="n">tab</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="o">(</span><span class="n">tab</span> <span class="o">=</span> <span class="n">resize</span><span class="o">()).</span><span class="na">length</span><span class="o">;</span>    
+</code></pre></div></div>
+<p>첫 if문에서 table, 즉 Hash테이블이 null 인지를 물어본다.
+즉, <strong>“데이터를 처음 넣는거냐?”</strong> 라고 물어보는 것이다.<br />
+참이라면, resize() 함수를 실행하고, 그 결과를 tab에, 그리고 그 길이를 n에 넣는다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">((</span><span class="n">p</span> <span class="o">=</span> <span class="n">tab</span><span class="o">[</span><span class="n">i</span> <span class="o">=</span> <span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">&amp;</span> <span class="n">hash</span><span class="o">])</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+    <span class="n">tab</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">(</span><span class="n">hash</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+</code></pre></div></div>
+<p>다음으로, table의 ((n-1) &amp; hash) 위치. 
+즉 배열의 특정 index에 위치한 값이 null 이라면, <br />
+다시 말해, 자리가 비어있다면,   <br />
+해당 위치에는 새로운 Node를 만들어서 집어넣는다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">else</span> <span class="o">{</span>
+    <span class="nc">Node</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;</span> <span class="n">e</span><span class="o">;</span> <span class="no">K</span> <span class="n">k</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">hash</span> <span class="o">==</span> <span class="n">hash</span> <span class="o">&amp;&amp;</span>
+        <span class="o">((</span><span class="n">k</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">key</span><span class="o">)</span> <span class="o">==</span> <span class="n">key</span> <span class="o">||</span> <span class="o">(</span><span class="n">key</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">key</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">k</span><span class="o">))))</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
+</code></pre></div></div>
+<p>아니라면, 즉 해당 위치에 무언가가(Node) 이미 존재한다면, else문으로 진입하게 된다.</p>
+
+<p>그 이후 등장하는 첫번째 if문은 “hash만 같은게 아니라, key 자체도 같은거야?’ 라고 물어본다.<br />
+맞다면, 해당 key를 교체하게 된다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">p</span> <span class="k">instanceof</span> <span class="nc">TreeNode</span><span class="o">)</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="o">((</span><span class="nc">TreeNode</span><span class="o">&lt;</span><span class="no">K</span><span class="o">,</span><span class="no">V</span><span class="o">&gt;)</span><span class="n">p</span><span class="o">).</span><span class="na">putTreeVal</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">tab</span><span class="o">,</span> <span class="n">hash</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>그게 아니라면, 우선 해당 LinkedList가 Tree인지를 물어본다.<br />
+Tree라면, Tree에 맞게 값을 추가한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">else</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">binCount</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="o">;</span> <span class="o">++</span><span class="n">binCount</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">((</span><span class="n">e</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="na">next</span><span class="o">)</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">p</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">newNode</span><span class="o">(</span><span class="n">hash</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">binCount</span> <span class="o">&gt;=</span> <span class="no">TREEIFY_THRESHOLD</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="c1">// -1 for 1st</span>
+                <span class="n">treeifyBin</span><span class="o">(</span><span class="n">tab</span><span class="o">,</span> <span class="n">hash</span><span class="o">);</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">hash</span> <span class="o">==</span> <span class="n">hash</span> <span class="o">&amp;&amp;</span>
+            <span class="o">((</span><span class="n">k</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">key</span><span class="o">)</span> <span class="o">==</span> <span class="n">key</span> <span class="o">||</span> <span class="o">(</span><span class="n">key</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">key</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">k</span><span class="o">))))</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">e</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>트리가 아니라면, LinkedList란 뜻이다. 그렇다면 해당 LinkedList를 돌면서,<br />
+“Key까지 같으면, replace” 해주고, 처음 들어오는 놈이라면, 맨 끝에 이어붙이게 된다.</p>
+
+<p>그 과정속에서, bin. 즉 LinkedList의 길이가 너무 길다면, 이를 Tree로 바꿔준다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">e</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// existing mapping for key</span>
+    <span class="no">V</span> <span class="n">oldValue</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">value</span><span class="o">;</span>
+    <span class="k">if</span> <span class="o">(!</span><span class="n">onlyIfAbsent</span> <span class="o">||</span> <span class="n">oldValue</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="n">e</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+    <span class="n">afterNodeAccess</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">oldValue</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>여기서 e는 우리가 새로이 추가하고자 하는 Node를 가리킨다.<br />
+else문으로 분기한 이후, 우리가 지금까지 한 것은, Node를 추가할 위치를 찾는 것이었다.<br />
+이제 값을 넣어야 한다. 해당 코드가 Key 안에 Value를 넣는것이다.</p>
+
+<p>onltIfAbsent는 “키가 이미 있으면, 안넣겠다”를 의미한다.
+즉, 우리는 false를 넣어줬고, ! 가 붙었으므로 true이므로, 참이 되니 값을 교체할 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">++</span><span class="n">modCount</span><span class="o">;</span>
+<span class="k">if</span> <span class="o">(++</span><span class="n">size</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="o">)</span>
+    <span class="n">resize</span><span class="o">();</span>
+<span class="n">afterNodeInsertion</span><span class="o">(</span><span class="n">evict</span><span class="o">);</span>
+<span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+</code></pre></div></div>
+<p>마지막으로, 수정된 횟수를 ++시키고,<br />
+HashTable의 길이 또한 ++ 시킨 뒤, 일정 수준을 넘어서면 resize() 하게 된다.</p>
+
+<p>afterNodeAccess와 afterNodeInsertion은 LinkedHashMap에서 Override 되는 내용이므로 Pass한다.</p>
+
+<p>resize() 코드 또한 꽤 복잡하므로, 주석만 따왔다. 여기서는 다음과 같이 설명한다.</p>
+
+<blockquote>
+  <p>Initializes or doubles table size.  If null, allocates in
+accord with initial capacity target held in field threshold.
+Otherwise, because we are using power-of-two expansion, the
+elements from each bin must either stay at same index, or move
+with a power of two offset in the new table.</p>
+</blockquote>
+
+<p>즉, bucket을 초기화 하던지, 충돌이 너무 많이 일어나면 두배로 늘리겠다는 얘기다.</p>
+
+<p>이렇게 흐름을 읽고 나면, 왜 HashMap이 O(1)에 가까운 접근속도를 보이는지 알 수 있다.</p>
+
+<p>기본적으로, 데이터의 구조가 배열이므로 O(1)의 접근속도를 가지고,  “해쉬”라는 것은 결국 일정 길이의 숫자를 return 하므로,<br />
+“해쉬값을 통해 index 접근”을 진행하면, 어떤 Object 이던 O(1)으로 접근할 수 있다.</p>
+
+<p>그런데, 충돌이 아예 안일어난다면 좋겠지만, 이를 위해 배열의 길이를 너무 길게 만들면 공간의 낭비고,
+그렇다고 적게 만들자니, 충돌이 일어날 때 문제가 생긴다. 따라서 충돌이 일어나면 LinkedList로 연결지어준다.</p>
+
+<p>이 LinkedList는 특정 길이를 넘어서면 Tree 형태를 갖게 되고,<br />
+또한 충돌 자체도 많이 일어나면 배열을 늘리므로,<br />
+이 LinkedList 혹은 Tree는 제한된 크기를 갖게 된다.</p>
+
+<h1 id="5-마치며">5. 마치며</h1>
+<p>: 기존에 가졌던 궁금증이 모두 해소되었다.<br />
+Hash를 왜 사용했는지, 그리고 왜 시간복잡도가 이렇게 빠른 것인지 알 수 있었다. <br />
+그런데, 또 한가지 궁금증이 발생한다.<br />
+Python은 3.7 이후 Dictionary는 Ordered, 즉 순서를 갖는 Dictionary를 Default로 사용한다고 한다.</p>
+
+<p>얘는 또 어떻게 구현되었을지에 대해 알아보고 싶지만, 일단 여기에서 멈추자.</p>
+
+<p><strong>Reference</strong></p>
+<ul>
+  <li><a href="https://d2.naver.com/helloworld/831311">Java HashMap은 어떻게 동작하는가?</a></li>
+  <li><a href="https://www.youtube.com/watch?v=S7vni1hdsZE&amp;t=297s&amp;ab_channel=%ED%8F%AC%ED%94%84TV">Hash Table은 프로그래머의 기본기</a></li>
+  <li><a href="https://backdoosaan.tistory.com/13">Java HashMap동작 원리</a></li>
+</ul>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/data-structure/what_is_linked_list">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 마음으로 이해하는 자료구조 : LinkedList ( feat. C )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/jsp/jsp_project_with_intellij">
+					<span class="page-number"># 0. JSP 학습기록 - Intellij JSP 프로젝트 생성</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/java/journey_to_java_hashmap',
+    'title': '# (Java) HashMap 으로의 여행'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

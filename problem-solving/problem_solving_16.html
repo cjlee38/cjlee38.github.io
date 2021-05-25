@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 프로그래머스[Lv.2] 더 맵게 ( Java )</title>
+  <meta name="description" content="문제 링크">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="문제 링크" />
+  <meta property="og:url" content="https://cjlee38.github.io/problem-solving/problem_solving_16">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 프로그래머스[Lv.2] 더 맵게 ( Java )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 프로그래머스[Lv.2] 더 맵게 ( Java )">
+  <meta name="twitter:description" content="문제 링크">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/problem-solving/problem_solving_16">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/problem-solving/problem_solving_16">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 프로그래머스[Lv.2] 더 맵게 ( Java )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">October 30, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/problem-solving">Problem-solving</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p><a href="https://programmers.co.kr/learn/courses/30/lessons/42626">문제 링크</a></p>
+
+<h1 id="problem">Problem.</h1>
+
+<p><strong>문제 설명</strong></p>
+
+<p>매운 것을 좋아하는 Leo는 모든 음식의 스코빌 지수를 K 이상으로 만들고 싶습니다. 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 Leo는 스코빌 지수가 가장 낮은 두 개의 음식을 아래와 같이 특별한 방법으로 섞어 새로운 음식을 만듭니다.</p>
+
+<p>섞은 음식의 스코빌 지수 = 가장 맵지 않은 음식의 스코빌 지수 + (두 번째로 맵지 않은 음식의 스코빌 지수 * 2)</p>
+
+<p>Leo는 모든 음식의 스코빌 지수가 K 이상이 될 때까지 반복하여 섞습니다.<br />
+Leo가 가진 음식의 스코빌 지수를 담은 배열 scoville과 원하는 스코빌 지수 K가 주어질 때, 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 섞어야 하는 최소 횟수를 return 하도록 solution 함수를 작성해주세요.</p>
+
+<p><strong>제한 사항</strong></p>
+<ul>
+  <li>scoville의 길이는 2 이상 1,000,000 이하입니다.</li>
+  <li>K는 0 이상 1,000,000,000 이하입니다.</li>
+  <li>scoville의 원소는 각각 0 이상 1,000,000 이하입니다.</li>
+  <li>모든 음식의 스코빌 지수를 K 이상으로 만들 수 없는 경우에는 -1을 return 합니다.</li>
+</ul>
+
+<p><strong>입출력 예</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">scoville</th>
+      <th style="text-align: center">K</th>
+      <th style="text-align: center">return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">[1, 2, 3, 9, 10, 12]</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">2</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>입출력 예 설명</strong></p>
+<ol>
+  <li>
+    <p>스코빌 지수가 1인 음식과 2인 음식을 섞으면 음식의 스코빌 지수가 아래와 같이 됩니다.  <br />
+새로운 음식의 스코빌 지수 = 1 + (2 * 2) = 5<br />
+가진 음식의 스코빌 지수 = [5, 3, 9, 10, 12]</p>
+  </li>
+  <li>
+    <p>스코빌 지수가 3인 음식과 5인 음식을 섞으면 음식의 스코빌 지수가 아래와 같이 됩니다.  <br />
+새로운 음식의 스코빌 지수 = 3 + (5 * 2) = 13<br />
+가진 음식의 스코빌 지수 = [13, 9, 10, 12]</p>
+  </li>
+</ol>
+
+<p>모든 음식의 스코빌 지수가 7 이상이 되었고 이때 섞은 횟수는 2회입니다.</p>
+
+<h1 id="solve">Solve</h1>
+<p>: 지난 번에 풀었던 <a href="https://cjlee38.github.io/problem-solving/problem_solving_13">야근 지수 문제</a>와 살짝 흡사하다.</p>
+
+<h2 id="접근방법">접근방법.</h2>
+<p>문제의 핵심은, <strong>가장 작은 수(음식)을 두 개 꺼내서, 이를 계산 후 다시 집어넣는 것</strong>이다.<br />
+음식이 들어있는 array를 내림차순 정렬해서, <br />
+가장 뒤에서 두개를 꺼냈다가 다시 집어넣는 방법도 있지만,</p>
+
+<p><strong>우선순위 큐</strong>라는, 여기에 아주 걸맞는 자료구조가 있으므로, <br />
+이용하지 않을 이유가 없다.</p>
+
+<h2 id="구현">구현.</h2>
+
+<p>연습도 할 겸, 겉멋으로 스트림을 이용했다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">foods</span> 
+         <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">scoville</span><span class="o">)</span>
+               <span class="o">.</span><span class="na">boxed</span><span class="o">()</span>
+               <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toCollection</span><span class="o">(</span><span class="nl">PriorityQueue:</span><span class="o">:</span><span class="k">new</span><span class="o">));</span>
+</code></pre></div></div>
+
+<p>현재 <code class="highlighter-rouge">foods</code> 라는 우선순위 큐는 오름차순 정렬되어있으므로,<br />
+하나씩 꺼낼때에는, 가장 낮은 숫자가 튀어나오게 된다.</p>
+
+<p>첫 번째 꺼내는 녀석은 그대로, <br />
+두 번째 꺼내는 녀석은 2를 곱한 뒤, <br />
+다시 집어넣어주면 되는데</p>
+
+<p>이 때 주의할 점은, 매 반복마다 2개의 음식을 꺼내므로,<br />
+foods의 크기가 2 이상이어야 한다는 것이다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="o">(</span><span class="n">foods</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">foods</span><span class="o">.</span><span class="na">peek</span><span class="o">()</span> <span class="o">&lt;</span> <span class="no">K</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">foods</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">foods</span><span class="o">.</span><span class="na">poll</span><span class="o">()</span> <span class="o">+</span> <span class="n">foods</span><span class="o">.</span><span class="na">poll</span><span class="o">()</span> <span class="o">*</span> <span class="mi">2</span><span class="o">);</span>
+   <span class="n">count</span><span class="o">++;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>그리고 마지막으로,<br />
+<strong>모두 잘 섞여서 반복이 중단된건지,</strong><br />
+<strong>아니면 K 이상으로 만들 수 없어서 중단된건지,</strong></p>
+
+<p>를 확인하기 위해, peek()한 값이 K보다 큰지 확인하고,<br />
+맞으면 count를, 아니라면 -1을 return하면 된다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="n">foods</span><span class="o">.</span><span class="na">peek</span><span class="o">()</span> <span class="o">&gt;=</span> <span class="no">K</span> <span class="o">?</span> <span class="n">count</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>전체 코드는 다음과 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">programmers</span><span class="o">.</span><span class="na">lv2</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.PriorityQueue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.stream.Collectors</span><span class="o">;</span>
+
+<span class="c1">//프로그래머스 - 더 맵게</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">p42626</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">socville</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">5</span><span class="o">};</span>
+        <span class="kt">int</span> <span class="no">K</span> <span class="o">=</span> <span class="mi">7</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">solution</span><span class="o">(</span><span class="n">socville</span><span class="o">,</span> <span class="no">K</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">solution</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">scoville</span><span class="o">,</span> <span class="kt">int</span> <span class="no">K</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+        <span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">foods</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">scoville</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">boxed</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="nc">Collectors</span><span class="o">.</span><span class="na">toCollection</span><span class="o">(</span><span class="nl">PriorityQueue:</span><span class="o">:</span><span class="k">new</span><span class="o">));</span>
+        
+        <span class="k">while</span> <span class="o">(</span><span class="n">foods</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">foods</span><span class="o">.</span><span class="na">peek</span><span class="o">()</span> <span class="o">&lt;</span> <span class="no">K</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">foods</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">foods</span><span class="o">.</span><span class="na">poll</span><span class="o">()</span> <span class="o">+</span> <span class="n">foods</span><span class="o">.</span><span class="na">poll</span><span class="o">()</span> <span class="o">*</span> <span class="mi">2</span><span class="o">);</span>
+            <span class="n">count</span><span class="o">++;</span>
+        <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">foods</span><span class="o">.</span><span class="na">peek</span><span class="o">()</span> <span class="o">&gt;=</span> <span class="no">K</span> <span class="o">?</span> <span class="n">count</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+</article>
+
+
+
+<section class="tags">
+  <strong>Tags:</strong> <a href="/tag/programmers">programmers</a>
+</section>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/java/java_parameters">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># (Java) Parameter를 활용하는 방법 ( feat. varargs, kwargs )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/problem-solving/problem_solving_17">
+					<span class="page-number"># 프로그래머스[Lv.2] [1차] 뉴스 클러스터링 ( Java )</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/problem-solving/problem_solving_16',
+    'title': '# 프로그래머스[Lv.2] 더 맵게 ( Java )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

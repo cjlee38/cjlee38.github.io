@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 5. JSP 학습기록 - Array 와 Application, Session, Cookie</title>
+  <meta name="description" content="배열 다루기.: 원래 이번 편에서 곧바로 Application / Session / Cookie 에 대해서 다루려고 했는데,생각해보니 데이터를 배열로 주고 받는 법에 대해서 다루지 않아서, 잠깐 짚고 가자.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="배열 다루기.: 원래 이번 편에서 곧바로 Application / Session / Cookie 에 대해서 다루려고 했는데,생각해보니 데이터를 배열로 주고 받는 법에 대해서 다루지 않아서, 잠깐 짚고 가자." />
+  <meta property="og:url" content="https://cjlee38.github.io/jsp/jsp_learning_05">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 5. JSP 학습기록 - Array 와 Application, Session, Cookie" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 5. JSP 학습기록 - Array 와 Application, Session, Cookie">
+  <meta name="twitter:description" content="배열 다루기.: 원래 이번 편에서 곧바로 Application / Session / Cookie 에 대해서 다루려고 했는데,생각해보니 데이터를 배열로 주고 받는 법에 대해서 다루지 않아서, 잠깐 짚고 가자.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/jsp/jsp_learning_05">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/jsp/jsp_learning_05">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 5. JSP 학습기록 - Array 와 Application, Session, Cookie</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 22, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/jsp">Jsp</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="배열-다루기">배열 다루기.</h1>
+<p>: 원래 이번 편에서 곧바로 Application / Session / Cookie 에 대해서 다루려고 했는데,<br />
+생각해보니 데이터를 배열로 주고 받는 법에 대해서 다루지 않아서, 잠깐 짚고 가자.</p>
+
+<p><a href="http://cjlee38.github.io/jsp/jsp_learning_04">지난 편</a>에서 다뤘던 firstServlet.html은 다음과 같다.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Title<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"firstServlet"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;label&gt;</span> input your title <span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name = </span><span class="s">"title"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;label&gt;</span> input your title <span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">name = </span><span class="s">"title"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;label&gt;</span> input your content <span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"click here to submit"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<p>여기서, 대충 title을 두 개를 넣고 싶다고 해보자.<br />
+<em>소제목으로 구분하자</em> 뭐 이런게 아니라, <br />
+그냥 <strong>말 그대로 똑같은 title이라는 input</strong>을 하나 더 추가해보자는 것이다.</p>
+
+<p>간단하게,</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;label&gt;</span> input your title <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name = </span><span class="s">"title"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+</code></pre></div></div>
+<p>요 코드를 복사해서 그 바로 밑에 붙여넣으면 된다.</p>
+
+<p>그러면, firstServlet에서 첫 번째 title을 받을까, 두 번째 title을 받을까 ?<br />
+이 질문에 대한 내 대답은 “배열로 받으면 되지, 왜 그걸 고민해” 이다.</p>
+
+<p>기존의 <code class="highlighter-rouge">req.getParameter("title");</code> 에서, 6글자만 추가하면 된다.</p>
+
+<p><code class="highlighter-rouge">req.getParameterValues()</code></p>
+
+<p>그러면, 여러개의 Parameter가 넘어오므로, String의 배열로 받아주고,<br />
+이를 for문을 돌려서 출력해보자.</p>
+
+<p>코드는 다음과 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/firstServlet"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">firstServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">title</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameterValues</span><span class="o">(</span><span class="s">"title"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">content</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"content"</span><span class="o">);</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">title</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">" 번째 타이틀 : "</span> <span class="o">+</span> <span class="n">title</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"컨텐츠 : "</span> <span class="o">+</span> <span class="n">content</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<p>그리고, <strong>localhost:8080/firstServlet.html</strong> 로 들어가서 대충 작성해보자.</p>
+
+<hr />
+
+<p><img src="/assets/images/2020-09-22-19-55-14_2020-09-22-jsp_learning_05.md.png" alt="array_submit" class="alignCenter" /></p>
+
+<hr />
+
+<p><img src="/assets/images/2020-09-22-19-55-02_2020-09-22-jsp_learning_05.md.png" alt="array_result" class="alignCenter" /></p>
+
+<hr />
+
+<p>잘 동작하는 모습을 볼 수 있다.</p>
+
+<h1 id="application-session-cookie">Application, Session, Cookie</h1>
+<h2 id="이론">이론</h2>
+<p>: Application, Session, Cookie 는 셋 모두 <br />
+어떤 <strong>상태를 유지</strong>하기 위하여, <br />
+다시 말해 <strong>“데이터를 보존하기 위해서”</strong> 사용한다.  <br />
+그러나, 같은 목적을 가지고 있더라도, 다른 방법을 지향하기 때문에, 상황에 따라 적절히 사용해야 한다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">Application</th>
+      <th style="text-align: center">Session</th>
+      <th style="text-align: center">Cookie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">사용범위</td>
+      <td style="text-align: center">전역 범위</td>
+      <td style="text-align: center">*세션 범위</td>
+      <td style="text-align: center">특정 URL 범위(여러 개 가능)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">생명주기</td>
+      <td style="text-align: center">WAS의 시작&amp;종료와 함께</td>
+      <td style="text-align: center">세션의 시작&amp;종료와 함께</td>
+      <td style="text-align: center">TimeOut까지</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">저장위치</td>
+      <td style="text-align: center">WAS 메모리</td>
+      <td style="text-align: center">WAS의 메모리</td>
+      <td style="text-align: center">Client의 Memory 혹은 File</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>*세션 범위 : 특정 사용자만 사용할 수 있는 범위</p>
+
+<p>가령, Cookie 같은 경우, <strong>데이터가 Client에게 저장되어 있기 때문에,</strong><br />
+Client가 <strong>악의적인 목적으로 이를 수정하는 것을 막기 위해</strong>,<br />
+Application 혹은 Session을 활용해야 한다.<br />
+혹은, <strong>오랫동안 갖고 있어야 할</strong> (중요치 않은) 어떤 Data가 있다면, 이는 Cookie로 저장해야지, <br />
+Session이나 Application에 갖고 있다면 감당하지 못할 것이다.</p>
+
+<p>또한, 어떤 Data를 Application 으로 설정했을 경우,<br />
+다른 사용자가 접속했을 때 해당 Data를 볼 수 있으므로, 이러한 경우를 방지하기 위해<br />
+Session을 사용해야 한다.<br />
+비유하자면, Application은 전역변수고, Session은 지역변수라고 볼 수 있다.</p>
+
+<hr />
+
+<blockquote>
+  <p>Note. 위 개념을 잡기 위해, <a href="https://youtu.be/OpoVuwxGRDI">얄코님의 영상</a>에 큰 도움을 받았다.<br />
+헷갈리는 사람은 이를 참고하자.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="활용">활용</h2>
+<h3 id="application">Application</h3>
+<p>: Application을 사용하려면, 다음과 같이 작성하면 된다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">ServletContext</span> <span class="n">app</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getServletContext</span><span class="o">();</span>
+</code></pre></div></div>
+<p>그리고, HashMap의 put을 사용하는 것처럼, 다음과 같이 사용하면 된다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">app</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"value"</span><span class="o">,</span> <span class="n">someValue</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h3 id="session">Session</h3>
+<p>: Session 또한, Application과 비슷하다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">HttpSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getSession</span><span class="o">();</span>
+<span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"value"</span><span class="o">,</span> <span class="n">somevalue</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h3 id="cookie">Cookie</h3>
+<p>: Cookie는 위 두가지와 약간 궤를 달리하기 때문에, 사용법 또한 조금 다르다.
+단순히 put()만 해주면 안되고, 쿠키 객체를 만들어서 이를 resp에 덧붙여줘야 한다.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 기존 Cookie 읽기</span>
+<span class="nc">Cookie</span><span class="o">[]</span> <span class="n">cookies</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getCookies</span><span class="o">();</span>
+
+<span class="c1">// Cookie 만들어서 추가하기</span>
+<span class="nc">Cookie</span> <span class="n">cookie</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Cookie</span><span class="o">(</span><span class="s">"value"</span><span class="o">,</span> <span class="n">someValue</span><span class="o">)</span> <span class="c1">// key value</span>
+<span class="n">resp</span><span class="o">.</span><span class="na">addCookie</span><span class="o">(</span><span class="n">cookie</span><span class="o">);</span>
+
+<span class="c1">// Cookie 경로 설정</span>
+<span class="n">cookie</span><span class="o">.</span><span class="na">setPath</span><span class="o">(</span><span class="s">"/"</span><span class="o">);</span> <span class="c1">// 모든 Path</span>
+<span class="n">cookie</span><span class="o">.</span><span class="na">setPath</span><span class="o">(</span><span class="s">"/firstServlet"</span><span class="o">);</span> <span class="c1">// firstServlet 이 포함된 Path</span>
+</code></pre></div></div>
+
+<p>전부 다 하기엔 시간적 여유가 없으니,<br />
+Cookie만 다뤄보자.</p>
+
+<p>예상 Flow는 다음과 같다.</p>
+
+<ul>
+  <li>localhost:8080/firstServlet.html에서 입력받은 Title Array를, 각각 Title_1, Title_2 라고 이름 붙여서 쿠키에 추가한다.</li>
+  <li>lolcahost:8080/firstServlet 페이지에서, 쿠키를 확인한다.</li>
+  <li>Path는 “/firstServlet” 으로 정한다. 따라서, 캐시된 쿠키를 지우고 다른 페이지를 가면 쿠키가 없어야 한다.</li>
+</ul>
+
+<p>firstServlet.java</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/firstServlet"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">firstServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+
+        <span class="nc">String</span><span class="o">[]</span> <span class="n">title</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameterValues</span><span class="o">(</span><span class="s">"title"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">content</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"content"</span><span class="o">);</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">title</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">" 번째 타이틀 : "</span> <span class="o">+</span> <span class="n">title</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+        <span class="o">}</span>
+
+        <span class="nc">Cookie</span> <span class="n">cookie_1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Cookie</span><span class="o">(</span><span class="s">"Title_1"</span><span class="o">,</span> <span class="n">title</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+        <span class="nc">Cookie</span> <span class="n">cookie_2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Cookie</span><span class="o">(</span><span class="s">"Title_2"</span><span class="o">,</span> <span class="n">title</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+
+        <span class="n">cookie_1</span><span class="o">.</span><span class="na">setPath</span><span class="o">(</span><span class="s">"/firstServlet"</span><span class="o">);</span>
+        <span class="n">cookie_2</span><span class="o">.</span><span class="na">setPath</span><span class="o">(</span><span class="s">"/firstServlet"</span><span class="o">);</span>
+
+        <span class="n">resp</span><span class="o">.</span><span class="na">addCookie</span><span class="o">(</span><span class="n">cookie_1</span><span class="o">);</span>
+        <span class="n">resp</span><span class="o">.</span><span class="na">addCookie</span><span class="o">(</span><span class="n">cookie_2</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/2020-09-22-20-34-59_2020-09-22-jsp_learning_05.md.png" alt="cookie_result" class="alignCenter" /></p>
+
+<p>먼저, 정상적으로 작동하는 모습을 볼 수 있다.
+캐시된 쿠키를 지우고 루트 페이지로 가보자.</p>
+
+<p><img src="/assets/images/2020-09-22-20-37-41_2020-09-22-jsp_learning_05.md.png" alt="cookie_result" class="alignCenter" /></p>
+
+<p>아무리 새로고침을 해봐도 쿠키는 들어오지 않는다.</p>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/data-structure/what_is_queue">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 마음으로 이해하는 자료구조 : Queue ( feat. C )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/problem-solving/problem_solving_9">
+					<span class="page-number"># 프로그래머스[Lv.2] - 카펫 ( java )</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/jsp/jsp_learning_05',
+    'title': '# 5. JSP 학습기록 - Array 와 Application, Session, Cookie'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

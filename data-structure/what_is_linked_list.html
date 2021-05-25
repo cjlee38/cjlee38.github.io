@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 마음으로 이해하는 자료구조 : LinkedList ( feat. C )</title>
+  <meta name="description" content="0. 들어가며: 개인적으로, C로 코딩을 시작했을 때 마주하는 가장 첫 번째 관문은 포인터라고 생각한다. 변수에 값을 담는다는 것은 알겠는데(그마저도 자유자재로 다루기가 어려웠지만),주소값을 가리킨다는 말은, 번지 수라는 말을 붙여도 쉽게 와닿지는 않는 개념이다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 들어가며: 개인적으로, C로 코딩을 시작했을 때 마주하는 가장 첫 번째 관문은 포인터라고 생각한다. 변수에 값을 담는다는 것은 알겠는데(그마저도 자유자재로 다루기가 어려웠지만),주소값을 가리킨다는 말은, 번지 수라는 말을 붙여도 쉽게 와닿지는 않는 개념이다." />
+  <meta property="og:url" content="https://cjlee38.github.io/data-structure/what_is_linked_list">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 마음으로 이해하는 자료구조 : LinkedList ( feat. C )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/data-structure.jpg" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 마음으로 이해하는 자료구조 : LinkedList ( feat. C )">
+  <meta name="twitter:description" content="0. 들어가며: 개인적으로, C로 코딩을 시작했을 때 마주하는 가장 첫 번째 관문은 포인터라고 생각한다. 변수에 값을 담는다는 것은 알겠는데(그마저도 자유자재로 다루기가 어려웠지만),주소값을 가리킨다는 말은, 번지 수라는 말을 붙여도 쉽게 와닿지는 않는 개념이다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/data-structure.jpg">
+  <meta name="twitter:url" content="https://cjlee38.github.io/data-structure/what_is_linked_list">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/data-structure/what_is_linked_list">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/data-structure.jpg);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 마음으로 이해하는 자료구조 : LinkedList ( feat. C )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 10, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/data-structure">Data-structure</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-들어가며">0. 들어가며</h1>
+<p>: 개인적으로, C로 코딩을 시작했을 때 마주하는 가장 첫 번째 관문은 포인터라고 생각한다. <br />
+변수에 값을 담는다는 것은 알겠는데(그마저도 자유자재로 다루기가 어려웠지만),<br />
+주소값을 가리킨다는 말은, 번지 수라는 말을 붙여도 쉽게 와닿지는 않는 개념이다.</p>
+
+<p>두 번째로 마주하는 관문은, 자료구조다.<br />
+기존에 변수, 배열, 구조체 등등이 충분히 모든 역할을 해줄 수 있을 것 같은데, <br />
+자료구조가 왜 필요한지, 무엇을 도와줄 수 있는지에 대해서 알기가 어렵다. <br />
+물론, 엄청난 과제와 학습량은 머릿속에 갓 넣은 지식을 강제로 손가락에 주입시켜준다.</p>
+
+<p>이번 포스팅을 통해, 머릿 속에 있는 이 개념을 <strong>“자연스럽게”</strong> 머리, 가슴까지만 천천히 흘려보내보자.<br />
+손으로 익히는건 아쉽게도 본인의 몫이다.</p>
+
+<p>이 포스팅을 보고 있는 독자는 아직 코딩에 익숙치 않은 입문자, 혹은 자료구조 수업을 처음 듣는 수강생이라고 가정한다.<br />
+또한, 이 포스팅은 “코드”가 아닌 “이해”에 목적을 두고 있다. 이 점 유념하기 바란다.</p>
+
+<h1 id="1-array">1. Array</h1>
+
+<h2 id="a-형태">A. 형태</h2>
+<p>: 처음 LinkedList, 즉 연결 리스트를 처음 배웠을 때, 가장 많이 비교되는 대상은 배열이다. <br />
+둘 다 연속적인 데이터를 표현하고 있기에 큰 차이가 없는 것으로 생각할 수도 있지만, 실제로 동작하는 방식은 꽤나 다르다.</p>
+
+<p>먼저, 기존의 C로 만든 배열에 대해서 이해해보자.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 1, 2, 3, 4, 5가 순서대로 출력.</span>
+</code></pre></div></div>
+
+<p>위 간단한 코드에서, 우리가 쳐다봐야 할 부분은 printf() 함수를 사용하는 부분이다. <br />
+배열의 요소를 순차적으로 탐색하고 있다. 이는 우리가 자연스럽게 이해하고 있는 부분이다.</p>
+
+<p>그러나, 기존의 printf()를 <code class="highlighter-rouge">printf("%p\n", &amp;numbers[i]);</code> 로 바꾸면 어떻게 되는가? <br />
+이 코드는 기존의 “값”을 출력하던 것을, 대신에 “주소값”을 출력하게 해준다. 결과는 다음과 같다.</p>
+
+<blockquote>
+  <p>0x7ffc5c6f9810<br />
+0x7ffc5c6f9814<br />
+0x7ffc5c6f9818<br />
+0x7ffc5c6f981c<br />
+0x7ffc5c6f9820</p>
+</blockquote>
+
+<p>뭔가 복잡해 보이지만, 아주 잠깐만 자세히 들여다보면, 뭔가 패턴이 있는 것을 알 수 있다.<br />
+그 패턴은, <strong>가장 끝 두자리만 바뀔 뿐, 앞은 똑같다</strong>는 것이다.</p>
+
+<p>또한, 16진수로 표기되어 있다는 점을 감안하면, 4씩 늘어나는 것도 알 수 있다.</p>
+
+<p>이것으로 우리는 <strong>“아, 배열은 여러 개의 변수를 만드는 건데, 이것들이 이어서 붙어있다”</strong> 라는 것을 알 수 있다.</p>
+
+<h2 id="b-장점">B. 장점</h2>
+<p>: 이 배열이라는 녀석의 특징이 “이어서 붙여져” 있다는 것을 알았다면, <br />
+우리는 <strong>내가 찾고자 하는 녀석의 위치를 알고 있다면, 아주 순식간에 찾아낼 수 있다</strong> 는 장점을 알 수 있다.</p>
+
+<p>즉, 10개의 서랍이 있는 서랍장에서,<br />
+<em>3번째에 내가 찾고 있는 빨간 옷이 있다는 것을 이미 알고 있다면,</em> <br />
+3번째 서랍장을 바로 열면 되는 것이다.</p>
+
+<p><img src="/assets/images/2020-09-10-05-43-44_2020-09-10-what_is_linked_list.md.png" alt="drawer" class="alignCenter" /></p>
+
+<p class="caption">&lt; DRAWER &gt;</p>
+
+<h2 id="c-단점">C. 단점</h2>
+<p>: 이렇게 아주 간단하고 유용한 배열은, <strong>삽입과 제거</strong>에서 문제점을 안고 있다.</p>
+
+<p>가령, 위 [1, 2, 3, 4, 5] 라는 배열에서, 나는 중간에 10이라는 숫자를 집어넣고 싶다고 해보자 -&gt; [1, 2, 10, 3, 4, 5]</p>
+
+<p>뭔가 간단해보인다. 그냥 넣으면 되는거아닌가? 하지만, 컴퓨터는 그렇게 똑똑하지 않다.</p>
+
+<p>이는 현실로 비유하면, <strong>아주 좁은 간격으로 세워놓은 도미노에, 새로운 블럭 하나를 중간에 집어넣는것</strong>으로 생각해 볼 수 있다. <br />
+기존에 세워놓은 블럭에, 새로운 블럭을 집어넣고 싶다면(기존에는 이를 집어넣을 공간이 충분하지 않다면) 그 뒤에 있는 블럭들을 다 뒤로 밀어줘야 한다.</p>
+
+<p><img src="/assets/images/2020-09-10-05-56-41_2020-09-10-what_is_linked_list.md.png" alt="domino" class="alignCenter" /></p>
+
+<p class="caption">&lt; DOMINO &gt;</p>
+
+<p>즉, 5번째(컴퓨터에서의 index는 4) 에 있는 5라는 숫자를 6번째으로 밀어주고,<br />
+4번째에 있는 4라는 숫자를 5번째로 밀어줘야 한다. <br />
+언제까지? 10이 들어갈 여유가 될 때 까지.</p>
+
+<p>지금은 예시가 간단하지만, 만약 배열 안에 원소가 1억 개가 있다고 해보자. <br />
+그리고 더 최악으로, 우리는 “첫 번째”에 새로운 원소를 추가해야 한다고 해보자. 1억 번을 다 밀어야 한다.</p>
+
+<p><strong>제거의 경우도 마찬가지다.</strong> [1, 2, 3, 4, 5] 에서, 3을 지우고 싶다. 어떻게 해야 할까? <br />
+아마 3번째에 있는 3이라는 숫자를, 4번째에서 가져와서 4로 바꿔주고,<br />
+그렇다면 4번째에 있는 4라는 숫자를, 5번째에서 가져와서 5라는 숫자로 바꿔주면 될 것이다.</p>
+
+<p>이 또한, 도미노로 생각해보면, 중간에 블럭 하나를 치우겠다고 하면,<br />
+ <strong>그 뒤에 있는 모든 블럭을 앞으로 가져와야 한다. 그래야 도미노가 제대로 쓰러질테니까</strong></p>
+
+<h1 id="2-linkedlist">2. LinkedList</h1>
+
+<h2 id="a-형태-1">A. 형태</h2>
+<p>: 연결 리스트는, 위 배열에서 등장한 문제를 아주 손쉽게 해결해 줄 수 있다. 이를 구현하기 위해선, 포인터가 필요하다.<br />
+왜인지는 다음의 예시를 차분히 읽어가면서 이해해보자.</p>
+
+<blockquote>
+  <p>가령, 학교에서 선생님이 방학 중에 각 학생들에게 어떤 공지사항을 알려주고 싶다고 해보자. 선생님은 방학 중이어도 일을 하기 때문에, 너무 바빠서 모든 학생들에게 공지를 해 줄 시간이 없다. 그래서, A라는 한 명의 학생에게 전화를 해서 알려주면, A 학생은 내용을 전달받고, B 학생에게 전화해서 공지사항을 전달해준다. 이렇게 해서 모든 학생들에게 전화를 돌리고 싶다고 해보자.</p>
+</blockquote>
+
+<p>그럼 <strong>배열을 안쓰고</strong> 이렇게 전화를 한다고 하면, 당신은 어떻게 구현해야 할까?</p>
+
+<p>어떻게 해야 할지 계획은 세우지 못해도, 일단 각 학생들의 변수를 만들고 보면, int A, int B, int C… 이런식으로 만들 것이다.<br />
+근데 이렇게만 하면, int A가 int B와 연결고리. 즉 전화번호가 없다. 무슨 수로 공지사항을 전달할 것인가?</p>
+
+<p>이 때, 포인터라는 개념이 등장한다. 이 포인터라는 녀석이 다음 학생의 전화번호가 되는 셈이다.<br />
+어떻게 포인터가 전화번호의 개념이 될까? 코드로 한번 살펴보자.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">Node</span> <span class="p">{</span>
+	<span class="kt">int</span> <span class="n">called</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 공지사항을 안내 받았는가? 0이면 받지 않음, 1이면 받음.</span>
+    <span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span> <span class="c1">// 다음 학생의 전화번호.</span>
+<span class="p">}</span><span class="n">Node</span><span class="p">;</span>
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <p>Note. 이 Node라는 녀석은, int, float 등등의 primitive 데이터 타입이 아닌, 우리가 새로 정의한 데이터 타입이다. <br />
+따라서, 다음과 같이 사용해야 한다.</p>
+  <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Node</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span> <span class="c1">// newNode만큼의 공간을 확보</span>
+<span class="n">newNode</span><span class="o">-&gt;</span><span class="n">called</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// newNode의 called를 0으로 정의</span>
+<span class="n">newNode</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">existingNode</span><span class="p">;</span> <span class="c1">// newNode의 포인터(전화번호)를 다음 Node를 가리키도록 함.</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<hr />
+
+<p>이 구조체 Node 라는 녀석은 <strong>학생</strong>이다. 학생은 공지사항을 안내 받았는지에 대한 called 변수, 그리고 <strong>“다음 학생의 전화번호. 즉 Node를 가리키는 포인터”</strong> 를 갖고 있다.</p>
+
+<p>즉, 학생을 int A 라고 하는 정수형 변수로 만드는 것이 아니라, Node 라고 하는 녀석으로 만든다면, <strong>“서로 간의 연결고리가 이어진다”</strong>.</p>
+
+<p>이렇게 연결된 Data들을 묶어서 이름 그대로의 “Linked List” 라고 부르는 것이다.</p>
+
+<h2 id="b-장점-1">B. 장점</h2>
+<p>: 그렇다면, 이 LinkedList라는 것을 활용하면, 배열의 단점을 해소할 수 있지 않을까?</p>
+
+<p>학생의 예시로 다시 돌아와보자. 공지를 하려고 하는데, C 라는 학생이 전학을 가버려서 더 이상 해당 반의 학생이 아니게 되었다. 10명의 학생이 있었다면, 이제는 9명인 셈이다.</p>
+
+<p>이를 배열로 해결하려 한다면, 꽤 골머리 아픈 일인 것임을 아까 배웠다. LinkedList는 어떨까?</p>
+
+<p>아주 간단하다. C라는 학생의 전화번호를 알고 있는 학생은 B 학생이므로, <strong>B 학생이 갖고 있던 C의 전화번호를, D 라는 학생으로 바꿔주기만 하면 된다!</strong></p>
+
+<p>그러면 끝이다.</p>
+
+<h2 id="c-단점-1">C. 단점</h2>
+<p>: 그러나, 이렇게 대단해 보이는 LinkedList에도 단점이 있다. 이는, 배열에서의 장점이었던 부분이다. 무엇일까?<br />
+내가 <strong>“몇 번째에 데이터가 있는지 알더라도, 곧바로 접근할 수 없다”</strong>는 것이다.</p>
+
+<p>왜일까? 아주 단순하다. 사람이 됐건, 컴퓨터가 됐건, 특정 index에 있는 데이터를 “곧바로 접근”할 수는 없기 때문이다.</p>
+
+<p>아까 1-B에서 들었던 서랍을 생각해보자. 이번에는, 서랍이 아니라, 바구니라고 해보자.<br />
+우리는 검은색 바구니에 우리가 찾는 빨간 옷이 있다는 것을 알고 있다.<br />
+근데, 정작 중요한 검은색 바구니가 어디에 위치한지 모른다.</p>
+
+<p>왜일까? 이 검은색 바구니. 즉, 변수는 <strong>“컴퓨터가 알아서 빈 공간에 배치”</strong> 하기 때문이다.</p>
+
+<p>학생의 예시로 생각해보면, Z라는 학생에게 도달하기 위해서는,<br />
+반드시 A가 갖고 있는 B의 전화번호라는 포인터를 통해서, B에게 가고,<br />
+B가 갖고 있는 C의 전화번호라는 포인터를 통해서, C에게 가고.. 를 반복해야 한다.</p>
+
+<h1 id="끝이-아니다">끝이 아니다.</h1>
+
+<h2 id="첫-번째-문제">첫 번째 문제</h2>
+<p>: 지금까지의 내용을 읽고, 다음과 같은 의문을 가질 수 있다.</p>
+
+<p><strong><center>"C의 전화번호는 B가 갖고있고, B의 전화번호는 A가 갖고 있는데, 그럼 A의 전화번호는 누가 갖고있어요?"</center></strong></p>
+
+<p>물론, 선생님이 전화번호를 알고 있기는 하다. 근데, 선생님도 같은 Node로 표현할 것인가?<br />
+선생님은 학생들과 달리 조금 특별한데, 이걸로 될까? 학생을 추가하고, 삭제하고, 관리하는 녀석이 있었으면 좋겠다.</p>
+
+<p>내가 자료구조 수업을 들었을 당시 받았던 과제는, <strong>“웹 브라우저 흉내내기”</strong> 였다. <br />
+즉, 우리가 웹페이지를 돌아다니면서, 뒤로가기를 누르면 이전 웹페이지가 나오고, 또 뒤로가기를 누르면 그 이전.. 뭐 이런식이다.<br />
+또한, 앞으로가기, 홈페이지 가기 등등을 만드는 것이 필요했다.</p>
+
+<p>그렇다면, 뒤로가기를 했다가, 다시 앞으로 가기 등의 행위를 하려면, 무엇이 필요할까? 정답은 다음과 같다.</p>
+
+<ol>
+  <li>다음 Node를 가리키는 포인터 뿐만 아니라, “이전 Node를 가리키는 포인터도 필요하다.” <strong>이런 형태를 Doubly Linked List”라고 부른다!</strong></li>
+  <li><strong>“현재 페이지”</strong> 가 어디인지를 알아야 한다.</li>
+</ol>
+
+<p>1번 문제를 해결하기 위한 Node의 구조체는 다음과 같다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define LEN 100
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">Node</span> <span class="p">{</span>
+	<span class="kt">char</span> <span class="n">data</span><span class="p">[</span><span class="n">LEN</span><span class="p">];</span> <span class="c1">// 웹페이지의 주소를 저장(e.g. www.naver.com) </span>
+	<span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span> <span class="c1">// 다음 페이지를 가리키는 포인터</span>
+	<span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="n">prev</span><span class="p">;</span> <span class="c1">// 이전 페이지를 가리키는 포인터</span>
+<span class="p">}</span><span class="n">Node</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>또한, 2번 문제를 해결하기 위한 Node의 구조체는 다음과 같다.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">LinkedList</span> <span class="p">{</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span> <span class="c1">// 첫 페이지를 가리키는 포인터</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">cur</span><span class="p">;</span> <span class="c1">// 현재 페이지를 가리키는 포인터</span>
+	<span class="n">Node</span> <span class="o">*</span><span class="n">last</span><span class="p">;</span> <span class="c1">// 마지막 페이지를 가리키는 포인터</span>
+	<span class="kt">int</span> <span class="n">NumOfData</span><span class="p">;</span> <span class="c1">// 방문 페이지의 개수</span>
+<span class="p">}</span><span class="n">List</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위 내용을 다 이해 했다면, 해당 코드를 이해하기는 수월할 것이다.</p>
+
+<h2 id="두-번째-문제">두 번째 문제</h2>
+<p>: 학생 예시에서, 이러한 의문 또한 가질 수 있다. 무엇이냐?</p>
+
+<p><strong>“학생 C가 전학을 가서, B가 갖고있는 C의 전화번호를 D의 전화번호로 바꾸어줬다면, C에 앞으로 접근 못하는 것 아닌가요?”</strong></p>
+
+<p>정답이다. 이를 Memory Leak. 메모리 누수라 한다. 메모리 누수는 중요하다. <br />
+바구니를 아무리 안쓴다고 한들, 그 내용이 쓰레기라면 집 구석에 박아 놓으면 안된다. <br />
+쓰레기가 암만 소량이라고 하더라도, 쌓이게 되면 결국 버려야 하는 것이다.<br />
+잘 분리수거하고, 종량제 봉투에 깔끔하게 담아 버려야 한다.</p>
+
+<p>코드로는 어떻게 버려야 할까? 순서는 다음과 같다.</p>
+
+<ol>
+  <li>버릴 대상을 가리키는 <strong>임시 포인터</strong> delNode를 만든다. (주의하자. delNode는 Node가 아닌 pointer다.)</li>
+  <li>B학생의 전화번호를 D학생으로 바꾼다.</li>
+  <li><code class="highlighter-rouge">free(delNode)</code> 를 통해, <strong>delNode라는 포인터가 가리키는 노드(즉, C학생)를 삭제한다.</strong></li>
+</ol>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Node</span> <span class="o">*</span><span class="n">delNode</span><span class="p">;</span>
+
+<span class="n">delNode</span> <span class="o">=</span> <span class="n">plist</span><span class="o">-&gt;</span><span class="n">last</span><span class="p">;</span>
+<span class="n">bNode</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">dNode</span><span class="p">;</span>
+<span class="n">free</span><span class="p">(</span><span class="n">delNode</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>이렇게 하면, 쓰레기를 잘 분리수거해서 버리게 된다.</p>
+
+<h2 id="array-linkedlist">Array? LinkedList?</h2>
+<p>: 그렇다면, 언제 무엇을 사용할까? <br />
+“결국 과정은 다르지만 결과는 같으니, 어려운 리스트보다는 배열을 사용할래요” 하면 안된다.</p>
+
+<p>이는 컴퓨터 알고리즘의 기초 중 기초인 시간복잡도에서 차이가 난다.<br />
+Array의 시간복잡도는, 특정 index 접근은 O(1), 삽입/제거는 O(N) 이다.
+LinkedList의 시간복잡도는, 특정 index 접근은 O(N), 삽입/제거는 O(1) 이다.</p>
+
+<p>따라서, “내가 데이터의 변경을 자주 할 것 같으면 LinkedList, index 접근을 자주 할 것 같으면 array”를 선택하면 된다.</p>
+
+<hr />
+
+<blockquote>
+  <p>Note. O(1), O(N)은 최악의 경우를 가정한 시간복잡도를 나타내는 “빅오 표기법”으로 나타낸 수치이다.<br />
+O(1)은, 최악의 경우에도 연산을 1번만 하고, O(N)은 최악의 경우에 N번, 즉 데이터의 개수만큼 연산을 한다는 의미이다.<br />
+빅오 표기법에 대해서는 추후에 작성하겠다.</p>
+</blockquote>
+
+<hr />
+
+<h1 id="마치며">마치며</h1>
+<p>: 가볍게 쓰자고 마음 먹었는데, 아무래도 쉽게 설명하려고 하다 보니 포스팅이 많이 길어졌다.<br />
+그래도 뭐, 나쁘게 생각하지는 않는다. 이렇게 한번 이해하고 나면,<br />
+본인이 작성한 코드가 잘못 되더라도, <strong>“왜 잘못되었는지에 대한 추론”</strong> 이 가능해지기 때문이다.<br />
+어디서 잘못되었는지를 알아야, 머리가 살짝 고생하더라도 몸이 편해진다.</p>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/diary/why_data_engineer">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 왜 나는 데이터 엔지니어를 바라보는가</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/java/journey_to_java_hashmap">
+					<span class="page-number"># (Java) HashMap 으로의 여행</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/data-structure/what_is_linked_list',
+    'title': '# 마음으로 이해하는 자료구조 : LinkedList ( feat. C )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

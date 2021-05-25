@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># Python list 다뤄보기 ( a.k.a. 잡기술 )</title>
+  <meta name="description" content="0. 서론: 파이썬 사용자에게, 파이썬에서 가장 자주 사용하는 자료형이 무엇이냐고 물어보면, 원시 타입(Primtive type)을 제외하고는, list라고 답할 것이다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 서론: 파이썬 사용자에게, 파이썬에서 가장 자주 사용하는 자료형이 무엇이냐고 물어보면, 원시 타입(Primtive type)을 제외하고는, list라고 답할 것이다." />
+  <meta property="og:url" content="https://cjlee38.github.io/python/play_with_python_list">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# Python list 다뤄보기 ( a.k.a. 잡기술 )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# Python list 다뤄보기 ( a.k.a. 잡기술 )">
+  <meta name="twitter:description" content="0. 서론: 파이썬 사용자에게, 파이썬에서 가장 자주 사용하는 자료형이 무엇이냐고 물어보면, 원시 타입(Primtive type)을 제외하고는, list라고 답할 것이다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/python/play_with_python_list">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/python/play_with_python_list">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># Python list 다뤄보기 ( a.k.a. 잡기술 )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 5, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/python">Python</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-서론">0. 서론</h1>
+<p>: 파이썬 사용자에게, 파이썬에서 가장 자주 사용하는 자료형이 무엇이냐고 물어보면, 원시 타입(Primtive type)을 제외하고는, list라고 답할 것이다.</p>
+
+<hr />
+
+<blockquote>
+  <p>Note. 사실, 파이썬에서는 원시타입이 존재하지 않는다. 우리가 사용하는 int, float .. 등등은 사실 객체이다. 이는 당장 python에서 help(int) 라고만 입력해보면, 다음과 같이 나타난다.</p>
+</blockquote>
+
+<blockquote>
+  <p>Help on class int in module builtins:</p>
+</blockquote>
+
+<blockquote>
+  <p>class int(object)<br />
+|  int([x]) -&gt; integer<br />
+|  int(x, base=10) -&gt; integer<br />
+|  <br />
+|  Convert a number or string to an integer, or return 0 if no arguments<br />
+|  are given.  If x is a number, return x.<strong>int</strong>().  For floating point<br />
+|  numbers, this truncates towards zero.</p>
+</blockquote>
+
+<blockquote>
+  <p>… 이하 생략</p>
+</blockquote>
+
+<hr />
+
+<p>이러한 list는 다양한 <strong>잡기술</strong>이 존재하는데, 이를 하나하나 살펴보자.</p>
+
+<h1 id="1-list-indexing">1. list indexing</h1>
+<p>: 리스트를 indexing 하는 법에 대해서는 많은 사람들이 알고 있다. <br />
+그런데, 이렇게 사용하는 것은 흔하게는 보지 못하였을 것이라 생각한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">_list</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="o">-&gt;</span> <span class="err">???</span>
+</code></pre></div></div>
+<p>기존에는 colon(:) 을 한번만 사용했는데, 두개를 사용한다. 어떤 결과가 나타날까? 정답은 다음과 같다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">_list</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>indexing 없이 그냥 print 했다면 [1,2,3,4] 가 나와야 할텐데, 첫 번째와 세 번째가 나타났다. 즉, colon을 두 번 쓰고 숫자를 입력하면, 이는 <strong>step</strong>이 된다.</p>
+
+<p>즉, _list[start : end : step] 인 셈이고, start와 end가 생략되었으니 전체 list에 대해 순회하면서, step만큼 움직인다.</p>
+
+<p>다시 말해, 기존에 계단을 <strong>한 칸씩</strong> 오르던 것을, 이제는 <strong>두 칸씩</strong> 오르겠다는 말이다.</p>
+
+<p>이를 조금 응용하면, 다음과 같이 사용할 수도 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">_list</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+<p>기존에 계단을 한 칸씩 <strong>오르던 것을</strong>, 이제는 한 칸씩 <strong>내려가겠다</strong>는 의미가 된다.</p>
+
+<h1 id="2-list-합치기">2. list 합치기</h1>
+
+<p>: list 를 합치는 방법에는, 다음의 세 가지 방법이 사용된다.</p>
+<ol>
+  <li>+ operator</li>
+  <li>append()</li>
+  <li>extend()</li>
+</ol>
+
+<h3 id="1--operator">1. + operator</h3>
+<p>: + 연산자는 말 그대로, list끼리 더하는 역할을 해준다.<br />
+다음과 같은 list가 존재한다고 해보자.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s">'a'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>그리고, 여기에 새로이 4.5 라는 요소를 추가하고 싶다면, 다음과 같이 사용하면 된다</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list</span> <span class="o">+=</span> <span class="p">[</span><span class="mf">3.5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>아주 명료하다.</p>
+
+<h3 id="2-append">2. append()</h3>
+<p>: append는 영어로 덧붙이다, 추가하다.. 이런 뜻을 가지고 있다. <br />
+개인적으로는 덧붙이다 라는 표현이 좀 더 걸맞는 듯 하다. 위 list에서, 3.5를 추가하는 방법은 다음과 같다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>이 또한, 아주 간단명료하다.</p>
+
+<p>그러나, 눈썰미가 좋은 분은, 한 가지 차이점을 발견하였을 것이다.</p>
+
+<p class="caption">” 1번에서는 list를 더해줬는데, 2번에서는 3.5라는 float을 더해주네요?”</p>
+
+<p>이는, list 자료형의 append 함수를 help(list.append)를 통해 살펴보면 알 수 있다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>append(self, object, /)
+: Append object to the end of the list.
+</code></pre></div></div>
+
+<p>즉, list의 끝에 float이라는 object를 붙였기 때문에 이와 같이 나타나는 것이다.</p>
+
+<p>따라서, 다음과 같이 사용할 경우, 의도한 대로 결과가 나타나지 않는다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">3.5</span><span class="p">])</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">_list</span><span class="p">)</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s">'a'</span><span class="p">,[</span><span class="mf">3.5</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<h3 id="3-extend">3. extend()</h3>
+<p>extend() 함수는 결과적으로 1번의 덧셈 연산자와 같은 결과를 내놓는다. 그러나, 다음과 같은 차이점이 있다.</p>
+
+<p>위와 같은 list에서, 역시 3.5를 추가하고 싶다고 해보자.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
+<span class="o">-&gt;</span> <span class="nb">TypeError</span><span class="p">:</span> <span class="s">'float'</span> <span class="nb">object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">iterable</span>
+</code></pre></div></div>
+
+<p>무슨 에러인고 하니, float은 iterable하지 않다는 뜻이다. 즉, 반복할 수 없다는 말이 된다.</p>
+
+<p>이 또한 help(list.extend)를 통해 설명을 보면 알 수 있는데, append와 달리 extend는 <strong>object가 아닌 iterable한 객체를 받기 때문에</strong> 발생하는 일이다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extend(iterable, /) method of builtins.list instance
+    Extend list by appending elements from the iterable.
+</code></pre></div></div>
+
+<p>즉, 다음과 같이 사용해야 한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mf">3.5</span><span class="p">])</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>Note. extend()와 append()는 객체 내에 있는 요소를 변경시키기 때문에, return 값을 반환하지 않는다.(사실 null을 반환한다) 따라서, _list2 = _list.append(3.5) 혹은 _list2 = _list.extend([3.5]) 이와 같이 사용해서는 안되고, 마찬가지로 _list + [3.5]라고 사용한다면, _list에는 3.5가 들어가지 않을 것이다.</p>
+
+<hr />
+
+<h3 id="41-extend--string">4.1 extend() + String</h3>
+
+<p>그렇다면, <strong>extend()에 string을 넣는다면 어떻게 될까?</strong><br />
+String은 결국 char의 sequential이므로, iterable한 객체이다. 따라서, 다음과 같이  사용할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">_list</span><span class="p">)</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'a'</span><span class="p">,</span> <span class="s">'H'</span><span class="p">,</span> <span class="s">'e'</span><span class="p">,</span> <span class="s">'l'</span><span class="p">,</span> <span class="s">'l'</span><span class="p">,</span> <span class="s">'o'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>보는 바와 같이, Hello가 각각의 character로 나누어져 하나씩 들어간 모습을 볼 수 있다.</p>
+
+<h1 id="3-list-comprehension">3. list comprehension</h1>
+<p>: list comprehension은 정말 유용하면서도, 몇 번을 사용해도 손가락이 순차적으로 움직이지 않고, 커서가 Home과 End를 들락거리는 마성을 가진 녀석이다.</p>
+
+<h3 id="1-기본">1) 기본</h3>
+<p>: 일반적인 형태는 다음과 같다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list2</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">_list</span><span class="p">]</span> <span class="c1"># e는 element의 약자이다.
+</span><span class="k">print</span><span class="p">(</span><span class="n">_list2</span><span class="p">)</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">'a'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>단순히 이렇게 생긴 것만 봐서는, 얘가 뭘 의미하는 건지 모른다.</p>
+
+<p>일반적인 for문과 차이점이라면, for문 앞에 e라는 녀석이 있고, 그 for문 전체를 []로 감싸고 있다는 것만 보인다.</p>
+
+<h3 id="2-조건문">2) 조건문</h3>
+<p>: 이 list comprehension의 파워는 if/else의 조건문이 붙었을 때 힘을 발휘한다.  예시를 위해, 우리가 _list에서 int형인 녀석만 뽑아오고 싶다고 해보자. 그러면 다음과 같이 작성했을 것이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">_list</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">_list2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="c1"># 혹은 _list2 += e
+</span><span class="k">print</span><span class="p">(</span><span class="n">_list2</span><span class="p">)</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <p>Note. isinstance()는 내장함수로써, “이 instance가 해당 class 소속인가요?” 하고 물어보는 것이다. 첫 번째 인자로 instance를, 두 번째 인자로 class를 넣어주면, True/False의 boolean으로 return된다. java의 instanceof와 비슷하다.</p>
+</blockquote>
+
+<hr />
+
+<p>위 코드를 list comprehension으로 바꾸면, 다음과 같이 작성할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list2</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">_list</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="nb">int</span><span class="p">)]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">_list2</span><span class="p">)</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>print문을 제외하고, <strong>4줄인 코드가 1줄로 감소</strong>하였다. 또한, 이 문법을 알고 있다면, <strong>가독성</strong>도 훨씬 늘어난다.</p>
+
+<p>단순 if문 뿐만 아니라, else문도 다음과 같이 추가할 수 있다. 다만, <strong>if 하나만 넣는 것과 달리, if else를 같이 쓰면 위치가 다르다는 것</strong>을 명심하자.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list2</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">_list</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">_list2</span><span class="p">)</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>if문의 조건에 맞으면 e를 그대로 사용하고, 아니라면 0을 집어넣겠다는 의미가 된다.</p>
+
+<hr />
+
+<blockquote>
+  <p>Note 1. 사실, list comprehension에서 사용되는 if else문은 list comprehension에 종속된 문법이 아니라, 변수를 할당할 때에도 사용될 수 있는 문법이다. 다음의 예시를 참고하자.</p>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="k">else</span> <span class="mi">0</span>
+<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="o">-&gt;</span> <span class="mi">0</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p>Note 2. Note 1의 문법을 참고하면, 다음과 같이 사용할 수도 있다. 
+파이썬의 함수를 정의할 때, default 값을 줄 수 있다는 것을 알고 있을 것이다.</p>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">myFunc</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+  <span class="c1"># do something
+</span></code></pre></div>  </div>
+  <p>헌데, default 값에 조건문을 주고 싶다면, 이를 조금 응용하면 된다..</p>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">myFunc</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">0</span>
+  <span class="c1"># do something
+</span></code></pre></div>  </div>
+  <p>이렇게 작성하면, b가 2일 경우에는 a를 그대로 사용하고, 2가 아닐 경우에는 a에는 어떤 값이 들어왔었더라도, 0이 할당될 것이다.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="3-중첩">3) 중첩</h3>
+<p>: list comprehension은 중첩해서 쓸 수도 있다. 다음과 같은 list가 있다고 해보자.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<p>이를 일반적인 list comprehension을 사용해 접근한다면, 첫 번째 요소는 [1,2,3] 이라는 list고, 두 번째 요소는 [4,5,6], 세 번째 요소는 [7,8,9]가 된다.</p>
+
+<p>각각의 1, 2, 3 … 9 의 int data를 접근하고 싶다면, 다음과 같이 사용하면 된다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">_list</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">l</span><span class="p">]</span>
+</code></pre></div></div>
+<p>첫 번째 for문에서, 접근하는 요소인 l에 대해서, 다시 한번 for문을 통해 e라는 객체에 접근하겠다는 뜻이다.</p>
+
+<p>이 또한, if else문을 섞어줄 수 있다.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">([</span><span class="n">e</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">_list</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">l</span> <span class="k">if</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">])</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="k">print</span><span class="p">([</span><span class="n">e</span> <span class="k">if</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">_list</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">l</span> <span class="p">])</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">_list2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]]</span> <span class="c1"># 두 번째 list element의 6 제거
+</span><span class="k">print</span><span class="p">([</span><span class="n">e</span> <span class="k">if</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">_list2</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">l</span> <span class="p">])</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>그런데, 이렇게 쓰면 쓰면 쓸수록 복잡해지고, 가독성도 떨어진다. 따라서, 이렇게 nested list comprehension을 사용하는 경우는 <strong>중첩 list를 flatten 하는 상황</strong>이 대부분이다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">([</span><span class="n">e</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">_list</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">l</span><span class="p">])</span>
+<span class="o">-&gt;</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <p>Note 1. 그러나, 사실 이 flatten 하는 과정 마저도,  sum() 함수를 통해 쉽게 해결할 수 있다.</p>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">_list2</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">_list</span><span class="p">,</span> <span class="p">[])</span>
+</code></pre></div>  </div>
+  <p>이 또한 help(sum)을 입력해보자.</p>
+
+  <p>Help on built-in function sum in module builtins:
+ sum(iterable, start=0, /)<br />
+   Return the sum of a ‘start’ value (default: 0) plus an iterable of numbers</p>
+
+  <p>When the iterable is empty, return the start value.<br />
+   This function is intended specifically for use with numeric values and may<br />
+   reject non-numeric types.</p>
+
+  <p>sum 또한 iterable 객체를 첫 번째 인자로 받고, 두 번째 인자는 start = 0 으로 default는 숫자이다.
+따라서, start를 빈 객체로 바꿔준다면, 위 2-1 번에서 설명한 덧셈 연산자와 같은 효과를 발휘하게 된다.</p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p>Note 2. 다음과 같이 사용하는 것을 <strong>“최대한 지양”</strong> 해야 한다.</p>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">_list2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">_list</span><span class="p">]</span>
+</code></pre></div>  </div>
+  <p>위 코드를 실행하면, append는 null을 return하므로, list comprehension을 받는 변수가 있다면, 이는 null로 이루어진 list가 된다.
+이렇게 사용하는 것을, 파이썬 사용자들은 최대한 피하기를 권하고 있는데, 그 이유는</p>
+  <ol>
+    <li>위 코드를 실행하면, null 값이 들어있는 list object가 생성되었다가 소멸되므로, 자원의 낭비가 생기며</li>
+    <li>Explicit 하게 작성하는 것을 목표로 하는, 파이썬의 이념(혹은 convention)에 어긋나기 때문이다.</li>
+  </ol>
+
+  <p>한마디로, 저렇게 쓰는 것은 <strong>“쓸데없는 겉멋”</strong> 이라는 것이다.</p>
+</blockquote>
+
+<hr />
+
+<p>결론적으로, list comprehenson은 정말 유용한 문법임은 맞지만, 이를 남용하는 일이 없도록 주의해야 한다.</p>
+
+<p>끝.</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/problem-solving/problem_solving_6">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 백준[No.2457] - 공주님의 정원 ( Java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/problem-solving/problem_solving_7">
+					<span class="page-number"># 프로그래머스[Lv.2] - 튜플 ( java )</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/python/play_with_python_list',
+    'title': '# Python list 다뤄보기 ( a.k.a. 잡기술 )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

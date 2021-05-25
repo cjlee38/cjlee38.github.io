@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 6. JSP 학습기록 - doGet, doPost와 JSP, 그리고 EL(Expression Language) </title>
+  <meta name="description" content="doGet, doPost: 기존에는 Servlet에 코드를 작성할 때, service()만 사용하고, get과 post를 구분하지 않았었다. 당연히, get과 post를 구분하는 방법이 있을텐데, 우선적으로 생각할 수 있는 방법은if else 문으로 분기하는 것이다. 또한, 이에 ...">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="doGet, doPost: 기존에는 Servlet에 코드를 작성할 때, service()만 사용하고, get과 post를 구분하지 않았었다. 당연히, get과 post를 구분하는 방법이 있을텐데, 우선적으로 생각할 수 있는 방법은if else 문으로 분기하는 것이다. 또한, 이에 ..." />
+  <meta property="og:url" content="https://cjlee38.github.io/jsp/jsp_learning_06">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 6. JSP 학습기록 - doGet, doPost와 JSP, 그리고 EL(Expression Language) " />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 6. JSP 학습기록 - doGet, doPost와 JSP, 그리고 EL(Expression Language) ">
+  <meta name="twitter:description" content="doGet, doPost: 기존에는 Servlet에 코드를 작성할 때, service()만 사용하고, get과 post를 구분하지 않았었다. 당연히, get과 post를 구분하는 방법이 있을텐데, 우선적으로 생각할 수 있는 방법은if else 문으로 분기하는 것이다. 또한, 이에 ...">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/jsp/jsp_learning_06">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/jsp/jsp_learning_06">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 6. JSP 학습기록 - doGet, doPost와 JSP, 그리고 EL(Expression Language) </h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 25, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/jsp">Jsp</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="doget-dopost">doGet, doPost</h1>
+<p>: 기존에는 Servlet에 코드를 작성할 때, service()만 사용하고, <br />
+get과 post를 구분하지 않았었다. 
+당연히, get과 post를 구분하는 방법이 있을텐데, 우선적으로 생각할 수 있는 방법은<br />
+if else 문으로 분기하는 것이다. 또한, 이에 걸맞은 method 도 존재한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">req</span><span class="o">.</span><span class="na">getMethod</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">"GET"</span><span class="o">))</span> <span class="o">{</span>
+    <span class="c1">// do something for get</span>
+<span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">req</span><span class="o">.</span><span class="na">getMethod</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">"POST"</span><span class="o">))</span> <span class="o">{</span>
+    <span class="c1">// do something for post</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>그러나, 이렇게 작성하는 것은 당연하게도 우아해보이지 않는다.<br />
+이에 걸맞은 method가 있는데, 바로 <strong>doGet()</strong>, <strong>doPost()</strong> method 다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="c1">//do something for get</span>
+<span class="o">}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doPost</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="c1">// do something for post</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>그렇다면, service() 함수와 어떤 관계를 가질까?</p>
+
+<p>우리가 작성한 Servlet이 상속받은 <strong>HttpServlet 클래스</strong>를 찾아가보면, 다음과 같은 코드를 볼 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">method</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getMethod</span><span class="o">();</span>
+        <span class="kt">long</span> <span class="n">lastModified</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">method</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"GET"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">lastModified</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getLastModified</span><span class="o">(</span><span class="n">req</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">lastModified</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1L</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">doGet</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">resp</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="kt">long</span> <span class="n">ifModifiedSince</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getDateHeader</span><span class="o">(</span><span class="s">"If-Modified-Since"</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">ifModifiedSince</span> <span class="o">&lt;</span> <span class="n">lastModified</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">maybeSetLastModified</span><span class="o">(</span><span class="n">resp</span><span class="o">,</span> <span class="n">lastModified</span><span class="o">);</span>
+                    <span class="k">this</span><span class="o">.</span><span class="na">doGet</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">resp</span><span class="o">);</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">resp</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="mi">304</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">method</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"HEAD"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">lastModified</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getLastModified</span><span class="o">(</span><span class="n">req</span><span class="o">);</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">maybeSetLastModified</span><span class="o">(</span><span class="n">resp</span><span class="o">,</span> <span class="n">lastModified</span><span class="o">);</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">doHead</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">resp</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">method</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"POST"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">doPost</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">resp</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">method</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"PUT"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">doPut</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">resp</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">method</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"DELETE"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">doDelete</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">resp</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">method</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"OPTIONS"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">doOptions</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">resp</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">method</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"TRACE"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">doTrace</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">resp</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="nc">String</span> <span class="n">errMsg</span> <span class="o">=</span> <span class="n">lStrings</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"http.method_not_implemented"</span><span class="o">);</span>
+            <span class="nc">Object</span><span class="o">[]</span> <span class="n">errArgs</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">[]{</span><span class="n">method</span><span class="o">};</span>
+            <span class="n">errMsg</span> <span class="o">=</span> <span class="nc">MessageFormat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">errMsg</span><span class="o">,</span> <span class="n">errArgs</span><span class="o">);</span>
+            <span class="n">resp</span><span class="o">.</span><span class="na">sendError</span><span class="o">(</span><span class="mi">501</span><span class="o">,</span> <span class="n">errMsg</span><span class="o">);</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>자세한건 잘 알아보지 못하더라도, <br />
+대충 <strong>각 http 방식에 걸맞는 do method를 실행</strong>하는 것을 볼 수 있다.</p>
+
+<p>따라서, 우리가 service() 함수를 작성하고, <br />
+그 안에 <strong>super.service(req, resp)</strong>로 <br />
+부모 클래스인 HttpServlet의 service() 함수를 실행하면,<br />
+service() 함수가 일종의 “Filter” 역할을 해줄 수 있는 것이다.</p>
+
+<p>앞서 우리가 봤던 Servlet Filter는 특정 Path에 대해서 걸 수도 있지만,<br />
+그보다 조금 더 <strong>좁은 개념</strong>으로 <strong>service() 함수</strong>를 활용할 수 있다.</p>
+
+<h1 id="jsp-with-jasper">JSP with Jasper</h1>
+<p>: 지금까지 학습했던 내용들은, JSP 가 아니라 단순히 Servlet을 만드는 과정이었다.<br />
+따라서, HTML 문서는 나름대로 웹페이지로서의 기능을 할 수 있었지만, 대신 정적인 페이지일 뿐이었고,<br />
+Servlet으로 작성한 코드는 <code class="highlighter-rouge">out.println()</code> 과 같은, 소위 텍스트와 비슷한 결과물만을 볼 수 있었다.</p>
+
+<p>우리가 원하는 것은 이것이 아니다. <strong>WAS</strong> 를 사용하는 목적은, <strong>“동적인 페이지”</strong>를 만드는 것이다.</p>
+
+<p><code class="highlighter-rouge">out.println()</code> 을 통해서도, 그 안에 태그를 붙여줌으로써 <strong>동적인 HTML 문서를</strong> 만들 수 있다.<br />
+그러나, 그 모습은 다음과 같이 정말 <strong>괴랄</strong>하기 짝이 없다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@WebServlet</span><span class="o">(</span><span class="s">"/firstServlet"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">firstServlet</span> <span class="kd">extends</span> <span class="nc">HttpServlet</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">PrintWriter</span> <span class="n">out</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="na">getWriter</span><span class="o">();</span>
+        
+        <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;!DOCTYPE html&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;html lang=\"en\"&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;head&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;meta charset=\"UTF-8\"&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;title&gt;Title&lt;/title&gt;"</span><span class="o">);</span>
+        
+        <span class="c1">// 중략 </span>
+
+        <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;/body&gt;"</span><span class="o">);</span>
+        <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;/html&gt;"</span><span class="o">);</span>        
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<p>이런 단순 반복 행위에 불과한 코드를 작성하는 행위는, 사람이 아니라 기계에게 맡기는 것이 어떨까?<br />
+애초에 기계라는 것이 이러한 단순반복을 대신 수행하기 위해 등장한 것이니 말이다.</p>
+
+<p>이 때 바로 <strong>JSP</strong> 라는 것이 등장한다.</p>
+
+<p>JSP는 Java Server Page의 약자로서, <br />
+이 JSP의 형태는 <strong>HTML에 Java Code를 작성할 수 있는 모습이다.</strong></p>
+
+<p>Jekyll 기반의 블로그를 운영하면서 배웠던, <strong>Liquid라는 문법이 하는 일과 굉장히 흡사</strong>한데,<br />
+대신 Liquid는 Programming Language가 아니었지만, JSP는 Jasper라는 도구를 이용해<br />
+Java 코드를 해석하고, 위 괴상한 코드를 자동으로 생성해줌으로써 최종적으로 <strong>Servlet의 구색</strong>을 갖출 수 있게 해준다.</p>
+
+<p>일례로, 다음과 같은 모습을 볼 수 있다.</p>
+
+<div class="language-jsp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;%@ page </span><span class="na">contentType=</span><span class="s">"text/html;charset=UTF-8"</span><span class="na"> language=</span><span class="s">"java"</span> <span class="nt">%&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Title<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;%</span> <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">15</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span> <span class="nt">%&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+hello world! <span class="nt">&lt;br/&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;%</span> <span class="o">}</span> <span class="nt">%&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/2020-09-25-17-36-48_2020-09-25-jsp_learning_06.md.png" alt="JSP_sample" class="alignCenter" /></p>
+
+<p><code class="highlighter-rouge">&lt;% %&gt;</code> 이런식으로 생긴 녀석 <em>(=코드블럭)</em> 으로 코드를 감쌀 수 있다.<br />
+이렇게 <strong>“이 문장은 HTML이 아닌 Java 코드다”</strong> 라는 것을 알려줌으로서,<br />
+for문을 15번을 반복시켜서 Hello world! 를 15번을 출력할 수 있다.</p>
+
+<p>이러한 JSP 코드의 문법은 다음과 같다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">이름</th>
+      <th style="text-align: center">작성법</th>
+      <th style="text-align: center">목적</th>
+      <th style="text-align: center">예시</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">스크립트릿(Scriptlet)</td>
+      <td style="text-align: center">&lt;% %&gt;</td>
+      <td style="text-align: center">일반적인 변수 할당 등의 script</td>
+      <td style="text-align: center">&lt;% String name = “홍길동”; %&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">선언문(Declarations)</td>
+      <td style="text-align: center">&lt;%! %&gt;</td>
+      <td style="text-align: center">함수 선언</td>
+      <td style="text-align: center">&lt;%! public void someFunction() { … } %&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">지시자(Directivs)</td>
+      <td style="text-align: center">&lt;%@ %&gt;</td>
+      <td style="text-align: center">라이브러리 임포트, 혹은 페이지 메타데이터 설정</td>
+      <td style="text-align: center">&lt;%@ page pageEncoding=”UTF-8” … %&gt;</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">표현식(Expressions)</td>
+      <td style="text-align: center">&lt;%= %&gt;</td>
+      <td style="text-align: center">Expression 출력</td>
+      <td style="text-align: center">&lt;%= someFunction() %&gt; 입니다.(태그 내)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>위에서 실행한 JSP 파일이, 어떻게 Jasper에 의해 .java 파일로 변환되었는지 살펴보자.<br />
+(설정이 꼬였는지, 정확히 위 파일이 존재하지는 않고, <strong>이전 포스팅에서 작성했던 index.jsp</strong>를 살펴볼 수 있었다.)</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 윗부분 생략</span>
+<span class="k">try</span> <span class="o">{</span>
+      <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="s">"text/html;charset=UTF-8"</span><span class="o">);</span>
+      <span class="n">pageContext</span> <span class="o">=</span> <span class="n">_jspxFactory</span><span class="o">.</span><span class="na">getPageContext</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">request</span><span class="o">,</span> <span class="n">response</span><span class="o">,</span>
+      			<span class="kc">null</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="mi">8192</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+      <span class="n">_jspx_page_context</span> <span class="o">=</span> <span class="n">pageContext</span><span class="o">;</span>
+      <span class="n">application</span> <span class="o">=</span> <span class="n">pageContext</span><span class="o">.</span><span class="na">getServletContext</span><span class="o">();</span>
+      <span class="n">config</span> <span class="o">=</span> <span class="n">pageContext</span><span class="o">.</span><span class="na">getServletConfig</span><span class="o">();</span>
+      <span class="n">session</span> <span class="o">=</span> <span class="n">pageContext</span><span class="o">.</span><span class="na">getSession</span><span class="o">();</span>
+      <span class="n">out</span> <span class="o">=</span> <span class="n">pageContext</span><span class="o">.</span><span class="na">getOut</span><span class="o">();</span>
+      <span class="n">_jspx_out</span> <span class="o">=</span> <span class="n">out</span><span class="o">;</span>
+
+      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"\r\n"</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"\r\n"</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;html&gt;\r\n"</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;head&gt;\r\n"</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"    &lt;title&gt;Title&lt;/title&gt;\r\n"</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;/head&gt;\r\n"</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;body&gt;\r\n"</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"\r\n"</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"    This is index!\r\n"</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;/body&gt;\r\n"</span><span class="o">);</span>
+      <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"&lt;/html&gt;\r\n"</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">lang</span><span class="o">.</span><span class="na">Throwable</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(!(</span><span class="n">t</span> <span class="k">instanceof</span> <span class="n">javax</span><span class="o">.</span><span class="na">servlet</span><span class="o">.</span><span class="na">jsp</span><span class="o">.</span><span class="na">SkipPageException</span><span class="o">)){</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">_jspx_out</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">out</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">out</span><span class="o">.</span><span class="na">getBufferSize</span><span class="o">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">)</span>
+          <span class="k">try</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">isCommitted</span><span class="o">())</span> <span class="o">{</span>
+              <span class="n">out</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+              <span class="n">out</span><span class="o">.</span><span class="na">clearBuffer</span><span class="o">();</span>
+            <span class="o">}</span>
+          <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">_jspx_page_context</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">_jspx_page_context</span><span class="o">.</span><span class="na">handlePageException</span><span class="o">(</span><span class="n">t</span><span class="o">);</span>
+        <span class="k">else</span> <span class="k">throw</span> <span class="k">new</span> <span class="nf">ServletException</span><span class="o">(</span><span class="n">t</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+      <span class="n">_jspxFactory</span><span class="o">.</span><span class="na">releasePageContext</span><span class="o">(</span><span class="n">_jspx_page_context</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>그러나, 이렇게 JSP 파일에 몰아서 작성했을 경우 발생할 수 있는 단점은, <strong>JSP 코드 자체가 급격하게 보기에 나빠진다는 것</strong>이다.</p>
+
+<p>작성된 JSP 또한 결국 jasper에 의해 Servlet으로 변환되므로,<br />
+기존에 Servlet에서 사용하던 여러 변수 <em>(e.g. Parameter로 넘겨받은 HttpServletRequest req)</em> 들을 사용할 수 있는데,<br />
+loop 문이라던지, 각 변수마다 <code class="highlighter-rouge">&lt;%= request.getAttribute("something") %&gt;</code> 를 작성하게 되면<br />
+보기도 좋지 않고, <strong>유지보수하기도 힘들 것</strong>이 분명하다.</p>
+
+<p>따라서, 다음 포스팅에 이야기할 <strong>MVC model 1, 그리고 model 2가 등장</strong>하게 되는데,<br />
+일단 거기에 앞서 <strong>EL, Expression Langauge</strong>에 대해서 잠깐 짚고 가자.</p>
+
+<h1 id="el-expression-language">EL (Expression Language)</h1>
+<p>: 다음 포스팅에서 작성할 MVC model에 대해서 이해하고 나면, <strong>이 EL이 왜 쓰이는지 더더욱 명확하게</strong> 알 수 있다.<br />
+EL은, 흡사 Javascript의 Template Literal과 비슷하게 생겼는데,<br />
+이런식으로 작성한다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>${something}
+</code></pre></div></div>
+
+<p>그냥 저렇게 작성하는 것만으로, <code class="highlighter-rouge">&lt;%= request.getAttribute("something") %&gt;</code> 를 대체할 수 있다.</p>
+
+<p>EL 문법을 정리하면, 다음과 같다.</p>
+
+<h3 id="사용법">사용법</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Data Type</th>
+      <th style="text-align: center">JSP</th>
+      <th style="text-align: center">EL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Primitive</td>
+      <td style="text-align: center">request.getAttribute(“value”);</td>
+      <td style="text-align: center">${value}</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Array(or list)</td>
+      <td style="text-align: center">request.getAttribute(“list”).get(0);</td>
+      <td style="text-align: center">${list[0]}</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Map</td>
+      <td style="text-align: center">request.getAttribute(“map”).get(“key”)</td>
+      <td style="text-align: center">${map.key} 혹은 ${map[“key”]}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="변수-탐색-범위">변수 탐색 범위</h3>
+<p>: pageContext Scope -&gt; request Scope -&gt; session Scope -&gt; application Scope
+(다음 포스팅에서 설명)</p>
+
+<h3 id="연산자">연산자</h3>
+<p>: 파이썬과 겹치는 부분이 좀 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">연산자 구분</th>
+      <th style="text-align: center">기호</th>
+      <th style="text-align: center">EL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">비교연산자</td>
+      <td style="text-align: center">&gt;</td>
+      <td style="text-align: center">gt(greater than)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">비교연산자</td>
+      <td style="text-align: center">&lt;</td>
+      <td style="text-align: center">lt(less than)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">비교연산자</td>
+      <td style="text-align: center">&gt;=</td>
+      <td style="text-align: center">ge(greater or equal)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">비교연산자</td>
+      <td style="text-align: center">&lt;=</td>
+      <td style="text-align: center">le(less or equal)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">산술연산자</td>
+      <td style="text-align: center">/</td>
+      <td style="text-align: center">div(divide)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">산술연산자</td>
+      <td style="text-align: center">%</td>
+      <td style="text-align: center">mod(modulo)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">관계연산자</td>
+      <td style="text-align: center">==</td>
+      <td style="text-align: center">eq(equal)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">관계연산자</td>
+      <td style="text-align: center">!=</td>
+      <td style="text-align: center">ne(not equal)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">논리연산자</td>
+      <td style="text-align: center">&amp;&amp;</td>
+      <td style="text-align: center">and</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">논리연산자</td>
+      <td style="text-align: center">││</td>
+      <td style="text-align: center">or</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">부호연산자</td>
+      <td style="text-align: center">!</td>
+      <td style="text-align: center">not</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">empty (isEmpty())</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>반드시 EL 연산자로 작성할 필요는 없지만, <br />
+문제가 생길 것을 대비해(e.g. ‘&lt;’,’&gt;’ 기호가 Tag로 인식된다던지), <br />
+EL 연산자로 작성하는 것을 권장한다.</p>
+
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/btb/expression_and_statement">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># Expression과 Statement의 차이 ( feat. Python, Java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/btb/what_is_hash">
+					<span class="page-number"># Hash 맛보기</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/jsp/jsp_learning_06',
+    'title': '# 6. JSP 학습기록 - doGet, doPost와 JSP, 그리고 EL(Expression Language) '
+  });
+</script>
+
+
+
+  </body>
+
+</html>

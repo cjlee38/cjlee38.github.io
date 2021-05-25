@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># 마음으로 이해하는 자료구조 : Queue ( feat. C )</title>
+  <meta name="description" content="0. 들어가며: Stack과 Queue는 아주 기본 중의 기본인 자료구조이다.아주 간단하므로, 사실 Stack과 Queue가 무엇인지에 대해서 이야기할 부분은 많지 않다.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 들어가며: Stack과 Queue는 아주 기본 중의 기본인 자료구조이다.아주 간단하므로, 사실 Stack과 Queue가 무엇인지에 대해서 이야기할 부분은 많지 않다." />
+  <meta property="og:url" content="https://cjlee38.github.io/data-structure/what_is_queue">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# 마음으로 이해하는 자료구조 : Queue ( feat. C )" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/data-structure.jpg" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# 마음으로 이해하는 자료구조 : Queue ( feat. C )">
+  <meta name="twitter:description" content="0. 들어가며: Stack과 Queue는 아주 기본 중의 기본인 자료구조이다.아주 간단하므로, 사실 Stack과 Queue가 무엇인지에 대해서 이야기할 부분은 많지 않다.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/data-structure.jpg">
+  <meta name="twitter:url" content="https://cjlee38.github.io/data-structure/what_is_queue">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/data-structure/what_is_queue">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/data-structure.jpg);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># 마음으로 이해하는 자료구조 : Queue ( feat. C )</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">September 21, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/data-structure">Data-structure</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-들어가며">0. 들어가며</h1>
+<p>: Stack과 Queue는 아주 기본 중의 기본인 자료구조이다.<br />
+아주 간단하므로, 사실 Stack과 Queue가 무엇인지에 대해서 이야기할 부분은 많지 않다.</p>
+
+<p>따라서, 이번 포스팅은 코드 구현 위주로 작성할 것이다.<br />
+쓰다보니, 생각보다 포스팅이 또 길어져서, Stack과 Queue를 나누어서 작성했다.<br />
+<a href="http://cjlee38.github.io/data_structure/what_is_stack">지난 Stack편</a> 에 이어집니다.</p>
+
+<h1 id="1-이론-편">1. 이론 편</h1>
+<p>: Queue는, 편의점의 냉장고를 생각하면 된다.<br />
+편의점 알바를 해보면, 우리가 보고 있는 냉장고 뒤편은 냉장창고라는 것을 알 수 있다.<br />
+창고 뒤편에서, 냉장고에 음료수를 넣으면, 반대편에선 가장 먼저 넣은 것을 우선으로 꺼낼 수 있다.</p>
+
+<p>즉, A,B,C,D 를 넣으면, 편의점 손님이 이것을 꺼낼 때도 A,B,C,D 순서로 꺼낸다.</p>
+
+<p>이를, <strong>FIFO(First in, First out)(선입선출)</strong> 라고 한다.</p>
+
+<h1 id="2-구현-편---adt">2. 구현 편 - ADT</h1>
+<p>: Queue의 ADT는 다음과 같다.</p>
+
+<ul>
+  <li>init()
+    <ul>
+      <li>Queue의 초기화를 진행</li>
+      <li>Queue 생성 후, 가장 먼저 호출되어야 하는 함수</li>
+    </ul>
+  </li>
+  <li>size()
+    <ul>
+      <li>해당 Queue에 데이터가 몇 개 쌓여 있는지 확인.</li>
+    </ul>
+  </li>
+  <li>isEmpty()
+    <ul>
+      <li>해당 Queue가 비어 있는가를 확인.</li>
+      <li>비었으면 true, 아니면 false를 반환.</li>
+    </ul>
+  </li>
+  <li>enqueue(data)
+    <ul>
+      <li>Queue에 데이터를 저장.</li>
+      <li>당연히, 가장 마지막에 저장한다.</li>
+    </ul>
+  </li>
+  <li>dequeue()
+    <ul>
+      <li>Queue에 있는 데이터를 반환</li>
+      <li>꺼낸 데이터는 <strong>Queue에서 삭제</strong>한다.</li>
+      <li>역시 당연히, <strong>가장 오래된 데이터</strong>를 꺼낸다.</li>
+      <li><strong>Queue에 데이터가 최소 하나는 있어야 한다.</strong></li>
+    </ul>
+  </li>
+  <li>peek()
+    <ul>
+      <li>Queue에 있는 데이터를 반환.</li>
+      <li>꺼낸 데이터는 <strong>삭제하지 않는다.</strong></li>
+      <li>물론 역시 당연히, <strong>가장 오래된 데이터</strong>를 꺼낸다.</li>
+      <li><strong>Queue에 데이터가 최소 하나는 있어야 한다.</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="3-구현-편---code">3. 구현 편 - Code</h1>
+<p>: 역시, Queue 또한, LinkedList로 구현한다.</p>
+
+<hr />
+
+<blockquote>
+  <p>Note. 구현에 앞서<br />
+Stack과 달리, Queue에서 앞, 뒤를 구분하는 것은 헷갈린다. <br />
+Front와 Rear로 표현하는 사람도 있고, Head와 Tail로 표현하는 사람도 있다.<br />
+우리가 구현하는 큐는, 다음과 같은 그림을 갖고 있다고 생각하고 보자.</p>
+</blockquote>
+
+<p><img src="/assets/images/2020-09-21-21-16-35_2020-09-21-what_is_Queue.md.png" alt="Queue" class="alignCenter" /></p>
+
+<hr />
+
+<p>Stack과 마찬가지로, 구조체부터 만들자.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">Queue</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Node</span><span class="o">*</span> <span class="n">head</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Node</span><span class="o">*</span> <span class="n">tail</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Queue</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">Node</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Node</span><span class="o">*</span> <span class="n">prev</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Node</span><span class="p">;</span>
+</code></pre></div></div>
+<p>지난 Stack 구조체에 비해서, 추가 된 것은 tail 하나다.<br />
+Stack에서는 최상단의 대상만 삭제하고, 추가했지만,<br />
+Queue에서는 추가할 때는 Tail, 삭제할 때는 Head를 이용할 것이므로,<br />
+Head와 Tail이 둘다 필요하다.</p>
+
+<p>다음으로, Init() 함수는 다음과 같다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">QInit</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>역시, size는 0으로, head와 tail은 모두 NULL로 우선 초기화 해준다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">QSize</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">QIsEmpty</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// if (Qsize(pqueue) == 0) 으로 대체해도 무방.</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>QSize()와 QIsEmpty() 또한 간단하다.<br />
+IsEmpty() 그대로, 비어 있는지를 묻고 있으므로,<br />
+비어 있다면, 즉 size가 0 이라면 참인 1을,<br />
+비어 있지 않다면 거짓인 0을 return 하면 된다.</p>
+
+<p>다음으로, 핵심이 되는 Enqueue()와 Dequeue() 작업이다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">QEnqueue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">,</span> <span class="kt">int</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">newNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
+    <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    
+    <span class="k">if</span><span class="p">(</span><span class="n">QIsEmpty</span><span class="p">(</span><span class="n">pqueue</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">tail</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span> <span class="c1">// 그림 1번</span>
+    <span class="p">}</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span> <span class="c1">// 그림 2번</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><img src="/assets/images/2020-09-21-21-42-21_2020-09-21-what_is_Queue.md.png" alt="queue_enqueue" class="alignCenter" /></p>
+
+<p>만약, 처음으로 데이터를 넣는 것이라면, pqueue의 head와 tail은 둘다 newNode를 가리킨다.<br />
+그러나, 두 번째부터는, 조금 다르다.</p>
+
+<p><strong>원래 tail이 가리키고 있던 Node가 갖고있는 prev 포인터</strong>를, 새로운 Node인 <strong>newNode를 가리키게 한다.</strong>(그림의 1번)<br />
+그리고, <strong>Tail은 새로운 Node인 newNode를 가리킨다.</strong> (그림의 2번)</p>
+
+<p>그리고, pqueue가 갖고 있는 size라는 속성을 하나 증가시킨다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">QDequeue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+    
+    <span class="n">Node</span><span class="o">*</span> <span class="n">delNode</span> <span class="o">=</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">;</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">delNode</span><span class="p">);</span>
+    
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">--</span><span class="p">;</span>
+    
+    <span class="k">return</span> <span class="n">data</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/2020-09-21-21-44-13_2020-09-21-what_is_Queue.md.png" alt="queue_dequeue" class="alignCenter" /></p>
+
+<p>삭제를 하는 경우는, stack과 같다.</p>
+
+<p>가장 먼저, pqueue-&gt;head 의 Node가 갖고 있는 data를 int data에 저장한다.</p>
+
+<p>그리고, <strong>delNode가 pqueue의 head를 가리키게 하고</strong>(그림의 1번)<br />
+<strong>pqueue head는 하나 이전의 요소(prev)를 가리키게 한다.</strong>(그림의 2번)<br />
+마지막으로, free(delNode)를 통해, delNode가 가리키는 요소를 삭제하게 하면 된다.</p>
+
+<p>이후, pstack의 data를 하나 감소시키고, data를 return 해주면 된다.</p>
+
+<p>마지막으로, peek() 또한 stack과 같다</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">QPeek</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>역시, 잘 돌아가는지 한번 테스트 해보자.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Queue</span> <span class="n">queue</span><span class="p">;</span>
+    <span class="n">QInit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">);</span>
+    
+    <span class="n">QEnqueue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">QEnqueue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="n">QEnqueue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+    <span class="n">QEnqueue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Q size : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">QSize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">));</span>
+    <span class="c1">// Q size : 4</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Q peek : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">QPeek</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">));</span>
+    <span class="c1">// Q peek : 3</span>
+    
+    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">QIsEmpty</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Dequeue : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">QDequeue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="c1">// Dequeue : 3</span>
+    <span class="c1">// Dequeue : 5</span>
+    <span class="c1">// Dequeue : 4</span>
+    <span class="c1">// Dequeue : 1</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>잘 동작하는 모습을 볼 수 있다. 
+역시, 전체 코드는 최하단에 작성하였다.</p>
+
+<h1 id="4-응용-편---다리를-지나는-트럭">4. 응용 편 - 다리를 지나는 트럭</h1>
+<p>: <a href="https://programmers.co.kr/learn/courses/30/lessons/42583">다리를 지나는 트럭 문제</a>는 java 로 한번 풀었으나,<br />
+C로도 한번 풀어보자.(프로그래머스에서 C를 지원하지 않으므로, 제시된 테스트 케이스만 통과하면 맞았다고 보자.)</p>
+
+<p>이를 위해선, <strong>트럭이 다리에 얼마나 올라와 있었는가?</strong> 를 구분하기 위해,<br />
+Truck 구조체를 하나 만들어야 한다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">Truck</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">weight</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">time</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Truck</span><span class="p">;</span>
+</code></pre></div></div>
+<p>또한, 이 Truck 을 Queue에 담을 것이므로,<br />
+int 대신 Truck 구조체를 담을 수 있도록 적절히 바꿔주자.</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">Node</span> <span class="p">{</span>
+    <span class="n">Truck</span> <span class="n">truck</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Node</span><span class="o">*</span> <span class="n">prev</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Node</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>당연히, 다른 관련 함수들 또한 Truck으로 적절히 바꿔주어야 한다(e.g. QDequeue())</p>
+
+<p>main() 함수는 다음과 같다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Queue</span> <span class="n">waitQ</span><span class="p">;</span>
+    <span class="n">QInit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">waitQ</span><span class="p">);</span>
+    
+    <span class="n">Queue</span> <span class="n">bridgeQ</span><span class="p">;</span>
+    <span class="n">QInit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bridgeQ</span><span class="p">);</span>
+    
+    <span class="kt">int</span> <span class="n">bridge_length</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">weight</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    
+    <span class="kt">int</span> <span class="n">truck_weights</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">array_length</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">truck_weights</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+    
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">solution</span><span class="p">(</span><span class="o">&amp;</span><span class="n">waitQ</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bridgeQ</span><span class="p">,</span> <span class="n">bridge_length</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">truck_weights</span><span class="p">,</span> <span class="n">array_length</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"answer : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>“진입을 대기하는 waitQ”</strong>와, <strong>“다리에 해당하는 bridgeQ”</strong> 를 만들어주고,<br />
+문제에서 주어지는 값들과 함께 solution() 함수로 넘겨주었다.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">waitQ</span><span class="p">,</span> <span class="n">Queue</span> <span class="o">*</span><span class="n">bridgeQ</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bridge_length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">weight</span><span class="p">,</span> <span class="kt">int</span> <span class="n">truck_weights</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">array_length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 다리를 나가야 하는 트럭이 존재하는지 확인하는 flag</span>
+    <span class="kt">int</span> <span class="n">bridge</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 현재 다리에 올라가 있는 트럭 무게의 합</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="c1">// 처음엔 모두 Truck 구조체로 만들어서 waitQ에 넣어준다.</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">array_length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Truck</span> <span class="n">truck</span><span class="p">;</span>
+        <span class="n">truck</span><span class="p">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">truck_weights</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">truck</span><span class="p">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">bridge_length</span><span class="p">;</span>
+        <span class="n">QEnqueue</span><span class="p">(</span><span class="n">waitQ</span><span class="p">,</span> <span class="n">truck</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// waitQ와 bridgeQ가 모두 비어있다면, 모든 트럭이 통과한 것이므로 중단한다.</span>
+    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">QIsEmpty</span><span class="p">(</span><span class="n">waitQ</span><span class="p">)</span> <span class="o">||</span> <span class="o">!</span><span class="n">QIsEmpty</span><span class="p">(</span><span class="n">bridgeQ</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// bridgeQ를 돌면서, 다리 위에 올라가 있는 시간인 time을 1씩 감소시킨다.</span>
+        <span class="c1">// time이 0 이하 인 경우, 즉 다리를 나가야 하는 트럭이 존재하는 경우, flag는 1을 추가시킨다.</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">bridgeQ</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">p</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">p</span><span class="o">-&gt;</span><span class="n">truck</span><span class="p">.</span><span class="n">time</span><span class="o">--</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">truck</span><span class="p">.</span><span class="n">time</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="c1">// flag가 존재하는 경우, 무조건 가장 앞에 있는 트럭이 나가야 하므로,</span>
+        <span class="c1">// 트럭을 하나 빼내고, 현재 다리에 올라가 있는 트럭 무게의 합인 bridge를, 빠져나가는 트럭 무게 만큼 감소시킨다.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">flag</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Truck</span> <span class="n">outTruck</span> <span class="o">=</span> <span class="n">QDequeue</span><span class="p">(</span><span class="n">bridgeQ</span><span class="p">);</span>
+            <span class="n">bridge</span> <span class="o">-=</span> <span class="n">outTruck</span><span class="p">.</span><span class="n">weight</span><span class="p">;</span>
+            <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="c1">// waitQ가 비어있지 않다면, 들어갈 수 있는지를 확인해보고, </span>
+        <span class="c1">// 들어갈 수 있다면, waitQ에서 빼서 bridgeQ에 추가한다.</span>
+        <span class="c1">// 역시, 현재 다리에 올라가 있는 트럭 무게의 합인 bridge를, 들어가는 트럭 무게 만큼 증가시킨다.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">QIsEmpty</span><span class="p">(</span><span class="n">waitQ</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">Truck</span> <span class="n">inTruck</span> <span class="o">=</span> <span class="n">QPeek</span><span class="p">(</span><span class="n">waitQ</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">bridge</span> <span class="o">+</span> <span class="n">inTruck</span><span class="p">.</span><span class="n">weight</span> <span class="o">&lt;=</span> <span class="n">weight</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">QEnqueue</span><span class="p">(</span><span class="n">bridgeQ</span><span class="p">,</span> <span class="n">QDequeue</span><span class="p">(</span><span class="n">waitQ</span><span class="p">));</span>
+                <span class="n">bridge</span> <span class="o">+=</span> <span class="n">inTruck</span><span class="p">.</span><span class="n">weight</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="n">answer</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> <span class="c1">// end of while</span>
+    
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>역시, 코드에 대한 설명은 주석으로 달아놓았다.</p>
+
+<h1 id="마치며">마치며.</h1>
+<p>: C 자체로는, 생산성이 많이 떨어짐을 느꼈다. 한 번 풀었던 문제인데도,<br />
+이렇게 시간이 오래 걸릴줄은 몰랐다 ㅠ.<br />
+역시 나는 Java가 좋다.</p>
+
+<h1 id="구현-코드들">구현 코드들.</h1>
+<p><strong>queueImpl.c</strong></p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">Queue</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Node</span><span class="o">*</span> <span class="n">head</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Node</span><span class="o">*</span> <span class="n">tail</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Queue</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">Node</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Node</span><span class="o">*</span> <span class="n">prev</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Node</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">QInit</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">QSize</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">QIsEmpty</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">QEnqueue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">,</span> <span class="kt">int</span> <span class="n">data</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">QDequeue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">QPeek</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">);</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Queue</span> <span class="n">queue</span><span class="p">;</span>
+    <span class="n">QInit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">);</span>
+    
+    <span class="n">QEnqueue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">QEnqueue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+    <span class="n">QEnqueue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+    <span class="n">QEnqueue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Q size : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">QSize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">));</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Q peek : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">QPeek</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">));</span>
+    
+    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">QIsEmpty</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Dequeue : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">QDequeue</span><span class="p">(</span><span class="o">&amp;</span><span class="n">queue</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+
+<span class="kt">void</span> <span class="nf">QInit</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">QSize</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">QIsEmpty</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">QEnqueue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">,</span> <span class="kt">int</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">newNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
+    <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    
+    
+    <span class="k">if</span><span class="p">(</span><span class="n">QIsEmpty</span><span class="p">(</span><span class="n">pqueue</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">tail</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">QDequeue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+    
+    <span class="n">Node</span><span class="o">*</span> <span class="n">delNode</span> <span class="o">=</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">;</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">delNode</span><span class="p">);</span>
+    
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">--</span><span class="p">;</span>
+    
+    <span class="k">return</span> <span class="n">data</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">QPeek</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Trucks.c</strong></p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">Truck</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">weight</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">time</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Truck</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">Queue</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Node</span><span class="o">*</span> <span class="n">head</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Node</span><span class="o">*</span> <span class="n">tail</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Queue</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">Node</span> <span class="p">{</span>
+    <span class="n">Truck</span> <span class="n">truck</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Node</span><span class="o">*</span> <span class="n">prev</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Node</span><span class="p">;</span>
+
+
+
+<span class="kt">void</span> <span class="nf">QInit</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">QSize</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">QIsEmpty</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">QEnqueue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">,</span> <span class="n">Truck</span> <span class="n">truck</span><span class="p">);</span>
+<span class="n">Truck</span> <span class="nf">QDequeue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">);</span>
+<span class="n">Truck</span> <span class="nf">QPeek</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">waitQ</span><span class="p">,</span> <span class="n">Queue</span> <span class="o">*</span><span class="n">bridgeQ</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bridge_length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">weight</span><span class="p">,</span> <span class="kt">int</span> <span class="n">truck_weights</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">array_length</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Queue</span> <span class="n">waitQ</span><span class="p">;</span>
+    <span class="n">QInit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">waitQ</span><span class="p">);</span>
+    
+    <span class="n">Queue</span> <span class="n">bridgeQ</span><span class="p">;</span>
+    <span class="n">QInit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">bridgeQ</span><span class="p">);</span>
+    
+    
+    <span class="kt">int</span> <span class="n">bridge_length</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">weight</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    
+    <span class="kt">int</span> <span class="n">truck_weights</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">array_length</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">truck_weights</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+    
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">solution</span><span class="p">(</span><span class="o">&amp;</span><span class="n">waitQ</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bridgeQ</span><span class="p">,</span> <span class="n">bridge_length</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">truck_weights</span><span class="p">,</span> <span class="n">array_length</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"answer : %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+
+<span class="kt">void</span> <span class="nf">QInit</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">QSize</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">QIsEmpty</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">QEnqueue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">,</span> <span class="n">Truck</span> <span class="n">truck</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">newNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
+    <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">truck</span> <span class="o">=</span> <span class="n">truck</span><span class="p">;</span>
+    <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    
+    
+    <span class="k">if</span><span class="p">(</span><span class="n">QIsEmpty</span><span class="p">(</span><span class="n">pqueue</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">tail</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">tail</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Truck</span> <span class="nf">QDequeue</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Truck</span> <span class="n">truck</span> <span class="o">=</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">truck</span><span class="p">;</span>
+    
+    <span class="n">Node</span><span class="o">*</span> <span class="n">delNode</span> <span class="o">=</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">;</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">delNode</span><span class="p">);</span>
+    
+    <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">size</span><span class="o">--</span><span class="p">;</span>
+    
+    <span class="k">return</span> <span class="n">truck</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Truck</span> <span class="nf">QPeek</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">pqueue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">pqueue</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">truck</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">solution</span><span class="p">(</span><span class="n">Queue</span> <span class="o">*</span><span class="n">waitQ</span><span class="p">,</span> <span class="n">Queue</span> <span class="o">*</span><span class="n">bridgeQ</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bridge_length</span><span class="p">,</span> <span class="kt">int</span> <span class="n">weight</span><span class="p">,</span> <span class="kt">int</span> <span class="n">truck_weights</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">array_length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">bridge</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">array_length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Truck</span> <span class="n">truck</span><span class="p">;</span>
+        <span class="n">truck</span><span class="p">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">truck_weights</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="n">truck</span><span class="p">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">bridge_length</span><span class="p">;</span>
+        <span class="n">QEnqueue</span><span class="p">(</span><span class="n">waitQ</span><span class="p">,</span> <span class="n">truck</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+    
+    
+    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">QIsEmpty</span><span class="p">(</span><span class="n">waitQ</span><span class="p">)</span> <span class="o">||</span> <span class="o">!</span><span class="n">QIsEmpty</span><span class="p">(</span><span class="n">bridgeQ</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">bridgeQ</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+        
+        <span class="k">while</span><span class="p">(</span><span class="n">p</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">p</span><span class="o">-&gt;</span><span class="n">truck</span><span class="p">.</span><span class="n">time</span><span class="o">--</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">truck</span><span class="p">.</span><span class="n">time</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">flag</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Truck</span> <span class="n">outTruck</span> <span class="o">=</span> <span class="n">QDequeue</span><span class="p">(</span><span class="n">bridgeQ</span><span class="p">);</span>
+            <span class="n">bridge</span> <span class="o">-=</span> <span class="n">outTruck</span><span class="p">.</span><span class="n">weight</span><span class="p">;</span>
+            <span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">QIsEmpty</span><span class="p">(</span><span class="n">waitQ</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">Truck</span> <span class="n">inTruck</span> <span class="o">=</span> <span class="n">QPeek</span><span class="p">(</span><span class="n">waitQ</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">bridge</span> <span class="o">+</span> <span class="n">inTruck</span><span class="p">.</span><span class="n">weight</span> <span class="o">&lt;=</span> <span class="n">weight</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">QEnqueue</span><span class="p">(</span><span class="n">bridgeQ</span><span class="p">,</span> <span class="n">QDequeue</span><span class="p">(</span><span class="n">waitQ</span><span class="p">));</span>
+                <span class="n">bridge</span> <span class="o">+=</span> <span class="n">inTruck</span><span class="p">.</span><span class="n">weight</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="n">answer</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/data-structure/what_is_stack">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 마음으로 이해하는 자료구조 : Stack ( feat. C )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/jsp/jsp_learning_05">
+					<span class="page-number"># 5. JSP 학습기록 - Array 와 Application, Session, Cookie</span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/data-structure/what_is_queue',
+    'title': '# 마음으로 이해하는 자료구조 : Queue ( feat. C )'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

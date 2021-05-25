@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># (Java) Wrapper Class는 Call by Value 일까?</title>
+  <meta name="description" content="0. 들어가며: Java 는 Call by Value일까, Call by Reference 일까?">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 들어가며: Java 는 Call by Value일까, Call by Reference 일까?" />
+  <meta property="og:url" content="https://cjlee38.github.io/java/java_wrapper_class">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# (Java) Wrapper Class는 Call by Value 일까?" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/coding.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# (Java) Wrapper Class는 Call by Value 일까?">
+  <meta name="twitter:description" content="0. 들어가며: Java 는 Call by Value일까, Call by Reference 일까?">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/coding.png">
+  <meta name="twitter:url" content="https://cjlee38.github.io/java/java_wrapper_class">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/java/java_wrapper_class">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/coding.png);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># (Java) Wrapper Class는 Call by Value 일까?</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">October 21, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/java">Java</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-들어가며">0. 들어가며</h1>
+<p>: Java 는 Call by Value일까, Call by Reference 일까?</p>
+
+<p>지금까지는, 함수의 parameter로 primitive type을 넘겨줄 때에는 call by value,<br />
+객체를 넘겨줄 때에는 call by reference로 알고 있었다.</p>
+
+<p>그런데, 구선생님의 말씀에 따르면, 그렇지는 않은 것 같다.</p>
+
+<h1 id="1-call-in-java">1. Call in Java</h1>
+<p>: Java 에서는 언제나 Call by Value 라고 한다. <br />
+<a href="https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value?page=1&amp;tab=oldest#tab-top">약 12년 된 스택오버플로우의 한 질문글</a>에 달린 답변은 다음과 같다.</p>
+
+<hr />
+
+<blockquote>
+  <p>자바는 예외 없이, 항상 pass by value 입니다. <br />
+그렇다면, 왜 사람들이 이것을 혼란스러워 하고, Java는 pass by reference라고 믿고 있을까요? 키 포인트는, Java가 어떠한 상황에서도, 객체의 값에 직접적인 접근을 제공하지 않기 때문입니다. 객체에 접근하는 유일한 방법은 그 객체의 참조를 통하는 것뿐입니다. Java 객체가 직접 접근되지 않고 참조에 의해 접근되기 때문에, 현학적으로 필드, 변수, 그리고 메소드 인자를 객체인 것처럼 이야기 되는데, 이것들은 객체에 대한 참조일 뿐입니다. 이러한 혼란은 (엄밀히 말하면, 틀린) 명명(命名)의 변화에서 기인합니다.<br />
+따라서, 메소드를 호출할 때,</p>
+  <ul>
+    <li>Primitive인 경우 : pass-by-value 는 primitive의 실제 값의 전달입니다.</li>
+    <li>객체인 경우 : pass-by-value는 객체에 대한 참조 “값”의 전달입니다.<br />
+… 하략</li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<p>또 다른 답변의 경우, 친절하게 예시도 같이 달아주었다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Dog</span> <span class="n">aDog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="s">"Max"</span><span class="o">);</span>
+    <span class="nc">Dog</span> <span class="n">oldDog</span> <span class="o">=</span> <span class="n">aDog</span><span class="o">;</span>
+
+    <span class="c1">// we pass the object to foo</span>
+    <span class="n">foo</span><span class="o">(</span><span class="n">aDog</span><span class="o">);</span>
+    <span class="c1">// aDog variable is still pointing to the "Max" dog when foo(...) returns</span>
+    <span class="n">aDog</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">"Max"</span><span class="o">);</span> <span class="c1">// true</span>
+    <span class="n">aDog</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">"Fifi"</span><span class="o">);</span> <span class="c1">// false</span>
+    <span class="n">aDog</span> <span class="o">==</span> <span class="n">oldDog</span><span class="o">;</span> <span class="c1">// true</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">foo</span><span class="o">(</span><span class="nc">Dog</span> <span class="n">d</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">d</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">"Max"</span><span class="o">);</span> <span class="c1">// true</span>
+    <span class="c1">// change d inside of foo() to point to a new Dog instance "Fifi"</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="s">"Fifi"</span><span class="o">);</span>
+    <span class="n">d</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">"Fifi"</span><span class="o">);</span> <span class="c1">// true</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이 예제를 보고 나니, 위 답변이 무슨 말을 하는지 이해할 수 있었다.</p>
+
+<p>코드를 보면, <code class="highlighter-rouge">aDog</code> 라는 변수를 <code class="highlighter-rouge">foo()</code> 메소드로 넘겨주었다.<br />
+<code class="highlighter-rouge">foo()</code> 메소드 안에서, <code class="highlighter-rouge">getName()</code> 을 찍어보면 <code class="highlighter-rouge">"Max"</code>로 찍히는 것은 당연하다.<br />
+<strong>그러나, 주의깊게 봐야 할 부분은 <code class="highlighter-rouge">d = new Dog("Fifi")</code> 다.</strong></p>
+
+<p>만약 참조에 의한 호출이었다면, <code class="highlighter-rouge">d</code> 라는 참조는 본래 <code class="highlighter-rouge">aDog</code>가 가리키는 객체를 가리킬 것이다.<br />
+따라서, <code class="highlighter-rouge">aDog는</code> Fifi로 바뀌어야 한다.</p>
+
+<p>그러나 메소드를 실행하고 나서 다시 <code class="highlighter-rouge">aDog</code>의 <code class="highlighter-rouge">getName()</code>을 찍어보면,<br />
+여전히 <code class="highlighter-rouge">"Max"</code>로 남아있다.</p>
+
+<p>왜냐하면, <code class="highlighter-rouge">aDog</code> 라는 <strong>참조</strong> 를 넘겨준 것이 아니라, <strong>복사본</strong> 을 넘겨주었기 때문이다.</p>
+
+<p>여전히 이해하기 힘들다면, 다음의 그림을 보자.</p>
+
+<p><img src="/assets/images/2020-10-27-20-59-29_2020-10-21-java_wrapper_class.md.png" alt="" /></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Dog</span> <span class="n">aDog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">(</span><span class="s">"Max"</span><span class="o">);</span>
+<span class="nc">Dog</span> <span class="n">oldDog</span> <span class="o">=</span> <span class="n">aDog</span><span class="o">;</span>
+</code></pre></div></div>
+<p>위 코드를 실행하면, 그림과 같이 <code class="highlighter-rouge">aDog과</code> <code class="highlighter-rouge">oldDog는</code> Max라는 녀석을 가리키고 있다.<br />
+여기서, <code class="highlighter-rouge">foo()</code> 메소드를 실행하면 어떻게 될까?</p>
+
+<p><img src="/assets/images/2020-10-27-21-06-02_2020-10-21-java_wrapper_class.md.png" alt="" /></p>
+
+<p>위 그림과 같이, <code class="highlighter-rouge">d</code>는 <code class="highlighter-rouge">aDog</code>의 복사본(call-by-value)이 된다.<br />
+만약, 참조에 의한 호출이었다면 다음과 같은 모양새였을 것이다.</p>
+
+<p><img src="/assets/images/2020-10-27-21-11-08_2020-10-21-java_wrapper_class.md.png" alt="" /></p>
+
+<p>그러나, 실제로 <code class="highlighter-rouge">d</code>는 복사본이므로, <code class="highlighter-rouge">new Dog("Fifi")</code>를 수행하면 다음과 같이 된다.</p>
+
+<p><img src="/assets/images/2020-10-27-21-08-22_2020-10-21-java_wrapper_class.md.png" alt="" /></p>
+
+<p>따라서, <code class="highlighter-rouge">foo()</code> 메소드 안에서 <code class="highlighter-rouge">getName()</code> 을 찍어보면 <code class="highlighter-rouge">"Fifi"</code>로 나오지만,<br />
+메소드가 끝난 이후, 메인 메소드에서 다시 <code class="highlighter-rouge">getName()</code>을 찍어보면 <code class="highlighter-rouge">"Max"</code>로 나오게 된다.</p>
+
+<p>반면, <code class="highlighter-rouge">foo()</code> 메소드 안에서, <code class="highlighter-rouge">d.setName("Fifi")</code> 라고 사용한다면,<br />
+다음 그림과 같이 메소드 종료 이후에 <code class="highlighter-rouge">aDog</code>의 Name은 <code class="highlighter-rouge">"Fifi"</code>가 될 것이다.</p>
+
+<p><img src="/assets/images/2020-10-27-21-15-17_2020-10-21-java_wrapper_class.md.png" alt="" /></p>
+
+<p>결국 Java는 Call-by-value 이지만, 
+우리가 사용할 때에는 대부분 Call-by-Reference 처럼 인식하게 된다.<br />
+Call-by-value라고 해서, 특별하게 걱정할 내용은 없다는 얘기다.</p>
+
+<h1 id="2-how-about-wrapper-classes">2. How about Wrapper classes?</h1>
+<p>: 하지만, Integer 와 같은 Wrapper class는 어떨까?<br />
+다음 코드의 결과를 예상해보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">intValue</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+        <span class="nc">Integer</span> <span class="n">integerValue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Integer</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+        <span class="nc">MyInteger</span> <span class="n">myIntegerValue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MyInteger</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"before intValue = "</span> <span class="o">+</span> <span class="n">intValue</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"before integerValue = "</span> <span class="o">+</span> <span class="n">integerValue</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"before myIntegerValue = "</span> <span class="o">+</span> <span class="n">myIntegerValue</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+
+        <span class="n">intMethod</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+        <span class="n">integerMethod</span><span class="o">(</span><span class="n">integerValue</span><span class="o">);</span>
+        <span class="n">myIntegerMethod</span><span class="o">(</span><span class="n">myIntegerValue</span><span class="o">);</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"after intValue = "</span> <span class="o">+</span> <span class="n">intValue</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"after integerValue = "</span> <span class="o">+</span> <span class="n">integerValue</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"after myIntegerValue = "</span> <span class="o">+</span> <span class="n">myIntegerValue</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">intMethod</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">integerMethod</span><span class="o">(</span><span class="nc">Integer</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">myIntegerMethod</span><span class="o">(</span><span class="nc">MyInteger</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">value</span><span class="o">.</span><span class="na">increase</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">MyInteger</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">value</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">MyInteger</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getValue</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">increase</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>결과는 다음과 같다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>before intValue = 10
+before integerValue = 10
+before myIntegerValue = 10
+after intValue = 10
+after integerValue = 10
+after myIntegerValue = 11
+</code></pre></div></div>
+
+<p>int 값의 경우, 위에서 이야기한 것처럼 <strong>call-by-value</strong> 이므로,<br />
+10이 그대로 유지되는 것은 당연하다.</p>
+
+<p>MyInteger의 경우 또한, <code class="highlighter-rouge">myIntegerValue</code> 라는 참조값을 복사해서 전달했으므로,<br />
+11로 늘어나는 것 또한 타당하다. <br />
+이는 앞서 이야기한 코드 예시에서, <code class="highlighter-rouge">setName("Fifi")</code> 를 실행한 것과 비슷하다.</p>
+
+<p><strong>주목할 부분은, <code class="highlighter-rouge">integerValue</code> 다.</strong><br />
+Integer는 primitive가 아닌 class이고, <br />
+따라서 <code class="highlighter-rouge">integerValue</code> 는 <code class="highlighter-rouge">new Integer(10)</code> 을 가리키고 있던 것이 아닐까?<br />
+그렇다면, <code class="highlighter-rouge">value = value + 1</code> 을 실행하면 11이 나와야 할 것 같은데,<br />
+10으로 그냥 유지되어 버렸다.</p>
+
+<p>왜 이렇게 되었을까?</p>
+
+<h1 id="3-secret-in-wrapper-class">3. Secret in Wrapper class</h1>
+<p>: 그 비밀을 파헤치기 위해, Integer 클래스를 살짝 뜯어보자.<br />
+Integer 클래스의 (int 형을 넘겨주는 경우의) 생성자는 다음과 같이 생겼다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nf">Integer</span><span class="o">(</span><span class="kt">int</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>이 this.value 를 찾아가보면, 다음과 같이 final 로 선언된 것을 볼 수 있다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">value</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>말인 즉슨, Integer 클래스는 <strong>Immutable(불변)</strong> 이라는 뜻이 된다.<br />
+그렇다면, 아까 작성했던 <code class="highlighter-rouge">value = value + 1</code> 은 어떻게 동작했을까?</p>
+
+<p>Wrapper class에 대해서 배웠다면, <code class="highlighter-rouge">autoboxing</code>, <code class="highlighter-rouge">unboxing</code> 이라는 용어에 대해서 들어봤을 것이다.<br />
+이 <code class="highlighter-rouge">boxing</code>이 어떻게 일어나는지, 바이트 코드를 들여다보자.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Integer</span> <span class="n">integerValue</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-properties highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="err">public</span> <span class="err">static</span> <span class="err">void</span> <span class="err">main(java.lang.String[]);</span>
+    <span class="py">Code</span><span class="p">:</span>
+       <span class="py">0</span><span class="p">:</span> <span class="s">bipush        10</span>
+       <span class="py">2</span><span class="p">:</span> <span class="s">invokestatic  #2                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;</span>
+       <span class="py">5</span><span class="p">:</span> <span class="s">astore_1</span>
+       <span class="py">6</span><span class="p">:</span> <span class="s">return</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">2: invokestatic  #2     // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;</code> <br />
+이라는 부분을 보면, valueOf() 라는 static 메소드를 호출하고 있음을 볼 수 있다.</p>
+
+<p><code class="highlighter-rouge">valueOf()</code> 메소드는 다음과 같이 생겼다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">Integer</span> <span class="nf">valueOf</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="nc">IntegerCache</span><span class="o">.</span><span class="na">low</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="nc">IntegerCache</span><span class="o">.</span><span class="na">high</span><span class="o">)</span>
+        <span class="k">return</span> <span class="nc">IntegerCache</span><span class="o">.</span><span class="na">cache</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="o">(-</span><span class="nc">IntegerCache</span><span class="o">.</span><span class="na">low</span><span class="o">)];</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nf">Integer</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>따라서, <code class="highlighter-rouge">autoboxing</code>은 내부적으로 컴파일러가 <code class="highlighter-rouge">valueOf()</code> 메소드를 호출했고, <br />
+이에 따라 새로운 Integer 객체를 생성해서, 이를 return 하고 있음을 볼 수 있다.</p>
+
+<p>그렇다면, 덧셈은 어떻게 동작할까?</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Integer</span> <span class="n">integerValue</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+    <span class="n">integerValue</span> <span class="o">=</span> <span class="n">integerValue</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> public static void main(java.lang.String[]);
+    Code:
+       0: bipush        10
+       2: invokestatic  #2                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       5: astore_1
+       6: aload_1
+       7: invokevirtual #3                  // Method java/lang/Integer.intValue:()I
+      10: iconst_1
+      11: iadd
+      12: invokestatic  #2                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      15: astore_1
+      16: return
+</code></pre></div></div>
+
+<p>0, 2, 5 번호의 byte code는 위의 내용과 같다.<br />
+<code class="highlighter-rouge">valueOf()</code> 메소드를 실행한 뒤에, <br />
+그 결과인 Integer 객체를 지역변수 Array의 1번에 할당했다.</p>
+
+<p>6 번에서, 만들었던 이 Integer 객체를 꺼내왔고,<br />
+7 번에서, <code class="highlighter-rouge">intValue()</code>라는 메소드를 호출했다.  <br />
+참고로 <code class="highlighter-rouge">intValue()</code>는 다음과 같이 생겼다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">int</span> <span class="nf">intValue</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">value</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>다음으로 10번에서, 1 이라는 상수 값을 가져왔다.<br />
+(<code class="highlighter-rouge">iconst_1</code>은 <code class="highlighter-rouge">integerValue = interValue + 1</code> 에서, <code class="highlighter-rouge">1</code>을 담당한다.<br />
+만약, <code class="highlighter-rouge">1</code> 대신 <code class="highlighter-rouge">3</code>을 더했다면, 바이트 코드는 <code class="highlighter-rouge">iconst_3</code>이 된다.)</p>
+
+<p>이렇게 까지 하면,<br />
+아까 Integer 객체에서 꺼낸 int 값과, <br />
+상수 1이 Stack에 쌓여 있다.</p>
+
+<p>11번에서 이 두개를 더한다(<code class="highlighter-rouge">iadd</code>)</p>
+
+<p>그리고, 다시 <code class="highlighter-rouge">Integer.valueOf()</code> 의 static method를 실행해서,<br />
+다시 Integer 객체로 만들고, 이를 다시 지역변수 Array의 1번에 저장한다.</p>
+
+<p>와우, 긴 여정이 끝났다. 정리하면 다음과 같다.</p>
+
+<p>(Integer 덧셈코드)</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Integer</span> <span class="n">integerValue</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+<span class="n">integerValue</span> <span class="o">=</span> <span class="n">integerValue</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>int 값(10)을 boxing(Integer 객체로 만듦)하고, 저장한다.</li>
+  <li>저장한 Integer 값을 unboxing 한다.</li>
+  <li>unboxing 된 int 값에, 1을 더한다.</li>
+  <li>더한 결과(11)를 다시 boxing 하고, 저장한다.</li>
+</ol>
+
+<hr />
+
+<blockquote>
+  <p>Note. 이런 동작방식을 증명하는 또 다른 방법은, <br />
+다음과 같은 코드를 실행해보는 것이다.</p>
+  <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Integer</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">10</span><span class="o">;</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"value.getClass() = "</span> <span class="o">+</span> <span class="n">value</span><span class="o">.</span><span class="na">getClass</span><span class="o">());</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"(value+1).getClass() = "</span> <span class="o">+</span> <span class="o">(</span><span class="n">value</span><span class="o">+</span><span class="mi">1</span><span class="o">).</span><span class="na">getClass</span><span class="o">());</span>
+</code></pre></div>  </div>
+  <p>당연하게도, (value+1)은 unboxing된 int형이므로, <br />
+getClass()라는 메소드가 없다는 에러를 뱉는다.</p>
+</blockquote>
+
+<hr />
+
+<p>이 과정을, 아까 수행한 <code class="highlighter-rouge">integerMethod()</code>에 대입해서 생각해보자.<br />
+다시 스크롤해서 올려보기 귀찮을테니, 코드를 여기에 다시 적겠다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">integerMethod</span><span class="o">(</span><span class="nc">Integer</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>아직 덧셈 연산을 하기 전에는, 다음과 같은 형태를 갖고 있을 것이다.</p>
+
+<p><img src="/assets/images/2020-10-27-22-14-26_2020-10-21-java_wrapper_class.md.png" alt="" /></p>
+
+<p>그러나, 방금 정리했듯이, <br />
+<strong>더한 결과를 다시 Boxing하므로</strong><br />
+다시 말해, <strong>새로운 new Integer() 객체를 생성하므로,</strong><br />
+덧셈을 하고나면, 다음의 그림과 같이 된다.</p>
+
+<p><img src="/assets/images/2020-10-27-22-16-00_2020-10-21-java_wrapper_class.md.png" alt="" /></p>
+
+<p>value 라는 변수는 위와 같이 11 이라는 <strong>새로운 객체</strong>를 가리키고 있으므로,<br />
+<code class="highlighter-rouge">integerMethod()</code> 를 수행하더라도, 메소드의 종료 이후 결과값은 변하지 않는다.</p>
+
+<h1 id="4-마치며">4. 마치며</h1>
+<p>: 길고도 험난한 여정이었다.<br />
+C언어는 포인터라는 개념이 있기에, <br />
+메소드를 호출해서 그 내부의 값을 변경하려면 무조건 이를 이용해야 하는데,<br />
+Java에서는 primitives 와 object 의 동작방식이 다르고, <br />
+이에 더해 Wrapper class는 클래스임에도 불구하고 primitives 처럼 동작해서 자주 헷갈렸다.</p>
+
+<p>이번 포스팅을 통해 확실하게 개념을 잡을 수 있었던 것 같다.<br />
+이상으로 포스팅을 마칩니다.</p>
+
+<h2 id="reference">Reference</h2>
+<ul>
+  <li><a href="https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value?page=1&amp;tab=oldest#tab-top">Is Java “pass-by-reference” or “pass-by-value”?</a></li>
+  <li><a href="https://stackoverflow.com/questions/20804862/wrapper-classes-and-call-by-reference-in-java">Wrapper classes and call by reference in java [duplicate]</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings">Java bytecode instruction listings</a></li>
+</ul>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/btb/value_object">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># (번역) Value Object of Martin Fowler</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+				<a href="/java/how-junit_works_without_main">
+					<span class="page-number"># (Java) Junit은 어떻게 Main method 없이 실행될까? </span>
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/java/java_wrapper_class',
+    'title': '# (Java) Wrapper Class는 Call by Value 일까?'
+  });
+</script>
+
+
+
+  </body>
+
+</html>

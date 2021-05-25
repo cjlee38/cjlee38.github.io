@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title># Step by Step, Web crawling 학습하기 (2) - Request</title>
+  <meta name="description" content="0. 들어가며: 지난 포스팅 에 이어, 이번에는 본격적으로 데이터를 수집해보는 연습을 해보자.">
+  
+  <meta name="author" content="LEECHANJOO">
+  <meta name="copyright" content="&copy; LEECHANJOO 2021">
+  
+
+  <!-- google search console -->
+  <meta name="google-site-verification" content="dOawqdqcpyXtkSA8Gr6bmoBlbqhEQylxB9MDFJ-hTus" />
+  
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="0. 들어가며: 지난 포스팅 에 이어, 이번에는 본격적으로 데이터를 수집해보는 연습을 해보자." />
+  <meta property="og:url" content="https://cjlee38.github.io/web-crawling/how_to_crawl_2">
+  <meta property="og:site_name" content="Festina Lente" />
+  <meta property="og:title" content="# Step by Step, Web crawling 학습하기 (2) - Request" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://cjlee38.github.io/assets/covers/web-crawling.jpg" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="# Step by Step, Web crawling 학습하기 (2) - Request">
+  <meta name="twitter:description" content="0. 들어가며: 지난 포스팅 에 이어, 이번에는 본격적으로 데이터를 수집해보는 연습을 해보자.">
+  <meta name="twitter:image" content="https://cjlee38.github.io/assets/covers/web-crawling.jpg">
+  <meta name="twitter:url" content="https://cjlee38.github.io/web-crawling/how_to_crawl_2">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://cjlee38.github.io/web-crawling/how_to_crawl_2">
+	<link rel="alternate" type="application/rss+xml" title="Festina Lente" href="https://cjlee38.github.io/feed.xml" />
+	
+	<!-- Tooltips -->
+	<script type="text/javascript">
+		window.tooltips = []
+	</script>
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="Festina Lente">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container has-cover" style="background-image: url(/assets/covers/web-crawling.jpg);">
+  <div class="scrim has-cover">
+    <header class="post-header">
+      <h1 class="title"># Step by Step, Web crawling 학습하기 (2) - Request</h1>
+      <p class="info">by <strong>cjlee</strong></p>
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+
+
+<section class="post-meta">
+  <div class="post-date">January 7, 2021</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/category/web-crawling">Web-crawling</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="0-들어가며">0. 들어가며</h1>
+<p>: <a href="https://cjlee38.github.io/web-crawling/how_to_crawl_1">지난 포스팅</a> 에 이어, 이번에는 본격적으로 데이터를 수집해보는 연습을 해보자.</p>
+
+<p>데이터를 수집하고자 하는 방법과 라이브러리는 크게 두 가지로 구분할 수 있다.</p>
+
+<ul>
+  <li>직접 Http 요청 보내기 - requests</li>
+  <li>웹 브라우저를 자동화하기 - Selenium</li>
+</ul>
+
+<p>대부분의 웹사이트는 이 두 가지 라이브러리를 사용(혹은 혼용)함으로써 원하는 html을 얻어낼 수 있고, 이를 BeautifulSoup 라이브러리를 이용해 파싱하는 것이 일반적이다.</p>
+
+<h1 id="1-수집-과정에-대한-이해">1. 수집 과정에 대한 이해</h1>
+<p>: 위와 같이 Http 요청을 보내는 방법도 있고, 웹 브라우저를 이용하는 방법이 있다면, 그 방법들의 차이점은 무엇일까?</p>
+
+<blockquote>
+  <p>기존에 웹이 어떻게 동작하는 것인지에 대해서 이해하고 있다면, 스킵해도 무방하다.</p>
+</blockquote>
+
+<h3 id="1-수동으로-데이터를-수집">1) 수동으로 데이터를 수집</h3>
+
+<p>: 우리가 일반적으로 생각하는, <strong>사람이 직접</strong> 데이터를 수집하는 방법은 아래 그림과 같다.</p>
+
+<p><img src="/assets/images/2021-01-07-19-21-11_2021-01-07-how_to_crawl_2.md.png" alt="" /></p>
+
+<p>웹 브라우저를 이용해서 어떤 사이트에 접속해서, 직접 복사 붙여넣기를 하거나, 필요한 부분만 눈으로 보면서 엑셀이나 메모장 등에 직접 타이핑하는 등의 수고를 거친다.</p>
+
+<p>그러나 그 이면에서 어떻게 동작하는 것인지에 대해서 이해가고 있어야 한다.</p>
+
+<p><img src="/assets/images/2021-01-07-19-28-48_2021-01-07-how_to_crawl_2.md.png" alt="" /></p>
+
+<p>우리가 웹브라우저를 통해 네이버 홈페이지에 접속했다고 해보자. 그러면, 해당 주소에 대한 정보를 갖고있는 네이버 서버가, 그 요청을 받고, 그에 걸맞는 html, css, javascript 등의 정보를 돌려준다. 이렇게 받아낸 정보를 웹브라우저가 잘 해석해서, 예쁘게 접시에 담아 우리에게 보여주는 것이다.</p>
+
+<p>그렇다면 Requests 를 이용하는 방법과 Selenium 을 이용하는 방법은, 위와 같은 과정에, 코드를 첨가해서 자동화를 이끌어낸다.</p>
+
+<h3 id="2-자동으로-데이터를-수집---requests">2) 자동으로 데이터를 수집 - Requests</h3>
+
+<p>먼저 Requests를 이용하는 방법이다.</p>
+
+<p><img src="/assets/images/2021-01-07-19-35-23_2021-01-07-how_to_crawl_2.md.png" alt="" /></p>
+
+<p>Requests를 이용했을 때에는, 위와 같이 웹 브라우저를 거치지 않고, 네이버 서버로 곧바로 요청을 보낸다. 요청을 받은 네이버는 마찬가지로 우리에게 데이터를 돌려준다.</p>
+
+<p>이 데이터를 우리는 파이썬에서 BeautifulSoup를 이용해 다루기 쉬운 객체로 만든 다음, 코드를 이용해 필요한 데이터의 위치를 찾아서, 우리가 원하는 데이터의 형태로 재구성하게 된다.</p>
+
+<h3 id="3-자동으로-데이터-수집---selenium">3) 자동으로 데이터 수집 - Selenium</h3>
+
+<p><img src="/assets/images/2021-01-07-19-43-34_2021-01-07-how_to_crawl_2.md.png" alt="" /></p>
+
+<p>Selenium 을 이용하는 방법은, 위 두 가지 방법을 합친것과 비슷하다. 사람이 직접 웹 브라우저에 주소창에 주소를 쳐서 접속하는 과정을 자동화한다.</p>
+
+<p>그리고, 마찬가지로 BeautifulSoup를 이용해 다루기 쉬운 객체로 만들수도 있고, 혹은 Selenium에서 직접 다룰수도 있다. 이 내용은 차차 알아가자.</p>
+
+<hr />
+
+<p>여기까지의 배경지식을 쌓았다면, 실제로 requests를 이용해 데이터를 수집하는 과정을 경험해보자.</p>
+
+<p>데이터를 수집할 대상은, <code class="highlighter-rouge">robots.txt</code> 를 확인해 보았을 때 문제가 없으면서, 나름대로의 구조화가 되어있는 <a href="https://programmers.co.kr/learn/challenges?tab=all_challenges">프로그래머스의 모든 문제</a> 라는 페이지 이다.</p>
+
+<p><img src="/assets/images/2021-01-30-03-23-14_2021-01-07-how_to_crawl_2.md.png" alt="" /></p>
+
+<p>당장 눈앞에 보이는 한 페이지의 문제 제목들을 가져와보자.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://programmers.co.kr/learn/challenges?tab=all_challenges"</span>
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="c1"># 200
+</span></code></pre></div></div>
+
+<p>이는 위 url 을 대상으로 “GET” 이라는 메소드를 전달하겠다는 뜻이며, 이를 전달받은 프로그래머스 서버는 이에 기반한 정보를 우리에게 돌려주고, 이를 resp 라는 이름의 변수에 저장한다.</p>
+
+<p>곧바로 다음에 위치한 status_code는 요청을 보냈을 때, 정상적으로 처리가 되었는지, 그렇지 않다면 어떤 문제가 발생하였는지에 대한 정보를 제공해주는 HTTP 상태 코드를 의미한다. 자세한 내용은 <a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Status">여기</a> 에서 확인하자.</p>
+
+<p>요청 결과가 정상적으로 처리되었음을 알리는 200 코드를 확인했다면, 다음을 입력해보자.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/2021-01-30-03-37-17_2021-01-07-how_to_crawl_2.md.png" alt="" /></p>
+
+<p>알아보기 힘든 갑작스러운 글자들이 눈을 어지럽히는데, 전혀 당황할 필요가 없다. 이는 정상이다. 그리고, 조금만 집중해서 살펴보면, 한글로 써있는 부분은 <code class="highlighter-rouge">코딩테스트 연습</code> 과 같이, 뭔가 익숙한 부분이 보이기도 한다.</p>
+
+<p>지금 우리가 받은 이 내용은, 위에서 언급한 HTML 을 받아온 것이다. 아직 접시에 예쁘게 담기기 전인, <strong>냄비에 들어 있는 상태 정도</strong>로 이해하면 될 듯 싶다.</p>
+
+<p>직접 웹브라우저로 해당 페이지로 이동해서, <code class="highlighter-rouge">F12</code> 버튼을 눌러보면, Elements 라는 탭에서 비슷한 코드를 볼 수 있다. 자세히 비교해보면, 앞서 requests 모듈을 통해 얻어낸 데이터와 일치하는 것을 확인 할 수 있을 것이다.</p>
+
+<hr />
+
+<blockquote>
+  <p>정확히는, request 의 headers, params 등으로 인해 차이가 있을 수 있다.</p>
+</blockquote>
+
+<hr />
+
+<p>다음으로 해야할 일은, 접시에 예쁘게 담아내지는 못하더라도, 식사를 할 수 있을 정도로 용이하도록 그릇에 쏟아부어야 한다.</p>
+
+<p>이는 역시, 앞에서 언급한 <code class="highlighter-rouge">BeautifulSoup</code> 라는 라이브러리를 이용하면, 간편하게 처리할 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="k">as</span> <span class="n">bs</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">bs</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s">'lxml'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/2021-01-30-03-37-49_2021-01-07-how_to_crawl_2.md.png" alt="" /></p>
+
+<p>내용 자체에는 변화가 없지만, 아까와는 다르게 조금 정렬된 느낌이 든다.<br />
+앞선 <code class="highlighter-rouge">resp.text</code> 자체는 문자열이었지만, 현재의 soup 라는 녀석은 BeautifulSoup 라는 객체이다. 그리고 우리는 이 녀석을 통해, <strong>쉽게 데이터를 조작할 수 있다.</strong></p>
+
+<p>다시 웹브라우저로 돌아와서, <code class="highlighter-rouge">Ctrl + Shift + C</code> 를 누르고 문제의 이름에 마우스를 올려보면, 해당하는 녀석이 HTML 에서 어떻게 구성되어 있는지 가늠해볼 수 있다.</p>
+
+<p><img src="/assets/images/2021-01-30-03-42-39_2021-01-07-how_to_crawl_2.md.png" alt="" /></p>
+
+<p>위 사진을 보면, <code class="highlighter-rouge">title</code> 이라는 <code class="highlighter-rouge">class(속성)</code>를 갖고 있는, <code class="highlighter-rouge">h4</code> 태그 안에 <code class="highlighter-rouge">멀쩡한 사각형</code> 이라는 텍스트가 있다.</p>
+
+<p><img src="/assets/images/2021-01-30-03-45-59_2021-01-07-how_to_crawl_2.md.png" alt="" /></p>
+
+<p>마찬가지로 <code class="highlighter-rouge">Ctrl + Shift + C</code> 를 통해 다른 문제에 마우스를 올려봤을 때, <code class="highlighter-rouge">프린터</code> 라는 녀석 또한 <code class="highlighter-rouge">title</code> 이라는 <code class="highlighter-rouge">class</code>를 갖고 있는, <code class="highlighter-rouge">h4</code> 태그 안에 있음을 확인할 수 있다.</p>
+
+<hr />
+
+<p>이렇게 패턴을 발견했다면, 다음 할 일은 간단해진다.</p>
+
+<p><strong><code class="highlighter-rouge">h4</code> 태그 이면서, 동시에 <code class="highlighter-rouge">title</code> 이라는 <code class="highlighter-rouge">class</code>를 가진 녀석이 있나요?</strong> 라고 BeautifulSoup 객체에게 물어보면 된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">probs</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">"h4"</span><span class="p">,</span> <span class="n">class_</span> <span class="o">=</span> <span class="s">"title"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span>
+
+<span class="c1"># [&lt;h4 class="title"&gt;모든 레코드 조회하기&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;두 개 뽑아서 더하기&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;크레인 인형뽑기 게임&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;최댓값 구하기&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;스킬트리&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;프린터&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;다리를 지나는 트럭&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;기능개발&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;주식가격&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;멀쩡한 사각형&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;124 나라의 숫자&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;[1차] 추석 트래픽&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;지형 이동&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;완주하지 못한 선수&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;신규 아이디 추천&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;카카오프렌즈 컬러링북&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;문자열 압축&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;삼각 달팽이&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;N으로 표현&lt;/h4&gt;,
+#  &lt;h4 class="title"&gt;2 x n 타일링&lt;/h4&gt;]
+</span></code></pre></div></div>
+
+<p>운이 좋게도, 문제 제목에 해당하는 녀석들 이외에는, <code class="highlighter-rouge">h4</code> 태그이면서 동시에 <code class="highlighter-rouge">class</code> 가 <code class="highlighter-rouge">title</code> 인 녀석은 없었다.</p>
+
+<p>그리고, 이 녀석은 아직도 BeautifulSoup 객체이므로, 그 안에 들어있는 텍스트, 즉 문자열을 꺼내오면 된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">titles</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">prob</span> <span class="ow">in</span> <span class="n">probs</span> <span class="p">:</span>
+    <span class="n">titles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">get_text</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">titles</span><span class="p">)</span>
+
+<span class="c1"># ['모든 레코드 조회하기', '두 개 뽑아서 더하기', '크레인 인형뽑기 게임', '최댓값 구하기', '스킬트리', '프린터', '다리를 지나는 트럭', '기능개발', '주식가격', '멀쩡한 사각형', '124 나라의 숫자', '[1차] 추석 트래픽', '지형 이동', '완주하지 못한 선수', '신규 아이디 추천', '카카오프렌즈 컬러링북', '문자열 압축', '삼각 달팽이', 'N으로 표현', '2 x n 타일링']
+</span></code></pre></div></div>
+
+<p>probs 안에 있는 녀석들로부터, 하나씩 꺼내서 <code class="highlighter-rouge">get_text()</code> 라는 함수를 호출해서 문자열을 꺼내고, 이를 titles 라는 녀석에 저장함으로서 데이터를 수집하였다.</p>
+
+<p>여러 페이지에 대해서 이렇게 진행이 가능하다면, 프로그래머스에 있는 모든 문제들에 대한 정보를 가져올 수 있을 것이다.</p>
+
+<p>그러나, <strong>아쉽게도 requests 모듈로 이를 다루기에는 쉽지 않다.</strong> 웹에 대한 꽤나 깊은 이해가 필요하기 때문에, 속도가 중요하지 않다면 차선책으로 Selenium 을 선택한다.</p>
+
+<p>다음 포스팅에서 <strong>Selenium</strong>의 사용법에 대해 알아보면서, <strong>어떤 상황에 어떤 라이브러리를 선택하는 것이 좋은 것인지</strong>까지 알아보자.</p>
+
+<p>이상으로 포스팅을 마칩니다.</p>
+
+</article>
+
+
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+
+	<section class="post-navigation">
+		<span class="prev-post">
+			
+				<a href="/problem-solving/problem_solving_22">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+					<span class="page-number"># 백준[No.1676] - 팩토리얼 0의 개수 ( Java )</span>
+				</a>
+			
+		</span>
+		<span class="next-post">
+			
+		</span>
+	</section>
+
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'games2';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Festina Lente</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+				
+	
+	<li class="nav-link"><a href="/about/">About</a>
+	
+
+	
+
+	
+
+	
+	<li class="nav-link"><a href="/posts/">Posts</a>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:gptpem38@gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">gptpem38@gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://github.com/cjlee38" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">cjlee38</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Data Warehouse
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+<script src="//unpkg.com/popper.js@1"></script>
+<script src="//unpkg.com/tippy.js@5"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+	// Enable tooltips via Tippy.js
+	if (Array.isArray(window.tooltips)) {
+		window.tooltips.forEach(function(tooltip) {
+			var selector = tooltip[0];
+			var config = tooltip[1];
+			tippy(selector, config);
+		})
+	}
+});
+
+</script>
+
+
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-174927148-1', 'auto');
+  ga('send', 'pageview', {
+    'page': '/web-crawling/how_to_crawl_2',
+    'title': '# Step by Step, Web crawling 학습하기 (2) - Request'
+  });
+</script>
+
+
+
+  </body>
+
+</html>
