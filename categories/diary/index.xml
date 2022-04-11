@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>diary on cjlee38</title>
+    <link>http://cjlee38.github.io/categories/diary/</link>
+    <description>Recent content in diary on cjlee38</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Feb 2022 19:48:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/diary/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title># 조금 늦은 우테코 4기 합격 후기</title>
+      <link>http://cjlee38.github.io/post/diary/2022-02-28-woowacourse/</link>
+      <pubDate>Mon, 28 Feb 2022 19:48:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/diary/2022-02-28-woowacourse/</guid>
+      <description>우아한 테크코스 : 우아한 테크코스는 우아한형제들에서 진행하는 교육 프로그램입니다. 이미 알만한 사람들은 다 알고 있고, 이 글을 보고 있는 독자분도 아마 우아한 테크코스에 합격하려면 어떻게 해야 할까? 하는 생각으로 왔으리라 생각합니다&amp;hellip;만 본 글은 그저 일기에 가깝습니다. 이번 4기에 합격하고나서(사실은 1차 합격때부터) 써야지, 써야지 했는데 여유가 나지 않아서 이제와서 쓰게 되었습니다. 😢
+왜 지원했는가? : 사실 지원 동기를 따지라면, 그 누구도 할 것 없이 가장 첫 번째로 꼽는 것은 바로 &amp;lsquo;취업&amp;rsquo; 일 것입니다.</description>
+    </item>
+    
+    <item>
+      <title># 객체지향의 사실과 오해를 읽고, 짧은 감상문</title>
+      <link>http://cjlee38.github.io/post/diary/2021-10-22-oop_truth_and_misunderstanding/</link>
+      <pubDate>Fri, 22 Oct 2021 22:13:50 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/diary/2021-10-22-oop_truth_and_misunderstanding/</guid>
+      <description>0. 계기 코드를 작성하면서 언제나 들었던 고민은 &amp;ldquo;더러워보인다&amp;rdquo; 였습니다. 누구도 아닌 나 스스로가 작성한 코드이니, 해결책 또한 마땅히 보이지 않았습니다.
+이보다 더 문제인 점은, 가끔은 한참을 고민하면 어디를 수정해야 할지 발견해낼 수 있었으나, 대부분의 경우 &amp;ldquo;이 클래스에 이 메소드가 있는 것이 맞는가?&amp;rdquo; &amp;ldquo;이 메소드가 이 파라미터를 필요로 하는 것이 맞는가?&amp;rdquo; 와 같이, 정답이 없는 문제들이었습니다.
+더더욱 문제인 점은, 저에게는 이러한 고민에 대해서 조언해줄 사람을 찾기가 어렵다는 점입니다. 개발자에 대한 관심이 쏠리면서, 특정 기술, 프레임워크, 라이브러리에 대해서는 수많은 인터넷 강의, 블로그 자료가 영어는 물론 한국어로도 쏟아져 나옵니다.</description>
+    </item>
+    
+    <item>
+      <title># 왜 나는 데이터 엔지니어를 바라보는가</title>
+      <link>http://cjlee38.github.io/post/diary/2020-09-09-why_data_engineer/</link>
+      <pubDate>Wed, 09 Sep 2020 08:28:36 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/diary/2020-09-09-why_data_engineer/</guid>
+      <description>들어가며 : 휴학을 한 이후, 스스로의 진로에 대해서 심도 깊은 고민을 난생 처음으로 하게 되었다. 사실 4학년이 되기 이전에는, 마치 내가 고3이 되어서 그제서야 &amp;ldquo;어느 대학을 가고 싶은지, 가야 하는지, 갈 수 있는지&amp;rdquo; 를 고민하기 시작한 것과 맥락이 비슷하다. 잠깐, 지난 몇 년간을 회고해보자.
+고등학교 : 거짓말이 아니고, 나는 고등학교 2학년 때까지만 하더라도, 소위 말하는 &amp;ldquo;스카이, 서성한&amp;rdquo; 밑의 대학은 무엇이 있는지 조차 몰랐다. 그 밑의 대학은 관심 줄 가치도 없다, 뭐 이런 대단한 이야기가 아니라, 정말 말 그대로 대학이란 것 자체에 관심이 없었다.</description>
+    </item>
+    
+    <item>
+      <title># 블로그를 시작하며</title>
+      <link>http://cjlee38.github.io/post/diary/2020-02-23-prologue/</link>
+      <pubDate>Sun, 23 Feb 2020 02:53:36 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/diary/2020-02-23-prologue/</guid>
+      <description>1. 블로그를 시작하며 지금까지 &amp;lsquo;넓고 얕게&amp;rsquo; 배운 여러가지 지식들에 대해서 머릿속에 담아두기만 했을 뿐, &amp;lsquo;언젠가 정리 해야지, 해야지&amp;rsquo; 하는 마음만 먹고 아무것도 하지 않았었다. 다만 고스란히 내 life 라는 이름의 폴더에 담아두기만 하였을 뿐.
+블로그의 목적이 무엇이 되었던, 구글링을 할 때마다 나타났던 여러 다른 분들의 블로그는 휘황찬란했고, 그걸 볼때마다 &amp;lsquo;이 사람은 정말 대단하구나&amp;rsquo; 싶고, 또 나는 한없이 초라해지는 기분이었다. 그러나 애초에 블로그라는 것이 누구에게 홍보하며 돈을 벌기 위한 수단도 아니었고, 나라고 못할 것은 무엇이랴, 여차하면 접고말지 라는 마인드로 시작하게 되었다.</description>
+    </item>
+    
+  </channel>
+</rss>

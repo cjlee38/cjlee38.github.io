@@ -2,13 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on cjlee38</title>
-    <link>http://example.org/tags/</link>
+    <link>http://cjlee38.github.io/tags/</link>
     <description>Recent content in Tags on cjlee38</description>
-    <image>
-      <url>http://example.org/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://example.org/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Feb 2022 19:48:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>null</title>
+      <link>http://cjlee38.github.io/tags/null/</link>
+      <pubDate>Mon, 28 Feb 2022 19:48:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/tags/null/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>baekjoon</title>
+      <link>http://cjlee38.github.io/tags/baekjoon/</link>
+      <pubDate>Sat, 02 Jan 2021 22:17:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/tags/baekjoon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programmers</title>
+      <link>http://cjlee38.github.io/tags/programmers/</link>
+      <pubDate>Thu, 10 Dec 2020 13:39:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/tags/programmers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DIARY</title>
+      <link>http://cjlee38.github.io/tags/diary/</link>
+      <pubDate>Sun, 23 Feb 2020 02:53:36 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/tags/diary/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

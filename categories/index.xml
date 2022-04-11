@@ -2,13 +2,127 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on cjlee38</title>
-    <link>http://example.org/categories/</link>
+    <link>http://cjlee38.github.io/categories/</link>
     <description>Recent content in Categories on cjlee38</description>
-    <image>
-      <url>http://example.org/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://example.org/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Feb 2022 19:48:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>diary</title>
+      <link>http://cjlee38.github.io/categories/diary/</link>
+      <pubDate>Mon, 28 Feb 2022 19:48:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/diary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>http://cjlee38.github.io/categories/python/</link>
+      <pubDate>Thu, 16 Sep 2021 22:05:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>http://cjlee38.github.io/categories/java/</link>
+      <pubDate>Sun, 29 Aug 2021 23:44:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>etc</title>
+      <link>http://cjlee38.github.io/categories/etc/</link>
+      <pubDate>Fri, 30 Jul 2021 12:08:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/etc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>problem-solving</title>
+      <link>http://cjlee38.github.io/categories/problem-solving/</link>
+      <pubDate>Sat, 02 Jan 2021 22:17:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/problem-solving/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring</title>
+      <link>http://cjlee38.github.io/categories/spring/</link>
+      <pubDate>Tue, 29 Dec 2020 09:58:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algorithm</title>
+      <link>http://cjlee38.github.io/categories/algorithm/</link>
+      <pubDate>Tue, 15 Dec 2020 13:57:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>btb</title>
+      <link>http://cjlee38.github.io/categories/btb/</link>
+      <pubDate>Sun, 08 Nov 2020 17:43:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/btb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jsp</title>
+      <link>http://cjlee38.github.io/categories/jsp/</link>
+      <pubDate>Tue, 06 Oct 2020 22:21:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/jsp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-structure</title>
+      <link>http://cjlee38.github.io/categories/data-structure/</link>
+      <pubDate>Mon, 21 Sep 2020 19:38:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/data-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-mining</title>
+      <link>http://cjlee38.github.io/categories/data-mining/</link>
+      <pubDate>Sun, 30 Aug 2020 22:31:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/data-mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>http://cjlee38.github.io/categories/linux/</link>
+      <pubDate>Fri, 20 Mar 2020 05:37:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>drafts</title>
+      <link>http://cjlee38.github.io/categories/drafts/</link>
+      <pubDate>Wed, 01 Jan 2020 09:58:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/drafts/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
