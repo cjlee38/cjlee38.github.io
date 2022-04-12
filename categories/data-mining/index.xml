@@ -9,18 +9,6 @@
     <lastBuildDate>Sun, 30 Aug 2020 22:31:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/data-mining/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># Java로 구현하는 연관규칙분석(Association Rule) ( feat. Apriori Algorithm )</title>
-      <link>http://cjlee38.github.io/backup-copy/data/data_mining/2020-08-30-association_rule_with_java/</link>
-      <pubDate>Sun, 30 Aug 2020 22:31:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/data/data_mining/2020-08-30-association_rule_with_java/</guid>
-      <description>0. 들어가며 : 2020년 1학기에 수강했던 종합설계 과목에서, 우리 조의 주제는 &amp;ldquo;시간표 추천 시스템&amp;rdquo; 이었다.
-본인이 원하는 공강시간, 학점 범위, 그리고 내가 미리 골라놓은 듣고자 하는 수업을 선택하면, 이전에 내가 수강했던 과목들을 기반으로 &amp;ldquo;남는 시간에, 이걸 듣는건 어때?&amp;rdquo; 라는 개념으로 시간표를 구성해서, 제공해주는 시스템을 제작하고자 하였다.
-그 과정에서, &amp;ldquo;비즈니스프로그래밍2&amp;rdquo; 수업에서 배웠던 &amp;ldquo;연관규칙&amp;quot;을 활용할 수 있을 것이라 판단했고, 이에 대해서 공부하기 시작하였다.
-1. 연관규칙이란? : 흔히, 장바구니 분석이라고도 한다. 경영학을 전공하고 있는 사람이라면, 마케팅 수업에서 &amp;ldquo;맥주를 사는 사람은 대개 기저귀도 같이 산다&amp;rdquo;(혹은 반대로, 기저귀를 사는 사람은 대개 맥주도 사더라) 라는 이야기를 들어본 적이 있을 것이다.</description>
-    </item>
-    
-    <item>
-      <title># Java로 구현하는 연관규칙분석(Association Rule) ( feat. Apriori Algorithm )</title>
       <link>http://cjlee38.github.io/post/data/data_mining/2020-08-30-association_rule_with_java/</link>
       <pubDate>Sun, 30 Aug 2020 22:31:00 +0000</pubDate>
       
@@ -29,17 +17,6 @@
 본인이 원하는 공강시간, 학점 범위, 그리고 내가 미리 골라놓은 듣고자 하는 수업을 선택하면, 이전에 내가 수강했던 과목들을 기반으로 &amp;ldquo;남는 시간에, 이걸 듣는건 어때?&amp;rdquo; 라는 개념으로 시간표를 구성해서, 제공해주는 시스템을 제작하고자 하였다.
 그 과정에서, &amp;ldquo;비즈니스프로그래밍2&amp;rdquo; 수업에서 배웠던 &amp;ldquo;연관규칙&amp;quot;을 활용할 수 있을 것이라 판단했고, 이에 대해서 공부하기 시작하였다.
 1. 연관규칙이란? : 흔히, 장바구니 분석이라고도 한다. 경영학을 전공하고 있는 사람이라면, 마케팅 수업에서 &amp;ldquo;맥주를 사는 사람은 대개 기저귀도 같이 산다&amp;rdquo;(혹은 반대로, 기저귀를 사는 사람은 대개 맥주도 사더라) 라는 이야기를 들어본 적이 있을 것이다.</description>
-    </item>
-    
-    <item>
-      <title># 주피터 노트북 서버 열기</title>
-      <link>http://cjlee38.github.io/backup-copy/data/data_mining/2020-08-27-how_to_run_jupyter_server/</link>
-      <pubDate>Thu, 27 Aug 2020 05:56:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/data/data_mining/2020-08-27-how_to_run_jupyter_server/</guid>
-      <description>#0. 서버의 필요성 저번 방학 때, 공모전을 진행하면서 여러가지 난관에 부딪혔다. 지금도 아직 많이 부족한 나부랭이이지만, 그때 당시에는 서로가 갖고 있는 노트북으로 작업을 진행하기에는, 컴퓨팅 파워도, 시간도 부족했다. 그래서 서버의 필요성을 느꼈다. 결국에는 아마존에서 EC2를 하나 빌려다가 쓰긴 했지만, 그 전에 &amp;ldquo;이거부터 한번 해보고, 안되면 아마존을 쓰자&amp;rdquo; 라는 생각으로 개인 데스크탑을 서버로 열었다. #1. 본론으로 여러가지 이야기는 제쳐두고, 그래서 어떻게 하느냐..
-일단 아나콘다 프롬프트를 열어서
-$ jupyter notebook --generate-config 로 configuration 파일을 생성한다.</description>
     </item>
     
     <item>

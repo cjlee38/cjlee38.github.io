@@ -9,19 +9,6 @@
     <lastBuildDate>Tue, 29 Dec 2020 09:58:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/spring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># [Spring 학습 정리] Dependency Injection 의 필요성</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/spring/2020-12-29-dependency_injection/</link>
-      <pubDate>Tue, 29 Dec 2020 09:58:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/spring/2020-12-29-dependency_injection/</guid>
-      <description>0. Dependency Injection 이란? : Dependency Injection(이하, DI)는 Spring에서만 사용되는 용어가 아니라,
-객체지향프로그래밍(이하, OOP)에서 통용되는 개념이다. 이를 이해하기 위해서는, OOP에서 중요시 여기는 SOLID의 5원칙에 대해서 알아야 한다.
-이번 포스팅에서는 SOLID 5원칙에 무엇이 있는지만 심플하게 짚고 넘어가자.
-자세한 내용은 이전의 포스팅 혹은 다른 참고자료를 이용해 공부하자.
-          SRP Single Responsibility Principle 클래스는 하나의 책임만을 가져야 한다.   OCP Open-Closed Principle 클래스를 수정하지 않으면서, 행동을 확장할 수 있어야 한다.</description>
-    </item>
-    
-    <item>
-      <title># [Spring 학습 정리] Dependency Injection 의 필요성</title>
       <link>http://cjlee38.github.io/post/tech/spring/2020-12-29-dependency_injection/</link>
       <pubDate>Tue, 29 Dec 2020 09:58:00 +0000</pubDate>
       
@@ -31,17 +18,6 @@
 이번 포스팅에서는 SOLID 5원칙에 무엇이 있는지만 심플하게 짚고 넘어가자.
 자세한 내용은 이전의 포스팅 혹은 다른 참고자료를 이용해 공부하자.
           SRP Single Responsibility Principle 클래스는 하나의 책임만을 가져야 한다.   OCP Open-Closed Principle 클래스를 수정하지 않으면서, 행동을 확장할 수 있어야 한다.</description>
-    </item>
-    
-    <item>
-      <title># [Spring 학습 정리] Spring Framework 란?</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/spring/2020-11-11-what_is_spring/</link>
-      <pubDate>Wed, 11 Nov 2020 09:58:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/spring/2020-11-11-what_is_spring/</guid>
-      <description>What ? : 스프링, 정확히는 스프링 프레임워크란, 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크이다. 기존의 Java EE(Enterprise Edition)의 스펙을 구현한 EJB는 기술의 복잡도가 높아, 성능도 느리고 러닝커브도 높았다. 이를 &amp;lsquo;겨울&amp;rsquo;로 빗대서, 개발자들의 &amp;lsquo;봄&amp;rsquo;이 도래했다는 의미로 스프링이라는 명칭을 갖게 되었다.
-그러나, 이렇게만 이야기하면, 겨우 특정 언어의 문법 정도나 갓 뗀 사람들에게는 어렵고 생소하게만 다가온다. 오픈소스? 애플리케이션? 프레임워크? 무슨 뜻일까? 하나씩 살펴보자.
-1) 오픈 소스    오픈 소스란, 어떤 소프트웨어 프로그램을 개발하는 과정에 있어서 필요한 소스 코드를 누구나 볼 수 있도록 공개하는 것을 의미한다.</description>
     </item>
     
     <item>

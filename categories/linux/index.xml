@@ -9,19 +9,6 @@
     <lastBuildDate>Fri, 20 Mar 2020 05:37:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># 다시 우분투로, 그리고 태블릿을 듀얼 모니터로 활용하기</title>
-      <link>http://cjlee38.github.io/backup-copy/linux/2020-03-20-tablet_as_dual_monitor/</link>
-      <pubDate>Fri, 20 Mar 2020 05:37:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/linux/2020-03-20-tablet_as_dual_monitor/</guid>
-      <description>1. 왜 다시 우분투로? 리눅스를 지원한다는 프로그램들도, 대부분 데비안이나 레드햇계열의 확장자만 제공해주고, 아치 리눅스는 외면받는 현상을 정말 많이 목격했다. 예를들면 팀뷰어라던가.. 슬랙이라던가.. 덤으로 압도적으로 차이나는 구글링 결과 숫자도.
-기어코 구글링을 할때에도
-for/on manjaro로 검색하던 것을 for/on linux/manjaro로 검색하는 꼴이 되버리니 이게 뭐하는 짓인가 싶더라.
-결국 다시 우분투로 갈아타니, 상대적으로 이렇게 편할수가 없더라. deb확장자를 볼때에는 눈물이 다 나더라.
-2. 태블릿을 듀얼 모니터로 활용 - 실패담 해야 할 공부는 안하고, 공부를 할 환경만 이것저것 세팅하는데 재미를 붙이다보니, 자주 활용하지 않던 예전 태블릿</description>
-    </item>
-    
-    <item>
-      <title># 다시 우분투로, 그리고 태블릿을 듀얼 모니터로 활용하기</title>
       <link>http://cjlee38.github.io/post/linux/2020-03-20-tablet_as_dual_monitor/</link>
       <pubDate>Fri, 20 Mar 2020 05:37:00 +0000</pubDate>
       
@@ -35,17 +22,6 @@ for/on manjaro로 검색하던 것을 for/on linux/manjaro로 검색하는 꼴�
     
     <item>
       <title># 만자로 기본 설정</title>
-      <link>http://cjlee38.github.io/backup-copy/linux/2020-03-09-manjaro_linux_settings/</link>
-      <pubDate>Mon, 09 Mar 2020 21:24:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/linux/2020-03-09-manjaro_linux_settings/</guid>
-      <description>1. 한글 설정 리눅스에는 여러가지 한글 입력기가 있지만, 대체로 많이 알려진 것은 ibus와 uim인듯 하다. 우분투를 처음 깔았었을 당시만 하더라도 뭣도 모르고 두개를 동시에 다 깔았고, ibus로 한글입력을 했었지만, 이번에 다시 한번 찾아보니 대체로 uim이 오류가 적다고 해서, uim으로 설치했다.
-{: .alignCenter}
-$ sudo pacman -S uim 명령어를 통해서 uim을 설치한 뒤에, vim으로 .xprofile을 다음과 같이 수정하였다. ( xprofile을 처음 열어보는 거라면, 아무 것도 없어서 &amp;lsquo;내가 잘못열은건가?&amp;rsquo; 할 수도 있다. 사실, &amp;ldquo;수정&amp;quot;이라는 단어가 아니라 &amp;ldquo;생성&amp;quot;으로 봐도 무방하다.</description>
-    </item>
-    
-    <item>
-      <title># 만자로 기본 설정</title>
       <link>http://cjlee38.github.io/post/linux/2020-03-09-manjaro_linux_settings/</link>
       <pubDate>Mon, 09 Mar 2020 21:24:00 +0000</pubDate>
       
@@ -53,16 +29,6 @@ $ sudo pacman -S uim 명령어를 통해서 uim을 설치한 뒤에, vim으로 .
       <description>1. 한글 설정 리눅스에는 여러가지 한글 입력기가 있지만, 대체로 많이 알려진 것은 ibus와 uim인듯 하다. 우분투를 처음 깔았었을 당시만 하더라도 뭣도 모르고 두개를 동시에 다 깔았고, ibus로 한글입력을 했었지만, 이번에 다시 한번 찾아보니 대체로 uim이 오류가 적다고 해서, uim으로 설치했다.
 {: .alignCenter}
 $ sudo pacman -S uim 명령어를 통해서 uim을 설치한 뒤에, vim으로 .xprofile을 다음과 같이 수정하였다. ( xprofile을 처음 열어보는 거라면, 아무 것도 없어서 &amp;lsquo;내가 잘못열은건가?&amp;rsquo; 할 수도 있다. 사실, &amp;ldquo;수정&amp;quot;이라는 단어가 아니라 &amp;ldquo;생성&amp;quot;으로 봐도 무방하다.</description>
-    </item>
-    
-    <item>
-      <title># 만자로 리눅스 설치</title>
-      <link>http://cjlee38.github.io/backup-copy/linux/2020-02-23-how_to_install_manjaro_inux/</link>
-      <pubDate>Sun, 23 Feb 2020 03:54:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/linux/2020-02-23-how_to_install_manjaro_inux/</guid>
-      <description>0. 계기 여러가지 공부를 하면서 간간히 접했던 &amp;lsquo;리눅스&amp;rsquo;란 단어에 적응하기 시작할 무렵, 김정국 교수님의 운영체제 수업을 들으면서 처음으로 페도라를 깔았었다. VirtualBox 위에 설치했던 페도라에 묘하게 끌리기 시작하고, 또 답답한 속도에 &amp;lsquo;내 운영체제에 직업 리눅스를 깔면 어떨까?&amp;rsquo; 하는 생각이 들었다.
-처음 다루는 리눅스인지라, 여러가지 어려움과 난항이 많았고, 구글링을 할때마다 등장하던 &amp;lsquo;우분투&amp;rsquo; 라는 이름에 &amp;lsquo;우분투가 더욱 사용자가 많은 리눅스 버전이구나&amp;rsquo; 싶어 며칠내에 우분투로 갈아탔다. 그러나 한글부터 시작해서 이것저것 세팅해줘야할 부분이 많았고, 윈도우와의 호환성에 여러 어려움을 겪어 필요할 때 이외에는 사용하지 않았다.</description>
     </item>
     
     <item>

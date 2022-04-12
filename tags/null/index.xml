@@ -9,33 +9,12 @@
     <lastBuildDate>Mon, 28 Feb 2022 19:48:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/tags/null/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># 조금 늦은 우테코 4기 합격 후기</title>
-      <link>http://cjlee38.github.io/backup-copy/diary/2022-02-28-woowacourse/</link>
-      <pubDate>Mon, 28 Feb 2022 19:48:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/diary/2022-02-28-woowacourse/</guid>
-      <description>우아한 테크코스 : 우아한 테크코스는 우아한형제들에서 진행하는 교육 프로그램입니다. 이미 알만한 사람들은 다 알고 있고, 이 글을 보고 있는 독자분도 아마 우아한 테크코스에 합격하려면 어떻게 해야 할까? 하는 생각으로 왔으리라 생각합니다&amp;hellip;만 본 글은 그저 일기에 가깝습니다. 이번 4기에 합격하고나서(사실은 1차 합격때부터) 써야지, 써야지 했는데 여유가 나지 않아서 이제와서 쓰게 되었습니다. 😢
-왜 지원했는가? : 사실 지원 동기를 따지라면, 그 누구도 할 것 없이 가장 첫 번째로 꼽는 것은 바로 &amp;lsquo;취업&amp;rsquo; 일 것입니다.</description>
-    </item>
-    
-    <item>
-      <title># 조금 늦은 우테코 4기 합격 후기</title>
       <link>http://cjlee38.github.io/post/diary/2022-02-28-woowacourse/</link>
       <pubDate>Mon, 28 Feb 2022 19:48:00 +0000</pubDate>
       
       <guid>http://cjlee38.github.io/post/diary/2022-02-28-woowacourse/</guid>
       <description>우아한 테크코스 : 우아한 테크코스는 우아한형제들에서 진행하는 교육 프로그램입니다. 이미 알만한 사람들은 다 알고 있고, 이 글을 보고 있는 독자분도 아마 우아한 테크코스에 합격하려면 어떻게 해야 할까? 하는 생각으로 왔으리라 생각합니다&amp;hellip;만 본 글은 그저 일기에 가깝습니다. 이번 4기에 합격하고나서(사실은 1차 합격때부터) 써야지, 써야지 했는데 여유가 나지 않아서 이제와서 쓰게 되었습니다. 😢
 왜 지원했는가? : 사실 지원 동기를 따지라면, 그 누구도 할 것 없이 가장 첫 번째로 꼽는 것은 바로 &amp;lsquo;취업&amp;rsquo; 일 것입니다.</description>
-    </item>
-    
-    <item>
-      <title># 객체지향의 사실과 오해를 읽고, 짧은 감상문</title>
-      <link>http://cjlee38.github.io/backup-copy/diary/2021-10-22-oop_truth_and_misunderstanding/</link>
-      <pubDate>Fri, 22 Oct 2021 22:13:50 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/diary/2021-10-22-oop_truth_and_misunderstanding/</guid>
-      <description>0. 계기 코드를 작성하면서 언제나 들었던 고민은 &amp;ldquo;더러워보인다&amp;rdquo; 였습니다. 누구도 아닌 나 스스로가 작성한 코드이니, 해결책 또한 마땅히 보이지 않았습니다.
-이보다 더 문제인 점은, 가끔은 한참을 고민하면 어디를 수정해야 할지 발견해낼 수 있었으나, 대부분의 경우 &amp;ldquo;이 클래스에 이 메소드가 있는 것이 맞는가?&amp;rdquo; &amp;ldquo;이 메소드가 이 파라미터를 필요로 하는 것이 맞는가?&amp;rdquo; 와 같이, 정답이 없는 문제들이었습니다.
-더더욱 문제인 점은, 저에게는 이러한 고민에 대해서 조언해줄 사람을 찾기가 어렵다는 점입니다. 개발자에 대한 관심이 쏠리면서, 특정 기술, 프레임워크, 라이브러리에 대해서는 수많은 인터넷 강의, 블로그 자료가 영어는 물론 한국어로도 쏟아져 나옵니다.</description>
     </item>
     
     <item>
@@ -51,17 +30,6 @@
     
     <item>
       <title># (Python) @Property까지 가는 길</title>
-      <link>http://cjlee38.github.io/backup-copy/language/python/2021-09-16-journey-to-property/</link>
-      <pubDate>Thu, 16 Sep 2021 22:05:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/python/2021-09-16-journey-to-property/</guid>
-      <description>Note 1. 개인적으로 공부해가며 작성한 글이기 때문에 틀린 내용이 있을 수 있습니다. 틀린 내용을 발견하시면 언제든 지적 부탁드립니다.
-Note 2. 이해를 돕기 위해 일부 내용은 Java와 비교해가며 글을 작성했습니다.
- 0. 들어가며 : 한동안 Java를 애용하다가, Python을 다뤄야 하는 일이 생겨서 다시 Python을 붙잡게 되었습니다. Java의 syntax에 대해서 어느정도 이해하고 있다고 자만하던 중이었기 때문에, Python을 사용하면서 &amp;ldquo;왜 Python에는 Java의 이런 기능이 없지? 역시 Java가 짱이야&amp;rdquo; 라는 생각도 하곤 했습니다.</description>
-    </item>
-    
-    <item>
-      <title># (Python) @Property까지 가는 길</title>
       <link>http://cjlee38.github.io/post/language/python/2021-09-16-journey-to-property/</link>
       <pubDate>Thu, 16 Sep 2021 22:05:00 +0000</pubDate>
       
@@ -69,16 +37,6 @@ Note 2. 이해를 돕기 위해 일부 내용은 Java와 비교해가며 글을 
       <description>Note 1. 개인적으로 공부해가며 작성한 글이기 때문에 틀린 내용이 있을 수 있습니다. 틀린 내용을 발견하시면 언제든 지적 부탁드립니다.
 Note 2. 이해를 돕기 위해 일부 내용은 Java와 비교해가며 글을 작성했습니다.
  0. 들어가며 : 한동안 Java를 애용하다가, Python을 다뤄야 하는 일이 생겨서 다시 Python을 붙잡게 되었습니다. Java의 syntax에 대해서 어느정도 이해하고 있다고 자만하던 중이었기 때문에, Python을 사용하면서 &amp;ldquo;왜 Python에는 Java의 이런 기능이 없지? 역시 Java가 짱이야&amp;rdquo; 라는 생각도 하곤 했습니다.</description>
-    </item>
-    
-    <item>
-      <title># 제네릭 톺아보기 2</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2021-08-29-java-generics-2/</link>
-      <pubDate>Sun, 29 Aug 2021 23:44:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2021-08-29-java-generics-2/</guid>
-      <description>Java Generic 2 0. 들어가며 지난 시간에는 제네릭이 왜 필요한지, 어떻게 사용하는지, 그리고 어떻게 만들 수 있는지 등에 대해 살펴봤습니다. 그런데 한 가지, List 를 흉내낸 MyList 의 경우 생성자에서 여전히 Object 형을 사용했었습니다. 지난 시간의 코드를 다시 가져와보겠습니다.
-public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  private int size;  private Object[] array;   public MyList() {  this.array = new Object[capacity];  }   public void add(T o) {  array[size++] = o;  }   public T get(int index) {  return (T) array[index];  } } private Object[] array 그리고 this.</description>
     </item>
     
     <item>
@@ -93,33 +51,12 @@ public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  privat
     
     <item>
       <title># 제네릭 톺아보기 1</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2021-08-10-java-generics-1-copy/</link>
-      <pubDate>Tue, 10 Aug 2021 19:26:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2021-08-10-java-generics-1-copy/</guid>
-      <description>0. 들어가며 제네릭은 Java Collection Framework 를 사용하면 필연적으로 마주치는 문법 중 하나입니다. 처음 보았을 때에는 &amp;lt;&amp;gt; 형태의 다이아몬드가 당황스럽지만, 몇 번 써보고 나면 그리 어려운 개념이 아니라는걸 알게 되죠. 하지만 이건 사용자 관점일 뿐, 제네릭을 한 번이라도 만들어보려고 하면 손가락이 멈칫하게 됩니다.(특히 제가 그렇습니다.) 매 번 제네릭과 관련한 무언가를 만들어보려고 할 때마다 다시 찾아보는 것이 지겨워서, 직접 한 번 정리해볼까 합니다.
-1. Why Use Generics ? 제네릭은 클래스(혹은 인터페이스, 메소드)를 정의할 때, Type 을 파라미터로 넘겨줄 수 있도록 하는 녀석입니다.</description>
-    </item>
-    
-    <item>
-      <title># 제네릭 톺아보기 1</title>
       <link>http://cjlee38.github.io/post/language/java/2021-08-10-java-generics-1-copy/</link>
       <pubDate>Tue, 10 Aug 2021 19:26:00 +0000</pubDate>
       
       <guid>http://cjlee38.github.io/post/language/java/2021-08-10-java-generics-1-copy/</guid>
       <description>0. 들어가며 제네릭은 Java Collection Framework 를 사용하면 필연적으로 마주치는 문법 중 하나입니다. 처음 보았을 때에는 &amp;lt;&amp;gt; 형태의 다이아몬드가 당황스럽지만, 몇 번 써보고 나면 그리 어려운 개념이 아니라는걸 알게 되죠. 하지만 이건 사용자 관점일 뿐, 제네릭을 한 번이라도 만들어보려고 하면 손가락이 멈칫하게 됩니다.(특히 제가 그렇습니다.) 매 번 제네릭과 관련한 무언가를 만들어보려고 할 때마다 다시 찾아보는 것이 지겨워서, 직접 한 번 정리해볼까 합니다.
 1. Why Use Generics ? 제네릭은 클래스(혹은 인터페이스, 메소드)를 정의할 때, Type 을 파라미터로 넘겨줄 수 있도록 하는 녀석입니다.</description>
-    </item>
-    
-    <item>
-      <title># 백준PS 테스트 만들기(feat. Java)</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/etc/2021-07-30-make_test_for_boj/</link>
-      <pubDate>Fri, 30 Jul 2021 12:08:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/etc/2021-07-30-make_test_for_boj/</guid>
-      <description>0. 들어가며 코딩테스트를 준비하는 여러분 중 대부분은 아마 백준이나 프로그래머스를 많이 사용하실텐데요. 해당 사이트에서 주어지는 환경 날 것을 그대로 사용하기는 아무래도 어렵고, IDE 에서 코드를 작성한 뒤 복사 붙여넣기 하는 경우가 대부분일 것 같습니다.
-저는 자바를 좋아하는데, 프로그래머스에서는 클래스 내의 함수를 작성하는 형태로 문제가 주어지기 때문에, 그닥 어렵지 않게 코드를 작성하고, 또 그 결과를 확인할 수 있는 반면, 표준 입출력을 활용하는 백준은 코드 작성이 조금 귀찮은 편입니다.
-상대적으로 코드가 (조금 더) 긴 BufferedReader 클래스를 활용해야 조금 더 빠른 입출력이 가능하다는 점이나 , 코드가 올바르게 작성됐는지 확인하기 위해 표준 입력에 매번 테스트케이스를 복사해서 넣어주어야 한다는 점이 그렇죠.</description>
     </item>
     
     <item>
@@ -135,18 +72,6 @@ public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  privat
     
     <item>
       <title># Virtual Machine in M1 Mac</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/etc/2021-07-25-virtual_machine_in_m1/</link>
-      <pubDate>Sun, 25 Jul 2021 12:08:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/etc/2021-07-25-virtual_machine_in_m1/</guid>
-      <description>UTM ? 2021.07.25 기준, 아직까지는 M1 Mac에서는 VirtualBox나 Vmware 같은 가상머신 소프트웨어가 지원되지 않는 것으로 확인됩니다.
- Is Apple Silicon ready?  Parallels 같은 유료 소프트웨어도 있지만, 비싼 가격에 섣불리 구매하기가 망설여지는데, 찾아보니 UTM 이라는 소프트웨어로 대체할 수 있다는 소식을 발견했습니다.
- Virtual Box vs. UTM: Run Virtual Machines on Your Apple Silicon M1 Mac UTM - 나무위키   MacOS Version : Big Sur 11.4
- 설치 방법 설치 방법은 간단합니다.</description>
-    </item>
-    
-    <item>
-      <title># Virtual Machine in M1 Mac</title>
       <link>http://cjlee38.github.io/post/tech/etc/2021-07-25-virtual_machine_in_m1/</link>
       <pubDate>Sun, 25 Jul 2021 12:08:00 +0000</pubDate>
       
@@ -155,19 +80,6 @@ public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  privat
  Is Apple Silicon ready?  Parallels 같은 유료 소프트웨어도 있지만, 비싼 가격에 섣불리 구매하기가 망설여지는데, 찾아보니 UTM 이라는 소프트웨어로 대체할 수 있다는 소식을 발견했습니다.
  Virtual Box vs. UTM: Run Virtual Machines on Your Apple Silicon M1 Mac UTM - 나무위키   MacOS Version : Big Sur 11.4
  설치 방법 설치 방법은 간단합니다.</description>
-    </item>
-    
-    <item>
-      <title># [Spring 학습 정리] Dependency Injection 의 필요성</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/spring/2020-12-29-dependency_injection/</link>
-      <pubDate>Tue, 29 Dec 2020 09:58:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/spring/2020-12-29-dependency_injection/</guid>
-      <description>0. Dependency Injection 이란? : Dependency Injection(이하, DI)는 Spring에서만 사용되는 용어가 아니라,
-객체지향프로그래밍(이하, OOP)에서 통용되는 개념이다. 이를 이해하기 위해서는, OOP에서 중요시 여기는 SOLID의 5원칙에 대해서 알아야 한다.
-이번 포스팅에서는 SOLID 5원칙에 무엇이 있는지만 심플하게 짚고 넘어가자.
-자세한 내용은 이전의 포스팅 혹은 다른 참고자료를 이용해 공부하자.
-          SRP Single Responsibility Principle 클래스는 하나의 책임만을 가져야 한다.   OCP Open-Closed Principle 클래스를 수정하지 않으면서, 행동을 확장할 수 있어야 한다.</description>
     </item>
     
     <item>
@@ -185,17 +97,6 @@ public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  privat
     
     <item>
       <title># (Java8) 동작(≒메소드) 파라미터화 </title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-12-21-java8-behavior-parameterization/</link>
-      <pubDate>Mon, 21 Dec 2020 14:33:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-12-21-java8-behavior-parameterization/</guid>
-      <description>모던 자바 인 액션(라울-게이브리얼 우르마 저, 한빛미디어)을 기반으로 작성하였습니다.
- 0. 들어가며 : 스트림이나 람다 같은 프로그래밍 테크닉들을 사용하면서, &amp;ldquo;이게 어떻게 동작하지?&amp;rdquo; 라는 그 원리에 대해서는 전혀 생각을 해보지 못했었다. 모던 자바 인 액션을 보면서 이런 동작 원리에 대해서 새로운 시야가 트인 느낌이라, 각 내용을 내 입맛에 맞게 정리해보고자 한다. 그런 기념에서, 첫 번째 포스팅은 2장의 동작(동적,Dynamic이 아니다.) 파라미터화 코드 전달하기 이다.
-1. 예제 : 가령 예를들어서, 과일 재고 목록을 관리하는 애플리케이션이 있다고 해보자.</description>
-    </item>
-    
-    <item>
-      <title># (Java8) 동작(≒메소드) 파라미터화 </title>
       <link>http://cjlee38.github.io/post/language/java/2020-12-21-java8-behavior-parameterization/</link>
       <pubDate>Mon, 21 Dec 2020 14:33:00 +0000</pubDate>
       
@@ -203,17 +104,6 @@ public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  privat
       <description>모던 자바 인 액션(라울-게이브리얼 우르마 저, 한빛미디어)을 기반으로 작성하였습니다.
  0. 들어가며 : 스트림이나 람다 같은 프로그래밍 테크닉들을 사용하면서, &amp;ldquo;이게 어떻게 동작하지?&amp;rdquo; 라는 그 원리에 대해서는 전혀 생각을 해보지 못했었다. 모던 자바 인 액션을 보면서 이런 동작 원리에 대해서 새로운 시야가 트인 느낌이라, 각 내용을 내 입맛에 맞게 정리해보고자 한다. 그런 기념에서, 첫 번째 포스팅은 2장의 동작(동적,Dynamic이 아니다.) 파라미터화 코드 전달하기 이다.
 1. 예제 : 가령 예를들어서, 과일 재고 목록을 관리하는 애플리케이션이 있다고 해보자.</description>
-    </item>
-    
-    <item>
-      <title># 마음으로 이해하는 알고리즘 : LIS의 길이구하기 ( feat. Java )</title>
-      <link>http://cjlee38.github.io/backup-copy/algorithm/algorithm/2020-12-15-ways_to_get_lis_length/</link>
-      <pubDate>Tue, 15 Dec 2020 13:57:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/algorithm/algorithm/2020-12-15-ways_to_get_lis_length/</guid>
-      <description>0. 들어가며 : 누군가는 라면받침대라고 표현하는 종만북을 도서관에서 빌려봤다. 생각보다 너무 어려운 난이도에 책장을 넘기던 중, 어디선가 많이 주워들은 LIS 문제를 보고, 이것만큼은 이해해보자는 생각으로 한참을 들여다봤다. 나름대로 설명하는 페이지는 많았으나, 내 입맛에 맞게 설명해주는 그리 많지 않아, 혹여라도 나처럼 머리가 좋지 않아 고생하는 분들이 계실까 해서, 정말 극한으로 풀어서(≒구구절절) 설명해보고자 한다.
-아무래도 양이 꽤 될 것 같아, 나에게도, 읽는 분에게도 꽤 험난한 여정이 될 것이라 사료된다.
-1. 해결할 문제 : LIS는 Longest Increasing Subsequence의 약자로, 한국말로 번역하면 &amp;ldquo;최대 증가 부분 수열&amp;rdquo; 정도가 된다.</description>
     </item>
     
     <item>
@@ -229,17 +119,6 @@ public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  privat
     
     <item>
       <title># [Spring 학습 정리] Spring Framework 란?</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/spring/2020-11-11-what_is_spring/</link>
-      <pubDate>Wed, 11 Nov 2020 09:58:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/spring/2020-11-11-what_is_spring/</guid>
-      <description>What ? : 스프링, 정확히는 스프링 프레임워크란, 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크이다. 기존의 Java EE(Enterprise Edition)의 스펙을 구현한 EJB는 기술의 복잡도가 높아, 성능도 느리고 러닝커브도 높았다. 이를 &amp;lsquo;겨울&amp;rsquo;로 빗대서, 개발자들의 &amp;lsquo;봄&amp;rsquo;이 도래했다는 의미로 스프링이라는 명칭을 갖게 되었다.
-그러나, 이렇게만 이야기하면, 겨우 특정 언어의 문법 정도나 갓 뗀 사람들에게는 어렵고 생소하게만 다가온다. 오픈소스? 애플리케이션? 프레임워크? 무슨 뜻일까? 하나씩 살펴보자.
-1) 오픈 소스    오픈 소스란, 어떤 소프트웨어 프로그램을 개발하는 과정에 있어서 필요한 소스 코드를 누구나 볼 수 있도록 공개하는 것을 의미한다.</description>
-    </item>
-    
-    <item>
-      <title># [Spring 학습 정리] Spring Framework 란?</title>
       <link>http://cjlee38.github.io/post/tech/spring/2020-11-11-what_is_spring/</link>
       <pubDate>Wed, 11 Nov 2020 09:58:00 +0000</pubDate>
       
@@ -247,18 +126,6 @@ public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  privat
       <description>What ? : 스프링, 정확히는 스프링 프레임워크란, 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크이다. 기존의 Java EE(Enterprise Edition)의 스펙을 구현한 EJB는 기술의 복잡도가 높아, 성능도 느리고 러닝커브도 높았다. 이를 &amp;lsquo;겨울&amp;rsquo;로 빗대서, 개발자들의 &amp;lsquo;봄&amp;rsquo;이 도래했다는 의미로 스프링이라는 명칭을 갖게 되었다.
 그러나, 이렇게만 이야기하면, 겨우 특정 언어의 문법 정도나 갓 뗀 사람들에게는 어렵고 생소하게만 다가온다. 오픈소스? 애플리케이션? 프레임워크? 무슨 뜻일까? 하나씩 살펴보자.
 1) 오픈 소스    오픈 소스란, 어떤 소프트웨어 프로그램을 개발하는 과정에 있어서 필요한 소스 코드를 누구나 볼 수 있도록 공개하는 것을 의미한다.</description>
-    </item>
-    
-    <item>
-      <title># 소수(Prime Number)를 찾는 방법 ( feat. Java )</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/btb/2020-11-08-ways_to_find_prime_number/</link>
-      <pubDate>Sun, 08 Nov 2020 17:43:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/btb/2020-11-08-ways_to_find_prime_number/</guid>
-      <description>0. 들어가며 : 우아한 테크코스 코딩테스트를 준비하며, 이전에 풀었던 PS 문제들을 하나씩 둘러보던 중, 소수 문제를 발견했다. 소수를 구하는 방법에 여러 가지가 있는 것은 알았는데, 막상 쓰려니까 손가락이 잘 움직이지 않았다.
-해서 생각난 김에, 이번 포스팅에서 주어진 숫자가 소수인지 확인하는 방법에 대해서 알아보고자 한다.
-1. 소수(Prime Number) : 소수를 모르는 사람은 없을 것이다. 그래도 굳이 한번 적어보자면, 소수의 정의는 다음과 같다.
- 1과 자기자신 이외의 수로 나누어 떨어지지 않는, 즉 약수를 갖지 않는 자연수</description>
     </item>
     
     <item>
@@ -275,21 +142,6 @@ public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  privat
     
     <item>
       <title># (Java) Parameter를 활용하는 방법 ( feat. varargs, kwargs )</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-10-25-java_parameters/</link>
-      <pubDate>Sun, 25 Oct 2020 01:52:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-10-25-java_parameters/</guid>
-      <description>varargs : varargs 는 variable arguments의 약자로, 한국어로는 &amp;ldquo;가변인자&amp;rdquo; 로 해석된다.
-이는 지난번에 포스팅했던 파이썬의 Asterisk(*) 다루기 와 비슷한데,
-arguments를 몇 개를 받을지 지정하지 않고, 호출하는 쪽에서 정해주겠다는 의미가 된다.
-다음의 예시를 보자.
-구현하고자 하는 코드는, 입력받은 여러 개의 문자열을 하나씩 출력하고자 한다.
-가변인자를 사용하지 않는 방식
-public class Main {  public static void main(String[] args) {  Main main = new Main();  String[] strs = {&amp;#34;hello&amp;#34;, &amp;#34;world&amp;#34;, &amp;#34;java&amp;#34;};  main.</description>
-    </item>
-    
-    <item>
-      <title># (Java) Parameter를 활용하는 방법 ( feat. varargs, kwargs )</title>
       <link>http://cjlee38.github.io/post/language/java/2020-10-25-java_parameters/</link>
       <pubDate>Sun, 25 Oct 2020 01:52:00 +0000</pubDate>
       
@@ -301,23 +153,6 @@ arguments를 몇 개를 받을지 지정하지 않고, 호출하는 쪽에서 �
 구현하고자 하는 코드는, 입력받은 여러 개의 문자열을 하나씩 출력하고자 한다.
 가변인자를 사용하지 않는 방식
 public class Main {  public static void main(String[] args) {  Main main = new Main();  String[] strs = {&amp;#34;hello&amp;#34;, &amp;#34;world&amp;#34;, &amp;#34;java&amp;#34;};  main.</description>
-    </item>
-    
-    <item>
-      <title># (Java) Junit은 어떻게 Main method 없이 실행될까? </title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-10-23-how-junit_works_without_main/</link>
-      <pubDate>Fri, 23 Oct 2020 17:48:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-10-23-how-junit_works_without_main/</guid>
-      <description>0. 들어가며 : 첫 처음 자바를 배웠을 당시가 떠오른다.
-아무것도 모른채, &amp;ldquo;약속&amp;quot;이라는 말과 함께
-public static void main(String][] args) 를 기계적으로 입력했었는데,
-이게 무슨 뜻인지, 왜 이렇게 썼는지에 대해서 그닥 신경을 안썼던 것 같다.
-그런데, 최근 스프링을 공부하면서, 난생 처음으로 내손으로 테스트를 작성해보다,
-main method가 없는데 어떻게 실행되지? 라는 의문에 봉착했다.
-생각의 꼬리를 물고 올라가다 보니, main method 자체에 대한 의문이 생겼다.
-파이썬을 생각해보면, 이러한 main method 하나 없이도,
-print(&amp;quot;hello world&amp;quot;) 라는 명령어 하나만으로 실행이 가능했다.</description>
     </item>
     
     <item>
@@ -339,21 +174,6 @@ print(&amp;quot;hello world&amp;quot;) 라는 명령어 하나만으로 실행�
     
     <item>
       <title># (Java) Wrapper Class는 Call by Value 일까?</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-10-21-java_wrapper_class/</link>
-      <pubDate>Wed, 21 Oct 2020 20:26:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-10-21-java_wrapper_class/</guid>
-      <description>0. 들어가며 : Java 는 Call by Value일까, Call by Reference 일까?
-지금까지는, 함수의 parameter로 primitive type을 넘겨줄 때에는 call by value,
-객체를 넘겨줄 때에는 call by reference로 알고 있었다.
-그런데, 구선생님의 말씀에 따르면, 그렇지는 않은 것 같다.
-1. Call in Java : Java 에서는 언제나 Call by Value 라고 한다.
-약 12년 된 스택오버플로우의 한 질문글에 달린 답변은 다음과 같다.
-  자바는 예외 없이, 항상 pass by value 입니다.</description>
-    </item>
-    
-    <item>
-      <title># (Java) Wrapper Class는 Call by Value 일까?</title>
       <link>http://cjlee38.github.io/post/language/java/2020-10-21-java_wrapper_class/</link>
       <pubDate>Wed, 21 Oct 2020 20:26:00 +0000</pubDate>
       
@@ -365,18 +185,6 @@ print(&amp;quot;hello world&amp;quot;) 라는 명령어 하나만으로 실행�
 1. Call in Java : Java 에서는 언제나 Call by Value 라고 한다.
 약 12년 된 스택오버플로우의 한 질문글에 달린 답변은 다음과 같다.
   자바는 예외 없이, 항상 pass by value 입니다.</description>
-    </item>
-    
-    <item>
-      <title># (번역) Value Object of Martin Fowler</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/btb/2020-10-20-value_object/</link>
-      <pubDate>Tue, 20 Oct 2020 12:11:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/btb/2020-10-20-value_object/</guid>
-      <description>본 포스팅은 마틴 파울러가 Value Object 에 대해 작성한 글을 의역했습니다.
-정확한 이해를 위해, 가능하시면 원문을 보시는 것을 추천드립니다.
-  프로그래밍을 할 때, 종종 사물(things)을 복합적으로 표현하는게 유용할 때가 있습니다. 2차원의 좌표는 x 값과 y 값을 가집니다. 돈은 숫자와 통화를 가집니다. 기간은 시작 날짜와 끝 날짜를 가지고, 이것들은 연, 월, 일을 가집니다.
-이럴 때, 두 복합 객체가 같은지에 대해서 궁금할 때가 있습니다. (2,3)의 직교 좌표계를 갖는 두 개의 Point 객체가 서로 같다는 것은 말이 됩니다.</description>
     </item>
     
     <item>
@@ -393,19 +201,6 @@ print(&amp;quot;hello world&amp;quot;) 라는 명령어 하나만으로 실행�
     
     <item>
       <title># (Java) 효율적인 반복문 탈출을 위한 Label</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-10-18-label_statement/</link>
-      <pubDate>Sun, 18 Oct 2020 14:22:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-10-18-label_statement/</guid>
-      <description>0. 들어가며 : 혹시, 여러 개로 겹쳐있는 for문을 반복하다가, 어느 조건을 만족했을 때,
-**전체 반복문을 중단시키려면 어떻게 해야 할까?**에 대해서 고민해본 적이 있는가?
-아마 지금까지는 두가지 방법 중 하나를 사용했을 것 같다.
-A 방법
-boolean flag = false; for (int i = 0; i &amp;lt; 10; i++) {  for (int j = 0; j &amp;lt; 10; j++) {  if ( /*some_condition*/ ) {  flag = true;  break;  }  }  if (flag) {  break;  } } B 방법</description>
-    </item>
-    
-    <item>
-      <title># (Java) 효율적인 반복문 탈출을 위한 Label</title>
       <link>http://cjlee38.github.io/post/language/java/2020-10-18-label_statement/</link>
       <pubDate>Sun, 18 Oct 2020 14:22:00 +0000</pubDate>
       
@@ -415,22 +210,6 @@ boolean flag = false; for (int i = 0; i &amp;lt; 10; i++) {  for (int j = 0; j &
 아마 지금까지는 두가지 방법 중 하나를 사용했을 것 같다.
 A 방법
 boolean flag = false; for (int i = 0; i &amp;lt; 10; i++) {  for (int j = 0; j &amp;lt; 10; j++) {  if ( /*some_condition*/ ) {  flag = true;  break;  }  }  if (flag) {  break;  } } B 방법</description>
-    </item>
-    
-    <item>
-      <title># 재귀함수 주무르기 with 피보나치 수열 ( feat. Java )</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/btb/2020-10-16-recursive_function/</link>
-      <pubDate>Fri, 16 Oct 2020 05:44:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/btb/2020-10-16-recursive_function/</guid>
-      <description>0. 들어가며 : 나는 재귀함수를 좋아하지 않는다.
-재귀함수는 몇 번을 써도 어렵고, 몇 번을 봐도 쉽사리 파악하기 어렵다.
-그럼에도 불구하고, 재귀함수는 유용하고, 신기하다.
-이번 포스팅을 통해, 재귀함수가 어떻게 동작하는지 간단하게 살펴보고,
-재귀함수를 최적화하기 위한 두 가지 방법에 대해서 알아보자.
-1. 재귀함수의 사전적 정의 : 재귀(再歸) 라는 말을 국어사전에 쳐보면, 다음과 같이 설명한다.
-이를 프로그래밍에 적용하면, 함수가 자기 자신으로 되돌아옴 정도로 표현할 수 있겠다.
-다시 말해, 호출한 함수가 자기 자신을 호출하는 행위를 의미한다.</description>
     </item>
     
     <item>
@@ -451,20 +230,6 @@ boolean flag = false; for (int i = 0; i &amp;lt; 10; i++) {  for (int j = 0; j &
     
     <item>
       <title># (Java) Annotation에 대한 이해</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-10-14-java_annotation/</link>
-      <pubDate>Wed, 14 Oct 2020 21:11:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-10-14-java_annotation/</guid>
-      <description>0. 들어가며 : 스프링 공부를 하던 중, 자주 사용되는 Annotation에 대해서 살펴보았다.
-다양한 글을 읽었는데도, Java의 Annotation은 뭐라 딱 찝어서 설명하기 어려운 것 같다.
-더욱이, 나는 &amp;rsquo;@&amp;rsquo; 표시에 대해서, Python의 Decorator로 먼저 이해했기 때문에 더욱 어려웠던 것 같다.
-Python의 Decorator는 마치 함수를 감싸는 함수의 역할과 같은 모습을 볼 수 있지만,
-Java의 Annotation은 그냥 Meta data 로 퉁쳐버리기 때문에,
-&amp;ldquo;정말 그게 다야? 뭐 더 없어? 아닐 것 같은데?&amp;rdquo; 싶은 생각이 계속 들어서 이해하기 어려웠다.</description>
-    </item>
-    
-    <item>
-      <title># (Java) Annotation에 대한 이해</title>
       <link>http://cjlee38.github.io/post/language/java/2020-10-14-java_annotation/</link>
       <pubDate>Wed, 14 Oct 2020 21:11:00 +0000</pubDate>
       
@@ -475,22 +240,6 @@ Java의 Annotation은 그냥 Meta data 로 퉁쳐버리기 때문에,
 Python의 Decorator는 마치 함수를 감싸는 함수의 역할과 같은 모습을 볼 수 있지만,
 Java의 Annotation은 그냥 Meta data 로 퉁쳐버리기 때문에,
 &amp;ldquo;정말 그게 다야? 뭐 더 없어? 아닐 것 같은데?&amp;rdquo; 싶은 생각이 계속 들어서 이해하기 어려웠다.</description>
-    </item>
-    
-    <item>
-      <title># (Java) Static Field, Method, 그리고 Block</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-10-10-java_static/</link>
-      <pubDate>Sat, 10 Oct 2020 20:41:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-10-10-java_static/</guid>
-      <description>Concept of Static : static을 한글로 해석하면 정적이라는 뜻인데, 크게 와닿지는 않는 해석이다.
-흔히, 객체지향에서 자주 하는 비유 중 하나가 붕어빵 틀과 붕어빵이다.
-클래스는 붕어빵 틀로, 붕어빵을 찍어낼 수 있고, 인스턴스는 찍혀진 붕어빵이다.
-따라서, 찍힌 붕어빵은 서로 다른 객체로 인식해야한다.
-그러나, 붕어빵을 만들기 위해 사용하는 반죽은 어떨까?
-붕어빵 장사를 하는 사람이, 아주 기가막힌 비율의 반죽을 만들어내서,
-(말은 안되지만) 이미 만들어진, 그리고 앞으로 만들 모든 붕어빵의 반죽을
-new 반죽으로 바꾸고 싶다고 해보자.</description>
     </item>
     
     <item>
@@ -507,23 +256,6 @@ new 반죽으로 바꾸고 싶다고 해보자.</description>
 붕어빵 장사를 하는 사람이, 아주 기가막힌 비율의 반죽을 만들어내서,
 (말은 안되지만) 이미 만들어진, 그리고 앞으로 만들 모든 붕어빵의 반죽을
 new 반죽으로 바꾸고 싶다고 해보자.</description>
-    </item>
-    
-    <item>
-      <title># (Java) [짧] Enum 뜯어보기</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-10-09-java_enum/</link>
-      <pubDate>Fri, 09 Oct 2020 15:11:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-10-09-java_enum/</guid>
-      <description>Enum in Java : C언어에서의 Enum은, 단순하게 연속된 숫자의 Magic Number를 표현하는 것을
-막기 위해 사용되어서, 그 내부의 값은 int 값을 갖고 있다.
-Enumerate, 열거하다 라는 표현에, 걸맞다는 생각이 들기도 한다.
-그러나, Java에서의 Enum은 클래스다.
-따라서, C와는 다르게 여러가지 기능을 지원한다.
-사용법 기본 형태 : 먼저, 가장 단순하게 기존의 C에서 쓰던 것처럼 enum을 활용할 수 있다.
-Size.java
-public enum Size {  SMALL, MEDIUM, LARGE } Main.java
-public class Main {  public static void main(String[] args) {  System.</description>
     </item>
     
     <item>
@@ -545,23 +277,6 @@ public class Main {  public static void main(String[] args) {  System.</descript
     
     <item>
       <title># 객체지향 설계원칙 - SOLID(번역)</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/btb/2020-10-08-solid_principles/</link>
-      <pubDate>Thu, 08 Oct 2020 12:35:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/btb/2020-10-08-solid_principles/</guid>
-      <description>SOLID 원칙에 대해서 공부하던 중, 적절한 예시와 함께 작성된 글이 있어,
-짧은 영어 실력으로 번역 및 정리해보았다.
-수능을 마치고나서, 영어를 볼 떄마다 종종 드는 생각은,
-영어가 머릿속에 꽂히는, 맥락의 파악은 쉬워지는데,
-이를 한글로 다시 뱉어내기가 어려워졌다는 점 인것 같다.
-사실상 구글번역기를 돌린 것과 큰 차이가 없으니, 읽다가 정 안읽히면
-차라리 영어 원문을 보는것을 추천한다.
-원문
-SOLID 원칙이란 무엇입니까?  Robert C.Martin(Uncle Bob)에 의해 만들어진 SOLID 설계 원칙은 5가지 원칙의 조합을 의미합니다.</description>
-    </item>
-    
-    <item>
-      <title># 객체지향 설계원칙 - SOLID(번역)</title>
       <link>http://cjlee38.github.io/post/tech/btb/2020-10-08-solid_principles/</link>
       <pubDate>Thu, 08 Oct 2020 12:35:00 +0000</pubDate>
       
@@ -575,24 +290,6 @@ SOLID 원칙이란 무엇입니까?  Robert C.Martin(Uncle Bob)에 의해 만들
 차라리 영어 원문을 보는것을 추천한다.
 원문
 SOLID 원칙이란 무엇입니까?  Robert C.Martin(Uncle Bob)에 의해 만들어진 SOLID 설계 원칙은 5가지 원칙의 조합을 의미합니다.</description>
-    </item>
-    
-    <item>
-      <title># (Java) Stream API 첫걸음</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-10-07-java_stream/</link>
-      <pubDate>Wed, 07 Oct 2020 01:03:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-10-07-java_stream/</guid>
-      <description>0. 들어가며 : 최근, 여러 알고리즘 문제들을 풀면서,
-가끔 심심할때마다 프로그래머스 Lv.1 문제들도 푸는데,
-Lv.1 문제들은 단순하게 제출하는 것이 뭔가 좀 껄끄러웠다.
-개인적으로는, 1차원의 for loop를 쓰더라도 이게 여러 개 있으면 꽤 마음이 불편해진다.
-뭔가, 깔끔하고 멋있게 써야 할 것 같았다.
-개인적으로, 이러한 상황에 가장 베스트인 선택지는
-바로 Stream API 라고 생각한다.
-아직 익숙치 않은 Stream API를 공부해보자.
-양이 꽤 많기 때문에 아마 모두 적기에는 어려울 것 같다.
-  Note.</description>
     </item>
     
     <item>
@@ -615,21 +312,6 @@ Lv.1 문제들은 단순하게 제출하는 것이 뭔가 좀 껄끄러웠다.
     
     <item>
       <title># 7. JSP 학습기록 - MVC 패턴과 JSP Model 1, Model 2</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/jsp/2020-10-06-jsp_learning_07/</link>
-      <pubDate>Tue, 06 Oct 2020 22:21:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/jsp/2020-10-06-jsp_learning_07/</guid>
-      <description>들어가며 : 지난 포스팅에서, Jasper 라는 도구를 이용하여 HTML Code에 직접 자바코드를 때려박는 방법을,
-그리고 이렇게 생성되는 파일을 JSP 라고 부른다는 것을 배웠다.
-그렇다면, 기존의 Java Code는 다 그대로 JSP로 옮겨버려도 될까?
-흠.. 뭔가 그렇지는 않을 것 같은데, 명확히 이유를 짚어내기는 어렵다.
-이번 포스팅에서는 그 &amp;ldquo;이유&amp;quot;에 대해서 알아보자.
-코드 구분의 필요성 : 우선, 다음과 같이, 기본적인 덧셈, 뺄셈을 계산해주는 코드를 만들어보자.
-&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;calculator&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt; &amp;lt;form action=&amp;#34;Adder.jsp&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;label&amp;gt; first_number &amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;n1&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;label&amp;gt; second_number &amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;n2&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; name=&amp;#34;calc&amp;#34; value=&amp;#34;add&amp;#34;/&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; name=&amp;#34;calc&amp;#34; value=&amp;#34;minus&amp;#34;/&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;% int num1 = 0; int num2 = 0; String num1_ = request.</description>
-    </item>
-    
-    <item>
-      <title># 7. JSP 학습기록 - MVC 패턴과 JSP Model 1, Model 2</title>
       <link>http://cjlee38.github.io/post/tech/jsp/2020-10-06-jsp_learning_07/</link>
       <pubDate>Tue, 06 Oct 2020 22:21:00 +0000</pubDate>
       
@@ -641,24 +323,6 @@ Lv.1 문제들은 단순하게 제출하는 것이 뭔가 좀 껄끄러웠다.
 이번 포스팅에서는 그 &amp;ldquo;이유&amp;quot;에 대해서 알아보자.
 코드 구분의 필요성 : 우선, 다음과 같이, 기본적인 덧셈, 뺄셈을 계산해주는 코드를 만들어보자.
 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;calculator&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt; &amp;lt;form action=&amp;#34;Adder.jsp&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;label&amp;gt; first_number &amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;n1&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;label&amp;gt; second_number &amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;n2&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; name=&amp;#34;calc&amp;#34; value=&amp;#34;add&amp;#34;/&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; name=&amp;#34;calc&amp;#34; value=&amp;#34;minus&amp;#34;/&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;% int num1 = 0; int num2 = 0; String num1_ = request.</description>
-    </item>
-    
-    <item>
-      <title># (Java) 예외처리를 위한 Try-Catch</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-10-05-exception_in_java/</link>
-      <pubDate>Mon, 05 Oct 2020 06:42:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-10-05-exception_in_java/</guid>
-      <description>0. 들어가며 : 예외처리는, 그 이름만 들어도 두려움이 생긴다.
-간단하게 생각하자면 if else문의 연장선인 것 같으면서도,
-또 뭔가 시스템의 장애를 덕지덕지 막아내는 것 같은 찝찝함도 동시에 든다.
-예외처리문을 쓸때면 항상
-&amp;ldquo;애초에 코드를 잘 짜면 되지 않나?&amp;rdquo; 라는
-바보같은 의문이 남기도 한다.
-아무튼, 오늘 다루고자 하는 내용은
-&amp;ldquo;예외 처리는 이렇게 해야한다!&amp;rdquo; 하는 거창한 내용은 못되고(쓸 실력도 안되고),
-기본적으로 알고 있었던, 그리고 글을 쓰면서 새로 배운,
-이러이러한 것들이 존재한다~ 정도의 Introduction 느낌만 가져가려고 한다.</description>
     </item>
     
     <item>
@@ -681,22 +345,6 @@ Lv.1 문제들은 단순하게 제출하는 것이 뭔가 좀 껄끄러웠다.
     
     <item>
       <title># (Java) 추석맞이 String 종합선물세트</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-10-01-all_of_string_in_java/</link>
-      <pubDate>Thu, 01 Oct 2020 16:59:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-10-01-all_of_string_in_java/</guid>
-      <description>0. 들어가며 : String은 언제 다뤄도 어렵다.
-Java 에서의 String은 조금 특별한 존재이기 때문에, Python처럼 생각없이 다루면 안된다.
-String에 연산이 많이 들어가는 경우, StringBuilder를 쓰는 경우가 많은데,
-도대체 어떤 차이가 있는지, String은 어떻게 변환되는지에 대해
-이번 포스팅을 통해 짚어보고자 한다.
-1. String String Constant Pool : 기본적으로, String은 Primitive Type이 아닌, Reference Type이다.
-즉, 우리가 바라보고 있는 특정 String은 그 자체로서 값을 갖고 있는 것이 아니고,
-그 값에 대한 &amp;ldquo;포인터&amp;rdquo; 인 셈이다.</description>
-    </item>
-    
-    <item>
-      <title># (Java) 추석맞이 String 종합선물세트</title>
       <link>http://cjlee38.github.io/post/language/java/2020-10-01-all_of_string_in_java/</link>
       <pubDate>Thu, 01 Oct 2020 16:59:00 +0000</pubDate>
       
@@ -713,19 +361,6 @@ String에 연산이 많이 들어가는 경우, StringBuilder를 쓰는 경우�
     
     <item>
       <title># 박재성 - 의식적인 연습으로 TDD, 리팩토링 연습하기</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/btb/2020-09-27-tdd-by-jaesung_park/</link>
-      <pubDate>Sun, 27 Sep 2020 21:31:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/btb/2020-09-27-tdd-by-jaesung_park/</guid>
-      <description>본 포스팅은 자바지기 박재성님의 강의를 듣고 정리하면서 작성한 글입니다.
-발표 동영상과 슬라이드는 하단의 Reference를 참고해주세요.
-  의식적인 연습 : 단순히 반복적인 연습을 함으로써 실력 향상을 기대하기는 어렵다.
-&amp;ldquo;의식적인&amp;rdquo; 연습이 필요하다.
-의식적인 연습의 7가지 원칙.  효과적인 훈련 기법이 수립되어 있는 기술 연마 개인의 &amp;ldquo;컴포트 존&amp;quot;을 벗어난 지점에서 진행, 자신의 현재 능력을 살짝 넘어가는 작업을 지속적으로 시도 명확하고 구체적인 목표를 가지고 진행 신중하고 계획적이다. 즉, 개인이 온전히 집중하고 &amp;lsquo;의식적&amp;rsquo;으로 행동할 것을 요구 피드백과 피드백에 따른 행동 변경을 수반 효과적인 심적 표상을 만들어내는 한편으로 심적 표상에 의존 기존에 습득한 기술의 특정 부분을 집중적으로 개선함으로써 발전시키고 수정하는 과정을 수반.</description>
-    </item>
-    
-    <item>
-      <title># 박재성 - 의식적인 연습으로 TDD, 리팩토링 연습하기</title>
       <link>http://cjlee38.github.io/post/tech/btb/2020-09-27-tdd-by-jaesung_park/</link>
       <pubDate>Sun, 27 Sep 2020 21:31:00 +0000</pubDate>
       
@@ -735,23 +370,6 @@ String에 연산이 많이 들어가는 경우, StringBuilder를 쓰는 경우�
   의식적인 연습 : 단순히 반복적인 연습을 함으로써 실력 향상을 기대하기는 어렵다.
 &amp;ldquo;의식적인&amp;rdquo; 연습이 필요하다.
 의식적인 연습의 7가지 원칙.  효과적인 훈련 기법이 수립되어 있는 기술 연마 개인의 &amp;ldquo;컴포트 존&amp;quot;을 벗어난 지점에서 진행, 자신의 현재 능력을 살짝 넘어가는 작업을 지속적으로 시도 명확하고 구체적인 목표를 가지고 진행 신중하고 계획적이다. 즉, 개인이 온전히 집중하고 &amp;lsquo;의식적&amp;rsquo;으로 행동할 것을 요구 피드백과 피드백에 따른 행동 변경을 수반 효과적인 심적 표상을 만들어내는 한편으로 심적 표상에 의존 기존에 습득한 기술의 특정 부분을 집중적으로 개선함으로써 발전시키고 수정하는 과정을 수반.</description>
-    </item>
-    
-    <item>
-      <title># Hash 맛보기</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/btb/2020-09-25-what_is_hash/</link>
-      <pubDate>Fri, 25 Sep 2020 22:52:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/btb/2020-09-25-what_is_hash/</guid>
-      <description>0. 들어가며 : Hash 라는 용어는 주로 암호학에서 많이 사용되지만,
-개발자라면 오며가며 한 번쯤은 주워 듣는 용어이기도 하다.
-특히, 블록체인을 한 번이라도 공부해봤다면,
-Hash 라는 것이 이 블록체인의 핵심 기술 중 하나라는 것을 배웠을 것이다.
-동작 원리를 안다고 해도 복호화(Decryption)가 불가능하므로,
-암호학을 전공하지 않는 한 깊게 파고들 이유는 없다고 생각하지만,
-그렇다고 아예 모르는 것은 개발자에겐 죄악에 가까우므로,
-이번 포스팅을 통해 가볍게 혓바닥 한 번 대서 맛이라도 보자는 느낌으로 건드려보자.
-1. Hash 에 대한 이론 1) What is Hash?</description>
     </item>
     
     <item>
@@ -773,19 +391,6 @@ Hash 라는 것이 이 블록체인의 핵심 기술 중 하나라는 것을 배
     
     <item>
       <title># 6. JSP 학습기록 - doGet, doPost와 JSP, 그리고 EL(Expression Language) </title>
-      <link>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-25-jsp_learning_06/</link>
-      <pubDate>Fri, 25 Sep 2020 16:21:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-25-jsp_learning_06/</guid>
-      <description>doGet, doPost : 기존에는 Servlet에 코드를 작성할 때, service()만 사용하고,
-get과 post를 구분하지 않았었다. 당연히, get과 post를 구분하는 방법이 있을텐데, 우선적으로 생각할 수 있는 방법은
-if else 문으로 분기하는 것이다. 또한, 이에 걸맞은 method 도 존재한다.
-if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } else if (req.getMethod().equals(&amp;#34;POST&amp;#34;)) {  // do something for post } 그러나, 이렇게 작성하는 것은 당연하게도 우아해보이지 않는다.
-이에 걸맞은 method가 있는데, 바로 doGet(), doPost() method 다.</description>
-    </item>
-    
-    <item>
-      <title># 6. JSP 학습기록 - doGet, doPost와 JSP, 그리고 EL(Expression Language) </title>
       <link>http://cjlee38.github.io/post/tech/jsp/2020-09-25-jsp_learning_06/</link>
       <pubDate>Fri, 25 Sep 2020 16:21:00 +0000</pubDate>
       
@@ -795,21 +400,6 @@ get과 post를 구분하지 않았었다. 당연히, get과 post를 구분하는
 if else 문으로 분기하는 것이다. 또한, 이에 걸맞은 method 도 존재한다.
 if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } else if (req.getMethod().equals(&amp;#34;POST&amp;#34;)) {  // do something for post } 그러나, 이렇게 작성하는 것은 당연하게도 우아해보이지 않는다.
 이에 걸맞은 method가 있는데, 바로 doGet(), doPost() method 다.</description>
-    </item>
-    
-    <item>
-      <title># Expression과 Statement의 차이 ( feat. Python, Java )</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/btb/2020-09-25-expression_and_statement/</link>
-      <pubDate>Fri, 25 Sep 2020 00:12:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/btb/2020-09-25-expression_and_statement/</guid>
-      <description>0. 들어가며 : 코드를 작성하다보면 한번쯤은, 그런 생각을 해본다.
-물론, Key-Value 를 갖는 Java의 Hashmap, Python의 Dictionary가 있지만,
-때로는 편의성 때문에 변수명 자체가 그 값에 의해서 자동으로 선언될 수 있으면 좋겠다는 생각을 해본다.
-이럴때, Python에서는 eval() 혹은 exec() 이라는 내장함수를 이용해볼 수 있는데,
-쓰다보면 expression과 statement 라는 용어가 등장한다.
-생각해보니, expression 이라는 단어도, statement라는 단어도, 둘 다 한 번쯤은
-어디선가 들어본 용어인데, 갑자기 두 개의 차이가 있다고 하니 당혹스러울 수 밖에 없다.</description>
     </item>
     
     <item>
@@ -829,18 +419,6 @@ if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } 
     
     <item>
       <title># 5. JSP 학습기록 - Array 와 Application, Session, Cookie</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-22-jsp_learning_05/</link>
-      <pubDate>Tue, 22 Sep 2020 17:26:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-22-jsp_learning_05/</guid>
-      <description>배열 다루기. : 원래 이번 편에서 곧바로 Application / Session / Cookie 에 대해서 다루려고 했는데,
-생각해보니 데이터를 배열로 주고 받는 법에 대해서 다루지 않아서, 잠깐 짚고 가자.
-지난 편에서 다뤘던 firstServlet.html은 다음과 같다.
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;  &amp;lt;title&amp;gt;Title&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt;  &amp;lt;form action=&amp;#34;firstServlet&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your title &amp;lt;/label&amp;gt;  &amp;lt;input name = &amp;#34;title&amp;#34; type=&amp;#34;text&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your title &amp;lt;/label&amp;gt;  &amp;lt;input name = &amp;#34;title&amp;#34; type=&amp;#34;text&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your content &amp;lt;/label&amp;gt;  &amp;lt;textarea name=&amp;#34;content&amp;#34;&amp;gt;&amp;lt;/textarea&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;click here to submit&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 여기서, 대충 title을 두 개를 넣고 싶다고 해보자.</description>
-    </item>
-    
-    <item>
-      <title># 5. JSP 학습기록 - Array 와 Application, Session, Cookie</title>
       <link>http://cjlee38.github.io/post/tech/jsp/2020-09-22-jsp_learning_05/</link>
       <pubDate>Tue, 22 Sep 2020 17:26:00 +0000</pubDate>
       
@@ -849,22 +427,6 @@ if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } 
 생각해보니 데이터를 배열로 주고 받는 법에 대해서 다루지 않아서, 잠깐 짚고 가자.
 지난 편에서 다뤘던 firstServlet.html은 다음과 같다.
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;  &amp;lt;title&amp;gt;Title&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt;  &amp;lt;form action=&amp;#34;firstServlet&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your title &amp;lt;/label&amp;gt;  &amp;lt;input name = &amp;#34;title&amp;#34; type=&amp;#34;text&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your title &amp;lt;/label&amp;gt;  &amp;lt;input name = &amp;#34;title&amp;#34; type=&amp;#34;text&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your content &amp;lt;/label&amp;gt;  &amp;lt;textarea name=&amp;#34;content&amp;#34;&amp;gt;&amp;lt;/textarea&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;click here to submit&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 여기서, 대충 title을 두 개를 넣고 싶다고 해보자.</description>
-    </item>
-    
-    <item>
-      <title># 마음으로 이해하는 자료구조 : Queue ( feat. C )</title>
-      <link>http://cjlee38.github.io/backup-copy/algorithm/data_structure/2020-09-21-what_is_queue/</link>
-      <pubDate>Mon, 21 Sep 2020 19:38:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/algorithm/data_structure/2020-09-21-what_is_queue/</guid>
-      <description>0. 들어가며 : Stack과 Queue는 아주 기본 중의 기본인 자료구조이다.
-아주 간단하므로, 사실 Stack과 Queue가 무엇인지에 대해서 이야기할 부분은 많지 않다.
-따라서, 이번 포스팅은 코드 구현 위주로 작성할 것이다.
-쓰다보니, 생각보다 포스팅이 또 길어져서, Stack과 Queue를 나누어서 작성했다.
-지난 Stack편 에 이어집니다.
-1. 이론 편 : Queue는, 편의점의 냉장고를 생각하면 된다.
-편의점 알바를 해보면, 우리가 보고 있는 냉장고 뒤편은 냉장창고라는 것을 알 수 있다.
-창고 뒤편에서, 냉장고에 음료수를 넣으면, 반대편에선 가장 먼저 넣은 것을 우선으로 꺼낼 수 있다.</description>
     </item>
     
     <item>
@@ -885,21 +447,6 @@ if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } 
     
     <item>
       <title># 마음으로 이해하는 자료구조 : Stack ( feat. C )</title>
-      <link>http://cjlee38.github.io/backup-copy/algorithm/data_structure/2020-09-21-what_is_stack/</link>
-      <pubDate>Mon, 21 Sep 2020 18:13:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/algorithm/data_structure/2020-09-21-what_is_stack/</guid>
-      <description>0. 들어가며 : Stack과 Queue는 아주 기본 중의 기본인 자료구조이다.
-아주 간단하므로, 사실 Stack과 Queue가 무엇인지에 대해서 이야기할 부분은 많지 않다.
-따라서, 이번 포스팅은 코드 구현 위주로 작성할 것이다.
-쓰다보니, 생각보다 포스팅이 또 길어져서, Stack과 Queue를 나누어서 작성했다.
-1. 이론 편 : Stack 이란 말 그대로, &amp;ldquo;쌓는 것&amp;quot;이다. 접시쌓기를 생각해보면 된다.
-접시를 쌓을 때에는, 처음 혹은 중간에 끼워 넣을 수 없으며, 가장 상위에만 쌓아야 한다.
-반대로, 꺼낼 때에도, 처음 혹은 중간에서 꺼낼 수 없으며, 가장 상위에서만 꺼내야 한다.</description>
-    </item>
-    
-    <item>
-      <title># 마음으로 이해하는 자료구조 : Stack ( feat. C )</title>
       <link>http://cjlee38.github.io/post/algorithm/data_structure/2020-09-21-what_is_stack/</link>
       <pubDate>Mon, 21 Sep 2020 18:13:00 +0000</pubDate>
       
@@ -915,17 +462,6 @@ if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } 
     
     <item>
       <title># 4. JSP 학습기록 - POST handling과 Servlet Filter</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-21-jsp_learning_04/</link>
-      <pubDate>Mon, 21 Sep 2020 15:22:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-21-jsp_learning_04/</guid>
-      <description>POST 다루기 : 지난 3편에 이어서, POST를 다뤄보자.
-이를 위해, 지난 편에 작성했던 html 코드를 조금 더 업그레이드 시켜보자.
-&amp;lt;div&amp;gt;  &amp;lt;form action=&amp;#34;firstServlet&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your title &amp;lt;/label&amp;gt;  &amp;lt;input name = &amp;#34;title&amp;#34; type=&amp;#34;text&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your content &amp;lt;/label&amp;gt;  &amp;lt;textarea name=&amp;#34;content&amp;#34;&amp;gt;&amp;lt;/textarea&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;click here to submit&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; 기존과 달라진 점이라면</description>
-    </item>
-    
-    <item>
-      <title># 4. JSP 학습기록 - POST handling과 Servlet Filter</title>
       <link>http://cjlee38.github.io/post/tech/jsp/2020-09-21-jsp_learning_04/</link>
       <pubDate>Mon, 21 Sep 2020 15:22:00 +0000</pubDate>
       
@@ -933,18 +469,6 @@ if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } 
       <description>POST 다루기 : 지난 3편에 이어서, POST를 다뤄보자.
 이를 위해, 지난 편에 작성했던 html 코드를 조금 더 업그레이드 시켜보자.
 &amp;lt;div&amp;gt;  &amp;lt;form action=&amp;#34;firstServlet&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your title &amp;lt;/label&amp;gt;  &amp;lt;input name = &amp;#34;title&amp;#34; type=&amp;#34;text&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your content &amp;lt;/label&amp;gt;  &amp;lt;textarea name=&amp;#34;content&amp;#34;&amp;gt;&amp;lt;/textarea&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;click here to submit&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; 기존과 달라진 점이라면</description>
-    </item>
-    
-    <item>
-      <title># 3. JSP 학습기록 - Servlet을 이용한 입출력</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-19-jsp_learning_03/</link>
-      <pubDate>Sat, 19 Sep 2020 15:22:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-19-jsp_learning_03/</guid>
-      <description>Output : 지난 2편 에서 작성했던 코드는 다음과 같다.
-import javax.servlet.*; import javax.servlet.http.*; import java.io.*;  public class myServlet extends HttpServlet {  public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {  System.out.println(&amp;#34;This is myServlet.&amp;#34;);  } }   Note. 다른 작업을 하기 전에, 여기 를 참고해서,
-IDE의 도움을 받자. 하나하나 직접 작성하는 것도 꽤 수고스러운 일이다.
-학생의 경우 인증을 통해 무료로 Ultimate 버전을 구할 수 있으나, 불가능 할 경우 Eclipse를 사용하면 된다.</description>
     </item>
     
     <item>
@@ -957,20 +481,6 @@ IDE의 도움을 받자. 하나하나 직접 작성하는 것도 꽤 수고스�
 import javax.servlet.*; import javax.servlet.http.*; import java.io.*;  public class myServlet extends HttpServlet {  public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {  System.out.println(&amp;#34;This is myServlet.&amp;#34;);  } }   Note. 다른 작업을 하기 전에, 여기 를 참고해서,
 IDE의 도움을 받자. 하나하나 직접 작성하는 것도 꽤 수고스러운 일이다.
 학생의 경우 인증을 통해 무료로 Ultimate 버전을 구할 수 있으나, 불가능 할 경우 Eclipse를 사용하면 된다.</description>
-    </item>
-    
-    <item>
-      <title># 1. JSP 학습기록 - 기본 개념과 Tomcat 실행해보기.</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-17-jsp_learning_01/</link>
-      <pubDate>Thu, 17 Sep 2020 11:48:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-17-jsp_learning_01/</guid>
-      <description>1. 기본 개념 : Web server, Web application server, Servlet, Servlet Container&amp;hellip;
-처음 봤을 때에는, 각각이 무엇을 의미하는지, 무슨 차이가 있는지에 대해서 알지 못했다.
-이에 대해서 기본 개념을 정립하면 다음과 같다.
-1) Web server, Web application server(WAS) {: .alignCenter}
- : 우리가 html 파일을 만들고, 이를 더블클릭해서 열면, (대체로) 브라우저가 이 화면을 보여준다.
-이 때에는 Client와 Server의 개념이 딱히 없다. html이라는 양식을 통해 구성된, 어떤 화면을 Browser가 해석해서 우리에게 보여주는 것이다.</description>
     </item>
     
     <item>
@@ -989,20 +499,6 @@ IDE의 도움을 받자. 하나하나 직접 작성하는 것도 꽤 수고스�
     
     <item>
       <title># 2. JSP 학습기록 - Tomcat 구조 파악부터 Servlet 만들기까지</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-17-jsp_learning_02/</link>
-      <pubDate>Thu, 17 Sep 2020 11:48:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-17-jsp_learning_02/</guid>
-      <description>Directory : Tomcat을 직접 사용하면서, 우리가 쳐다봐야 할 부분은 크게 세 곳으로 나뉜다.
- bin conf webapps  bin 폴더는, tomcat을 실행하기 위한 여러 batch file 들이 저장된 곳이다.
-startup.bat을 통해 tomcat을 실행시킬 수 있다.
-conf 폴더는, configuration의 약자로, 말 그대로 어떤 설정하는 파일들이 구성된 곳이다.
-webapps 폴더는, 우리가 페이지를 구성하기 위한 파일들을 모아놓는 곳이다. 주로 이곳을 다루게 된다.
-webapps : 먼저, webapps 폴더, 그리고 그 안에 있는 ROOT 폴더에 들어가보자.</description>
-    </item>
-    
-    <item>
-      <title># 2. JSP 학습기록 - Tomcat 구조 파악부터 Servlet 만들기까지</title>
       <link>http://cjlee38.github.io/post/tech/jsp/2020-09-17-jsp_learning_02/</link>
       <pubDate>Thu, 17 Sep 2020 11:48:00 +0000</pubDate>
       
@@ -1013,19 +509,6 @@ startup.bat을 통해 tomcat을 실행시킬 수 있다.
 conf 폴더는, configuration의 약자로, 말 그대로 어떤 설정하는 파일들이 구성된 곳이다.
 webapps 폴더는, 우리가 페이지를 구성하기 위한 파일들을 모아놓는 곳이다. 주로 이곳을 다루게 된다.
 webapps : 먼저, webapps 폴더, 그리고 그 안에 있는 ROOT 폴더에 들어가보자.</description>
-    </item>
-    
-    <item>
-      <title># Python Asterisk(*) 다루기</title>
-      <link>http://cjlee38.github.io/backup-copy/language/python/2020-09-17-asterisk_of_python/</link>
-      <pubDate>Thu, 17 Sep 2020 09:54:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/python/2020-09-17-asterisk_of_python/</guid>
-      <description>들어가며 : Python을 다루다 보면, 어떤 함수에서 여러개의 인자를 받고 싶을때가 있다.
-이럴 때는 보통, list로 묶어서 보내는 경우가 대부분이다.
-그러나, Python을 계속해서 쓰다가 보면, 일종의 debugging을 위해 print()함수를 쓸 때가 종종 있는데,
-print() 함수에 다음과 같이 여러개의 인자를 넘겨줄 때에는 list로 묶어서 보내지 않는 것을 볼 수 있다.
-print(&amp;#34;안녕하세요, 제 이름은&amp;#34;, myName, &amp;#34;입니다.&amp;#34;) # &amp;#34;안녕하세요, 제 이름은 홍길동 입니다&amp;#34; 위 코드는, &amp;ldquo;안녕하세요, 제 이름은&amp;rdquo; 이라는 문자열, myName이라는 변수, 그리고 &amp;ldquo;입니다.</description>
     </item>
     
     <item>
@@ -1043,22 +526,6 @@ print(&amp;#34;안녕하세요, 제 이름은&amp;#34;, myName, &amp;#34;입니�
     
     <item>
       <title># 0. JSP 학습기록 - Intellij JSP 프로젝트 생성</title>
-      <link>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-11-jsp_project_with_intellij/</link>
-      <pubDate>Fri, 11 Sep 2020 16:45:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/tech/jsp/2020-09-11-jsp_project_with_intellij/</guid>
-      <description>Prerequisite  Intellij Ultimate JDK Tomcat Environment Variable Settings  Create :
-  Welcome 화면에서, 새 프로젝트(New Project) 만든다.
-  Java - Project SDK에서 JDK를 설정하고,
-  Additional Libraries and Frameworks에서 JAVE EE - Web Application - WebService를 체크하고 Next 버튼을 누른다..?
-  {: .alignCenter}
-왠지 모르겠는데 나는 없다.
-공식 문서에도 이렇게 하라고 하는데, 나는 없다.
-각고의 구글링 끝에, 나와 비슷한 문제가 있던 질문 글을 발견</description>
-    </item>
-    
-    <item>
-      <title># 0. JSP 학습기록 - Intellij JSP 프로젝트 생성</title>
       <link>http://cjlee38.github.io/post/tech/jsp/2020-09-11-jsp_project_with_intellij/</link>
       <pubDate>Fri, 11 Sep 2020 16:45:00 +0000</pubDate>
       
@@ -1071,23 +538,6 @@ print(&amp;#34;안녕하세요, 제 이름은&amp;#34;, myName, &amp;#34;입니�
 왠지 모르겠는데 나는 없다.
 공식 문서에도 이렇게 하라고 하는데, 나는 없다.
 각고의 구글링 끝에, 나와 비슷한 문제가 있던 질문 글을 발견</description>
-    </item>
-    
-    <item>
-      <title># (Java) HashMap 으로의 여행</title>
-      <link>http://cjlee38.github.io/backup-copy/language/java/2020-09-10-journey_to_java_hashmap/</link>
-      <pubDate>Thu, 10 Sep 2020 14:54:36 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/java/2020-09-10-journey_to_java_hashmap/</guid>
-      <description>0. 들어가며 : 나는 프로그래밍에서 Naming이 정말 Critical한 중요성을 갖는다고 생각한다.
-새로운 무언가에 대해서 배우고 나서, 그 이름을 다시 떠올려보면,
-왜 이걸 만든 사람들이 이 이름을 지었는지에 대해서 가닥이 잡힌다.
-Python에서의 dictionary, 그리고 Java에서의 HashMap은 Key-Value의 구조를 갖는
-데이터를 저장하는 가장 대표적인 클래스다.
-Python의 dictionary 라는 이름을 보면,
-&amp;ldquo;음, 사전이니까, 마치 단어사전 혹은 백과사전처럼, 어떤 이름과 그 안에 내용물을 갖춘 무언가겠군!&amp;rdquo;
-이라고 유추해 볼 수 있지만,
-Java의 HashMap을 보면 잘 이해가 되지 않는다.</description>
     </item>
     
     <item>
@@ -1109,21 +559,6 @@ Java의 HashMap을 보면 잘 이해가 되지 않는다.</description>
     
     <item>
       <title># 마음으로 이해하는 자료구조 : LinkedList ( feat. C )</title>
-      <link>http://cjlee38.github.io/backup-copy/algorithm/data_structure/2020-09-10-what_is_linked_list/</link>
-      <pubDate>Thu, 10 Sep 2020 01:51:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/algorithm/data_structure/2020-09-10-what_is_linked_list/</guid>
-      <description>0. 들어가며 : 개인적으로, C로 코딩을 시작했을 때 마주하는 가장 첫 번째 관문은 포인터라고 생각한다.
-변수에 값을 담는다는 것은 알겠는데(그마저도 자유자재로 다루기가 어려웠지만),
-주소값을 가리킨다는 말은, 번지 수라는 말을 붙여도 쉽게 와닿지는 않는 개념이다.
-두 번째로 마주하는 관문은, 자료구조다.
-기존에 변수, 배열, 구조체 등등이 충분히 모든 역할을 해줄 수 있을 것 같은데,
-자료구조가 왜 필요한지, 무엇을 도와줄 수 있는지에 대해서 알기가 어렵다.
-물론, 엄청난 과제와 학습량은 머릿속에 갓 넣은 지식을 강제로 손가락에 주입시켜준다.</description>
-    </item>
-    
-    <item>
-      <title># 마음으로 이해하는 자료구조 : LinkedList ( feat. C )</title>
       <link>http://cjlee38.github.io/post/algorithm/data_structure/2020-09-10-what_is_linked_list/</link>
       <pubDate>Thu, 10 Sep 2020 01:51:00 +0000</pubDate>
       
@@ -1139,37 +574,12 @@ Java의 HashMap을 보면 잘 이해가 되지 않는다.</description>
     
     <item>
       <title># 왜 나는 데이터 엔지니어를 바라보는가</title>
-      <link>http://cjlee38.github.io/backup-copy/diary/2020-09-09-why_data_engineer/</link>
-      <pubDate>Wed, 09 Sep 2020 08:28:36 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/diary/2020-09-09-why_data_engineer/</guid>
-      <description>들어가며 : 휴학을 한 이후, 스스로의 진로에 대해서 심도 깊은 고민을 난생 처음으로 하게 되었다. 사실 4학년이 되기 이전에는, 마치 내가 고3이 되어서 그제서야 &amp;ldquo;어느 대학을 가고 싶은지, 가야 하는지, 갈 수 있는지&amp;rdquo; 를 고민하기 시작한 것과 맥락이 비슷하다. 잠깐, 지난 몇 년간을 회고해보자.
-고등학교 : 거짓말이 아니고, 나는 고등학교 2학년 때까지만 하더라도, 소위 말하는 &amp;ldquo;스카이, 서성한&amp;rdquo; 밑의 대학은 무엇이 있는지 조차 몰랐다. 그 밑의 대학은 관심 줄 가치도 없다, 뭐 이런 대단한 이야기가 아니라, 정말 말 그대로 대학이란 것 자체에 관심이 없었다.</description>
-    </item>
-    
-    <item>
-      <title># 왜 나는 데이터 엔지니어를 바라보는가</title>
       <link>http://cjlee38.github.io/post/diary/2020-09-09-why_data_engineer/</link>
       <pubDate>Wed, 09 Sep 2020 08:28:36 +0000</pubDate>
       
       <guid>http://cjlee38.github.io/post/diary/2020-09-09-why_data_engineer/</guid>
       <description>들어가며 : 휴학을 한 이후, 스스로의 진로에 대해서 심도 깊은 고민을 난생 처음으로 하게 되었다. 사실 4학년이 되기 이전에는, 마치 내가 고3이 되어서 그제서야 &amp;ldquo;어느 대학을 가고 싶은지, 가야 하는지, 갈 수 있는지&amp;rdquo; 를 고민하기 시작한 것과 맥락이 비슷하다. 잠깐, 지난 몇 년간을 회고해보자.
 고등학교 : 거짓말이 아니고, 나는 고등학교 2학년 때까지만 하더라도, 소위 말하는 &amp;ldquo;스카이, 서성한&amp;rdquo; 밑의 대학은 무엇이 있는지 조차 몰랐다. 그 밑의 대학은 관심 줄 가치도 없다, 뭐 이런 대단한 이야기가 아니라, 정말 말 그대로 대학이란 것 자체에 관심이 없었다.</description>
-    </item>
-    
-    <item>
-      <title># Python list 다뤄보기 ( a.k.a. 잡기술 )</title>
-      <link>http://cjlee38.github.io/backup-copy/language/python/2020-09-05-play_with_python_list/</link>
-      <pubDate>Sat, 05 Sep 2020 00:35:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/python/2020-09-05-play_with_python_list/</guid>
-      <description>0. 서론 : 파이썬 사용자에게, 파이썬에서 가장 자주 사용하는 자료형이 무엇이냐고 물어보면, 원시 타입(Primtive type)을 제외하고는, list라고 답할 것이다.
-  Note. 사실, 파이썬에서는 원시타입이 존재하지 않는다. 우리가 사용하는 int, float .. 등등은 사실 객체이다. 이는 당장 python에서 help(int) 라고만 입력해보면, 다음과 같이 나타난다.
-  Help on class int in module builtins:
-  class int(object)
-| int([x]) -&amp;gt; integer
-| int(x, base=10) -&amp;gt; integer
-| | Convert a number or string to an integer, or return 0 if no arguments</description>
     </item>
     
     <item>
@@ -1189,18 +599,6 @@ Java의 HashMap을 보면 잘 이해가 되지 않는다.</description>
     
     <item>
       <title># Java로 구현하는 연관규칙분석(Association Rule) ( feat. Apriori Algorithm )</title>
-      <link>http://cjlee38.github.io/backup-copy/data/data_mining/2020-08-30-association_rule_with_java/</link>
-      <pubDate>Sun, 30 Aug 2020 22:31:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/data/data_mining/2020-08-30-association_rule_with_java/</guid>
-      <description>0. 들어가며 : 2020년 1학기에 수강했던 종합설계 과목에서, 우리 조의 주제는 &amp;ldquo;시간표 추천 시스템&amp;rdquo; 이었다.
-본인이 원하는 공강시간, 학점 범위, 그리고 내가 미리 골라놓은 듣고자 하는 수업을 선택하면, 이전에 내가 수강했던 과목들을 기반으로 &amp;ldquo;남는 시간에, 이걸 듣는건 어때?&amp;rdquo; 라는 개념으로 시간표를 구성해서, 제공해주는 시스템을 제작하고자 하였다.
-그 과정에서, &amp;ldquo;비즈니스프로그래밍2&amp;rdquo; 수업에서 배웠던 &amp;ldquo;연관규칙&amp;quot;을 활용할 수 있을 것이라 판단했고, 이에 대해서 공부하기 시작하였다.
-1. 연관규칙이란? : 흔히, 장바구니 분석이라고도 한다. 경영학을 전공하고 있는 사람이라면, 마케팅 수업에서 &amp;ldquo;맥주를 사는 사람은 대개 기저귀도 같이 산다&amp;rdquo;(혹은 반대로, 기저귀를 사는 사람은 대개 맥주도 사더라) 라는 이야기를 들어본 적이 있을 것이다.</description>
-    </item>
-    
-    <item>
-      <title># Java로 구현하는 연관규칙분석(Association Rule) ( feat. Apriori Algorithm )</title>
       <link>http://cjlee38.github.io/post/data/data_mining/2020-08-30-association_rule_with_java/</link>
       <pubDate>Sun, 30 Aug 2020 22:31:00 +0000</pubDate>
       
@@ -1209,17 +607,6 @@ Java의 HashMap을 보면 잘 이해가 되지 않는다.</description>
 본인이 원하는 공강시간, 학점 범위, 그리고 내가 미리 골라놓은 듣고자 하는 수업을 선택하면, 이전에 내가 수강했던 과목들을 기반으로 &amp;ldquo;남는 시간에, 이걸 듣는건 어때?&amp;rdquo; 라는 개념으로 시간표를 구성해서, 제공해주는 시스템을 제작하고자 하였다.
 그 과정에서, &amp;ldquo;비즈니스프로그래밍2&amp;rdquo; 수업에서 배웠던 &amp;ldquo;연관규칙&amp;quot;을 활용할 수 있을 것이라 판단했고, 이에 대해서 공부하기 시작하였다.
 1. 연관규칙이란? : 흔히, 장바구니 분석이라고도 한다. 경영학을 전공하고 있는 사람이라면, 마케팅 수업에서 &amp;ldquo;맥주를 사는 사람은 대개 기저귀도 같이 산다&amp;rdquo;(혹은 반대로, 기저귀를 사는 사람은 대개 맥주도 사더라) 라는 이야기를 들어본 적이 있을 것이다.</description>
-    </item>
-    
-    <item>
-      <title># 주피터 노트북 서버 열기</title>
-      <link>http://cjlee38.github.io/backup-copy/data/data_mining/2020-08-27-how_to_run_jupyter_server/</link>
-      <pubDate>Thu, 27 Aug 2020 05:56:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/data/data_mining/2020-08-27-how_to_run_jupyter_server/</guid>
-      <description>#0. 서버의 필요성 저번 방학 때, 공모전을 진행하면서 여러가지 난관에 부딪혔다. 지금도 아직 많이 부족한 나부랭이이지만, 그때 당시에는 서로가 갖고 있는 노트북으로 작업을 진행하기에는, 컴퓨팅 파워도, 시간도 부족했다. 그래서 서버의 필요성을 느꼈다. 결국에는 아마존에서 EC2를 하나 빌려다가 쓰긴 했지만, 그 전에 &amp;ldquo;이거부터 한번 해보고, 안되면 아마존을 쓰자&amp;rdquo; 라는 생각으로 개인 데스크탑을 서버로 열었다. #1. 본론으로 여러가지 이야기는 제쳐두고, 그래서 어떻게 하느냐..
-일단 아나콘다 프롬프트를 열어서
-$ jupyter notebook --generate-config 로 configuration 파일을 생성한다.</description>
     </item>
     
     <item>
@@ -1235,35 +622,12 @@ $ jupyter notebook --generate-config 로 configuration 파일을 생성한다.</
     
     <item>
       <title># Python string prefix에 관하여</title>
-      <link>http://cjlee38.github.io/backup-copy/language/python/2020-08-27-python_prefix/</link>
-      <pubDate>Thu, 27 Aug 2020 01:47:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/language/python/2020-08-27-python_prefix/</guid>
-      <description>0. 서론 : 데이터 수집 모듈을 작성했던 인턴쉽 과정 동안, 파이썬을 많이 애용했다. 초기 작성은 그럭저럭 잘 되가나 싶었는데, 가장 해결하기 힘들었던 문제 두가지를 꼽자면, 비동기와 인코딩이 되겠다.
-비동기란 개념을 이번에 처음 알게되었는데, 각고의 구글링과, 테스트를 통해 어찌어찌 기워넣는 수준으로 비동기를 적용하였다. 여담이지만 체감상, 구글링해서 나오는 자료의 대부분은 자바스크립트에서 개념을 갖고와 설명해줬고, 나머지 대부분은 코드만 보여주고 &amp;ldquo;이게 비동기 요청입니다&amp;rdquo; 하는데, 제각기 사용법도 다르고, 실제 몇번 테스트를 해봤을 때도 성능이 다른 것을 확인할 수 있었다.</description>
-    </item>
-    
-    <item>
-      <title># Python string prefix에 관하여</title>
       <link>http://cjlee38.github.io/post/language/python/2020-08-27-python_prefix/</link>
       <pubDate>Thu, 27 Aug 2020 01:47:00 +0000</pubDate>
       
       <guid>http://cjlee38.github.io/post/language/python/2020-08-27-python_prefix/</guid>
       <description>0. 서론 : 데이터 수집 모듈을 작성했던 인턴쉽 과정 동안, 파이썬을 많이 애용했다. 초기 작성은 그럭저럭 잘 되가나 싶었는데, 가장 해결하기 힘들었던 문제 두가지를 꼽자면, 비동기와 인코딩이 되겠다.
 비동기란 개념을 이번에 처음 알게되었는데, 각고의 구글링과, 테스트를 통해 어찌어찌 기워넣는 수준으로 비동기를 적용하였다. 여담이지만 체감상, 구글링해서 나오는 자료의 대부분은 자바스크립트에서 개념을 갖고와 설명해줬고, 나머지 대부분은 코드만 보여주고 &amp;ldquo;이게 비동기 요청입니다&amp;rdquo; 하는데, 제각기 사용법도 다르고, 실제 몇번 테스트를 해봤을 때도 성능이 다른 것을 확인할 수 있었다.</description>
-    </item>
-    
-    <item>
-      <title># 다시 우분투로, 그리고 태블릿을 듀얼 모니터로 활용하기</title>
-      <link>http://cjlee38.github.io/backup-copy/linux/2020-03-20-tablet_as_dual_monitor/</link>
-      <pubDate>Fri, 20 Mar 2020 05:37:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/linux/2020-03-20-tablet_as_dual_monitor/</guid>
-      <description>1. 왜 다시 우분투로? 리눅스를 지원한다는 프로그램들도, 대부분 데비안이나 레드햇계열의 확장자만 제공해주고, 아치 리눅스는 외면받는 현상을 정말 많이 목격했다. 예를들면 팀뷰어라던가.. 슬랙이라던가.. 덤으로 압도적으로 차이나는 구글링 결과 숫자도.
-기어코 구글링을 할때에도
-for/on manjaro로 검색하던 것을 for/on linux/manjaro로 검색하는 꼴이 되버리니 이게 뭐하는 짓인가 싶더라.
-결국 다시 우분투로 갈아타니, 상대적으로 이렇게 편할수가 없더라. deb확장자를 볼때에는 눈물이 다 나더라.
-2. 태블릿을 듀얼 모니터로 활용 - 실패담 해야 할 공부는 안하고, 공부를 할 환경만 이것저것 세팅하는데 재미를 붙이다보니, 자주 활용하지 않던 예전 태블릿</description>
     </item>
     
     <item>
@@ -1281,17 +645,6 @@ for/on manjaro로 검색하던 것을 for/on linux/manjaro로 검색하는 꼴�
     
     <item>
       <title># 만자로 기본 설정</title>
-      <link>http://cjlee38.github.io/backup-copy/linux/2020-03-09-manjaro_linux_settings/</link>
-      <pubDate>Mon, 09 Mar 2020 21:24:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/linux/2020-03-09-manjaro_linux_settings/</guid>
-      <description>1. 한글 설정 리눅스에는 여러가지 한글 입력기가 있지만, 대체로 많이 알려진 것은 ibus와 uim인듯 하다. 우분투를 처음 깔았었을 당시만 하더라도 뭣도 모르고 두개를 동시에 다 깔았고, ibus로 한글입력을 했었지만, 이번에 다시 한번 찾아보니 대체로 uim이 오류가 적다고 해서, uim으로 설치했다.
-{: .alignCenter}
-$ sudo pacman -S uim 명령어를 통해서 uim을 설치한 뒤에, vim으로 .xprofile을 다음과 같이 수정하였다. ( xprofile을 처음 열어보는 거라면, 아무 것도 없어서 &amp;lsquo;내가 잘못열은건가?&amp;rsquo; 할 수도 있다. 사실, &amp;ldquo;수정&amp;quot;이라는 단어가 아니라 &amp;ldquo;생성&amp;quot;으로 봐도 무방하다.</description>
-    </item>
-    
-    <item>
-      <title># 만자로 기본 설정</title>
       <link>http://cjlee38.github.io/post/linux/2020-03-09-manjaro_linux_settings/</link>
       <pubDate>Mon, 09 Mar 2020 21:24:00 +0000</pubDate>
       
@@ -1303,31 +656,12 @@ $ sudo pacman -S uim 명령어를 통해서 uim을 설치한 뒤에, vim으로 .
     
     <item>
       <title># 만자로 리눅스 설치</title>
-      <link>http://cjlee38.github.io/backup-copy/linux/2020-02-23-how_to_install_manjaro_inux/</link>
-      <pubDate>Sun, 23 Feb 2020 03:54:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/linux/2020-02-23-how_to_install_manjaro_inux/</guid>
-      <description>0. 계기 여러가지 공부를 하면서 간간히 접했던 &amp;lsquo;리눅스&amp;rsquo;란 단어에 적응하기 시작할 무렵, 김정국 교수님의 운영체제 수업을 들으면서 처음으로 페도라를 깔았었다. VirtualBox 위에 설치했던 페도라에 묘하게 끌리기 시작하고, 또 답답한 속도에 &amp;lsquo;내 운영체제에 직업 리눅스를 깔면 어떨까?&amp;rsquo; 하는 생각이 들었다.
-처음 다루는 리눅스인지라, 여러가지 어려움과 난항이 많았고, 구글링을 할때마다 등장하던 &amp;lsquo;우분투&amp;rsquo; 라는 이름에 &amp;lsquo;우분투가 더욱 사용자가 많은 리눅스 버전이구나&amp;rsquo; 싶어 며칠내에 우분투로 갈아탔다. 그러나 한글부터 시작해서 이것저것 세팅해줘야할 부분이 많았고, 윈도우와의 호환성에 여러 어려움을 겪어 필요할 때 이외에는 사용하지 않았다.</description>
-    </item>
-    
-    <item>
-      <title># 만자로 리눅스 설치</title>
       <link>http://cjlee38.github.io/post/linux/2020-02-23-how_to_install_manjaro_inux/</link>
       <pubDate>Sun, 23 Feb 2020 03:54:00 +0000</pubDate>
       
       <guid>http://cjlee38.github.io/post/linux/2020-02-23-how_to_install_manjaro_inux/</guid>
       <description>0. 계기 여러가지 공부를 하면서 간간히 접했던 &amp;lsquo;리눅스&amp;rsquo;란 단어에 적응하기 시작할 무렵, 김정국 교수님의 운영체제 수업을 들으면서 처음으로 페도라를 깔았었다. VirtualBox 위에 설치했던 페도라에 묘하게 끌리기 시작하고, 또 답답한 속도에 &amp;lsquo;내 운영체제에 직업 리눅스를 깔면 어떨까?&amp;rsquo; 하는 생각이 들었다.
 처음 다루는 리눅스인지라, 여러가지 어려움과 난항이 많았고, 구글링을 할때마다 등장하던 &amp;lsquo;우분투&amp;rsquo; 라는 이름에 &amp;lsquo;우분투가 더욱 사용자가 많은 리눅스 버전이구나&amp;rsquo; 싶어 며칠내에 우분투로 갈아탔다. 그러나 한글부터 시작해서 이것저것 세팅해줘야할 부분이 많았고, 윈도우와의 호환성에 여러 어려움을 겪어 필요할 때 이외에는 사용하지 않았다.</description>
-    </item>
-    
-    <item>
-      <title># draft </title>
-      <link>http://cjlee38.github.io/backup-copy/drafts/2020-01-01-test/</link>
-      <pubDate>Wed, 01 Jan 2020 09:58:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/backup-copy/drafts/2020-01-01-test/</guid>
-      <description>this file is just draft, shoudln&amp;rsquo;t be exposed on github blog..</description>
     </item>
     
     <item>
