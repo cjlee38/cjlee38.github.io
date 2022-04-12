@@ -5,7 +5,7 @@
 그런데, 구선생님의 말씀에 따르면, 그렇지는 않은 것 같다.
 1. Call in Java : Java 에서는 언제나 Call by Value 라고 한다.
 약 12년 된 스택오버플로우의 한 질문글에 달린 답변은 다음과 같다.
-자바는 예외 없이, 항상 pass by value 입니다....</p></section><footer class=entry-footer><span title="2020-10-21 20:26:00 +0000 UTC">October 21, 2020</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;cjlee38</footer><a class=entry-link aria-label="post link to # (Java) Wrapper Class는 Call by Value 일까?" href=http://cjlee38.github.io/backup/language/java/2020-10-21-java_wrapper_class/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2># (Java) Wrapper Class는 Call by Value 일까?</h2></header><section class=entry-content><p>0. 들어가며 : Java 는 Call by Value일까, Call by Reference 일까?
+자바는 예외 없이, 항상 pass by value 입니다....</p></section><footer class=entry-footer><span title="2020-10-21 20:26:00 +0000 UTC">October 21, 2020</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;cjlee38</footer><a class=entry-link aria-label="post link to # (Java) Wrapper Class는 Call by Value 일까?" href=http://cjlee38.github.io/backup-copy/language/java/2020-10-21-java_wrapper_class/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2># (Java) Wrapper Class는 Call by Value 일까?</h2></header><section class=entry-content><p>0. 들어가며 : Java 는 Call by Value일까, Call by Reference 일까?
 지금까지는, 함수의 parameter로 primitive type을 넘겨줄 때에는 call by value,
 객체를 넘겨줄 때에는 call by reference로 알고 있었다.
 그런데, 구선생님의 말씀에 따르면, 그렇지는 않은 것 같다.
@@ -15,7 +15,7 @@
 **전체 반복문을 중단시키려면 어떻게 해야 할까?**에 대해서 고민해본 적이 있는가?
 아마 지금까지는 두가지 방법 중 하나를 사용했을 것 같다.
 A 방법
-boolean flag = false; for (int i = 0; i &lt; 10; i++) { for (int j = 0; j &lt; 10; j++) { if ( /*some_condition*/ ) { flag = true; break; } } if (flag) { break; } } B 방법...</p></section><footer class=entry-footer><span title="2020-10-18 14:22:00 +0000 UTC">October 18, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;cjlee38</footer><a class=entry-link aria-label="post link to # (Java) 효율적인 반복문 탈출을 위한 Label" href=http://cjlee38.github.io/backup/language/java/2020-10-18-label_statement/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2># (Java) 효율적인 반복문 탈출을 위한 Label</h2></header><section class=entry-content><p>0. 들어가며 : 혹시, 여러 개로 겹쳐있는 for문을 반복하다가, 어느 조건을 만족했을 때,
+boolean flag = false; for (int i = 0; i &lt; 10; i++) { for (int j = 0; j &lt; 10; j++) { if ( /*some_condition*/ ) { flag = true; break; } } if (flag) { break; } } B 방법...</p></section><footer class=entry-footer><span title="2020-10-18 14:22:00 +0000 UTC">October 18, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;cjlee38</footer><a class=entry-link aria-label="post link to # (Java) 효율적인 반복문 탈출을 위한 Label" href=http://cjlee38.github.io/backup-copy/language/java/2020-10-18-label_statement/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2># (Java) 효율적인 반복문 탈출을 위한 Label</h2></header><section class=entry-content><p>0. 들어가며 : 혹시, 여러 개로 겹쳐있는 for문을 반복하다가, 어느 조건을 만족했을 때,
 **전체 반복문을 중단시키려면 어떻게 해야 할까?**에 대해서 고민해본 적이 있는가?
 아마 지금까지는 두가지 방법 중 하나를 사용했을 것 같다.
 A 방법
@@ -24,7 +24,7 @@ boolean flag = false; for (int i = 0; i &lt; 10; i++) { for (int j = 0; j &lt; 1
 더욱이, 나는 ’@’ 표시에 대해서, Python의 Decorator로 먼저 이해했기 때문에 더욱 어려웠던 것 같다.
 Python의 Decorator는 마치 함수를 감싸는 함수의 역할과 같은 모습을 볼 수 있지만,
 Java의 Annotation은 그냥 Meta data 로 퉁쳐버리기 때문에,
-“정말 그게 다야? 뭐 더 없어? 아닐 것 같은데?” 싶은 생각이 계속 들어서 이해하기 어려웠다....</p></section><footer class=entry-footer><span title="2020-10-14 21:11:00 +0000 UTC">October 14, 2020</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;cjlee38</footer><a class=entry-link aria-label="post link to # (Java) Annotation에 대한 이해" href=http://cjlee38.github.io/backup/language/java/2020-10-14-java_annotation/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2># (Java) Annotation에 대한 이해</h2></header><section class=entry-content><p>0. 들어가며 : 스프링 공부를 하던 중, 자주 사용되는 Annotation에 대해서 살펴보았다.
+“정말 그게 다야? 뭐 더 없어? 아닐 것 같은데?” 싶은 생각이 계속 들어서 이해하기 어려웠다....</p></section><footer class=entry-footer><span title="2020-10-14 21:11:00 +0000 UTC">October 14, 2020</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;cjlee38</footer><a class=entry-link aria-label="post link to # (Java) Annotation에 대한 이해" href=http://cjlee38.github.io/backup-copy/language/java/2020-10-14-java_annotation/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2># (Java) Annotation에 대한 이해</h2></header><section class=entry-content><p>0. 들어가며 : 스프링 공부를 하던 중, 자주 사용되는 Annotation에 대해서 살펴보았다.
 다양한 글을 읽었는데도, Java의 Annotation은 뭐라 딱 찝어서 설명하기 어려운 것 같다.
 더욱이, 나는 ’@’ 표시에 대해서, Python의 Decorator로 먼저 이해했기 때문에 더욱 어려웠던 것 같다.
 Python의 Decorator는 마치 함수를 감싸는 함수의 역할과 같은 모습을 볼 수 있지만,
@@ -36,7 +36,7 @@ Java의 Annotation은 그냥 Meta data 로 퉁쳐버리기 때문에,
 그러나, 붕어빵을 만들기 위해 사용하는 반죽은 어떨까?
 붕어빵 장사를 하는 사람이, 아주 기가막힌 비율의 반죽을 만들어내서,
 (말은 안되지만) 이미 만들어진, 그리고 앞으로 만들 모든 붕어빵의 반죽을
-new 반죽으로 바꾸고 싶다고 해보자....</p></section><footer class=entry-footer><span title="2020-10-10 20:41:00 +0000 UTC">October 10, 2020</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;cjlee38</footer><a class=entry-link aria-label="post link to # (Java) Static Field, Method, 그리고 Block" href=http://cjlee38.github.io/backup/language/java/2020-10-10-java_static/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2># (Java) Static Field, Method, 그리고 Block</h2></header><section class=entry-content><p>Concept of Static : static을 한글로 해석하면 정적이라는 뜻인데, 크게 와닿지는 않는 해석이다.
+new 반죽으로 바꾸고 싶다고 해보자....</p></section><footer class=entry-footer><span title="2020-10-10 20:41:00 +0000 UTC">October 10, 2020</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;cjlee38</footer><a class=entry-link aria-label="post link to # (Java) Static Field, Method, 그리고 Block" href=http://cjlee38.github.io/backup-copy/language/java/2020-10-10-java_static/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2># (Java) Static Field, Method, 그리고 Block</h2></header><section class=entry-content><p>Concept of Static : static을 한글로 해석하면 정적이라는 뜻인데, 크게 와닿지는 않는 해석이다.
 흔히, 객체지향에서 자주 하는 비유 중 하나가 붕어빵 틀과 붕어빵이다.
 클래스는 붕어빵 틀로, 붕어빵을 찍어낼 수 있고, 인스턴스는 찍혀진 붕어빵이다.
 따라서, 찍힌 붕어빵은 서로 다른 객체로 인식해야한다.
@@ -51,7 +51,7 @@ Enumerate, 열거하다 라는 표현에, 걸맞다는 생각이 들기도 한�
 사용법 기본 형태 : 먼저, 가장 단순하게 기존의 C에서 쓰던 것처럼 enum을 활용할 수 있다.
 Size.java
 public enum Size { SMALL, MEDIUM, LARGE } Main.java
-public class Main { public static void main(String[] args) { System....</p></section><footer class=entry-footer><span title="2020-10-09 15:11:00 +0000 UTC">October 9, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;cjlee38</footer><a class=entry-link aria-label="post link to # (Java) [짧] Enum 뜯어보기" href=http://cjlee38.github.io/backup/language/java/2020-10-09-java_enum/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2># (Java) [짧] Enum 뜯어보기</h2></header><section class=entry-content><p>Enum in Java : C언어에서의 Enum은, 단순하게 연속된 숫자의 Magic Number를 표현하는 것을
+public class Main { public static void main(String[] args) { System....</p></section><footer class=entry-footer><span title="2020-10-09 15:11:00 +0000 UTC">October 9, 2020</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;cjlee38</footer><a class=entry-link aria-label="post link to # (Java) [짧] Enum 뜯어보기" href=http://cjlee38.github.io/backup-copy/language/java/2020-10-09-java_enum/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2># (Java) [짧] Enum 뜯어보기</h2></header><section class=entry-content><p>Enum in Java : C언어에서의 Enum은, 단순하게 연속된 숫자의 Magic Number를 표현하는 것을
 막기 위해 사용되어서, 그 내부의 값은 int 값을 갖고 있다.
 Enumerate, 열거하다 라는 표현에, 걸맞다는 생각이 들기도 한다.
 그러나, Java에서의 Enum은 클래스다.

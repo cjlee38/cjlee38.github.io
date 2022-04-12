@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 02 Jan 2021 22:17:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/tags/baekjoon/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># 백준[No.1676] - 팩토리얼 0의 개수 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2021-01-02-problem_solving_22/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2021-01-02-problem_solving_22/</link>
       <pubDate>Sat, 02 Jan 2021 22:17:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2021-01-02-problem_solving_22/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2021-01-02-problem_solving_22/</guid>
       <description>문제링크
 Problem Solve 접근 방법 : 문제를 푸는 원리만 이해하면, 구현은 쉽게 할수 있는 문제다.
 우선, 주어진 문제의 이해를 위해 factorial(10) 을 구해보면, 3628800 이라는 숫자가 나온다. 그리고 가장 뒤쪽에서부터 0의 개수를 세보면, 2개 라는 정답을 얻을 수 있다.
@@ -35,10 +35,10 @@ Problem Solve 접근 방법 : 문제를 푸는 원리만 이해하면, 구현은
     
     <item>
       <title># 백준[No.10227] - 삶의 질 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-11-06-problem_solving_18/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-11-06-problem_solving_18/</link>
       <pubDate>Fri, 06 Nov 2020 09:05:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-11-06-problem_solving_18/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-11-06-problem_solving_18/</guid>
       <description>문제 링크
 Problem Solve : 처음에는 한 5분 정도는 문제가 무슨 뜻인지 잘 이해가 되지 않았다.
 문제의 예제를 기준으로 설명하자면,
@@ -63,10 +63,10 @@ Problem Solve : 처음에는 한 5분 정도는 문제가 무슨 뜻인지 잘 �
     
     <item>
       <title># 백준[No.17144] - 미세먼지 안녕! ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-28-problem_solving_10/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-28-problem_solving_10/</link>
       <pubDate>Mon, 28 Sep 2020 21:00:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-28-problem_solving_10/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-28-problem_solving_10/</guid>
       <description>Problem {: .alignCenter}
 Answer : 문제가 좀 복잡한데, 어쨌든 시뮬레이션으로 풀었다.
 이 문제에서 신경써야 할 부분은, 보다시피 딱 두 가지다.
@@ -99,10 +99,10 @@ Answer : 문제가 좀 복잡한데, 어쨌든 시뮬레이션으로 풀었다.
     
     <item>
       <title># 백준[No.17140] - 이차원 배열과 연산 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-18-problem_solving_8/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-18-problem_solving_8/</link>
       <pubDate>Fri, 18 Sep 2020 20:12:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-18-problem_solving_8/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-18-problem_solving_8/</guid>
       <description>문제 링크
 Problem {: .alignCenter}
 Solve : 문제 자체를 푸는데도 꽤 걸렸지만, 쓸데 없는 부분에서 고생했던 문제라서, 살짝 열받아서 가져왔다.
@@ -127,10 +127,10 @@ Solve : 문제 자체를 푸는데도 꽤 걸렸지만, 쓸데 없는 부분에�
     
     <item>
       <title># 백준[No.1748] - 수 이어 쓰기 1 ( Python )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-27-problem_solving_3/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-27-problem_solving_3/</link>
       <pubDate>Thu, 27 Aug 2020 23:58:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-27-problem_solving_3/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-27-problem_solving_3/</guid>
       <description>문제 링크
 PROBLEM {: .alignCenter}
 SOLVE : 이번 문제는 이해 하기에 그리 어렵지 않으므로, 바로 해결 방법으로 진행한다.
@@ -151,10 +151,10 @@ SOLVE : 이번 문제는 이해 하기에 그리 어렵지 않으므로, 바로 
     
     <item>
       <title># 백준[No.2477] - 참외밭 ( python )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-27-problem_solving_2/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-27-problem_solving_2/</link>
       <pubDate>Thu, 27 Aug 2020 22:41:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-27-problem_solving_2/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-27-problem_solving_2/</guid>
       <description>문제 링크
 PROBLEM {: .alignCenter} {: .alignCenter}
 SOLVE ** 1) 주의사항** : 해당 문제에서 주의해야 할 요소는 다음과 같다.

@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 02 Jan 2021 22:17:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/problem-solving/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># 백준[No.1676] - 팩토리얼 0의 개수 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2021-01-02-problem_solving_22/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2021-01-02-problem_solving_22/</link>
       <pubDate>Sat, 02 Jan 2021 22:17:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2021-01-02-problem_solving_22/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2021-01-02-problem_solving_22/</guid>
       <description>문제링크
 Problem Solve 접근 방법 : 문제를 푸는 원리만 이해하면, 구현은 쉽게 할수 있는 문제다.
 우선, 주어진 문제의 이해를 위해 factorial(10) 을 구해보면, 3628800 이라는 숫자가 나온다. 그리고 가장 뒤쪽에서부터 0의 개수를 세보면, 2개 라는 정답을 얻을 수 있다.
@@ -35,10 +35,10 @@ Problem Solve 접근 방법 : 문제를 푸는 원리만 이해하면, 구현은
     
     <item>
       <title># 알고스팟 [ID:PICNIC] 소풍 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-12-10-problem_solving_21/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-12-10-problem_solving_21/</link>
       <pubDate>Thu, 10 Dec 2020 13:39:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-12-10-problem_solving_21/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-12-10-problem_solving_21/</guid>
       <description>문제 링크
 Problem 문제
 안드로메다 유치원 익스프레스반에서는 다음 주에 율동공원으로 소풍을 갑니다. 원석 선생님은 소풍 때 학생들을 두 명씩 짝을 지어 행동하게 하려고 합니다. 그런데 서로 친구가 아닌 학생들끼리 짝을 지어 주면 서로 싸우거나 같이 돌아다니지 않기 때문에, 항상 서로 친구인 학생들끼리만 짝을 지어 줘야 합니다.
@@ -59,10 +59,10 @@ Problem 문제
     
     <item>
       <title># 프로그래머스[Lv.4] - 숫자 블록 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-11-18-problem_solving_20/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-11-18-problem_solving_20/</link>
       <pubDate>Wed, 18 Nov 2020 12:43:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-11-18-problem_solving_20/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-11-18-problem_solving_20/</guid>
       <description>문제 링크
 Problem 문제 설명
 그렙시에는 0으로 된 도로에 숫자 블록을 설치하기로 하였습니다. 숫자 블록의 규칙은 다음과 같습니다.
@@ -85,10 +85,10 @@ Problem 문제 설명
     
     <item>
       <title># 프로그래머스[Lv.3] - 순위 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-11-18-problem_solving_19/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-11-18-problem_solving_19/</link>
       <pubDate>Wed, 18 Nov 2020 11:52:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-11-18-problem_solving_19/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-11-18-problem_solving_19/</guid>
       <description>문제 링크
 Problem 문제 설명
 n명의 권투선수가 권투 대회에 참여했고 각각 1번부터 n번까지 번호를 받았습니다. 권투 경기는 1대1 방식으로 진행이 되고, 만약 A 선수가 B 선수보다 실력이 좋다면 A 선수는 B 선수를 항상 이깁니다. 심판은 주어진 경기 결과를 가지고 선수들의 순위를 매기려 합니다. 하지만 몇몇 경기 결과를 분실하여 정확하게 순위를 매길 수 없습니다.
@@ -109,10 +109,10 @@ n명의 권투선수가 권투 대회에 참여했고 각각 1번부터 n번까�
     
     <item>
       <title># 백준[No.10227] - 삶의 질 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-11-06-problem_solving_18/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-11-06-problem_solving_18/</link>
       <pubDate>Fri, 06 Nov 2020 09:05:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-11-06-problem_solving_18/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-11-06-problem_solving_18/</guid>
       <description>문제 링크
 Problem Solve : 처음에는 한 5분 정도는 문제가 무슨 뜻인지 잘 이해가 되지 않았다.
 문제의 예제를 기준으로 설명하자면,
@@ -137,10 +137,10 @@ Problem Solve : 처음에는 한 5분 정도는 문제가 무슨 뜻인지 잘 �
     
     <item>
       <title># 프로그래머스[Lv.2] [1차] 뉴스 클러스터링 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-11-03-problem_solving_17/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-11-03-problem_solving_17/</link>
       <pubDate>Tue, 03 Nov 2020 10:52:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-11-03-problem_solving_17/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-11-03-problem_solving_17/</guid>
       <description>문제 링크
 Problem 문제 설명
 뉴스 클러스터링
@@ -167,10 +167,10 @@ Problem 문제 설명
     
     <item>
       <title># 프로그래머스[Lv.2] 더 맵게 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-10-30-problem_solving_16/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-10-30-problem_solving_16/</link>
       <pubDate>Fri, 30 Oct 2020 08:01:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-10-30-problem_solving_16/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-10-30-problem_solving_16/</guid>
       <description>문제 링크
 Problem. 문제 설명
 매운 것을 좋아하는 Leo는 모든 음식의 스코빌 지수를 K 이상으로 만들고 싶습니다. 모든 음식의 스코빌 지수를 K 이상으로 만들기 위해 Leo는 스코빌 지수가 가장 낮은 두 개의 음식을 아래와 같이 특별한 방법으로 섞어 새로운 음식을 만듭니다.
@@ -193,10 +193,10 @@ Leo는 모든 음식의 스코빌 지수가 K 이상이 될 때까지 반복하�
     
     <item>
       <title># 프로그래머스[Lv.2] 숫자의 표현 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-10-19-problem_solving_15/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-10-19-problem_solving_15/</link>
       <pubDate>Mon, 19 Oct 2020 19:45:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-10-19-problem_solving_15/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-10-19-problem_solving_15/</guid>
       <description>문제 링크
 Problem 문제 설명
 Finn은 요즘 수학공부에 빠져 있습니다. 수학 공부를 하던 Finn은 자연수 n을 연속한 자연수들로 표현 하는 방법이 여러개라는 사실을 알게 되었습니다. 예를들어 15는 다음과 같이 4가지로 표현 할 수 있습니다.
@@ -217,10 +217,10 @@ Finn은 요즘 수학공부에 빠져 있습니다. 수학 공부를 하던 Finn
     
     <item>
       <title># 프로그래머스[Lv.3] 최고의 집합 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-10-12-problem_solving_14/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-10-12-problem_solving_14/</link>
       <pubDate>Mon, 12 Oct 2020 05:27:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-10-12-problem_solving_14/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-10-12-problem_solving_14/</guid>
       <description>문제 링크
 Problem 문제 설명
 자연수 n 개로 이루어진 중복 집합(multi set, 편의상 이후에는 집합으로 통칭) 중에 다음 두 조건을 만족하는 집합을 최고의 집합이라고 합니다.
@@ -243,10 +243,10 @@ Problem 문제 설명
     
     <item>
       <title># 프로그래머스[Lv.3] 야근지수 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-10-11-problem_solving_13/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-10-11-problem_solving_13/</link>
       <pubDate>Sun, 11 Oct 2020 23:45:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-10-11-problem_solving_13/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-10-11-problem_solving_13/</guid>
       <description>문제 링크
 Problem 문제 설명
 회사원 Demi는 가끔은 야근을 하는데요, 야근을 하면 야근 피로도가 쌓입니다. 야근 피로도는 야근을 시작한 시점에서 남은 일의 작업량을 제곱하여 더한 값입니다. Demi는 N시간 동안 야근 피로도를 최소화하도록 일할 겁니다.Demi가 1시간 동안 작업량 1만큼을 처리할 수 있다고 할 때, 퇴근까지 남은 N 시간과 각 일에 대한 작업량 works에 대해 야근 피로도를 최소화한 값을 리턴하는 함수 solution을 완성해주세요.
@@ -269,10 +269,10 @@ works는 길이 1 이상, 20,000 이하인 배열입니다.</description>
     
     <item>
       <title># 프로그래머스[Lv.3] 단속카메라 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-10-04-problem_solving_12/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-10-04-problem_solving_12/</link>
       <pubDate>Sun, 04 Oct 2020 22:11:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-10-04-problem_solving_12/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-10-04-problem_solving_12/</guid>
       <description>Problem 문제 설명
 고속도로를 이동하는 모든 차량이 고속도로를 이용하면서 단속용 카메라를 한 번은 만나도록 카메라를 설치하려고 합니다.
 고속도로를 이동하는 차량의 경로 routes가 매개변수로 주어질 때, 모든 차량이 한 번은 단속용 카메라를 만나도록 하려면 최소 몇 대의 카메라를 설치해야 하는지를 return 하도록 solution 함수를 완성하세요.
@@ -295,10 +295,10 @@ works는 길이 1 이상, 20,000 이하인 배열입니다.</description>
     
     <item>
       <title># 백준[No.17144] - 미세먼지 안녕! ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-28-problem_solving_10/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-28-problem_solving_10/</link>
       <pubDate>Mon, 28 Sep 2020 21:00:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-28-problem_solving_10/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-28-problem_solving_10/</guid>
       <description>Problem {: .alignCenter}
 Answer : 문제가 좀 복잡한데, 어쨌든 시뮬레이션으로 풀었다.
 이 문제에서 신경써야 할 부분은, 보다시피 딱 두 가지다.
@@ -331,10 +331,10 @@ Answer : 문제가 좀 복잡한데, 어쨌든 시뮬레이션으로 풀었다.
     
     <item>
       <title># 프로그래머스[Lv.2] N진수 게임( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-28-problem_solving_11/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-28-problem_solving_11/</link>
       <pubDate>Mon, 28 Sep 2020 20:13:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-28-problem_solving_11/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-28-problem_solving_11/</guid>
       <description>문제 링크
 Problem N진수 게임
 튜브가 활동하는 코딩 동아리에서는 전통적으로 해오는 게임이 있다.
@@ -357,10 +357,10 @@ Problem N진수 게임
     
     <item>
       <title># 프로그래머스[Lv.2] - 카펫 ( java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-23-problem_solving_9/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-23-problem_solving_9/</link>
       <pubDate>Wed, 23 Sep 2020 22:12:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-23-problem_solving_9/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-23-problem_solving_9/</guid>
       <description>문제 링크
 PROBLEM : 문제 설명
 Leo는 카펫을 사러 갔다가 아래 그림과 같이 중앙에는 노란색으로 칠해져 있고 테두리 1줄은 갈색으로 칠해져 있는 격자 모양 카펫을 봤습니다.
@@ -385,10 +385,10 @@ Leo가 본 카펫에서 갈색 격자의 수 brown, 노란색 격자의 수 yell
     
     <item>
       <title># 백준[No.17140] - 이차원 배열과 연산 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-18-problem_solving_8/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-18-problem_solving_8/</link>
       <pubDate>Fri, 18 Sep 2020 20:12:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-18-problem_solving_8/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-18-problem_solving_8/</guid>
       <description>문제 링크
 Problem {: .alignCenter}
 Solve : 문제 자체를 푸는데도 꽤 걸렸지만, 쓸데 없는 부분에서 고생했던 문제라서, 살짝 열받아서 가져왔다.
@@ -413,10 +413,10 @@ Solve : 문제 자체를 푸는데도 꽤 걸렸지만, 쓸데 없는 부분에�
     
     <item>
       <title># 프로그래머스[Lv.2] - 튜플 ( java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-07-problem_solving_7/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-07-problem_solving_7/</link>
       <pubDate>Mon, 07 Sep 2020 01:51:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-07-problem_solving_7/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-07-problem_solving_7/</guid>
       <description>문제 링크
 PROBLEM {% raw %} 문제 설명
 셀수있는 수량의 순서있는 열거 또는 어떤 순서를 따르는 요소들의 모음을 튜플(tuple)이라고 합니다. n개의 요소를 가진 튜플을 n-튜플(n-tuple)이라고 하며, 다음과 같이 표현할 수 있습니다.
@@ -445,10 +445,10 @@ ex : (1, 2, 3) ≠ (1, 3, 2)</description>
     
     <item>
       <title># 백준[No.2457] - 공주님의 정원 ( Java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-04-problem_solving_6/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-04-problem_solving_6/</link>
       <pubDate>Fri, 04 Sep 2020 08:38:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-04-problem_solving_6/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-04-problem_solving_6/</guid>
       <description>문제 링크
 PROBLEM {: .alignCenter}
 예제 입력 4
@@ -481,10 +481,10 @@ SOLVE 1) 주의점 : 처음에는 &amp;ldquo;꽃들의 총 개수&amp;rdquo; 라
     
     <item>
       <title># 프로그래머스[Lv.2] - 오픈채팅방 ( java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-03-problem_solving_5/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-03-problem_solving_5/</link>
       <pubDate>Thu, 03 Sep 2020 07:19:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-09-03-problem_solving_5/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-09-03-problem_solving_5/</guid>
       <description>문제 링크
 PROBLEM 오픈채팅방 카카오톡 오픈채팅방에서는 친구가 아닌 사람들과 대화를 할 수 있는데, 본래 닉네임이 아닌 가상의 닉네임을 사용하여 채팅방에 들어갈 수 있다.
 신입사원인 김크루는 카카오톡 오픈 채팅방을 개설한 사람을 위해, 다양한 사람들이 들어오고, 나가는 것을 지켜볼 수 있는 관리자창을 만들기로 했다. 채팅방에 누군가 들어오면 다음 메시지가 출력된다.
@@ -513,10 +513,10 @@ PROBLEM 오픈채팅방 카카오톡 오픈채팅방에서는 친구가 아닌 �
     
     <item>
       <title># 프로그래머스[Lv.2] - 올바른 괄호 ( java )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-29-problem_solving_4/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-29-problem_solving_4/</link>
       <pubDate>Sat, 29 Aug 2020 17:16:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-29-problem_solving_4/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-29-problem_solving_4/</guid>
       <description>PROBLEM 문제 설명
 괄호가 바르게 짝지어졌다는 것은 &amp;lsquo;(&amp;rsquo; 문자로 열렸으면 반드시 짝지어서 &amp;lsquo;)&amp;rsquo; 문자로 닫혀야 한다는 뜻입니다. 예를 들어
  ()() 또는 (())() 는 올바른 괄호입니다. )()( 또는 (()( 는 올바르지 않은 괄호입니다.  &amp;lsquo;(&amp;rsquo; 또는 &amp;lsquo;)&amp;rsquo; 로만 이루어진 문자열 s가 주어졌을 때, 문자열 s가 올바른 괄호이면 true를 return 하고, 올바르지 않은 괄호이면 false를 return 하는 solution 함수를 완성해 주세요.
@@ -539,10 +539,10 @@ PROBLEM 오픈채팅방 카카오톡 오픈채팅방에서는 친구가 아닌 �
     
     <item>
       <title># 백준[No.1748] - 수 이어 쓰기 1 ( Python )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-27-problem_solving_3/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-27-problem_solving_3/</link>
       <pubDate>Thu, 27 Aug 2020 23:58:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-27-problem_solving_3/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-27-problem_solving_3/</guid>
       <description>문제 링크
 PROBLEM {: .alignCenter}
 SOLVE : 이번 문제는 이해 하기에 그리 어렵지 않으므로, 바로 해결 방법으로 진행한다.
@@ -563,10 +563,10 @@ SOLVE : 이번 문제는 이해 하기에 그리 어렵지 않으므로, 바로 
     
     <item>
       <title># 백준[No.2477] - 참외밭 ( python )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-27-problem_solving_2/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-27-problem_solving_2/</link>
       <pubDate>Thu, 27 Aug 2020 22:41:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-27-problem_solving_2/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-27-problem_solving_2/</guid>
       <description>문제 링크
 PROBLEM {: .alignCenter} {: .alignCenter}
 SOLVE ** 1) 주의사항** : 해당 문제에서 주의해야 할 요소는 다음과 같다.
@@ -589,10 +589,10 @@ SOLVE ** 1) 주의사항** : 해당 문제에서 주의해야 할 요소는 다
     
     <item>
       <title># 프로그래머스[Lv.1] - 크레인 인형 뽑기 ( python )</title>
-      <link>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-27-problem_solving_1/</link>
+      <link>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-27-problem_solving_1/</link>
       <pubDate>Thu, 27 Aug 2020 20:58:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/backup/algorithm/problem_solving/2020-08-27-problem_solving_1/</guid>
+      <guid>http://cjlee38.github.io/backup-copy/algorithm/problem_solving/2020-08-27-problem_solving_1/</guid>
       <description>문제 링크
 알고리즘 공부를 어제부터 시작해서, Lv.1 문제부터 차근차근 풀어나가고 있다. 첫 번째 문제로 선택한 크레인 인형뽑기 게임 문제의 다음과 같다.
 PROBLEM  게임개발자인 죠르디는 크레인 인형뽑기 기계를 모바일 게임으로 만들려고 합니다.
