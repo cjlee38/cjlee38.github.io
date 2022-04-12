@@ -9,6 +9,21 @@
     <lastBuildDate>Tue, 06 Oct 2020 22:21:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/jsp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># 7. JSP 학습기록 - MVC 패턴과 JSP Model 1, Model 2</title>
+      <link>http://cjlee38.github.io/backup/tech/jsp/2020-10-06-jsp_learning_07/</link>
+      <pubDate>Tue, 06 Oct 2020 22:21:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/tech/jsp/2020-10-06-jsp_learning_07/</guid>
+      <description>들어가며 : 지난 포스팅에서, Jasper 라는 도구를 이용하여 HTML Code에 직접 자바코드를 때려박는 방법을,
+그리고 이렇게 생성되는 파일을 JSP 라고 부른다는 것을 배웠다.
+그렇다면, 기존의 Java Code는 다 그대로 JSP로 옮겨버려도 될까?
+흠.. 뭔가 그렇지는 않을 것 같은데, 명확히 이유를 짚어내기는 어렵다.
+이번 포스팅에서는 그 &amp;ldquo;이유&amp;quot;에 대해서 알아보자.
+코드 구분의 필요성 : 우선, 다음과 같이, 기본적인 덧셈, 뺄셈을 계산해주는 코드를 만들어보자.
+&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;calculator&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt; &amp;lt;form action=&amp;#34;Adder.jsp&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;label&amp;gt; first_number &amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;n1&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;label&amp;gt; second_number &amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;n2&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; name=&amp;#34;calc&amp;#34; value=&amp;#34;add&amp;#34;/&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; name=&amp;#34;calc&amp;#34; value=&amp;#34;minus&amp;#34;/&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;% int num1 = 0; int num2 = 0; String num1_ = request.</description>
+    </item>
+    
+    <item>
+      <title># 7. JSP 학습기록 - MVC 패턴과 JSP Model 1, Model 2</title>
       <link>http://cjlee38.github.io/post/tech/jsp/2020-10-06-jsp_learning_07/</link>
       <pubDate>Tue, 06 Oct 2020 22:21:00 +0000</pubDate>
       
@@ -20,6 +35,19 @@
 이번 포스팅에서는 그 &amp;ldquo;이유&amp;quot;에 대해서 알아보자.
 코드 구분의 필요성 : 우선, 다음과 같이, 기본적인 덧셈, 뺄셈을 계산해주는 코드를 만들어보자.
 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;calculator&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt; &amp;lt;form action=&amp;#34;Adder.jsp&amp;#34;&amp;gt; &amp;lt;div&amp;gt; &amp;lt;label&amp;gt; first_number &amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;n1&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;label&amp;gt; second_number &amp;lt;/label&amp;gt; &amp;lt;input name=&amp;#34;n2&amp;#34; type=&amp;#34;text&amp;#34;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; name=&amp;#34;calc&amp;#34; value=&amp;#34;add&amp;#34;/&amp;gt; &amp;lt;input type=&amp;#34;submit&amp;#34; name=&amp;#34;calc&amp;#34; value=&amp;#34;minus&amp;#34;/&amp;gt; &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;% int num1 = 0; int num2 = 0; String num1_ = request.</description>
+    </item>
+    
+    <item>
+      <title># 6. JSP 학습기록 - doGet, doPost와 JSP, 그리고 EL(Expression Language) </title>
+      <link>http://cjlee38.github.io/backup/tech/jsp/2020-09-25-jsp_learning_06/</link>
+      <pubDate>Fri, 25 Sep 2020 16:21:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/tech/jsp/2020-09-25-jsp_learning_06/</guid>
+      <description>doGet, doPost : 기존에는 Servlet에 코드를 작성할 때, service()만 사용하고,
+get과 post를 구분하지 않았었다. 당연히, get과 post를 구분하는 방법이 있을텐데, 우선적으로 생각할 수 있는 방법은
+if else 문으로 분기하는 것이다. 또한, 이에 걸맞은 method 도 존재한다.
+if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } else if (req.getMethod().equals(&amp;#34;POST&amp;#34;)) {  // do something for post } 그러나, 이렇게 작성하는 것은 당연하게도 우아해보이지 않는다.
+이에 걸맞은 method가 있는데, 바로 doGet(), doPost() method 다.</description>
     </item>
     
     <item>
@@ -37,6 +65,18 @@ if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } 
     
     <item>
       <title># 5. JSP 학습기록 - Array 와 Application, Session, Cookie</title>
+      <link>http://cjlee38.github.io/backup/tech/jsp/2020-09-22-jsp_learning_05/</link>
+      <pubDate>Tue, 22 Sep 2020 17:26:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/tech/jsp/2020-09-22-jsp_learning_05/</guid>
+      <description>배열 다루기. : 원래 이번 편에서 곧바로 Application / Session / Cookie 에 대해서 다루려고 했는데,
+생각해보니 데이터를 배열로 주고 받는 법에 대해서 다루지 않아서, 잠깐 짚고 가자.
+지난 편에서 다뤘던 firstServlet.html은 다음과 같다.
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;  &amp;lt;title&amp;gt;Title&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt;  &amp;lt;form action=&amp;#34;firstServlet&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your title &amp;lt;/label&amp;gt;  &amp;lt;input name = &amp;#34;title&amp;#34; type=&amp;#34;text&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your title &amp;lt;/label&amp;gt;  &amp;lt;input name = &amp;#34;title&amp;#34; type=&amp;#34;text&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your content &amp;lt;/label&amp;gt;  &amp;lt;textarea name=&amp;#34;content&amp;#34;&amp;gt;&amp;lt;/textarea&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;click here to submit&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 여기서, 대충 title을 두 개를 넣고 싶다고 해보자.</description>
+    </item>
+    
+    <item>
+      <title># 5. JSP 학습기록 - Array 와 Application, Session, Cookie</title>
       <link>http://cjlee38.github.io/post/tech/jsp/2020-09-22-jsp_learning_05/</link>
       <pubDate>Tue, 22 Sep 2020 17:26:00 +0000</pubDate>
       
@@ -45,6 +85,17 @@ if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } 
 생각해보니 데이터를 배열로 주고 받는 법에 대해서 다루지 않아서, 잠깐 짚고 가자.
 지난 편에서 다뤘던 firstServlet.html은 다음과 같다.
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;#34;en&amp;#34;&amp;gt; &amp;lt;head&amp;gt;  &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;&amp;gt;  &amp;lt;title&amp;gt;Title&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div&amp;gt;  &amp;lt;form action=&amp;#34;firstServlet&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your title &amp;lt;/label&amp;gt;  &amp;lt;input name = &amp;#34;title&amp;#34; type=&amp;#34;text&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your title &amp;lt;/label&amp;gt;  &amp;lt;input name = &amp;#34;title&amp;#34; type=&amp;#34;text&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your content &amp;lt;/label&amp;gt;  &amp;lt;textarea name=&amp;#34;content&amp;#34;&amp;gt;&amp;lt;/textarea&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;click here to submit&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; 여기서, 대충 title을 두 개를 넣고 싶다고 해보자.</description>
+    </item>
+    
+    <item>
+      <title># 4. JSP 학습기록 - POST handling과 Servlet Filter</title>
+      <link>http://cjlee38.github.io/backup/tech/jsp/2020-09-21-jsp_learning_04/</link>
+      <pubDate>Mon, 21 Sep 2020 15:22:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/tech/jsp/2020-09-21-jsp_learning_04/</guid>
+      <description>POST 다루기 : 지난 3편에 이어서, POST를 다뤄보자.
+이를 위해, 지난 편에 작성했던 html 코드를 조금 더 업그레이드 시켜보자.
+&amp;lt;div&amp;gt;  &amp;lt;form action=&amp;#34;firstServlet&amp;#34; method=&amp;#34;POST&amp;#34;&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your title &amp;lt;/label&amp;gt;  &amp;lt;input name = &amp;#34;title&amp;#34; type=&amp;#34;text&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;label&amp;gt; input your content &amp;lt;/label&amp;gt;  &amp;lt;textarea name=&amp;#34;content&amp;#34;&amp;gt;&amp;lt;/textarea&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;div&amp;gt;  &amp;lt;input type=&amp;#34;submit&amp;#34; value=&amp;#34;click here to submit&amp;#34;/&amp;gt;  &amp;lt;/div&amp;gt;  &amp;lt;/form&amp;gt; &amp;lt;/div&amp;gt; 기존과 달라진 점이라면</description>
     </item>
     
     <item>
@@ -60,6 +111,18 @@ if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } 
     
     <item>
       <title># 3. JSP 학습기록 - Servlet을 이용한 입출력</title>
+      <link>http://cjlee38.github.io/backup/tech/jsp/2020-09-19-jsp_learning_03/</link>
+      <pubDate>Sat, 19 Sep 2020 15:22:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/tech/jsp/2020-09-19-jsp_learning_03/</guid>
+      <description>Output : 지난 2편 에서 작성했던 코드는 다음과 같다.
+import javax.servlet.*; import javax.servlet.http.*; import java.io.*;  public class myServlet extends HttpServlet {  public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {  System.out.println(&amp;#34;This is myServlet.&amp;#34;);  } }   Note. 다른 작업을 하기 전에, 여기 를 참고해서,
+IDE의 도움을 받자. 하나하나 직접 작성하는 것도 꽤 수고스러운 일이다.
+학생의 경우 인증을 통해 무료로 Ultimate 버전을 구할 수 있으나, 불가능 할 경우 Eclipse를 사용하면 된다.</description>
+    </item>
+    
+    <item>
+      <title># 3. JSP 학습기록 - Servlet을 이용한 입출력</title>
       <link>http://cjlee38.github.io/post/tech/jsp/2020-09-19-jsp_learning_03/</link>
       <pubDate>Sat, 19 Sep 2020 15:22:00 +0000</pubDate>
       
@@ -68,6 +131,20 @@ if (req.getMethod().equals(&amp;#34;GET&amp;#34;)) {  // do something for get } 
 import javax.servlet.*; import javax.servlet.http.*; import java.io.*;  public class myServlet extends HttpServlet {  public void service(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {  System.out.println(&amp;#34;This is myServlet.&amp;#34;);  } }   Note. 다른 작업을 하기 전에, 여기 를 참고해서,
 IDE의 도움을 받자. 하나하나 직접 작성하는 것도 꽤 수고스러운 일이다.
 학생의 경우 인증을 통해 무료로 Ultimate 버전을 구할 수 있으나, 불가능 할 경우 Eclipse를 사용하면 된다.</description>
+    </item>
+    
+    <item>
+      <title># 1. JSP 학습기록 - 기본 개념과 Tomcat 실행해보기.</title>
+      <link>http://cjlee38.github.io/backup/tech/jsp/2020-09-17-jsp_learning_01/</link>
+      <pubDate>Thu, 17 Sep 2020 11:48:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/tech/jsp/2020-09-17-jsp_learning_01/</guid>
+      <description>1. 기본 개념 : Web server, Web application server, Servlet, Servlet Container&amp;hellip;
+처음 봤을 때에는, 각각이 무엇을 의미하는지, 무슨 차이가 있는지에 대해서 알지 못했다.
+이에 대해서 기본 개념을 정립하면 다음과 같다.
+1) Web server, Web application server(WAS) {: .alignCenter}
+ : 우리가 html 파일을 만들고, 이를 더블클릭해서 열면, (대체로) 브라우저가 이 화면을 보여준다.
+이 때에는 Client와 Server의 개념이 딱히 없다. html이라는 양식을 통해 구성된, 어떤 화면을 Browser가 해석해서 우리에게 보여주는 것이다.</description>
     </item>
     
     <item>
@@ -86,6 +163,20 @@ IDE의 도움을 받자. 하나하나 직접 작성하는 것도 꽤 수고스�
     
     <item>
       <title># 2. JSP 학습기록 - Tomcat 구조 파악부터 Servlet 만들기까지</title>
+      <link>http://cjlee38.github.io/backup/tech/jsp/2020-09-17-jsp_learning_02/</link>
+      <pubDate>Thu, 17 Sep 2020 11:48:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/tech/jsp/2020-09-17-jsp_learning_02/</guid>
+      <description>Directory : Tomcat을 직접 사용하면서, 우리가 쳐다봐야 할 부분은 크게 세 곳으로 나뉜다.
+ bin conf webapps  bin 폴더는, tomcat을 실행하기 위한 여러 batch file 들이 저장된 곳이다.
+startup.bat을 통해 tomcat을 실행시킬 수 있다.
+conf 폴더는, configuration의 약자로, 말 그대로 어떤 설정하는 파일들이 구성된 곳이다.
+webapps 폴더는, 우리가 페이지를 구성하기 위한 파일들을 모아놓는 곳이다. 주로 이곳을 다루게 된다.
+webapps : 먼저, webapps 폴더, 그리고 그 안에 있는 ROOT 폴더에 들어가보자.</description>
+    </item>
+    
+    <item>
+      <title># 2. JSP 학습기록 - Tomcat 구조 파악부터 Servlet 만들기까지</title>
       <link>http://cjlee38.github.io/post/tech/jsp/2020-09-17-jsp_learning_02/</link>
       <pubDate>Thu, 17 Sep 2020 11:48:00 +0000</pubDate>
       
@@ -96,6 +187,22 @@ startup.bat을 통해 tomcat을 실행시킬 수 있다.
 conf 폴더는, configuration의 약자로, 말 그대로 어떤 설정하는 파일들이 구성된 곳이다.
 webapps 폴더는, 우리가 페이지를 구성하기 위한 파일들을 모아놓는 곳이다. 주로 이곳을 다루게 된다.
 webapps : 먼저, webapps 폴더, 그리고 그 안에 있는 ROOT 폴더에 들어가보자.</description>
+    </item>
+    
+    <item>
+      <title># 0. JSP 학습기록 - Intellij JSP 프로젝트 생성</title>
+      <link>http://cjlee38.github.io/backup/tech/jsp/2020-09-11-jsp_project_with_intellij/</link>
+      <pubDate>Fri, 11 Sep 2020 16:45:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/tech/jsp/2020-09-11-jsp_project_with_intellij/</guid>
+      <description>Prerequisite  Intellij Ultimate JDK Tomcat Environment Variable Settings  Create :
+  Welcome 화면에서, 새 프로젝트(New Project) 만든다.
+  Java - Project SDK에서 JDK를 설정하고,
+  Additional Libraries and Frameworks에서 JAVE EE - Web Application - WebService를 체크하고 Next 버튼을 누른다..?
+  {: .alignCenter}
+왠지 모르겠는데 나는 없다.
+공식 문서에도 이렇게 하라고 하는데, 나는 없다.
+각고의 구글링 끝에, 나와 비슷한 문제가 있던 질문 글을 발견</description>
     </item>
     
     <item>

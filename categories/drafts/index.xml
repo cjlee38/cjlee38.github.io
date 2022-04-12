@@ -9,6 +9,15 @@
     <lastBuildDate>Wed, 01 Jan 2020 09:58:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/drafts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># draft </title>
+      <link>http://cjlee38.github.io/backup/drafts/2020-01-01-test/</link>
+      <pubDate>Wed, 01 Jan 2020 09:58:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/drafts/2020-01-01-test/</guid>
+      <description>this file is just draft, shoudln&amp;rsquo;t be exposed on github blog..</description>
+    </item>
+    
+    <item>
+      <title># draft </title>
       <link>http://cjlee38.github.io/post/drafts/2020-01-01-test/</link>
       <pubDate>Wed, 01 Jan 2020 09:58:00 +0000</pubDate>
       

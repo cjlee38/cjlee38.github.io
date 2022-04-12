@@ -9,6 +9,16 @@
     <lastBuildDate>Sun, 29 Aug 2021 23:44:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># 제네릭 톺아보기 2</title>
+      <link>http://cjlee38.github.io/backup/language/java/2021-08-29-java-generics-2/</link>
+      <pubDate>Sun, 29 Aug 2021 23:44:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2021-08-29-java-generics-2/</guid>
+      <description>Java Generic 2 0. 들어가며 지난 시간에는 제네릭이 왜 필요한지, 어떻게 사용하는지, 그리고 어떻게 만들 수 있는지 등에 대해 살펴봤습니다. 그런데 한 가지, List 를 흉내낸 MyList 의 경우 생성자에서 여전히 Object 형을 사용했었습니다. 지난 시간의 코드를 다시 가져와보겠습니다.
+public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  private int size;  private Object[] array;   public MyList() {  this.array = new Object[capacity];  }   public void add(T o) {  array[size++] = o;  }   public T get(int index) {  return (T) array[index];  } } private Object[] array 그리고 this.</description>
+    </item>
+    
+    <item>
+      <title># 제네릭 톺아보기 2</title>
       <link>http://cjlee38.github.io/post/language/java/2021-08-29-java-generics-2/</link>
       <pubDate>Sun, 29 Aug 2021 23:44:00 +0000</pubDate>
       
@@ -19,12 +29,33 @@ public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  privat
     
     <item>
       <title># 제네릭 톺아보기 1</title>
+      <link>http://cjlee38.github.io/backup/language/java/2021-08-10-java-generics-1-copy/</link>
+      <pubDate>Tue, 10 Aug 2021 19:26:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2021-08-10-java-generics-1-copy/</guid>
+      <description>0. 들어가며 제네릭은 Java Collection Framework 를 사용하면 필연적으로 마주치는 문법 중 하나입니다. 처음 보았을 때에는 &amp;lt;&amp;gt; 형태의 다이아몬드가 당황스럽지만, 몇 번 써보고 나면 그리 어려운 개념이 아니라는걸 알게 되죠. 하지만 이건 사용자 관점일 뿐, 제네릭을 한 번이라도 만들어보려고 하면 손가락이 멈칫하게 됩니다.(특히 제가 그렇습니다.) 매 번 제네릭과 관련한 무언가를 만들어보려고 할 때마다 다시 찾아보는 것이 지겨워서, 직접 한 번 정리해볼까 합니다.
+1. Why Use Generics ? 제네릭은 클래스(혹은 인터페이스, 메소드)를 정의할 때, Type 을 파라미터로 넘겨줄 수 있도록 하는 녀석입니다.</description>
+    </item>
+    
+    <item>
+      <title># 제네릭 톺아보기 1</title>
       <link>http://cjlee38.github.io/post/language/java/2021-08-10-java-generics-1-copy/</link>
       <pubDate>Tue, 10 Aug 2021 19:26:00 +0000</pubDate>
       
       <guid>http://cjlee38.github.io/post/language/java/2021-08-10-java-generics-1-copy/</guid>
       <description>0. 들어가며 제네릭은 Java Collection Framework 를 사용하면 필연적으로 마주치는 문법 중 하나입니다. 처음 보았을 때에는 &amp;lt;&amp;gt; 형태의 다이아몬드가 당황스럽지만, 몇 번 써보고 나면 그리 어려운 개념이 아니라는걸 알게 되죠. 하지만 이건 사용자 관점일 뿐, 제네릭을 한 번이라도 만들어보려고 하면 손가락이 멈칫하게 됩니다.(특히 제가 그렇습니다.) 매 번 제네릭과 관련한 무언가를 만들어보려고 할 때마다 다시 찾아보는 것이 지겨워서, 직접 한 번 정리해볼까 합니다.
 1. Why Use Generics ? 제네릭은 클래스(혹은 인터페이스, 메소드)를 정의할 때, Type 을 파라미터로 넘겨줄 수 있도록 하는 녀석입니다.</description>
+    </item>
+    
+    <item>
+      <title># (Java8) 동작(≒메소드) 파라미터화 </title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-12-21-java8-behavior-parameterization/</link>
+      <pubDate>Mon, 21 Dec 2020 14:33:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-12-21-java8-behavior-parameterization/</guid>
+      <description>모던 자바 인 액션(라울-게이브리얼 우르마 저, 한빛미디어)을 기반으로 작성하였습니다.
+ 0. 들어가며 : 스트림이나 람다 같은 프로그래밍 테크닉들을 사용하면서, &amp;ldquo;이게 어떻게 동작하지?&amp;rdquo; 라는 그 원리에 대해서는 전혀 생각을 해보지 못했었다. 모던 자바 인 액션을 보면서 이런 동작 원리에 대해서 새로운 시야가 트인 느낌이라, 각 내용을 내 입맛에 맞게 정리해보고자 한다. 그런 기념에서, 첫 번째 포스팅은 2장의 동작(동적,Dynamic이 아니다.) 파라미터화 코드 전달하기 이다.
+1. 예제 : 가령 예를들어서, 과일 재고 목록을 관리하는 애플리케이션이 있다고 해보자.</description>
     </item>
     
     <item>
@@ -40,6 +71,21 @@ public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  privat
     
     <item>
       <title># (Java) Parameter를 활용하는 방법 ( feat. varargs, kwargs )</title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-10-25-java_parameters/</link>
+      <pubDate>Sun, 25 Oct 2020 01:52:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-10-25-java_parameters/</guid>
+      <description>varargs : varargs 는 variable arguments의 약자로, 한국어로는 &amp;ldquo;가변인자&amp;rdquo; 로 해석된다.
+이는 지난번에 포스팅했던 파이썬의 Asterisk(*) 다루기 와 비슷한데,
+arguments를 몇 개를 받을지 지정하지 않고, 호출하는 쪽에서 정해주겠다는 의미가 된다.
+다음의 예시를 보자.
+구현하고자 하는 코드는, 입력받은 여러 개의 문자열을 하나씩 출력하고자 한다.
+가변인자를 사용하지 않는 방식
+public class Main {  public static void main(String[] args) {  Main main = new Main();  String[] strs = {&amp;#34;hello&amp;#34;, &amp;#34;world&amp;#34;, &amp;#34;java&amp;#34;};  main.</description>
+    </item>
+    
+    <item>
+      <title># (Java) Parameter를 활용하는 방법 ( feat. varargs, kwargs )</title>
       <link>http://cjlee38.github.io/post/language/java/2020-10-25-java_parameters/</link>
       <pubDate>Sun, 25 Oct 2020 01:52:00 +0000</pubDate>
       
@@ -51,6 +97,23 @@ arguments를 몇 개를 받을지 지정하지 않고, 호출하는 쪽에서 �
 구현하고자 하는 코드는, 입력받은 여러 개의 문자열을 하나씩 출력하고자 한다.
 가변인자를 사용하지 않는 방식
 public class Main {  public static void main(String[] args) {  Main main = new Main();  String[] strs = {&amp;#34;hello&amp;#34;, &amp;#34;world&amp;#34;, &amp;#34;java&amp;#34;};  main.</description>
+    </item>
+    
+    <item>
+      <title># (Java) Junit은 어떻게 Main method 없이 실행될까? </title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-10-23-how-junit_works_without_main/</link>
+      <pubDate>Fri, 23 Oct 2020 17:48:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-10-23-how-junit_works_without_main/</guid>
+      <description>0. 들어가며 : 첫 처음 자바를 배웠을 당시가 떠오른다.
+아무것도 모른채, &amp;ldquo;약속&amp;quot;이라는 말과 함께
+public static void main(String][] args) 를 기계적으로 입력했었는데,
+이게 무슨 뜻인지, 왜 이렇게 썼는지에 대해서 그닥 신경을 안썼던 것 같다.
+그런데, 최근 스프링을 공부하면서, 난생 처음으로 내손으로 테스트를 작성해보다,
+main method가 없는데 어떻게 실행되지? 라는 의문에 봉착했다.
+생각의 꼬리를 물고 올라가다 보니, main method 자체에 대한 의문이 생겼다.
+파이썬을 생각해보면, 이러한 main method 하나 없이도,
+print(&amp;quot;hello world&amp;quot;) 라는 명령어 하나만으로 실행이 가능했다.</description>
     </item>
     
     <item>
@@ -72,6 +135,21 @@ print(&amp;quot;hello world&amp;quot;) 라는 명령어 하나만으로 실행�
     
     <item>
       <title># (Java) Wrapper Class는 Call by Value 일까?</title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-10-21-java_wrapper_class/</link>
+      <pubDate>Wed, 21 Oct 2020 20:26:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-10-21-java_wrapper_class/</guid>
+      <description>0. 들어가며 : Java 는 Call by Value일까, Call by Reference 일까?
+지금까지는, 함수의 parameter로 primitive type을 넘겨줄 때에는 call by value,
+객체를 넘겨줄 때에는 call by reference로 알고 있었다.
+그런데, 구선생님의 말씀에 따르면, 그렇지는 않은 것 같다.
+1. Call in Java : Java 에서는 언제나 Call by Value 라고 한다.
+약 12년 된 스택오버플로우의 한 질문글에 달린 답변은 다음과 같다.
+  자바는 예외 없이, 항상 pass by value 입니다.</description>
+    </item>
+    
+    <item>
+      <title># (Java) Wrapper Class는 Call by Value 일까?</title>
       <link>http://cjlee38.github.io/post/language/java/2020-10-21-java_wrapper_class/</link>
       <pubDate>Wed, 21 Oct 2020 20:26:00 +0000</pubDate>
       
@@ -83,6 +161,19 @@ print(&amp;quot;hello world&amp;quot;) 라는 명령어 하나만으로 실행�
 1. Call in Java : Java 에서는 언제나 Call by Value 라고 한다.
 약 12년 된 스택오버플로우의 한 질문글에 달린 답변은 다음과 같다.
   자바는 예외 없이, 항상 pass by value 입니다.</description>
+    </item>
+    
+    <item>
+      <title># (Java) 효율적인 반복문 탈출을 위한 Label</title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-10-18-label_statement/</link>
+      <pubDate>Sun, 18 Oct 2020 14:22:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-10-18-label_statement/</guid>
+      <description>0. 들어가며 : 혹시, 여러 개로 겹쳐있는 for문을 반복하다가, 어느 조건을 만족했을 때,
+**전체 반복문을 중단시키려면 어떻게 해야 할까?**에 대해서 고민해본 적이 있는가?
+아마 지금까지는 두가지 방법 중 하나를 사용했을 것 같다.
+A 방법
+boolean flag = false; for (int i = 0; i &amp;lt; 10; i++) {  for (int j = 0; j &amp;lt; 10; j++) {  if ( /*some_condition*/ ) {  flag = true;  break;  }  }  if (flag) {  break;  } } B 방법</description>
     </item>
     
     <item>
@@ -100,6 +191,20 @@ boolean flag = false; for (int i = 0; i &amp;lt; 10; i++) {  for (int j = 0; j &
     
     <item>
       <title># (Java) Annotation에 대한 이해</title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-10-14-java_annotation/</link>
+      <pubDate>Wed, 14 Oct 2020 21:11:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-10-14-java_annotation/</guid>
+      <description>0. 들어가며 : 스프링 공부를 하던 중, 자주 사용되는 Annotation에 대해서 살펴보았다.
+다양한 글을 읽었는데도, Java의 Annotation은 뭐라 딱 찝어서 설명하기 어려운 것 같다.
+더욱이, 나는 &amp;rsquo;@&amp;rsquo; 표시에 대해서, Python의 Decorator로 먼저 이해했기 때문에 더욱 어려웠던 것 같다.
+Python의 Decorator는 마치 함수를 감싸는 함수의 역할과 같은 모습을 볼 수 있지만,
+Java의 Annotation은 그냥 Meta data 로 퉁쳐버리기 때문에,
+&amp;ldquo;정말 그게 다야? 뭐 더 없어? 아닐 것 같은데?&amp;rdquo; 싶은 생각이 계속 들어서 이해하기 어려웠다.</description>
+    </item>
+    
+    <item>
+      <title># (Java) Annotation에 대한 이해</title>
       <link>http://cjlee38.github.io/post/language/java/2020-10-14-java_annotation/</link>
       <pubDate>Wed, 14 Oct 2020 21:11:00 +0000</pubDate>
       
@@ -110,6 +215,22 @@ boolean flag = false; for (int i = 0; i &amp;lt; 10; i++) {  for (int j = 0; j &
 Python의 Decorator는 마치 함수를 감싸는 함수의 역할과 같은 모습을 볼 수 있지만,
 Java의 Annotation은 그냥 Meta data 로 퉁쳐버리기 때문에,
 &amp;ldquo;정말 그게 다야? 뭐 더 없어? 아닐 것 같은데?&amp;rdquo; 싶은 생각이 계속 들어서 이해하기 어려웠다.</description>
+    </item>
+    
+    <item>
+      <title># (Java) Static Field, Method, 그리고 Block</title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-10-10-java_static/</link>
+      <pubDate>Sat, 10 Oct 2020 20:41:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-10-10-java_static/</guid>
+      <description>Concept of Static : static을 한글로 해석하면 정적이라는 뜻인데, 크게 와닿지는 않는 해석이다.
+흔히, 객체지향에서 자주 하는 비유 중 하나가 붕어빵 틀과 붕어빵이다.
+클래스는 붕어빵 틀로, 붕어빵을 찍어낼 수 있고, 인스턴스는 찍혀진 붕어빵이다.
+따라서, 찍힌 붕어빵은 서로 다른 객체로 인식해야한다.
+그러나, 붕어빵을 만들기 위해 사용하는 반죽은 어떨까?
+붕어빵 장사를 하는 사람이, 아주 기가막힌 비율의 반죽을 만들어내서,
+(말은 안되지만) 이미 만들어진, 그리고 앞으로 만들 모든 붕어빵의 반죽을
+new 반죽으로 바꾸고 싶다고 해보자.</description>
     </item>
     
     <item>
@@ -130,6 +251,23 @@ new 반죽으로 바꾸고 싶다고 해보자.</description>
     
     <item>
       <title># (Java) [짧] Enum 뜯어보기</title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-10-09-java_enum/</link>
+      <pubDate>Fri, 09 Oct 2020 15:11:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-10-09-java_enum/</guid>
+      <description>Enum in Java : C언어에서의 Enum은, 단순하게 연속된 숫자의 Magic Number를 표현하는 것을
+막기 위해 사용되어서, 그 내부의 값은 int 값을 갖고 있다.
+Enumerate, 열거하다 라는 표현에, 걸맞다는 생각이 들기도 한다.
+그러나, Java에서의 Enum은 클래스다.
+따라서, C와는 다르게 여러가지 기능을 지원한다.
+사용법 기본 형태 : 먼저, 가장 단순하게 기존의 C에서 쓰던 것처럼 enum을 활용할 수 있다.
+Size.java
+public enum Size {  SMALL, MEDIUM, LARGE } Main.java
+public class Main {  public static void main(String[] args) {  System.</description>
+    </item>
+    
+    <item>
+      <title># (Java) [짧] Enum 뜯어보기</title>
       <link>http://cjlee38.github.io/post/language/java/2020-10-09-java_enum/</link>
       <pubDate>Fri, 09 Oct 2020 15:11:00 +0000</pubDate>
       
@@ -143,6 +281,24 @@ Enumerate, 열거하다 라는 표현에, 걸맞다는 생각이 들기도 한�
 Size.java
 public enum Size {  SMALL, MEDIUM, LARGE } Main.java
 public class Main {  public static void main(String[] args) {  System.</description>
+    </item>
+    
+    <item>
+      <title># (Java) Stream API 첫걸음</title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-10-07-java_stream/</link>
+      <pubDate>Wed, 07 Oct 2020 01:03:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-10-07-java_stream/</guid>
+      <description>0. 들어가며 : 최근, 여러 알고리즘 문제들을 풀면서,
+가끔 심심할때마다 프로그래머스 Lv.1 문제들도 푸는데,
+Lv.1 문제들은 단순하게 제출하는 것이 뭔가 좀 껄끄러웠다.
+개인적으로는, 1차원의 for loop를 쓰더라도 이게 여러 개 있으면 꽤 마음이 불편해진다.
+뭔가, 깔끔하고 멋있게 써야 할 것 같았다.
+개인적으로, 이러한 상황에 가장 베스트인 선택지는
+바로 Stream API 라고 생각한다.
+아직 익숙치 않은 Stream API를 공부해보자.
+양이 꽤 많기 때문에 아마 모두 적기에는 어려울 것 같다.
+  Note.</description>
     </item>
     
     <item>
@@ -165,6 +321,24 @@ Lv.1 문제들은 단순하게 제출하는 것이 뭔가 좀 껄끄러웠다.
     
     <item>
       <title># (Java) 예외처리를 위한 Try-Catch</title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-10-05-exception_in_java/</link>
+      <pubDate>Mon, 05 Oct 2020 06:42:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-10-05-exception_in_java/</guid>
+      <description>0. 들어가며 : 예외처리는, 그 이름만 들어도 두려움이 생긴다.
+간단하게 생각하자면 if else문의 연장선인 것 같으면서도,
+또 뭔가 시스템의 장애를 덕지덕지 막아내는 것 같은 찝찝함도 동시에 든다.
+예외처리문을 쓸때면 항상
+&amp;ldquo;애초에 코드를 잘 짜면 되지 않나?&amp;rdquo; 라는
+바보같은 의문이 남기도 한다.
+아무튼, 오늘 다루고자 하는 내용은
+&amp;ldquo;예외 처리는 이렇게 해야한다!&amp;rdquo; 하는 거창한 내용은 못되고(쓸 실력도 안되고),
+기본적으로 알고 있었던, 그리고 글을 쓰면서 새로 배운,
+이러이러한 것들이 존재한다~ 정도의 Introduction 느낌만 가져가려고 한다.</description>
+    </item>
+    
+    <item>
+      <title># (Java) 예외처리를 위한 Try-Catch</title>
       <link>http://cjlee38.github.io/post/language/java/2020-10-05-exception_in_java/</link>
       <pubDate>Mon, 05 Oct 2020 06:42:00 +0000</pubDate>
       
@@ -183,6 +357,22 @@ Lv.1 문제들은 단순하게 제출하는 것이 뭔가 좀 껄끄러웠다.
     
     <item>
       <title># (Java) 추석맞이 String 종합선물세트</title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-10-01-all_of_string_in_java/</link>
+      <pubDate>Thu, 01 Oct 2020 16:59:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-10-01-all_of_string_in_java/</guid>
+      <description>0. 들어가며 : String은 언제 다뤄도 어렵다.
+Java 에서의 String은 조금 특별한 존재이기 때문에, Python처럼 생각없이 다루면 안된다.
+String에 연산이 많이 들어가는 경우, StringBuilder를 쓰는 경우가 많은데,
+도대체 어떤 차이가 있는지, String은 어떻게 변환되는지에 대해
+이번 포스팅을 통해 짚어보고자 한다.
+1. String String Constant Pool : 기본적으로, String은 Primitive Type이 아닌, Reference Type이다.
+즉, 우리가 바라보고 있는 특정 String은 그 자체로서 값을 갖고 있는 것이 아니고,
+그 값에 대한 &amp;ldquo;포인터&amp;rdquo; 인 셈이다.</description>
+    </item>
+    
+    <item>
+      <title># (Java) 추석맞이 String 종합선물세트</title>
       <link>http://cjlee38.github.io/post/language/java/2020-10-01-all_of_string_in_java/</link>
       <pubDate>Thu, 01 Oct 2020 16:59:00 +0000</pubDate>
       
@@ -195,6 +385,23 @@ String에 연산이 많이 들어가는 경우, StringBuilder를 쓰는 경우�
 1. String String Constant Pool : 기본적으로, String은 Primitive Type이 아닌, Reference Type이다.
 즉, 우리가 바라보고 있는 특정 String은 그 자체로서 값을 갖고 있는 것이 아니고,
 그 값에 대한 &amp;ldquo;포인터&amp;rdquo; 인 셈이다.</description>
+    </item>
+    
+    <item>
+      <title># (Java) HashMap 으로의 여행</title>
+      <link>http://cjlee38.github.io/backup/language/java/2020-09-10-journey_to_java_hashmap/</link>
+      <pubDate>Thu, 10 Sep 2020 14:54:36 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/backup/language/java/2020-09-10-journey_to_java_hashmap/</guid>
+      <description>0. 들어가며 : 나는 프로그래밍에서 Naming이 정말 Critical한 중요성을 갖는다고 생각한다.
+새로운 무언가에 대해서 배우고 나서, 그 이름을 다시 떠올려보면,
+왜 이걸 만든 사람들이 이 이름을 지었는지에 대해서 가닥이 잡힌다.
+Python에서의 dictionary, 그리고 Java에서의 HashMap은 Key-Value의 구조를 갖는
+데이터를 저장하는 가장 대표적인 클래스다.
+Python의 dictionary 라는 이름을 보면,
+&amp;ldquo;음, 사전이니까, 마치 단어사전 혹은 백과사전처럼, 어떤 이름과 그 안에 내용물을 갖춘 무언가겠군!&amp;rdquo;
+이라고 유추해 볼 수 있지만,
+Java의 HashMap을 보면 잘 이해가 되지 않는다.</description>
     </item>
     
     <item>
