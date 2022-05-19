@@ -664,14 +664,5 @@ $ sudo pacman -S uim 명령어를 통해서 uim을 설치한 뒤에, vim으로 .
 처음 다루는 리눅스인지라, 여러가지 어려움과 난항이 많았고, 구글링을 할때마다 등장하던 &amp;lsquo;우분투&amp;rsquo; 라는 이름에 &amp;lsquo;우분투가 더욱 사용자가 많은 리눅스 버전이구나&amp;rsquo; 싶어 며칠내에 우분투로 갈아탔다. 그러나 한글부터 시작해서 이것저것 세팅해줘야할 부분이 많았고, 윈도우와의 호환성에 여러 어려움을 겪어 필요할 때 이외에는 사용하지 않았다.</description>
     </item>
     
-    <item>
-      <title># draft </title>
-      <link>http://cjlee38.github.io/post/drafts/2020-01-01-test/</link>
-      <pubDate>Wed, 01 Jan 2020 09:58:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/post/drafts/2020-01-01-test/</guid>
-      <description>this file is just draft, shoudln&amp;rsquo;t be exposed on github blog..</description>
-    </item>
-    
   </channel>
 </rss>

@@ -978,14 +978,5 @@ $ sudo pacman -S uim 명령어를 통해서 uim을 설치한 뒤에, vim으로 .
 블로그의 목적이 무엇이 되었던, 구글링을 할 때마다 나타났던 여러 다른 분들의 블로그는 휘황찬란했고, 그걸 볼때마다 &amp;lsquo;이 사람은 정말 대단하구나&amp;rsquo; 싶고, 또 나는 한없이 초라해지는 기분이었다. 그러나 애초에 블로그라는 것이 누구에게 홍보하며 돈을 벌기 위한 수단도 아니었고, 나라고 못할 것은 무엇이랴, 여차하면 접고말지 라는 마인드로 시작하게 되었다.</description>
     </item>
     
-    <item>
-      <title># draft </title>
-      <link>http://cjlee38.github.io/post/drafts/2020-01-01-test/</link>
-      <pubDate>Wed, 01 Jan 2020 09:58:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/post/drafts/2020-01-01-test/</guid>
-      <description>this file is just draft, shoudln&amp;rsquo;t be exposed on github blog..</description>
-    </item>
-    
   </channel>
 </rss>
