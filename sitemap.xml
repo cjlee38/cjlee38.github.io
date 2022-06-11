@@ -2,25 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://cjlee38.github.io/post/diary/2022-02-28-woowacourse/</loc>
-    <lastmod>2022-02-28T19:48:00+00:00</lastmod>
+    <loc>http://cjlee38.github.io/post/kotlin/kotlin-property/</loc>
+    <lastmod>2022-06-09T14:25:36+00:00</lastmod>
   </url><url>
     <loc>http://cjlee38.github.io/categories/</loc>
-    <lastmod>2022-02-28T19:48:00+00:00</lastmod>
+    <lastmod>2022-06-09T14:25:36+00:00</lastmod>
   </url><url>
     <loc>http://cjlee38.github.io/</loc>
+    <lastmod>2022-06-09T14:25:36+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/tags/kotlin/</loc>
+    <lastmod>2022-06-09T14:25:36+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/categories/kotlin/</loc>
+    <lastmod>2022-06-09T14:25:36+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/post/</loc>
+    <lastmod>2022-06-09T14:25:36+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/tags/property/</loc>
+    <lastmod>2022-06-09T14:25:36+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/tags/</loc>
+    <lastmod>2022-06-09T14:25:36+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/post/diary/2022-02-28-woowacourse/</loc>
     <lastmod>2022-02-28T19:48:00+00:00</lastmod>
   </url><url>
     <loc>http://cjlee38.github.io/categories/diary/</loc>
     <lastmod>2022-02-28T19:48:00+00:00</lastmod>
   </url><url>
     <loc>http://cjlee38.github.io/tags/null/</loc>
-    <lastmod>2022-02-28T19:48:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cjlee38.github.io/post/</loc>
-    <lastmod>2022-02-28T19:48:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cjlee38.github.io/tags/</loc>
     <lastmod>2022-02-28T19:48:00+00:00</lastmod>
   </url><url>
     <loc>http://cjlee38.github.io/post/diary/2021-10-22-oop_truth_and_misunderstanding/</loc>
