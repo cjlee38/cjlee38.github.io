@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>submodule on cjlee38</title>
+    <link>http://cjlee38.github.io/tags/submodule/</link>
+    <description>Recent content in submodule on cjlee38</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/tags/submodule/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title># 깃 서브모듈 트러블슈팅</title>
+      <link>http://cjlee38.github.io/post/git/git-submodule/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/git/git-submodule/</guid>
+      <description>깃 서브모듈 트러블슈팅 : 우테코 레벨3를 시작하면서, 본격적인 팀 프로젝트 작업에 착수했습니다. 여러가지 의견이 오고가던 중, 개인이 공부한 내용을 정리하는 블로그를 하나 만들자는 이야기가 나왔습니다. 공동의 소유라는 느낌을 갖기 위해, github organization 에 github blog를 만들기로 했죠. M1 맥에서 ruby &amp;amp; ruby bundle에 대한 문제를 겪었던 저와 다른 팀원의 경험을 토대로, 흔히 사용하는 jekyll 대신, hugo 를 사용하기로 결정하였습니다. 또한, 지금 현재 제가 사용하고 있는 깃허브 블로그도 hugo 로 제작되었기 때문에, 제가 블로그의 생성을 맡았습니다.</description>
+    </item>
+    
+  </channel>
+</rss>
