@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://cjlee38.github.io/post/tech/spring/2022-08-21-spring-scheudeld-with-transactional/</loc>
+    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://cjlee38.github.io/categories/</loc>
     <lastmod>2022-08-21T00:00:00+00:00</lastmod>
   </url><url>
@@ -24,9 +27,6 @@
     <lastmod>2022-08-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cjlee38.github.io/tags/transctional/</loc>
-    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cjlee38.github.io/post/tech/spring/2022-08-21-spring-scheudeld-with-transactional/</loc>
     <lastmod>2022-08-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</loc>
