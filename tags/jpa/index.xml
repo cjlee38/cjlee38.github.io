@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>jpa on cjlee38</title>
+    <link>http://cjlee38.github.io/tags/jpa/</link>
+    <description>Recent content in jpa on cjlee38</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/tags/jpa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title># @validation 은 언제 사용해야 하는가?</title>
+      <link>http://cjlee38.github.io/post/tech/spring/2022-08-26-bean-validation/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/tech/spring/2022-08-26-bean-validation/</guid>
+      <description>0. 계기 모락 프로젝트에서, entity 를 관리할 것인가에 대한 이야기로 회의를 진행했습니다. 당시에, 외부(controller)에서 들어오는 요청값에 대한 null 혹은 blank에 대한 검사라던지, 도메인 규칙에 따른 길이 제한과 같은 제약사항들을 어떻게 다룰지 내부적으로 많은 이야기가 오고 갔었죠. 최종적으로 저희가 사용하기로 한 규칙은 다음과 같습니다.
+ request DTO에 대한 검증에는 도메인 규칙을 담지 않는다. 즉, @NotNull 과 같이 &amp;ldquo;순수 데이터&amp;rdquo; 관점에서 필요한 로직만 검증한다. entity 에서는 모든 도메인 로직의 검증을 수행한다. 간단한 로직(e.</description>
+    </item>
+    
+  </channel>
+</rss>
