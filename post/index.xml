@@ -6,7 +6,16 @@
     <description>Recent content in Posts on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title># Spring Transaction Manager</title>
+      <link>http://cjlee38.github.io/post/tech/spring/2022-10-05-spring-transaction-manager/</link>
+      <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/tech/spring/2022-10-05-spring-transaction-manager/</guid>
+      <description>Transaction Manager </description>
+    </item>
+    
     <item>
       <title># 문자 인코딩과 MySQL varchar</title>
       <link>http://cjlee38.github.io/post/tech/btb/2022-10-03-encoding-with-mysql/</link>
@@ -15,6 +24,25 @@
       <guid>http://cjlee38.github.io/post/tech/btb/2022-10-03-encoding-with-mysql/</guid>
       <description>1. 문자 인코딩이란 문자 인코딩이란 사용자가 입력한 문자나 기호들을 컴퓨터가 이용할 수 있는 신호로 만드는 것을 말합니다. 1 우리가 작성한 모든 텍스트는 결국 CPU 상에서 2진수로 처리됩니다. 사람이 작성한 글을 2진수로 변환하고, 2진수를 다시 사람이 읽을 수 있도록 만드는 작업을 각각 인코딩(encoding)과 디코딩(decoding)이라고 표현합니다.
 이러한 인코딩을 하기 위해서는 서로 약속한 &amp;lsquo;문자열 세트&amp;rsquo;가 필요합니다. 가장 대표적인 문자열 세트는 ASCII 입니다. ASCII는 1963년 미국 ANSI에서 표준화한 7 bit 부호 체계로 128 개의 기호(33개의 제어문자와 95개의 출력문자)를 표현할 수 있습니다.</description>
+    </item>
+    
+    <item>
+      <title># 모락 쿼리 성능 개선기</title>
+      <link>http://cjlee38.github.io/post/tech/jpa/2022-09-25-query-enhancement/</link>
+      <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/tech/jpa/2022-09-25-query-enhancement/</guid>
+      <description>0. 서론 우아한테크코스의 레벨4, 5차 데모에서 주어진 요구사항 중 하나는 아래와 같습니다.
+ 서비스에서 사용하는 쿼리를 정리하고, 각 쿼리에서 사용하는 인덱스 설정 서비스에서 사용하는 모든 조회 쿼리와 테이블에 설정한 인덱스 공유 인덱스를 설정할 수 없는 쿼리가 있는 경우, 인덱스를 설정할 수 없는 이유 공유  레벨 3 기간 동안 쿼리가 어떻게 나가는지에 대해서 전혀 신경을 쓰지 않았었습니다. 20 만 건의 더미 데이터를 넣어놓고 쿼리 개수와 시간을 측정해보았을 때의 결과는 처참했죠. 아래는 저희가 측정한 API 성능표입니다.</description>
+    </item>
+    
+    <item>
+      <title># N &#43; 1</title>
+      <link>http://cjlee38.github.io/post/tech/jpa/2022-09-01-n-plus-1/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/tech/jpa/2022-09-01-n-plus-1/</guid>
+      <description></description>
     </item>
     
     <item>

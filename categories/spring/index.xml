@@ -6,7 +6,16 @@
     <description>Recent content in spring on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/spring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title># Spring Transaction Manager</title>
+      <link>http://cjlee38.github.io/post/tech/spring/2022-10-05-spring-transaction-manager/</link>
+      <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/tech/spring/2022-10-05-spring-transaction-manager/</guid>
+      <description>Transaction Manager </description>
+    </item>
+    
     <item>
       <title># 스프링 @Scheduled 와 @Transactional에 얽힌 이야기</title>
       <link>http://cjlee38.github.io/post/tech/spring/2022-08-21-spring-scheudeld-with-transactional/</link>
