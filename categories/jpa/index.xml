@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>JPA on cjlee38</title>
+    <title>jpa on cjlee38</title>
     <link>http://cjlee38.github.io/categories/jpa/</link>
-    <description>Recent content in JPA on cjlee38</description>
+    <description>Recent content in jpa on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 25 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/jpa/index.xml" rel="self" type="application/rss+xml" />
@@ -15,15 +15,6 @@
       <guid>http://cjlee38.github.io/post/tech/jpa/2022-09-25-query-enhancement/</guid>
       <description>0. 서론 우아한테크코스의 레벨4, 5차 데모에서 주어진 요구사항 중 하나는 아래와 같습니다.
  서비스에서 사용하는 쿼리를 정리하고, 각 쿼리에서 사용하는 인덱스 설정 서비스에서 사용하는 모든 조회 쿼리와 테이블에 설정한 인덱스 공유 인덱스를 설정할 수 없는 쿼리가 있는 경우, 인덱스를 설정할 수 없는 이유 공유  레벨 3 기간 동안 쿼리가 어떻게 나가는지에 대해서 전혀 신경을 쓰지 않았었습니다. 20 만 건의 더미 데이터를 넣어놓고 쿼리 개수와 시간을 측정해보았을 때의 결과는 처참했죠. 아래는 저희가 측정한 API 성능표입니다.</description>
-    </item>
-    
-    <item>
-      <title># N &#43; 1</title>
-      <link>http://cjlee38.github.io/post/tech/jpa/2022-09-01-n-plus-1/</link>
-      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/post/tech/jpa/2022-09-01-n-plus-1/</guid>
-      <description></description>
     </item>
     
   </channel>

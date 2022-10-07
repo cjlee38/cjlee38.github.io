@@ -6,16 +6,7 @@
     <description>Recent content in Categories on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>spring</title>
-      <link>http://cjlee38.github.io/categories/spring/</link>
-      <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/categories/spring/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>btb</title>
       <link>http://cjlee38.github.io/categories/btb/</link>
@@ -26,11 +17,20 @@
     </item>
     
     <item>
-      <title>JPA</title>
+      <title>jpa</title>
       <link>http://cjlee38.github.io/categories/jpa/</link>
       <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>http://cjlee38.github.io/categories/jpa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring</title>
+      <link>http://cjlee38.github.io/categories/spring/</link>
+      <pubDate>Sun, 21 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/categories/spring/</guid>
       <description></description>
     </item>
     

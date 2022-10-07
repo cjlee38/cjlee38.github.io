@@ -6,34 +6,7 @@
     <description>Recent content in Tags on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>spring</title>
-      <link>http://cjlee38.github.io/tags/spring/</link>
-      <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/tags/spring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>transaction</title>
-      <link>http://cjlee38.github.io/tags/transaction/</link>
-      <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/tags/transaction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>transaction-manager</title>
-      <link>http://cjlee38.github.io/tags/transaction-manager/</link>
-      <pubDate>Wed, 05 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/tags/transaction-manager/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>encoding</title>
       <link>http://cjlee38.github.io/tags/encoding/</link>
@@ -44,7 +17,7 @@
     </item>
     
     <item>
-      <title>JPA</title>
+      <title>jpa</title>
       <link>http://cjlee38.github.io/tags/jpa/</link>
       <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
       
@@ -62,20 +35,20 @@
     </item>
     
     <item>
-      <title>N&#43;1</title>
-      <link>http://cjlee38.github.io/tags/n&#43;1/</link>
-      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/tags/n&#43;1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>scheduled</title>
       <link>http://cjlee38.github.io/tags/scheduled/</link>
       <pubDate>Sun, 21 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>http://cjlee38.github.io/tags/scheduled/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring</title>
+      <link>http://cjlee38.github.io/tags/spring/</link>
+      <pubDate>Sun, 21 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/tags/spring/</guid>
       <description></description>
     </item>
     
