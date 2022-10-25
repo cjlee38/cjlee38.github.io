@@ -6,11 +6,11 @@
     <description>Recent content in Posts on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># 개인적인, 도메인과 레이어드 아키텍처</title>
       <link>http://cjlee38.github.io/post/tech/architecture/2022-10-19-domain-layered-architecture/</link>
-      <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>http://cjlee38.github.io/post/tech/architecture/2022-10-19-domain-layered-architecture/</guid>
       <description>주의) 본 글은 지극히 개인적이고 주관적인 생각과 성찰 등을 정리한 글입니다. 따라서 실무나 여러 &amp;lsquo;정론&amp;rsquo; 과는 다른 내용을 담고 있을 수 있습니다. 틀린 내용을 발견하면 댓글 부탁드립니다 !
