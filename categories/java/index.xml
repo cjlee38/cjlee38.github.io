@@ -6,7 +6,20 @@
     <description>Recent content in java on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Aug 2021 23:44:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title># Java의 static 메소드는 왜 overriding이 안되나요?</title>
+      <link>http://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</link>
+      <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</guid>
+      <description>얼마전 면접을 봤는데, 갑자기 이런 질문을 받았습니다.
+ Java의 static method는 왜 overriding이 안되나요 ?
+ static method의 overriding이라.. 너무나도 당연하게 안된다고 생각했는데, 갑작스럽게 질문을 받으니 머리가 백지상태가 되었습니다. 순간적으로 머릿속에서 JVM 구조가 얼핏 지나가면서, class loader, compile time, method area 등 여러 키워드가 지나갔으나 그 무엇도 속시원한 대답은 할 수 없을 것 같았습니다.
+이번 포스팅은, JVM 에서 왜 static method를 overriding 할 수 없는지에 대해, 자세하게 알아보고자 합니다.
+예제 아래 코드를 한번 살펴보겠습니다.</description>
+    </item>
+    
     <item>
       <title># 제네릭 톺아보기 2</title>
       <link>http://cjlee38.github.io/post/language/java/2021-08-29-java-generics-2/</link>
@@ -212,19 +225,6 @@ Python의 dictionary 라는 이름을 보면,
 &amp;ldquo;음, 사전이니까, 마치 단어사전 혹은 백과사전처럼, 어떤 이름과 그 안에 내용물을 갖춘 무언가겠군!&amp;rdquo;
 이라고 유추해 볼 수 있지만,
 Java의 HashMap을 보면 잘 이해가 되지 않는다.</description>
-    </item>
-    
-    <item>
-      <title># Java의 static 메소드는 왜 overriding이 안되나요?</title>
-      <link>http://cjlee38.github.io/post/language/java/2022-11-13-override-static-method/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://cjlee38.github.io/post/language/java/2022-11-13-override-static-method/</guid>
-      <description>얼마전 면접을 봤는데, 갑자기 이런 질문을 받았습니다.
- Java의 static method는 왜 overriding이 안되나요 ?
- static method의 overriding이라.. 너무나도 당연하게 안된다고 생각했는데, 갑작스럽게 질문을 받으니 머리가 백지상태가 되었습니다. 순간적으로 머릿속에서 JVM 구조가 얼핏 지나가면서, class loader, compile time, method area 등 여러 키워드가 지나갔으나 그 무엇도 속시원한 대답은 할 수 없을 것 같았습니다.
-이번 포스팅은, JVM 에서 왜 static method를 overriding 할 수 없는지에 대해, 자세하게 알아보고자 합니다.
-예제 아래 코드를 한번 살펴보겠습니다.</description>
     </item>
     
   </channel>
