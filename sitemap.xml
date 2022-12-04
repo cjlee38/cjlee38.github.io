@@ -2,25 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://cjlee38.github.io/post/language/java/2022-11-13-override-static-method/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/categories/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/tags/java/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/categories/java/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/tags/jvm/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/post/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://cjlee38.github.io/tags/</loc>
+    <lastmod>2022-11-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://cjlee38.github.io/post/tech/architecture/2022-10-19-domain-layered-architecture/</loc>
     <lastmod>2022-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cjlee38.github.io/categories/architecture/</loc>
     <lastmod>2022-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://cjlee38.github.io/categories/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cjlee38.github.io/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://cjlee38.github.io/tags/layered-architecture/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cjlee38.github.io/post/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cjlee38.github.io/tags/</loc>
     <lastmod>2022-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://cjlee38.github.io/post/tech/btb/2022-10-03-encoding-with-mysql/</loc>
@@ -114,9 +126,6 @@
     <lastmod>2021-09-16T22:05:00+00:00</lastmod>
   </url><url>
     <loc>http://cjlee38.github.io/post/language/java/2021-08-29-java-generics-2/</loc>
-    <lastmod>2021-08-29T23:44:00+00:00</lastmod>
-  </url><url>
-    <loc>http://cjlee38.github.io/categories/java/</loc>
     <lastmod>2021-08-29T23:44:00+00:00</lastmod>
   </url><url>
     <loc>http://cjlee38.github.io/post/language/java/2021-08-10-java-generics-1-copy/</loc>

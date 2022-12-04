@@ -6,7 +6,20 @@
     <description>Recent content in Posts on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title># Java의 static 메소드는 왜 overriding이 안되나요?</title>
+      <link>http://cjlee38.github.io/post/language/java/2022-11-13-override-static-method/</link>
+      <pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://cjlee38.github.io/post/language/java/2022-11-13-override-static-method/</guid>
+      <description>얼마전 면접을 봤는데, 갑자기 이런 질문을 받았습니다.
+ Java의 static method는 왜 overriding이 안되나요 ?
+ static method의 overriding이라.. 너무나도 당연하게 안된다고 생각했는데, 갑작스럽게 질문을 받으니 머리가 백지상태가 되었습니다. 순간적으로 머릿속에서 JVM 구조가 얼핏 지나가면서, class loader, compile time, method area 등 여러 키워드가 지나갔으나 그 무엇도 속시원한 대답은 할 수 없을 것 같았습니다.
+이번 포스팅은, JVM 에서 왜 static method를 overriding 할 수 없는지에 대해, 자세하게 알아보고자 합니다.
+예제 아래 코드를 한번 살펴보겠습니다.</description>
+    </item>
+    
     <item>
       <title># 개인적인, 도메인과 레이어드 아키텍처</title>
       <link>http://cjlee38.github.io/post/tech/architecture/2022-10-19-domain-layered-architecture/</link>
