@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>platform on cjlee38</title>
-    <link>http://cjlee38.github.io/tags/platform/</link>
+    <link>https://cjlee38.github.io/tags/platform/</link>
     <description>Recent content in platform on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/tags/platform/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/tags/platform/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># 스프링에서 환경을 분리하는 방법</title>
-      <link>http://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</link>
+      <link>https://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</link>
       <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</guid>
+      <guid>https://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</guid>
       <description>스프링에서 환경을 분리하는 방법 : 발단은 우아한테크코스 레벨 2, &amp;lsquo;장바구니&amp;rsquo; 미션에서 시작됩니다. 장바구니 미션의 goal은 총 3가지 였는데요. 레거시 코드 다루기, 프론트엔드와 협업 경험, 그리고 AWS EC2를 통한 배포입니다.
 처음으로 배포를 진행하다보니 우여곡절도 많았고, 자동화할 수 있는 부분도 잘 몰라서 수동으로 하는 등의 여러 고생을 했었는데, 이번 미션에서도 같은 주제로 이야기가 나오고 해서, 환경을 분리하는 방법 에 대해서 공유해보고자 합니다.
 1. application.yml(혹은 properties) 분리 : 프로젝트를 local에서만 개발하는게 아니라면, 그리고 develop 이나 staging, production 을 구분해서 개발하게 된다면 필연적으로 서로 다른 설정값이 필요하게 됩니다.</description>

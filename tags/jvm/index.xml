@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>jvm on cjlee38</title>
-    <link>http://cjlee38.github.io/tags/jvm/</link>
+    <link>https://cjlee38.github.io/tags/jvm/</link>
     <description>Recent content in jvm on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># Java의 static 메소드는 왜 overriding이 안되나요?</title>
-      <link>http://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</link>
+      <link>https://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</link>
       <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</guid>
       <description>얼마전 면접을 봤는데, 갑자기 이런 질문을 받았습니다.
  Java의 static method는 왜 overriding이 안되나요 ?
  static method의 overriding이라.. 너무나도 당연하게 안된다고 생각했는데, 갑작스럽게 질문을 받으니 머리가 백지상태가 되었습니다. 순간적으로 머릿속에서 JVM 구조가 얼핏 지나가면서, class loader, compile time, method area 등 여러 키워드가 지나갔으나 그 무엇도 속시원한 대답은 할 수 없을 것 같았습니다.

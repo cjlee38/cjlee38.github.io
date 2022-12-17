@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>java on cjlee38</title>
-    <link>http://cjlee38.github.io/categories/java/</link>
+    <link>https://cjlee38.github.io/categories/java/</link>
     <description>Recent content in java on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># Java의 static 메소드는 왜 overriding이 안되나요?</title>
-      <link>http://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</link>
+      <link>https://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</link>
       <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</guid>
       <description>얼마전 면접을 봤는데, 갑자기 이런 질문을 받았습니다.
  Java의 static method는 왜 overriding이 안되나요 ?
  static method의 overriding이라.. 너무나도 당연하게 안된다고 생각했는데, 갑작스럽게 질문을 받으니 머리가 백지상태가 되었습니다. 순간적으로 머릿속에서 JVM 구조가 얼핏 지나가면서, class loader, compile time, method area 등 여러 키워드가 지나갔으나 그 무엇도 속시원한 대답은 할 수 없을 것 같았습니다.
@@ -22,30 +22,30 @@
     
     <item>
       <title># 제네릭 톺아보기 2</title>
-      <link>http://cjlee38.github.io/post/language/java/2021-08-29-java-generics-2/</link>
+      <link>https://cjlee38.github.io/post/language/java/2021-08-29-java-generics-2/</link>
       <pubDate>Sun, 29 Aug 2021 23:44:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2021-08-29-java-generics-2/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2021-08-29-java-generics-2/</guid>
       <description>Java Generic 2 0. 들어가며 지난 시간에는 제네릭이 왜 필요한지, 어떻게 사용하는지, 그리고 어떻게 만들 수 있는지 등에 대해 살펴봤습니다. 그런데 한 가지, List 를 흉내낸 MyList 의 경우 생성자에서 여전히 Object 형을 사용했었습니다. 지난 시간의 코드를 다시 가져와보겠습니다.
 public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  private int size;  private Object[] array;   public MyList() {  this.array = new Object[capacity];  }   public void add(T o) {  array[size++] = o;  }   public T get(int index) {  return (T) array[index];  } } private Object[] array 그리고 this.</description>
     </item>
     
     <item>
       <title># 제네릭 톺아보기 1</title>
-      <link>http://cjlee38.github.io/post/language/java/2021-08-10-java-generics-1-copy/</link>
+      <link>https://cjlee38.github.io/post/language/java/2021-08-10-java-generics-1-copy/</link>
       <pubDate>Tue, 10 Aug 2021 19:26:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2021-08-10-java-generics-1-copy/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2021-08-10-java-generics-1-copy/</guid>
       <description>0. 들어가며 제네릭은 Java Collection Framework 를 사용하면 필연적으로 마주치는 문법 중 하나입니다. 처음 보았을 때에는 &amp;lt;&amp;gt; 형태의 다이아몬드가 당황스럽지만, 몇 번 써보고 나면 그리 어려운 개념이 아니라는걸 알게 되죠. 하지만 이건 사용자 관점일 뿐, 제네릭을 한 번이라도 만들어보려고 하면 손가락이 멈칫하게 됩니다.(특히 제가 그렇습니다.) 매 번 제네릭과 관련한 무언가를 만들어보려고 할 때마다 다시 찾아보는 것이 지겨워서, 직접 한 번 정리해볼까 합니다.
 1. Why Use Generics ? 제네릭은 클래스(혹은 인터페이스, 메소드)를 정의할 때, Type 을 파라미터로 넘겨줄 수 있도록 하는 녀석입니다.</description>
     </item>
     
     <item>
       <title># (Java8) 동작(≒메소드) 파라미터화 </title>
-      <link>http://cjlee38.github.io/post/language/java/2020-12-21-java8-behavior-parameterization/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-12-21-java8-behavior-parameterization/</link>
       <pubDate>Mon, 21 Dec 2020 14:33:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-12-21-java8-behavior-parameterization/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-12-21-java8-behavior-parameterization/</guid>
       <description>모던 자바 인 액션(라울-게이브리얼 우르마 저, 한빛미디어)을 기반으로 작성하였습니다.
  0. 들어가며 : 스트림이나 람다 같은 프로그래밍 테크닉들을 사용하면서, &amp;ldquo;이게 어떻게 동작하지?&amp;rdquo; 라는 그 원리에 대해서는 전혀 생각을 해보지 못했었다. 모던 자바 인 액션을 보면서 이런 동작 원리에 대해서 새로운 시야가 트인 느낌이라, 각 내용을 내 입맛에 맞게 정리해보고자 한다. 그런 기념에서, 첫 번째 포스팅은 2장의 동작(동적,Dynamic이 아니다.) 파라미터화 코드 전달하기 이다.
 1. 예제 : 가령 예를들어서, 과일 재고 목록을 관리하는 애플리케이션이 있다고 해보자.</description>
@@ -53,10 +53,10 @@ public class MyList&amp;lt;T&amp;gt; {  private final int capacity = 10;  privat
     
     <item>
       <title># (Java) Parameter를 활용하는 방법 ( feat. varargs, kwargs )</title>
-      <link>http://cjlee38.github.io/post/language/java/2020-10-25-java_parameters/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-10-25-java_parameters/</link>
       <pubDate>Sun, 25 Oct 2020 01:52:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-10-25-java_parameters/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-10-25-java_parameters/</guid>
       <description>varargs : varargs 는 variable arguments의 약자로, 한국어로는 &amp;ldquo;가변인자&amp;rdquo; 로 해석된다.
 이는 지난번에 포스팅했던 파이썬의 Asterisk(*) 다루기 와 비슷한데,
 arguments를 몇 개를 받을지 지정하지 않고, 호출하는 쪽에서 정해주겠다는 의미가 된다.
@@ -68,10 +68,10 @@ public class Main {  public static void main(String[] args) {  Main main = new M
     
     <item>
       <title># (Java) Junit은 어떻게 Main method 없이 실행될까? </title>
-      <link>http://cjlee38.github.io/post/language/java/2020-10-23-how-junit_works_without_main/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-10-23-how-junit_works_without_main/</link>
       <pubDate>Fri, 23 Oct 2020 17:48:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-10-23-how-junit_works_without_main/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-10-23-how-junit_works_without_main/</guid>
       <description>0. 들어가며 : 첫 처음 자바를 배웠을 당시가 떠오른다.
 아무것도 모른채, &amp;ldquo;약속&amp;quot;이라는 말과 함께
 public static void main(String][] args) 를 기계적으로 입력했었는데,
@@ -85,10 +85,10 @@ print(&amp;quot;hello world&amp;quot;) 라는 명령어 하나만으로 실행�
     
     <item>
       <title># (Java) Wrapper Class는 Call by Value 일까?</title>
-      <link>http://cjlee38.github.io/post/language/java/2020-10-21-java_wrapper_class/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-10-21-java_wrapper_class/</link>
       <pubDate>Wed, 21 Oct 2020 20:26:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-10-21-java_wrapper_class/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-10-21-java_wrapper_class/</guid>
       <description>0. 들어가며 : Java 는 Call by Value일까, Call by Reference 일까?
 지금까지는, 함수의 parameter로 primitive type을 넘겨줄 때에는 call by value,
 객체를 넘겨줄 때에는 call by reference로 알고 있었다.
@@ -100,10 +100,10 @@ print(&amp;quot;hello world&amp;quot;) 라는 명령어 하나만으로 실행�
     
     <item>
       <title># (Java) 효율적인 반복문 탈출을 위한 Label</title>
-      <link>http://cjlee38.github.io/post/language/java/2020-10-18-label_statement/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-10-18-label_statement/</link>
       <pubDate>Sun, 18 Oct 2020 14:22:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-10-18-label_statement/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-10-18-label_statement/</guid>
       <description>0. 들어가며 : 혹시, 여러 개로 겹쳐있는 for문을 반복하다가, 어느 조건을 만족했을 때,
 **전체 반복문을 중단시키려면 어떻게 해야 할까?**에 대해서 고민해본 적이 있는가?
 아마 지금까지는 두가지 방법 중 하나를 사용했을 것 같다.
@@ -113,10 +113,10 @@ boolean flag = false; for (int i = 0; i &amp;lt; 10; i++) {  for (int j = 0; j &
     
     <item>
       <title># (Java) Annotation에 대한 이해</title>
-      <link>http://cjlee38.github.io/post/language/java/2020-10-14-java_annotation/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-10-14-java_annotation/</link>
       <pubDate>Wed, 14 Oct 2020 21:11:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-10-14-java_annotation/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-10-14-java_annotation/</guid>
       <description>0. 들어가며 : 스프링 공부를 하던 중, 자주 사용되는 Annotation에 대해서 살펴보았다.
 다양한 글을 읽었는데도, Java의 Annotation은 뭐라 딱 찝어서 설명하기 어려운 것 같다.
 더욱이, 나는 &amp;rsquo;@&amp;rsquo; 표시에 대해서, Python의 Decorator로 먼저 이해했기 때문에 더욱 어려웠던 것 같다.
@@ -127,10 +127,10 @@ Java의 Annotation은 그냥 Meta data 로 퉁쳐버리기 때문에,
     
     <item>
       <title># (Java) Static Field, Method, 그리고 Block</title>
-      <link>http://cjlee38.github.io/post/language/java/2020-10-10-java_static/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-10-10-java_static/</link>
       <pubDate>Sat, 10 Oct 2020 20:41:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-10-10-java_static/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-10-10-java_static/</guid>
       <description>Concept of Static : static을 한글로 해석하면 정적이라는 뜻인데, 크게 와닿지는 않는 해석이다.
 흔히, 객체지향에서 자주 하는 비유 중 하나가 붕어빵 틀과 붕어빵이다.
 클래스는 붕어빵 틀로, 붕어빵을 찍어낼 수 있고, 인스턴스는 찍혀진 붕어빵이다.
@@ -143,10 +143,10 @@ new 반죽으로 바꾸고 싶다고 해보자.</description>
     
     <item>
       <title># (Java) [짧] Enum 뜯어보기</title>
-      <link>http://cjlee38.github.io/post/language/java/2020-10-09-java_enum/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-10-09-java_enum/</link>
       <pubDate>Fri, 09 Oct 2020 15:11:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-10-09-java_enum/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-10-09-java_enum/</guid>
       <description>Enum in Java : C언어에서의 Enum은, 단순하게 연속된 숫자의 Magic Number를 표현하는 것을
 막기 위해 사용되어서, 그 내부의 값은 int 값을 갖고 있다.
 Enumerate, 열거하다 라는 표현에, 걸맞다는 생각이 들기도 한다.
@@ -160,10 +160,10 @@ public class Main {  public static void main(String[] args) {  System.</descript
     
     <item>
       <title># (Java) Stream API 첫걸음</title>
-      <link>http://cjlee38.github.io/post/language/java/2020-10-07-java_stream/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-10-07-java_stream/</link>
       <pubDate>Wed, 07 Oct 2020 01:03:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-10-07-java_stream/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-10-07-java_stream/</guid>
       <description>0. 들어가며 : 최근, 여러 알고리즘 문제들을 풀면서,
 가끔 심심할때마다 프로그래머스 Lv.1 문제들도 푸는데,
 Lv.1 문제들은 단순하게 제출하는 것이 뭔가 좀 껄끄러웠다.
@@ -178,10 +178,10 @@ Lv.1 문제들은 단순하게 제출하는 것이 뭔가 좀 껄끄러웠다.
     
     <item>
       <title># (Java) 예외처리를 위한 Try-Catch</title>
-      <link>http://cjlee38.github.io/post/language/java/2020-10-05-exception_in_java/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-10-05-exception_in_java/</link>
       <pubDate>Mon, 05 Oct 2020 06:42:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-10-05-exception_in_java/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-10-05-exception_in_java/</guid>
       <description>0. 들어가며 : 예외처리는, 그 이름만 들어도 두려움이 생긴다.
 간단하게 생각하자면 if else문의 연장선인 것 같으면서도,
 또 뭔가 시스템의 장애를 덕지덕지 막아내는 것 같은 찝찝함도 동시에 든다.
@@ -196,10 +196,10 @@ Lv.1 문제들은 단순하게 제출하는 것이 뭔가 좀 껄끄러웠다.
     
     <item>
       <title># (Java) 추석맞이 String 종합선물세트</title>
-      <link>http://cjlee38.github.io/post/language/java/2020-10-01-all_of_string_in_java/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-10-01-all_of_string_in_java/</link>
       <pubDate>Thu, 01 Oct 2020 16:59:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-10-01-all_of_string_in_java/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-10-01-all_of_string_in_java/</guid>
       <description>0. 들어가며 : String은 언제 다뤄도 어렵다.
 Java 에서의 String은 조금 특별한 존재이기 때문에, Python처럼 생각없이 다루면 안된다.
 String에 연산이 많이 들어가는 경우, StringBuilder를 쓰는 경우가 많은데,
@@ -212,10 +212,10 @@ String에 연산이 많이 들어가는 경우, StringBuilder를 쓰는 경우�
     
     <item>
       <title># (Java) HashMap 으로의 여행</title>
-      <link>http://cjlee38.github.io/post/language/java/2020-09-10-journey_to_java_hashmap/</link>
+      <link>https://cjlee38.github.io/post/language/java/2020-09-10-journey_to_java_hashmap/</link>
       <pubDate>Thu, 10 Sep 2020 14:54:36 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/language/java/2020-09-10-journey_to_java_hashmap/</guid>
+      <guid>https://cjlee38.github.io/post/language/java/2020-09-10-journey_to_java_hashmap/</guid>
       <description>0. 들어가며 : 나는 프로그래밍에서 Naming이 정말 Critical한 중요성을 갖는다고 생각한다.
 새로운 무언가에 대해서 배우고 나서, 그 이름을 다시 떠올려보면,
 왜 이걸 만든 사람들이 이 이름을 지었는지에 대해서 가닥이 잡힌다.

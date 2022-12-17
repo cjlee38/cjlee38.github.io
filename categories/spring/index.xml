@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>spring on cjlee38</title>
-    <link>http://cjlee38.github.io/categories/spring/</link>
+    <link>https://cjlee38.github.io/categories/spring/</link>
     <description>Recent content in spring on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/spring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/categories/spring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># 스프링 @Scheduled 와 @Transactional에 얽힌 이야기</title>
-      <link>http://cjlee38.github.io/post/tech/spring/2022-08-21-spring-scheudeld-with-transactional/</link>
+      <link>https://cjlee38.github.io/post/tech/spring/2022-08-21-spring-scheudeld-with-transactional/</link>
       <pubDate>Sun, 21 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/spring/2022-08-21-spring-scheudeld-with-transactional/</guid>
+      <guid>https://cjlee38.github.io/post/tech/spring/2022-08-21-spring-scheudeld-with-transactional/</guid>
       <description>0. 서론 팀 프로젝트를 진행하면서, 특정 시간에 맞추어 Entity의 상태를 업데이트하고, 슬랙 메시지를 발송하는 기능을 개발하고 있었습니다. 제이슨이 추천해주신 여러가지 선택지 중에서, 러닝커브나 유지보수성을 감안하여 스프링의 스케줄링 기능을 활용하기로 결정했고, 약간의 학습 이후 본격적인 개발에 착수했습니다.
 코드는 대략 다음과 같이 구성되어 있었습니다.
 @Service @Transactional public class PollService {  	@Scheduled(cron = &amp;#34;0 0/1 * * * ?&amp;#34;) 	void notifyClosedByScheduled() { 	List&amp;lt;Poll&amp;gt; pollsToBeClosed = pollRepository.findAllToBeClosed(LocalDateTime.now()); 	for (Poll poll : pollsToBeClosed) { 	poll.</description>
@@ -20,10 +20,10 @@
     
     <item>
       <title># 스프링에서 환경을 분리하는 방법</title>
-      <link>http://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</link>
+      <link>https://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</link>
       <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</guid>
+      <guid>https://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</guid>
       <description>스프링에서 환경을 분리하는 방법 : 발단은 우아한테크코스 레벨 2, &amp;lsquo;장바구니&amp;rsquo; 미션에서 시작됩니다. 장바구니 미션의 goal은 총 3가지 였는데요. 레거시 코드 다루기, 프론트엔드와 협업 경험, 그리고 AWS EC2를 통한 배포입니다.
 처음으로 배포를 진행하다보니 우여곡절도 많았고, 자동화할 수 있는 부분도 잘 몰라서 수동으로 하는 등의 여러 고생을 했었는데, 이번 미션에서도 같은 주제로 이야기가 나오고 해서, 환경을 분리하는 방법 에 대해서 공유해보고자 합니다.
 1. application.yml(혹은 properties) 분리 : 프로젝트를 local에서만 개발하는게 아니라면, 그리고 develop 이나 staging, production 을 구분해서 개발하게 된다면 필연적으로 서로 다른 설정값이 필요하게 됩니다.</description>
@@ -31,10 +31,10 @@
     
     <item>
       <title># [Spring 학습 정리] Dependency Injection 의 필요성</title>
-      <link>http://cjlee38.github.io/post/tech/spring/2020-12-29-dependency_injection/</link>
+      <link>https://cjlee38.github.io/post/tech/spring/2020-12-29-dependency_injection/</link>
       <pubDate>Tue, 29 Dec 2020 09:58:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/spring/2020-12-29-dependency_injection/</guid>
+      <guid>https://cjlee38.github.io/post/tech/spring/2020-12-29-dependency_injection/</guid>
       <description>0. Dependency Injection 이란? : Dependency Injection(이하, DI)는 Spring에서만 사용되는 용어가 아니라,
 객체지향프로그래밍(이하, OOP)에서 통용되는 개념이다. 이를 이해하기 위해서는, OOP에서 중요시 여기는 SOLID의 5원칙에 대해서 알아야 한다.
 이번 포스팅에서는 SOLID 5원칙에 무엇이 있는지만 심플하게 짚고 넘어가자.
@@ -44,10 +44,10 @@
     
     <item>
       <title># [Spring 학습 정리] Spring Framework 란?</title>
-      <link>http://cjlee38.github.io/post/tech/spring/2020-11-11-what_is_spring/</link>
+      <link>https://cjlee38.github.io/post/tech/spring/2020-11-11-what_is_spring/</link>
       <pubDate>Wed, 11 Nov 2020 09:58:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/spring/2020-11-11-what_is_spring/</guid>
+      <guid>https://cjlee38.github.io/post/tech/spring/2020-11-11-what_is_spring/</guid>
       <description>What ? : 스프링, 정확히는 스프링 프레임워크란, 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크이다. 기존의 Java EE(Enterprise Edition)의 스펙을 구현한 EJB는 기술의 복잡도가 높아, 성능도 느리고 러닝커브도 높았다. 이를 &amp;lsquo;겨울&amp;rsquo;로 빗대서, 개발자들의 &amp;lsquo;봄&amp;rsquo;이 도래했다는 의미로 스프링이라는 명칭을 갖게 되었다.
 그러나, 이렇게만 이야기하면, 겨우 특정 언어의 문법 정도나 갓 뗀 사람들에게는 어렵고 생소하게만 다가온다. 오픈소스? 애플리케이션? 프레임워크? 무슨 뜻일까? 하나씩 살펴보자.
 1) 오픈 소스    오픈 소스란, 어떤 소프트웨어 프로그램을 개발하는 과정에 있어서 필요한 소스 코드를 누구나 볼 수 있도록 공개하는 것을 의미한다.</description>

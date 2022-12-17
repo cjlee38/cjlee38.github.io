@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>data-structure on cjlee38</title>
-    <link>http://cjlee38.github.io/categories/data-structure/</link>
+    <link>https://cjlee38.github.io/categories/data-structure/</link>
     <description>Recent content in data-structure on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Sep 2020 19:38:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/data-structure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Sep 2020 19:38:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/categories/data-structure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># 마음으로 이해하는 자료구조 : Queue ( feat. C )</title>
-      <link>http://cjlee38.github.io/post/algorithm/data_structure/2020-09-21-what_is_queue/</link>
+      <link>https://cjlee38.github.io/post/algorithm/data_structure/2020-09-21-what_is_queue/</link>
       <pubDate>Mon, 21 Sep 2020 19:38:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/algorithm/data_structure/2020-09-21-what_is_queue/</guid>
+      <guid>https://cjlee38.github.io/post/algorithm/data_structure/2020-09-21-what_is_queue/</guid>
       <description>0. 들어가며 : Stack과 Queue는 아주 기본 중의 기본인 자료구조이다.
 아주 간단하므로, 사실 Stack과 Queue가 무엇인지에 대해서 이야기할 부분은 많지 않다.
 따라서, 이번 포스팅은 코드 구현 위주로 작성할 것이다.
@@ -25,10 +25,10 @@
     
     <item>
       <title># 마음으로 이해하는 자료구조 : Stack ( feat. C )</title>
-      <link>http://cjlee38.github.io/post/algorithm/data_structure/2020-09-21-what_is_stack/</link>
+      <link>https://cjlee38.github.io/post/algorithm/data_structure/2020-09-21-what_is_stack/</link>
       <pubDate>Mon, 21 Sep 2020 18:13:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/algorithm/data_structure/2020-09-21-what_is_stack/</guid>
+      <guid>https://cjlee38.github.io/post/algorithm/data_structure/2020-09-21-what_is_stack/</guid>
       <description>0. 들어가며 : Stack과 Queue는 아주 기본 중의 기본인 자료구조이다.
 아주 간단하므로, 사실 Stack과 Queue가 무엇인지에 대해서 이야기할 부분은 많지 않다.
 따라서, 이번 포스팅은 코드 구현 위주로 작성할 것이다.
@@ -40,10 +40,10 @@
     
     <item>
       <title># 마음으로 이해하는 자료구조 : LinkedList ( feat. C )</title>
-      <link>http://cjlee38.github.io/post/algorithm/data_structure/2020-09-10-what_is_linked_list/</link>
+      <link>https://cjlee38.github.io/post/algorithm/data_structure/2020-09-10-what_is_linked_list/</link>
       <pubDate>Thu, 10 Sep 2020 01:51:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/algorithm/data_structure/2020-09-10-what_is_linked_list/</guid>
+      <guid>https://cjlee38.github.io/post/algorithm/data_structure/2020-09-10-what_is_linked_list/</guid>
       <description>0. 들어가며 : 개인적으로, C로 코딩을 시작했을 때 마주하는 가장 첫 번째 관문은 포인터라고 생각한다.
 변수에 값을 담는다는 것은 알겠는데(그마저도 자유자재로 다루기가 어려웠지만),
 주소값을 가리킨다는 말은, 번지 수라는 말을 붙여도 쉽게 와닿지는 않는 개념이다.

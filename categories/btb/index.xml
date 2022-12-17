@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>btb on cjlee38</title>
-    <link>http://cjlee38.github.io/categories/btb/</link>
+    <link>https://cjlee38.github.io/categories/btb/</link>
     <description>Recent content in btb on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://cjlee38.github.io/categories/btb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/categories/btb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># 문자 인코딩과 MySQL varchar</title>
-      <link>http://cjlee38.github.io/post/tech/btb/2022-10-03-encoding-with-mysql/</link>
+      <link>https://cjlee38.github.io/post/tech/btb/2022-10-03-encoding-with-mysql/</link>
       <pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/btb/2022-10-03-encoding-with-mysql/</guid>
+      <guid>https://cjlee38.github.io/post/tech/btb/2022-10-03-encoding-with-mysql/</guid>
       <description>1. 문자 인코딩이란 문자 인코딩이란 사용자가 입력한 문자나 기호들을 컴퓨터가 이용할 수 있는 신호로 만드는 것을 말합니다. 1 우리가 작성한 모든 텍스트는 결국 CPU 상에서 2진수로 처리됩니다. 사람이 작성한 글을 2진수로 변환하고, 2진수를 다시 사람이 읽을 수 있도록 만드는 작업을 각각 인코딩(encoding)과 디코딩(decoding)이라고 표현합니다.
 이러한 인코딩을 하기 위해서는 서로 약속한 &amp;lsquo;문자열 세트&amp;rsquo;가 필요합니다. 가장 대표적인 문자열 세트는 ASCII 입니다. ASCII는 1963년 미국 ANSI에서 표준화한 7 bit 부호 체계로 128 개의 기호(33개의 제어문자와 95개의 출력문자)를 표현할 수 있습니다.</description>
     </item>
     
     <item>
       <title># 소수(Prime Number)를 찾는 방법 ( feat. Java )</title>
-      <link>http://cjlee38.github.io/post/tech/btb/2020-11-08-ways_to_find_prime_number/</link>
+      <link>https://cjlee38.github.io/post/tech/btb/2020-11-08-ways_to_find_prime_number/</link>
       <pubDate>Sun, 08 Nov 2020 17:43:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/btb/2020-11-08-ways_to_find_prime_number/</guid>
+      <guid>https://cjlee38.github.io/post/tech/btb/2020-11-08-ways_to_find_prime_number/</guid>
       <description>0. 들어가며 : 우아한 테크코스 코딩테스트를 준비하며, 이전에 풀었던 PS 문제들을 하나씩 둘러보던 중, 소수 문제를 발견했다. 소수를 구하는 방법에 여러 가지가 있는 것은 알았는데, 막상 쓰려니까 손가락이 잘 움직이지 않았다.
 해서 생각난 김에, 이번 포스팅에서 주어진 숫자가 소수인지 확인하는 방법에 대해서 알아보고자 한다.
 1. 소수(Prime Number) : 소수를 모르는 사람은 없을 것이다. 그래도 굳이 한번 적어보자면, 소수의 정의는 다음과 같다.
@@ -31,10 +31,10 @@
     
     <item>
       <title># (번역) Value Object of Martin Fowler</title>
-      <link>http://cjlee38.github.io/post/tech/btb/2020-10-20-value_object/</link>
+      <link>https://cjlee38.github.io/post/tech/btb/2020-10-20-value_object/</link>
       <pubDate>Tue, 20 Oct 2020 12:11:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/btb/2020-10-20-value_object/</guid>
+      <guid>https://cjlee38.github.io/post/tech/btb/2020-10-20-value_object/</guid>
       <description>본 포스팅은 마틴 파울러가 Value Object 에 대해 작성한 글을 의역했습니다.
 정확한 이해를 위해, 가능하시면 원문을 보시는 것을 추천드립니다.
   프로그래밍을 할 때, 종종 사물(things)을 복합적으로 표현하는게 유용할 때가 있습니다. 2차원의 좌표는 x 값과 y 값을 가집니다. 돈은 숫자와 통화를 가집니다. 기간은 시작 날짜와 끝 날짜를 가지고, 이것들은 연, 월, 일을 가집니다.
@@ -43,10 +43,10 @@
     
     <item>
       <title># 재귀함수 주무르기 with 피보나치 수열 ( feat. Java )</title>
-      <link>http://cjlee38.github.io/post/tech/btb/2020-10-16-recursive_function/</link>
+      <link>https://cjlee38.github.io/post/tech/btb/2020-10-16-recursive_function/</link>
       <pubDate>Fri, 16 Oct 2020 05:44:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/btb/2020-10-16-recursive_function/</guid>
+      <guid>https://cjlee38.github.io/post/tech/btb/2020-10-16-recursive_function/</guid>
       <description>0. 들어가며 : 나는 재귀함수를 좋아하지 않는다.
 재귀함수는 몇 번을 써도 어렵고, 몇 번을 봐도 쉽사리 파악하기 어렵다.
 그럼에도 불구하고, 재귀함수는 유용하고, 신기하다.
@@ -59,10 +59,10 @@
     
     <item>
       <title># 객체지향 설계원칙 - SOLID(번역)</title>
-      <link>http://cjlee38.github.io/post/tech/btb/2020-10-08-solid_principles/</link>
+      <link>https://cjlee38.github.io/post/tech/btb/2020-10-08-solid_principles/</link>
       <pubDate>Thu, 08 Oct 2020 12:35:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/btb/2020-10-08-solid_principles/</guid>
+      <guid>https://cjlee38.github.io/post/tech/btb/2020-10-08-solid_principles/</guid>
       <description>SOLID 원칙에 대해서 공부하던 중, 적절한 예시와 함께 작성된 글이 있어,
 짧은 영어 실력으로 번역 및 정리해보았다.
 수능을 마치고나서, 영어를 볼 떄마다 종종 드는 생각은,
@@ -76,10 +76,10 @@ SOLID 원칙이란 무엇입니까?  Robert C.Martin(Uncle Bob)에 의해 만들
     
     <item>
       <title># 박재성 - 의식적인 연습으로 TDD, 리팩토링 연습하기</title>
-      <link>http://cjlee38.github.io/post/tech/btb/2020-09-27-tdd-by-jaesung_park/</link>
+      <link>https://cjlee38.github.io/post/tech/btb/2020-09-27-tdd-by-jaesung_park/</link>
       <pubDate>Sun, 27 Sep 2020 21:31:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/btb/2020-09-27-tdd-by-jaesung_park/</guid>
+      <guid>https://cjlee38.github.io/post/tech/btb/2020-09-27-tdd-by-jaesung_park/</guid>
       <description>본 포스팅은 자바지기 박재성님의 강의를 듣고 정리하면서 작성한 글입니다.
 발표 동영상과 슬라이드는 하단의 Reference를 참고해주세요.
   의식적인 연습 : 단순히 반복적인 연습을 함으로써 실력 향상을 기대하기는 어렵다.
@@ -89,10 +89,10 @@ SOLID 원칙이란 무엇입니까?  Robert C.Martin(Uncle Bob)에 의해 만들
     
     <item>
       <title># Hash 맛보기</title>
-      <link>http://cjlee38.github.io/post/tech/btb/2020-09-25-what_is_hash/</link>
+      <link>https://cjlee38.github.io/post/tech/btb/2020-09-25-what_is_hash/</link>
       <pubDate>Fri, 25 Sep 2020 22:52:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/btb/2020-09-25-what_is_hash/</guid>
+      <guid>https://cjlee38.github.io/post/tech/btb/2020-09-25-what_is_hash/</guid>
       <description>0. 들어가며 : Hash 라는 용어는 주로 암호학에서 많이 사용되지만,
 개발자라면 오며가며 한 번쯤은 주워 듣는 용어이기도 하다.
 특히, 블록체인을 한 번이라도 공부해봤다면,
@@ -106,10 +106,10 @@ Hash 라는 것이 이 블록체인의 핵심 기술 중 하나라는 것을 배
     
     <item>
       <title># Expression과 Statement의 차이 ( feat. Python, Java )</title>
-      <link>http://cjlee38.github.io/post/tech/btb/2020-09-25-expression_and_statement/</link>
+      <link>https://cjlee38.github.io/post/tech/btb/2020-09-25-expression_and_statement/</link>
       <pubDate>Fri, 25 Sep 2020 00:12:00 +0000</pubDate>
       
-      <guid>http://cjlee38.github.io/post/tech/btb/2020-09-25-expression_and_statement/</guid>
+      <guid>https://cjlee38.github.io/post/tech/btb/2020-09-25-expression_and_statement/</guid>
       <description>0. 들어가며 : 코드를 작성하다보면 한번쯤은, 그런 생각을 해본다.
 물론, Key-Value 를 갖는 Java의 Hashmap, Python의 Dictionary가 있지만,
 때로는 편의성 때문에 변수명 자체가 그 값에 의해서 자동으로 선언될 수 있으면 좋겠다는 생각을 해본다.
