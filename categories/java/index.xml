@@ -8,6 +8,16 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 03 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title># Java Memory Model explained (feat. Effective Java, Item 78)</title>
+      <link>https://cjlee38.github.io/post/language/java/2023-03-06-java-memory-model-explained/</link>
+      <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://cjlee38.github.io/post/language/java/2023-03-06-java-memory-model-explained/</guid>
+      <description>개요 이펙티브 자바의 ‘아이템 78 공유 중인 가변 데이터는 동기화해 사용하라’ 에서는 멀티태스킹 환경에서 발생할 수 있는 동시성 문제들을 소개하고, 이에 대한 해결책을 제시한다. 아이템 78을 읽어본 사람이라면, 아래의 유명한 코드를 한 번쯤은 본 적이 있을 것이다.
+public class StopThread {  private static boolean stopRequested;   public static void main(String[] args) throws InterruptedException {  Thread backgroundThread = new Thread(() -&amp;gt; {  int i = 0;  while (!</description>
+    </item>
+    
+    <item>
       <title># Java의 static 메소드는 왜 overriding이 안되나요?</title>
       <link>https://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</link>
       <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
