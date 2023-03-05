@@ -3,33 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://cjlee38.github.io/post/language/java/2023-03-06-java-memory-model-explained/</loc>
-    <lastmod>2022-12-03T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/categories/</loc>
+    <lastmod>2023-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/</loc>
+    <lastmod>2023-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/tags/java/</loc>
+    <lastmod>2023-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/categories/java/</loc>
+    <lastmod>2023-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/tags/jmm/</loc>
+    <lastmod>2023-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/post/</loc>
+    <lastmod>2023-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/tags/</loc>
+    <lastmod>2023-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</loc>
     <lastmod>2022-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cjlee38.github.io/categories/</loc>
-    <lastmod>2022-12-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/</loc>
-    <lastmod>2022-12-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/java/</loc>
-    <lastmod>2022-12-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/categories/java/</loc>
-    <lastmod>2022-12-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/jmm/</loc>
-    <lastmod>2022-12-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://cjlee38.github.io/tags/jvm/</loc>
-    <lastmod>2022-12-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/</loc>
-    <lastmod>2022-12-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/</loc>
     <lastmod>2022-12-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/post/tech/architecture/2022-10-19-domain-layered-architecture/</loc>
