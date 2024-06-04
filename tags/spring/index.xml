@@ -6,27 +6,17 @@
     <description>Recent content in spring on cjlee38</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title># 스프링 @Scheduled 와 @Transactional에 얽힌 이야기</title>
-      <link>https://cjlee38.github.io/post/tech/spring/2022-08-21-spring-scheudeld-with-transactional/</link>
-      <pubDate>Sun, 21 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/post/tech/spring/2022-08-21-spring-scheudeld-with-transactional/</guid>
-      <description>0. 서론 팀 프로젝트를 진행하면서, 특정 시간에 맞추어 Entity의 상태를 업데이트하고, 슬랙 메시지를 발송하는 기능을 개발하고 있었습니다. 제이슨이 추천해주신 여러가지 선택지 중에서, 러닝커브나 유지보수성을 감안하여 스프링의 스케줄링 기능을 활용하기로 결정했고, 약간의 학습 이후 본격적인 개발에 착수했습니다.
-코드는 대략 다음과 같이 구성되어 있었습니다.
-@Service @Transactional public class PollService {  	@Scheduled(cron = &amp;#34;0 0/1 * * * ?&amp;#34;) 	void notifyClosedByScheduled() { 	List&amp;lt;Poll&amp;gt; pollsToBeClosed = pollRepository.findAllToBeClosed(LocalDateTime.now()); 	for (Poll poll : pollsToBeClosed) { 	poll.</description>
-    </item>
-    
-    <item>
-      <title># 스프링에서 환경을 분리하는 방법</title>
-      <link>https://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</link>
+      <title>스프링에서 환경을 분리하는 방법</title>
+      <link>https://cjlee38.github.io/post/spring/spring-environment-seperation/</link>
       <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</guid>
-      <description>스프링에서 환경을 분리하는 방법 : 발단은 우아한테크코스 레벨 2, &amp;lsquo;장바구니&amp;rsquo; 미션에서 시작됩니다. 장바구니 미션의 goal은 총 3가지 였는데요. 레거시 코드 다루기, 프론트엔드와 협업 경험, 그리고 AWS EC2를 통한 배포입니다.
-처음으로 배포를 진행하다보니 우여곡절도 많았고, 자동화할 수 있는 부분도 잘 몰라서 수동으로 하는 등의 여러 고생을 했었는데, 이번 미션에서도 같은 주제로 이야기가 나오고 해서, 환경을 분리하는 방법 에 대해서 공유해보고자 합니다.
-1. application.yml(혹은 properties) 분리 : 프로젝트를 local에서만 개발하는게 아니라면, 그리고 develop 이나 staging, production 을 구분해서 개발하게 된다면 필연적으로 서로 다른 설정값이 필요하게 됩니다.</description>
+      <guid>https://cjlee38.github.io/post/spring/spring-environment-seperation/</guid>
+      <description>프로젝트를 local에서만 개발하는게 아니라면, 그리고 develop 이나 staging, production 을 구분해서 개발하게 된다면 필연적으로 서로 다른 설정값이 필요하게 된다.
+local 에서는 테스트 용도이므로 H2 의 in-memory DB 를 사용할 수 있지만, production 환경에서는 반드시 안정적인 밴더사의 RDBMS와 인스턴스를 사용하게 된다.
+가령, local에서 개발을 마치고, 이제 production 에서 코드를 가져와 실행하려면 당연히 datasource 를 바꿔주어야 한다.
+# as-is (local) spring:  datasource:  url: jdbc:h2:mem:testdb;MODE=MYSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE  username: sa  # to-be (production, or develop .</description>
     </item>
     
   </channel>

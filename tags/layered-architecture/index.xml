@@ -8,13 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/tags/layered-architecture/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title># 개인적인, 도메인과 레이어드 아키텍처</title>
-      <link>https://cjlee38.github.io/post/tech/architecture/2022-10-19-domain-layered-architecture/</link>
+      <title>도메인과 레이어드 아키텍처</title>
+      <link>https://cjlee38.github.io/post/code/domain-layered-architecture/</link>
       <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://cjlee38.github.io/post/tech/architecture/2022-10-19-domain-layered-architecture/</guid>
+      <guid>https://cjlee38.github.io/post/code/domain-layered-architecture/</guid>
       <description>주의) 본 글은 지극히 개인적이고 주관적인 생각과 성찰 등을 정리한 글입니다. 따라서 실무나 여러 &amp;lsquo;정론&amp;rsquo; 과는 다른 내용을 담고 있을 수 있습니다. 틀린 내용을 발견하면 댓글 부탁드립니다 !
- 약 8개월 간의 우아한테크코스를 진행하면서 배우고, 또 고민한 것 중 하나는, 소프트웨어의 책임을 어떻게 분리할 것인가에 관한 것이었습니다. 레벨 1 당시에는 콘솔 프로그래밍으로 도메인을 어떻게 구성할 것인지에 대해 다루었습니다. 레벨 2 로 넘어와서는 Spark Java 와 Spring을 추가하면서 도메인을 안정적으로 만드는 것이 왜 중요한지에 대해 학습하였고, 레벨 3에 이르러서는 JPA를 사용하면서 데이터베이스를 연결했을 때 겪는 문제점들을 ORM이 어떻게 풀어나가는지 배웠습니다.</description>
+ 약 8개월 간의 우아한테크코스를 진행하면서 배우고, 또 고민한 것 중 하나는, 소프트웨어의 책임을 어떻게 분리할 것인가에 관한 것이었다. 레벨 1 당시에는 콘솔 프로그래밍으로 도메인을 어떻게 구성할 것인지에 대해 다루었다. 레벨 2 로 넘어와서는 Spark Java 와 Spring을 추가하면서 도메인을 안정적으로 만드는 것이 왜 중요한지에 대해 학습하였고, 레벨 3에 이르러서는 JPA를 사용하면서 데이터베이스를 연결했을 때 겪는 문제점들을 ORM이 어떻게 풀어나가는지 배웠다.</description>
     </item>
     
   </channel>

@@ -9,25 +9,12 @@
     <lastBuildDate>Sun, 05 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title># Java Memory Model explained (feat. Effective Java, Item 78)</title>
-      <link>https://cjlee38.github.io/post/language/java/2023-03-06-java-memory-model-explained/</link>
+      <link>https://cjlee38.github.io/post/lang/java-memory-model-explained/</link>
       <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://cjlee38.github.io/post/language/java/2023-03-06-java-memory-model-explained/</guid>
+      <guid>https://cjlee38.github.io/post/lang/java-memory-model-explained/</guid>
       <description>개요 이펙티브 자바의 ‘아이템 78 공유 중인 가변 데이터는 동기화해 사용하라’ 에서는 멀티태스킹 환경에서 발생할 수 있는 동시성 문제들을 소개하고, 이에 대한 해결책을 제시한다. 아이템 78을 읽어본 사람이라면, 아래의 유명한 코드를 한 번쯤은 본 적이 있을 것이다.
 public class StopThread {  private static boolean stopRequested;   public static void main(String[] args) throws InterruptedException {  Thread backgroundThread = new Thread(() -&amp;gt; {  int i = 0;  while (!</description>
-    </item>
-    
-    <item>
-      <title># Java의 static 메소드는 왜 overriding이 안되나요?</title>
-      <link>https://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</link>
-      <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</guid>
-      <description>얼마전 면접을 봤는데, 갑자기 이런 질문을 받았습니다.
- Java의 static method는 왜 overriding이 안되나요 ?
- static method의 overriding이라.. 너무나도 당연하게 안된다고 생각했는데, 갑작스럽게 질문을 받으니 머리가 백지상태가 되었습니다. 순간적으로 머릿속에서 JVM 구조가 얼핏 지나가면서, class loader, compile time, method area 등 여러 키워드가 지나갔으나 그 무엇도 속시원한 대답은 할 수 없을 것 같았습니다.
-이번 포스팅은, JVM 에서 왜 static method를 overriding 할 수 없는지에 대해, 자세하게 알아보고자 합니다.
-예제 아래 코드를 한번 살펴보겠습니다.</description>
     </item>
     
   </channel>

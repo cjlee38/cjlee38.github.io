@@ -44,15 +44,6 @@
     </item>
     
     <item>
-      <title>jvm</title>
-      <link>https://cjlee38.github.io/tags/jvm/</link>
-      <pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/tags/jvm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>layered-architecture</title>
       <link>https://cjlee38.github.io/tags/layered-architecture/</link>
       <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
@@ -71,47 +62,11 @@
     </item>
     
     <item>
-      <title>jpa</title>
-      <link>https://cjlee38.github.io/tags/jpa/</link>
-      <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
+      <title>mysql</title>
+      <link>https://cjlee38.github.io/tags/mysql/</link>
+      <pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://cjlee38.github.io/tags/jpa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>query&#39;</title>
-      <link>https://cjlee38.github.io/tags/query/</link>
-      <pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/tags/query/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>scheduled</title>
-      <link>https://cjlee38.github.io/tags/scheduled/</link>
-      <pubDate>Sun, 21 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/tags/scheduled/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spring</title>
-      <link>https://cjlee38.github.io/tags/spring/</link>
-      <pubDate>Sun, 21 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/tags/spring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>transctional</title>
-      <link>https://cjlee38.github.io/tags/transctional/</link>
-      <pubDate>Sun, 21 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/tags/transctional/</guid>
+      <guid>https://cjlee38.github.io/tags/mysql/</guid>
       <description></description>
     </item>
     
@@ -134,29 +89,11 @@
     </item>
     
     <item>
-      <title>git</title>
-      <link>https://cjlee38.github.io/tags/git/</link>
-      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      <title>spring</title>
+      <link>https://cjlee38.github.io/tags/spring/</link>
+      <pubDate>Sat, 13 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://cjlee38.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>submodule</title>
-      <link>https://cjlee38.github.io/tags/submodule/</link>
-      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/tags/submodule/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>trouble-shooting</title>
-      <link>https://cjlee38.github.io/tags/trouble-shooting/</link>
-      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/tags/trouble-shooting/</guid>
+      <guid>https://cjlee38.github.io/tags/spring/</guid>
       <description></description>
     </item>
     
@@ -181,36 +118,9 @@
     <item>
       <title>null</title>
       <link>https://cjlee38.github.io/tags/null/</link>
-      <pubDate>Mon, 28 Feb 2022 19:48:00 +0000</pubDate>
+      <pubDate>Thu, 16 Sep 2021 22:05:00 +0000</pubDate>
       
       <guid>https://cjlee38.github.io/tags/null/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>baekjoon</title>
-      <link>https://cjlee38.github.io/tags/baekjoon/</link>
-      <pubDate>Sat, 02 Jan 2021 22:17:00 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/tags/baekjoon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programmers</title>
-      <link>https://cjlee38.github.io/tags/programmers/</link>
-      <pubDate>Thu, 10 Dec 2020 13:39:00 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/tags/programmers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DIARY</title>
-      <link>https://cjlee38.github.io/tags/diary/</link>
-      <pubDate>Sun, 23 Feb 2020 02:53:36 +0000</pubDate>
-      
-      <guid>https://cjlee38.github.io/tags/diary/</guid>
       <description></description>
     </item>
     

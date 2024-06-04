@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cjlee38.github.io/post/tech/code/2023-11-29-oop-is-psychotic-disorder/</loc>
-    <lastmod>2023-11-29T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://cjlee38.github.io/categories/</loc>
     <lastmod>2023-11-29T00:00:00+00:00</lastmod>
   </url><url>
@@ -26,7 +23,10 @@
     <loc>https://cjlee38.github.io/tags/</loc>
     <lastmod>2023-11-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2023-03-06-java-memory-model-explained/</loc>
+    <loc>https://cjlee38.github.io/post/code/oop-is-psychotic-disorder/</loc>
+    <lastmod>2023-11-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/post/lang/java-memory-model-explained/</loc>
     <lastmod>2023-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/tags/java/</loc>
@@ -38,23 +38,14 @@
     <loc>https://cjlee38.github.io/tags/jmm/</loc>
     <lastmod>2023-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2022-12-03-override-static-method/</loc>
-    <lastmod>2022-12-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/jvm/</loc>
-    <lastmod>2022-12-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/architecture/2022-10-19-domain-layered-architecture/</loc>
-    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://cjlee38.github.io/categories/architecture/</loc>
     <lastmod>2022-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/tags/layered-architecture/</loc>
     <lastmod>2022-10-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cjlee38.github.io/post/tech/btb/2022-10-03-encoding-with-mysql/</loc>
-    <lastmod>2022-10-02T00:00:00+00:00</lastmod>
+    <loc>https://cjlee38.github.io/post/code/domain-layered-architecture/</loc>
+    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/categories/btb/</loc>
     <lastmod>2022-10-02T00:00:00+00:00</lastmod>
@@ -62,35 +53,11 @@
     <loc>https://cjlee38.github.io/tags/encoding/</loc>
     <lastmod>2022-10-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cjlee38.github.io/post/tech/jpa/2022-09-25-query-enhancement/</loc>
-    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
+    <loc>https://cjlee38.github.io/tags/mysql/</loc>
+    <lastmod>2022-10-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cjlee38.github.io/tags/jpa/</loc>
-    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/categories/jpa/</loc>
-    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/query/</loc>
-    <lastmod>2022-09-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/spring/2022-08-21-spring-scheudeld-with-transactional/</loc>
-    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/scheduled/</loc>
-    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/spring/</loc>
-    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/categories/spring/</loc>
-    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/transctional/</loc>
-    <lastmod>2022-08-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/spring/2022-08-13-spring-environment-seperation/</loc>
-    <lastmod>2022-08-13T00:00:00+00:00</lastmod>
+    <loc>https://cjlee38.github.io/post/database/encoding-with-mysql/</loc>
+    <lastmod>2022-10-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/tags/platform/</loc>
     <lastmod>2022-08-13T00:00:00+00:00</lastmod>
@@ -98,23 +65,14 @@
     <loc>https://cjlee38.github.io/tags/profile/</loc>
     <lastmod>2022-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cjlee38.github.io/post/git/git-submodule/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
+    <loc>https://cjlee38.github.io/tags/spring/</loc>
+    <lastmod>2022-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cjlee38.github.io/tags/git/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
+    <loc>https://cjlee38.github.io/categories/spring/</loc>
+    <lastmod>2022-08-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cjlee38.github.io/categories/git/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/submodule/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/trouble-shooting/</loc>
-    <lastmod>2022-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/kotlin/kotlin-property/</loc>
-    <lastmod>2022-06-09T14:25:36+00:00</lastmod>
+    <loc>https://cjlee38.github.io/post/spring/spring-environment-seperation/</loc>
+    <lastmod>2022-08-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/tags/kotlin/</loc>
     <lastmod>2022-06-09T14:25:36+00:00</lastmod>
@@ -122,263 +80,20 @@
     <loc>https://cjlee38.github.io/categories/kotlin/</loc>
     <lastmod>2022-06-09T14:25:36+00:00</lastmod>
   </url><url>
+    <loc>https://cjlee38.github.io/post/lang/kotlin-property/</loc>
+    <lastmod>2022-06-09T14:25:36+00:00</lastmod>
+  </url><url>
     <loc>https://cjlee38.github.io/tags/property/</loc>
     <lastmod>2022-06-09T14:25:36+00:00</lastmod>
   </url><url>
-    <loc>https://cjlee38.github.io/post/diary/2022-02-28-woowacourse/</loc>
-    <lastmod>2022-02-28T19:48:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/categories/diary/</loc>
-    <lastmod>2022-02-28T19:48:00+00:00</lastmod>
-  </url><url>
     <loc>https://cjlee38.github.io/tags/null/</loc>
-    <lastmod>2022-02-28T19:48:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/diary/2021-10-22-oop_truth_and_misunderstanding/</loc>
-    <lastmod>2021-10-22T22:13:50+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/python/2021-09-16-journey-to-property/</loc>
     <lastmod>2021-09-16T22:05:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/categories/python/</loc>
     <lastmod>2021-09-16T22:05:00+00:00</lastmod>
   </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2021-08-29-java-generics-2/</loc>
-    <lastmod>2021-08-29T23:44:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2021-08-10-java-generics-1-copy/</loc>
-    <lastmod>2021-08-10T19:26:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/etc/2021-07-30-make_test_for_boj/</loc>
-    <lastmod>2021-07-30T12:08:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/categories/etc/</loc>
-    <lastmod>2021-07-30T12:08:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/etc/2021-07-25-virtual_machine_in_m1/</loc>
-    <lastmod>2021-07-25T12:08:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2021-01-02-problem_solving_22/</loc>
-    <lastmod>2021-01-02T22:17:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/baekjoon/</loc>
-    <lastmod>2021-01-02T22:17:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/categories/problem-solving/</loc>
-    <lastmod>2021-01-02T22:17:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/spring/2020-12-29-dependency_injection/</loc>
-    <lastmod>2020-12-29T09:58:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-12-21-java8-behavior-parameterization/</loc>
-    <lastmod>2020-12-21T14:33:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/algorithm/2020-12-15-ways_to_get_lis_length/</loc>
-    <lastmod>2020-12-15T13:57:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/categories/algorithm/</loc>
-    <lastmod>2020-12-15T13:57:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-12-10-problem_solving_21/</loc>
-    <lastmod>2020-12-10T13:39:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/programmers/</loc>
-    <lastmod>2020-12-10T13:39:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-11-18-problem_solving_20/</loc>
-    <lastmod>2020-11-18T12:43:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-11-18-problem_solving_19/</loc>
-    <lastmod>2020-11-18T11:52:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/spring/2020-11-11-what_is_spring/</loc>
-    <lastmod>2020-11-11T09:58:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/btb/2020-11-08-ways_to_find_prime_number/</loc>
-    <lastmod>2020-11-08T17:43:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-11-06-problem_solving_18/</loc>
-    <lastmod>2020-11-06T09:05:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-11-03-problem_solving_17/</loc>
-    <lastmod>2020-11-03T10:52:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-10-30-problem_solving_16/</loc>
-    <lastmod>2020-10-30T08:01:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-10-25-java_parameters/</loc>
-    <lastmod>2020-10-25T01:52:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-10-23-how-junit_works_without_main/</loc>
-    <lastmod>2020-10-23T17:48:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-10-21-java_wrapper_class/</loc>
-    <lastmod>2020-10-21T20:26:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/btb/2020-10-20-value_object/</loc>
-    <lastmod>2020-10-20T12:11:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-10-19-problem_solving_15/</loc>
-    <lastmod>2020-10-19T19:45:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-10-18-label_statement/</loc>
-    <lastmod>2020-10-18T14:22:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/btb/2020-10-16-recursive_function/</loc>
-    <lastmod>2020-10-16T05:44:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-10-14-java_annotation/</loc>
-    <lastmod>2020-10-14T21:11:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-10-12-problem_solving_14/</loc>
-    <lastmod>2020-10-12T05:27:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-10-11-problem_solving_13/</loc>
-    <lastmod>2020-10-11T23:45:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-10-10-java_static/</loc>
-    <lastmod>2020-10-10T20:41:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-10-09-java_enum/</loc>
-    <lastmod>2020-10-09T15:11:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/btb/2020-10-08-solid_principles/</loc>
-    <lastmod>2020-10-08T12:35:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-10-07-java_stream/</loc>
-    <lastmod>2020-10-07T01:03:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/jsp/2020-10-06-jsp_learning_07/</loc>
-    <lastmod>2020-10-06T22:21:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/categories/jsp/</loc>
-    <lastmod>2020-10-06T22:21:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-10-05-exception_in_java/</loc>
-    <lastmod>2020-10-05T06:42:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-10-04-problem_solving_12/</loc>
-    <lastmod>2020-10-04T22:11:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-10-01-all_of_string_in_java/</loc>
-    <lastmod>2020-10-01T16:59:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-09-28-problem_solving_10/</loc>
-    <lastmod>2020-09-28T21:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-09-28-problem_solving_11/</loc>
-    <lastmod>2020-09-28T20:13:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/btb/2020-09-27-tdd-by-jaesung_park/</loc>
-    <lastmod>2020-09-27T21:31:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/btb/2020-09-25-what_is_hash/</loc>
-    <lastmod>2020-09-25T22:52:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/jsp/2020-09-25-jsp_learning_06/</loc>
-    <lastmod>2020-09-25T16:21:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/btb/2020-09-25-expression_and_statement/</loc>
-    <lastmod>2020-09-25T00:12:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-09-23-problem_solving_9/</loc>
-    <lastmod>2020-09-23T22:12:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/jsp/2020-09-22-jsp_learning_05/</loc>
-    <lastmod>2020-09-22T17:26:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/data_structure/2020-09-21-what_is_queue/</loc>
-    <lastmod>2020-09-21T19:38:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/categories/data-structure/</loc>
-    <lastmod>2020-09-21T19:38:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/data_structure/2020-09-21-what_is_stack/</loc>
-    <lastmod>2020-09-21T18:13:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/jsp/2020-09-21-jsp_learning_04/</loc>
-    <lastmod>2020-09-21T15:22:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/jsp/2020-09-19-jsp_learning_03/</loc>
-    <lastmod>2020-09-19T15:22:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-09-18-problem_solving_8/</loc>
-    <lastmod>2020-09-18T20:12:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/jsp/2020-09-17-jsp_learning_01/</loc>
-    <lastmod>2020-09-17T11:48:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/jsp/2020-09-17-jsp_learning_02/</loc>
-    <lastmod>2020-09-17T11:48:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/python/2020-09-17-asterisk_of_python/</loc>
-    <lastmod>2020-09-17T09:54:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/tech/jsp/2020-09-11-jsp_project_with_intellij/</loc>
-    <lastmod>2020-09-11T16:45:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/java/2020-09-10-journey_to_java_hashmap/</loc>
-    <lastmod>2020-09-10T14:54:36+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/data_structure/2020-09-10-what_is_linked_list/</loc>
-    <lastmod>2020-09-10T01:51:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/diary/2020-09-09-why_data_engineer/</loc>
-    <lastmod>2020-09-09T08:28:36+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-09-07-problem_solving_7/</loc>
-    <lastmod>2020-09-07T01:51:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/python/2020-09-05-play_with_python_list/</loc>
-    <lastmod>2020-09-05T00:35:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-09-04-problem_solving_6/</loc>
-    <lastmod>2020-09-04T08:38:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-09-03-problem_solving_5/</loc>
-    <lastmod>2020-09-03T07:19:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/data/data_mining/2020-08-30-association_rule_with_java/</loc>
-    <lastmod>2020-08-30T22:31:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/categories/data-mining/</loc>
-    <lastmod>2020-08-30T22:31:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-08-29-problem_solving_4/</loc>
-    <lastmod>2020-08-29T17:16:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-08-27-problem_solving_3/</loc>
-    <lastmod>2020-08-27T23:58:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-08-27-problem_solving_2/</loc>
-    <lastmod>2020-08-27T22:41:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/algorithm/problem_solving/2020-08-27-problem_solving_1/</loc>
-    <lastmod>2020-08-27T20:58:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/data/data_mining/2020-08-27-how_to_run_jupyter_server/</loc>
-    <lastmod>2020-08-27T05:56:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/language/python/2020-08-27-python_prefix/</loc>
-    <lastmod>2020-08-27T01:47:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/linux/2020-03-20-tablet_as_dual_monitor/</loc>
-    <lastmod>2020-03-20T05:37:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/categories/linux/</loc>
-    <lastmod>2020-03-20T05:37:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/linux/2020-03-09-manjaro_linux_settings/</loc>
-    <lastmod>2020-03-09T21:24:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/linux/2020-02-23-how_to_install_manjaro_inux/</loc>
-    <lastmod>2020-02-23T03:54:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/diary/2020-02-23-prologue/</loc>
-    <lastmod>2020-02-23T02:53:36+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/diary/</loc>
-    <lastmod>2020-02-23T02:53:36+00:00</lastmod>
+    <loc>https://cjlee38.github.io/post/lang/python-property/</loc>
+    <lastmod>2021-09-16T22:05:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/search/</loc>
   </url>
