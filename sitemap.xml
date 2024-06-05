@@ -2,11 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cjlee38.github.io/tags/absorb/</loc>
+    <lastmod>2024-06-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://cjlee38.github.io/categories/</loc>
-    <lastmod>2023-11-29T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/</loc>
-    <lastmod>2023-11-29T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/tags/git/</loc>
+    <lastmod>2024-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/categories/git/</loc>
+    <lastmod>2024-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/post/git/git-absorb/</loc>
+    <lastmod>2024-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/post/</loc>
+    <lastmod>2024-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cjlee38.github.io/tags/</loc>
+    <lastmod>2024-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/tags/clean-code/</loc>
     <lastmod>2023-11-29T00:00:00+00:00</lastmod>
@@ -15,12 +33,6 @@
     <lastmod>2023-11-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/tags/oop/</loc>
-    <lastmod>2023-11-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/post/</loc>
-    <lastmod>2023-11-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cjlee38.github.io/tags/</loc>
     <lastmod>2023-11-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cjlee38.github.io/post/code/oop-is-psychotic-disorder/</loc>
