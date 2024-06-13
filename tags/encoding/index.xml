@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>encoding on cjlee38</title>
+    <title>Encoding on cjlee38</title>
     <link>https://cjlee38.github.io/tags/encoding/</link>
-    <description>Recent content in encoding on cjlee38</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Encoding on cjlee38</description>
+    <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/tags/encoding/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cjlee38.github.io/tags/encoding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>문자 인코딩과 MySQL varchar</title>
       <link>https://cjlee38.github.io/post/database/encoding-with-mysql/</link>
       <pubDate>Sun, 02 Oct 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://cjlee38.github.io/post/database/encoding-with-mysql/</guid>
       <description>1. 문자 인코딩이란 문자 인코딩이란 사용자가 입력한 문자나 기호들을 컴퓨터가 이용할 수 있는 신호로 만드는 것을 말한다. 1 우리가 작성한 모든 텍스트는 결국 CPU 상에서 2진수로 처리된다. 사람이 작성한 글을 2진수로 변환하고, 2진수를 다시 사람이 읽을 수 있도록 만드는 작업을 각각 인코딩(encoding)과 디코딩(decoding)이라고 표현한다.
 이러한 인코딩을 하기 위해서는 서로 약속한 &amp;lsquo;문자열 세트&amp;rsquo;가 필요하다. 가장 대표적인 문자열 세트는 ASCII다. ASCII는 1963년 미국 ANSI에서 표준화한 7 bit 부호 체계로 128 개의 기호(33개의 제어문자와 95개의 출력문자)를 표현할 수 있다.</description>
     </item>
-    
   </channel>
 </rss>

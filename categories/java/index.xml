@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>java on cjlee38</title>
+    <title>Java on cjlee38</title>
     <link>https://cjlee38.github.io/categories/java/</link>
-    <description>Recent content in java on cjlee38</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Java on cjlee38</description>
+    <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cjlee38.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cjlee38.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java Memory Model explained (feat. Effective Java, Item 78)</title>
       <link>https://cjlee38.github.io/post/lang/java-memory-model-explained/</link>
       <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://cjlee38.github.io/post/lang/java-memory-model-explained/</guid>
       <description>개요 이펙티브 자바의 ‘아이템 78 공유 중인 가변 데이터는 동기화해 사용하라’ 에서는 멀티태스킹 환경에서 발생할 수 있는 동시성 문제들을 소개하고, 이에 대한 해결책을 제시한다. 아이템 78을 읽어본 사람이라면, 아래의 유명한 코드를 한 번쯤은 본 적이 있을 것이다.
-public class StopThread {  private static boolean stopRequested;   public static void main(String[] args) throws InterruptedException {  Thread backgroundThread = new Thread(() -&amp;gt; {  int i = 0;  while (!</description>
+public class StopThread { private static boolean stopRequested; public static void main(String[] args) throws InterruptedException { Thread backgroundThread = new Thread(() -&amp;gt; { int i = 0; while (!stopRequested) i++; }); backgroundThread.start(); TimeUnit.SECONDS.sleep(1); stopRequested = true; } } 위 코드를 읽어보면, stopRequested 가 1초 뒤에 true 로 바뀌었으므로 백그라운드 스레드는 종료되어야 할 것 같지만, 실제로 무한 루프를 돌게 된다.</description>
     </item>
-    
   </channel>
 </rss>
