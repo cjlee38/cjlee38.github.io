@@ -6,8 +6,16 @@
     <description>Recent content on cjlee38</description>
     <generator>Hugo -- 0.127.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.cjlee.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>헷갈리는 WebClient Timeout</title>
+      <link>https://blog.cjlee.io/post/webclient-timeout/</link>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.cjlee.io/post/webclient-timeout/</guid>
+      <description>SpringBoot 환경에서 HTTP 요청을 보낼 때 주로 사용하는 client 는 RestTemplate 과 WebClient 가 있다. RestTemplate 은 Spring 3.0 부터 포함된 client 로, mvc 환경에서 blocking I/O 방식으로 요청을 보낼 때 주로 사용되어왔고, WebClient 는 (비교적 ?) 최신인 5.0 부터 도입되어, webflux 환경에서 non-blocking I/O 로 요청을 보낼 때 애용되어왔다.
+WebClient 의 connection manager 는 기본 구현체로 reactor-netty 를, 그리고 reactor-netty 는 netty 의 wrapper 로, 실상 HTTP 요청을 보내는 connection 을 관리하는 주체는 netty framework 를 사용한다.</description>
+    </item>
     <item>
       <title>reactor-kafka 는 조심하자</title>
       <link>https://blog.cjlee.io/post/graceful-kafka-receiver/</link>
